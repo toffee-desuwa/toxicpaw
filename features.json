@@ -1,0 +1,102 @@
+{
+  "project": "toxicpaw",
+  "version": "0.1.0",
+  "features": [
+    {
+      "id": "F001",
+      "name": "Project scaffold",
+      "description": "Next.js 15 + TypeScript project setup, Tailwind CSS, mobile-first layout, PWA manifest, camera-ready viewport",
+      "priority": 1,
+      "status": "pending",
+      "dependencies": []
+    },
+    {
+      "id": "F002",
+      "name": "Ingredient knowledge base",
+      "description": "JSON database of 500+ pet food ingredients with: name, category, safety_rating (safe/caution/harmful), explanation, common_aliases. Sources: AAFCO, veterinary nutrition literature",
+      "priority": 2,
+      "status": "pending",
+      "dependencies": ["F001"]
+    },
+    {
+      "id": "F003",
+      "name": "Camera and image upload",
+      "description": "Mobile camera capture via Web Camera API + image file upload. Preview image, crop to ingredient label area, handle permissions",
+      "priority": 3,
+      "status": "pending",
+      "dependencies": ["F001"]
+    },
+    {
+      "id": "F004",
+      "name": "OCR ingredient extraction",
+      "description": "Tesseract.js client-side OCR to extract text from ingredient label photo. Parse comma-separated ingredient list into structured array. Handle Chinese + English labels",
+      "priority": 4,
+      "status": "pending",
+      "dependencies": ["F003"]
+    },
+    {
+      "id": "F005",
+      "name": "Ingredient analysis engine",
+      "description": "Match extracted ingredients against knowledge base. Calculate overall grade (A-F) based on: harmful ingredient count, quality ingredient ratio, filler percentage. Flag each ingredient red/yellow/green",
+      "priority": 5,
+      "status": "pending",
+      "dependencies": ["F002", "F004"]
+    },
+    {
+      "id": "F006",
+      "name": "Analysis result display",
+      "description": "Beautiful mobile UI showing: big letter grade badge with color, scrollable ingredient list with red/yellow/green flags, plain-language summary explaining why this food scored this grade",
+      "priority": 6,
+      "status": "pending",
+      "dependencies": ["F005"]
+    },
+    {
+      "id": "F007",
+      "name": "AI explanation generation",
+      "description": "Claude API generates a 2-3 sentence plain-language explanation of why the food is good/bad, tailored for non-expert pet owners. Cached per ingredient combo to reduce API costs",
+      "priority": 7,
+      "status": "pending",
+      "dependencies": ["F005"]
+    },
+    {
+      "id": "F008",
+      "name": "Pet profile and personalization",
+      "description": "Input: pet type (cat/dog), breed, age, weight, health conditions. Adjust scoring based on breed-specific sensitivities (e.g., grain sensitivity in certain breeds)",
+      "priority": 8,
+      "status": "pending",
+      "dependencies": ["F005", "F006"]
+    },
+    {
+      "id": "F009",
+      "name": "Scan history and comparison",
+      "description": "LocalStorage-based scan history. Compare two foods side by side. Share results as image card (social media ready)",
+      "priority": 9,
+      "status": "pending",
+      "dependencies": ["F006"]
+    },
+    {
+      "id": "F010",
+      "name": "Social sharing cards",
+      "description": "Generate shareable image card with grade + food name + key findings. One-tap share to WeChat/WhatsApp/Twitter. OG meta tags for link previews",
+      "priority": 10,
+      "status": "pending",
+      "dependencies": ["F006"]
+    },
+    {
+      "id": "F011",
+      "name": "Landing page and README",
+      "description": "Marketing-grade landing page: hero with phone mockup, scan demo GIF, feature highlights, trust signals. GitHub README with badges, screenshots, setup guide",
+      "priority": 11,
+      "status": "pending",
+      "dependencies": ["F006"]
+    },
+    {
+      "id": "F012",
+      "name": "Open source packaging",
+      "description": "MIT license, CONTRIBUTING.md, GitHub Actions CI, Vercel deployment, Docker option, open-source the ingredient knowledge base separately",
+      "priority": 12,
+      "status": "pending",
+      "dependencies": ["F011"]
+    }
+  ]
+}

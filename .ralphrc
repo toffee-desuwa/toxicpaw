@@ -1,0 +1,27 @@
+# ToxicPaw Ralph Configuration
+
+# Claude CLI command
+CLAUDE_CODE_CMD="claude"
+
+# Rate limiting
+MAX_CALLS_PER_HOUR=50
+
+# Timeout per Claude execution (minutes)
+CLAUDE_TIMEOUT_MINUTES=20
+
+# Output format
+CLAUDE_OUTPUT_FORMAT=json
+
+# SESSION MANAGEMENT (harness engineering)
+# Every loop = fresh session. Context recovery via progress.txt + features.json + git log
+SESSION_EXPIRY_HOURS=0
+RESET_SESSION_EACH_LOOP=true
+CLAUDE_USE_CONTINUE=false
+
+# Tool permissions
+CLAUDE_ALLOWED_TOOLS="Write,Read,Edit,Bash(git add *),Bash(git commit *),Bash(git diff *),Bash(git log *),Bash(git status),Bash(npm *),Bash(npx *),Bash(node *),Bash(mkdir *),Bash(cat *)"
+
+# Circuit breaker
+CB_COOLDOWN_MINUTES=15
+CB_AUTO_RESET=true
+CB_NO_PROGRESS_THRESHOLD=3
