@@ -29,3 +29,14 @@
 - 24 tests all passing covering: metadata, lookup (exact/alias/Chinese/fuzzy), batch lookup, search, category/rating filters, data integrity, no duplicates
 - Build, lint, and tests all pass
 - Next action: F003 - Camera and image upload
+
+## Session 3 (F003 - Camera and Image Upload)
+- Created CameraCapture component: Web Camera API with environment-facing mode, permission handling, capture-to-canvas
+- Created ImageUpload component: file input + drag-and-drop, FileReader to data URL
+- Created ImagePreview component: preview image with Retake/Analyze buttons
+- Created Scanner orchestrator: manages capture→preview→confirm flow, camera error fallback to upload-only
+- Updated main page (page.tsx): landing→scanning→confirmed states, "use client" with Scanner integration
+- Added barrel export in src/components/scanner/index.ts
+- 15 new tests (39 total): CameraCapture (render, permissions, errors), ImageUpload (render, file selection), ImagePreview (render, retake, confirm), Scanner (orchestration, upload flow, retake)
+- All tests pass, lint clean, build succeeds
+- Next action: F004 - OCR ingredient extraction

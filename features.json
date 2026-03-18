@@ -23,7 +23,7 @@
       "name": "Camera and image upload",
       "description": "Mobile camera capture via Web Camera API + image file upload. Preview image, crop to ingredient label area, handle permissions",
       "priority": 3,
-      "status": "pending",
+      "status": "done",
       "dependencies": ["F001"]
     },
     {
