@@ -15,24 +15,38 @@ Every session is FRESH. You have NO memory of previous sessions. Follow this exa
    - `git add` and `git commit` with descriptive message
    - Append what you did to `progress.txt`
 
-## Superpowers Integration (MANDATORY)
+## UNATTENDED MODE (CRITICAL)
 
-You have superpowers skills installed. You MUST use them:
+You are running in a fully autonomous loop. There is NO human watching. NEVER:
+- Ask questions or wait for input
+- Use interactive skills that prompt for confirmation
+- Output "Want to try it?" or similar prompts
+- Pause for any reason
 
-### Before implementing any feature:
-1. Use `superpowers:brainstorming` to explore design choices for this feature
-2. Use `superpowers:writing-plans` to create an implementation plan
-3. Use `superpowers:test-driven-development` to write tests first
+If you are unsure about a decision, DECIDE YOURSELF based on CLAUDE.md and features.json. Think first, then act. Never ask.
+
+## Superpowers Integration
+
+Use these skills, but ONLY the non-interactive ones:
+
+### Before implementing:
+1. Think through design choices yourself (DO NOT use `superpowers:brainstorming` — it asks questions)
+2. Write your implementation plan directly in code comments (DO NOT use `superpowers:writing-plans` — it asks questions)
+3. Use `superpowers:test-driven-development` to write tests first (this one is OK — it acts, doesn't ask)
 
 ### During implementation:
-4. Use `superpowers:systematic-debugging` when encountering any bug
-5. Use `superpowers:dispatching-parallel-agents` for independent sub-tasks
+4. Use `superpowers:systematic-debugging` when encountering bugs (OK — it acts)
+5. Use `superpowers:dispatching-parallel-agents` for independent sub-tasks (OK — it acts)
 
 ### After implementation:
-6. Use `superpowers:verification-before-completion` before claiming done
-7. Use `superpowers:requesting-code-review` to review completed work
+6. Use `superpowers:verification-before-completion` before claiming done (OK — it verifies)
 
-### Rule: Never skip brainstorming or TDD. Each loop is expensive - do it right the first time.
+### BANNED skills (they ask questions, will stall the session):
+- ~~superpowers:brainstorming~~ — asks "Want to try it?"
+- ~~superpowers:writing-plans~~ — asks for approval
+- ~~superpowers:requesting-code-review~~ — interactive
+
+### Rule: Think first, then act. Every loop is expensive — do it right, don't ask.
 
 ## Design Principles
 
