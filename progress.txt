@@ -50,3 +50,15 @@
 - 45 new tests (84 total): parser tests (containsChinese, stripHeader, normalizeIngredient, detectLanguage, parseIngredients for English/Chinese/mixed/edge cases), OCR engine tests (mocked Tesseract), pipeline integration tests
 - All 84 tests pass, lint clean, build succeeds
 - Next action: F005 - Ingredient analysis engine
+
+## Session 5 (F005 - Ingredient Analysis Engine)
+- Created src/lib/analyzer/types.ts: AnalyzedIngredient, Grade, AnalysisSummary, AnalysisResult types
+- Created src/lib/analyzer/index.ts: full analysis engine with scoring algorithm
+  - 100-point scoring system: harmful (-15, +5 if top position), caution (-5, +3 if top), concern categories (-3 each)
+  - Bonuses: +5 for protein as first ingredient, -10 penalty if no protein in top 3
+  - Grade mapping: A (90+), B (75+), C (60+), D (40+), F (<40)
+  - Each ingredient flagged red/yellow/green/unknown based on knowledge base match
+  - Plain-language verdicts generated per grade level
+- 16 new tests (100 total): scoreToGrade mapping, empty input, high-quality food grading, harmful ingredient penalties, unknown flagging, color flags, protein position bonuses, summary statistics, verdict generation, score clamping
+- All 100 tests pass, lint clean, build succeeds
+- Next action: F006 - Analysis result display
