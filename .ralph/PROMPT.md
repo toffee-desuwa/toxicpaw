@@ -23,7 +23,19 @@ You are running in a fully autonomous loop. There is NO human watching. NEVER:
 - Output "Want to try it?" or similar prompts
 - Pause for any reason
 
-If you are unsure about a decision, DECIDE YOURSELF based on CLAUDE.md and features.json. Think first, then act. Never ask.
+If you are unsure about a decision, DECIDE YOURSELF based on CLAUDE.md and features.json. Never ask.
+
+## PRE-IMPLEMENTATION THINKING (MANDATORY)
+
+Before writing ANY code, you MUST think through these questions and write your answers as a comment block at the top of the first file you create/modify:
+
+1. **What exactly does this feature do?** (Re-read the feature description in features.json)
+2. **What are the key design decisions?** (List 2-3 choices you need to make, and pick one with reasoning)
+3. **What could go wrong?** (Edge cases, dependencies, potential blockers)
+4. **What's the simplest implementation that works?** (Avoid over-engineering)
+5. **What tests prove this feature works?** (Define acceptance criteria before coding)
+
+This thinking block replaces brainstorming. You think alone, decide alone, act alone. No asking.
 
 ## Superpowers Integration
 
