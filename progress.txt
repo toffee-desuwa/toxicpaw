@@ -62,3 +62,14 @@
 - 16 new tests (100 total): scoreToGrade mapping, empty input, high-quality food grading, harmful ingredient penalties, unknown flagging, color flags, protein position bonuses, summary statistics, verdict generation, score clamping
 - All 100 tests pass, lint clean, build succeeds
 - Next action: F006 - Analysis result display
+
+## Session 6 (F006 - Analysis Result Display)
+- Created GradeBadge component: large color-coded circle with letter grade (A=emerald, B=lime, C=amber, D=orange, F=red), score display, accessible aria labels
+- Created IngredientList component: scrollable list with colored dots (red/yellow/green/gray), position numbers, explanations, empty state handling
+- Created SummaryBar component: 4-column grid showing safe/caution/harmful/unknown counts at a glance
+- Created AnalysisView orchestrator: composes GradeBadge + verdict text + SummaryBar + IngredientList + Scan Another button
+- Updated page.tsx: full pipeline wired up (image → OCR → analysis → display), added analyzing spinner state, error state with retry button
+- Barrel exports in src/components/analysis/index.ts and src/components/grade/index.ts
+- 15 new tests (115 total): GradeBadge rendering + accessibility, SummaryBar counts + labels, IngredientList items + positions + explanations + empty state + count header, AnalysisView verdict + button + click handler + all grades
+- All 115 tests pass, lint clean, build succeeds
+- Next action: F007 - AI explanation generation
