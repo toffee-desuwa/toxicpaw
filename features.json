@@ -31,7 +31,7 @@
       "name": "OCR ingredient extraction",
       "description": "Tesseract.js client-side OCR to extract text from ingredient label photo. Parse comma-separated ingredient list into structured array. Handle Chinese + English labels",
       "priority": 4,
-      "status": "pending",
+      "status": "done",
       "dependencies": ["F003"]
     },
     {

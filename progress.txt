@@ -40,3 +40,13 @@
 - 15 new tests (39 total): CameraCapture (render, permissions, errors), ImageUpload (render, file selection), ImagePreview (render, retake, confirm), Scanner (orchestration, upload flow, retake)
 - All tests pass, lint clean, build succeeds
 - Next action: F004 - OCR ingredient extraction
+
+## Session 4 (F004 - OCR Ingredient Extraction)
+- Installed tesseract.js for client-side OCR (eng+chi_sim bilingual support)
+- Created src/lib/ocr/types.ts: OcrResult, ParsedIngredient, ExtractionResult types
+- Created src/lib/ocr/parser.ts: ingredient text parser with header stripping, comma/Chinese-comma/semicolon splitting, normalization, language detection, OCR artifact cleanup
+- Created src/lib/ocr/ocr-engine.ts: Tesseract.js wrapper with confidence threshold (60%)
+- Created src/lib/ocr/index.ts: full extraction pipeline (image → OCR → parse → structured ingredients) with error handling
+- 45 new tests (84 total): parser tests (containsChinese, stripHeader, normalizeIngredient, detectLanguage, parseIngredients for English/Chinese/mixed/edge cases), OCR engine tests (mocked Tesseract), pipeline integration tests
+- All 84 tests pass, lint clean, build succeeds
+- Next action: F005 - Ingredient analysis engine
