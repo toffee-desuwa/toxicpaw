@@ -15,7 +15,7 @@
       "name": "Ingredient knowledge base",
       "description": "JSON database of 500+ pet food ingredients with: name, category, safety_rating (safe/caution/harmful), explanation, common_aliases. Sources: AAFCO, veterinary nutrition literature",
       "priority": 2,
-      "status": "pending",
+      "status": "done",
       "dependencies": ["F001"]
     },
     {

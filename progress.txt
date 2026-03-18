@@ -17,3 +17,15 @@
 - Set up ESLint with next/core-web-vitals
 - Build, tests, and lint all pass
 - Next action: F002 - Ingredient knowledge base
+
+## Session 2 (F002 - Ingredient Knowledge Base)
+- Created data/ingredients.json with 507 pet food ingredients covering 17 categories
+- Categories: protein (73+), grain, vegetable, fruit, fat_oil, fiber, vitamin, mineral, preservative, additive, sweetener, coloring, filler, byproduct, supplement, thickener, flavor
+- Safety ratings: 302+ safe, 53+ caution, 29+ harmful
+- Bilingual support: all ingredients have Chinese name aliases
+- Created TypeScript types in src/lib/knowledge/types.ts (Ingredient, SafetyRating, IngredientCategory, LookupResult)
+- Created lookup/search utilities in src/lib/knowledge/index.ts (exact match, alias match, fuzzy match, search, filter by category/rating)
+- Pre-built lookup indexes for O(1) exact and alias matching
+- 24 tests all passing covering: metadata, lookup (exact/alias/Chinese/fuzzy), batch lookup, search, category/rating filters, data integrity, no duplicates
+- Build, lint, and tests all pass
+- Next action: F003 - Camera and image upload
