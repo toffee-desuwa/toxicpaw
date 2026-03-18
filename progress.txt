@@ -6,3 +6,14 @@
 - Created Ralph config: .ralph/PROMPT.md, .ralph/fix_plan.md, .ralph/AGENT.md, .ralphrc
 - Git initialized, initial commit
 - Next action: F001 - Project scaffold
+
+## Session 1 (F001 - Project Scaffold)
+- Set up Next.js 15.5 + React 19 + TypeScript with strict mode
+- Configured Tailwind CSS v4 via @tailwindcss/postcss
+- Created mobile-first root layout with camera-ready viewport (no zoom, viewport-fit=cover)
+- Added PWA manifest (standalone, portrait, dark theme)
+- Created project directory structure: src/components/{scanner,analysis,grade,profile}, src/lib/{ocr,analyzer,knowledge}, src/api, data/
+- Set up Jest + React Testing Library for testing
+- Set up ESLint with next/core-web-vitals
+- Build, tests, and lint all pass
+- Next action: F002 - Ingredient knowledge base

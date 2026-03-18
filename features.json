@@ -7,7 +7,7 @@
       "name": "Project scaffold",
       "description": "Next.js 15 + TypeScript project setup, Tailwind CSS, mobile-first layout, PWA manifest, camera-ready viewport",
       "priority": 1,
-      "status": "pending",
+      "status": "done",
       "dependencies": []
     },
     {

@@ -1,0 +1,44 @@
+/*
+ * F001 PRE-IMPLEMENTATION THINKING:
+ * 1. What: Root layout with mobile-first viewport, camera-ready meta tags, PWA support.
+ * 2. Decisions: Dark theme by default (fear-driven UX works better on dark bg),
+ *    viewport-fit=cover for notched phones, standalone PWA display mode.
+ * 3. Risks: iOS Safari quirks with viewport-fit, PWA install prompt timing.
+ * 4. Simplest: Standard Next.js layout with proper meta tags and manifest link.
+ * 5. Tests: Build succeeds, meta tags render correctly.
+ */
+
+import type { Metadata, Viewport } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "ToxicPaw - Pet Food Ingredient Scanner",
+  description:
+    "Scan pet food labels instantly. AI-powered ingredient analysis gives your pet's food a safety grade from A to F.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "ToxicPaw",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className="min-h-dvh antialiased">{children}</body>
+    </html>
+  );
+}

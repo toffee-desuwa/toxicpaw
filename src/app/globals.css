@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-safe: #22c55e;
+  --color-bg: #0a0a0a;
+  --color-fg: #fafafa;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  color: var(--color-fg);
+  background: var(--color-bg);
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+/* Prevent zoom on input focus (iOS) */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
