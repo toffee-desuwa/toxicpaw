@@ -17,6 +17,8 @@ import { SummaryBar } from "./SummaryBar";
 interface AnalysisViewProps {
   result: AnalysisResult;
   onScanAnother: () => void;
+  onSaveToHistory?: (foodName: string) => void;
+  saved?: boolean;
 }
 
 /** Build the request payload for /api/explain */
@@ -41,9 +43,11 @@ function buildExplainPayload(result: AnalysisResult): ExplainRequest {
   };
 }
 
-export function AnalysisView({ result, onScanAnother }: AnalysisViewProps) {
+export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = false }: AnalysisViewProps) {
   const [aiExplanation, setAiExplanation] = useState<string>("");
   const [aiLoading, setAiLoading] = useState(true);
+  const [foodName, setFoodName] = useState("");
+  const [showSaveInput, setShowSaveInput] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -146,11 +150,50 @@ export function AnalysisView({ result, onScanAnother }: AnalysisViewProps) {
       {/* Ingredient List */}
       <IngredientList ingredients={result.ingredients} />
 
+      {/* Save to History */}
+      {onSaveToHistory && !saved && !showSaveInput && (
+        <button
+          type="button"
+          onClick={() => setShowSaveInput(true)}
+          className="mt-2 w-full rounded-full bg-red-500 px-8 py-3 font-semibold text-white transition-colors hover:bg-red-400 active:scale-95"
+          data-testid="save-button"
+        >
+          Save to History
+        </button>
+      )}
+
+      {onSaveToHistory && showSaveInput && !saved && (
+        <div className="mt-2 flex gap-2" data-testid="save-input">
+          <input
+            type="text"
+            value={foodName}
+            onChange={(e) => setFoodName(e.target.value)}
+            placeholder="Food name (optional)"
+            className="flex-1 rounded-xl bg-neutral-800 px-4 py-3 text-sm text-neutral-200 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-red-500"
+            data-testid="food-name-input"
+          />
+          <button
+            type="button"
+            onClick={() => onSaveToHistory(foodName)}
+            className="shrink-0 rounded-xl bg-red-500 px-4 py-3 font-medium text-white hover:bg-red-400 active:scale-95"
+            data-testid="confirm-save"
+          >
+            Save
+          </button>
+        </div>
+      )}
+
+      {saved && (
+        <p className="mt-2 text-center text-sm text-emerald-400" data-testid="saved-confirmation">
+          Saved to history
+        </p>
+      )}
+
       {/* Actions */}
       <button
         type="button"
         onClick={onScanAnother}
-        className="mt-2 w-full rounded-full bg-neutral-700 px-8 py-3 font-medium text-white transition-colors hover:bg-neutral-600 active:scale-95"
+        className="w-full rounded-full bg-neutral-700 px-8 py-3 font-medium text-white transition-colors hover:bg-neutral-600 active:scale-95"
       >
         Scan Another
       </button>

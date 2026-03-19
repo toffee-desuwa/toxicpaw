@@ -98,3 +98,15 @@
 - 37 new tests (172 total): sensitivities (16 tests: breed data, condition data, adjustments for breeds/conditions/allergies/age/positions/combinations/empty), storage (6 tests: save/load/clear/corrupt), PetProfileForm (10 tests: rendering/interaction/pre-fill), profile-integration (5 tests: score adjustment/warnings/no-profile)
 - All 172 tests pass, lint clean, build succeeds
 - Next action: F009 - Scan history and comparison
+
+## Session 9 (F009 - Scan History and Comparison)
+- Created src/lib/history/types.ts: ScanHistoryEntry, ComparisonPair types
+- Created src/lib/history/storage.ts: localStorage persistence with save/load/delete/clear/getById, max 50 entries with LIFO ordering and overflow pruning
+- Created src/lib/history/index.ts: barrel exports
+- Created src/components/history/HistoryList.tsx: scrollable list with mini grade badges, formatted timestamps, delete buttons, compare mode with 2-selection flow, empty state
+- Created src/components/history/ComparisonView.tsx: side-by-side comparison with grade badges, 5 stat rows (score/safe/caution/harmful/total) with winner highlighting, verdicts for both foods
+- Updated src/components/analysis/AnalysisView.tsx: added Save to History button with optional food name input, saved confirmation state
+- Updated src/app/page.tsx: integrated history with new states (history, history-detail, comparing), View Scan History button on landing page, compare toggle, full history CRUD flow
+- 33 new tests (205 total): history storage (14 tests: load/save/delete/clear/getById/pruning/IDs/timestamps), HistoryList (11 tests: empty/entries/select/delete/clear/grade/compare-mode), ComparisonView (8 tests: render/names/grades/stats/verdicts/close/defaults)
+- All 205 tests pass, lint clean, build succeeds
+- Next action: F010 - Social sharing cards

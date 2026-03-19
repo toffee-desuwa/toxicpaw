@@ -71,7 +71,7 @@
       "name": "Scan history and comparison",
       "description": "LocalStorage-based scan history. Compare two foods side by side. Share results as image card (social media ready)",
       "priority": 9,
-      "status": "pending",
+      "status": "done",
       "dependencies": ["F006"]
     },
     {
