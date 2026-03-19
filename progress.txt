@@ -110,3 +110,14 @@
 - 33 new tests (205 total): history storage (14 tests: load/save/delete/clear/getById/pruning/IDs/timestamps), HistoryList (11 tests: empty/entries/select/delete/clear/grade/compare-mode), ComparisonView (8 tests: render/names/grades/stats/verdicts/close/defaults)
 - All 205 tests pass, lint clean, build succeeds
 - Next action: F010 - Social sharing cards
+
+## Session 10 (F010 - Social Sharing Cards)
+- Created src/components/sharing/ShareCard.tsx: visually striking 375px-wide card with grade circle, food name, verdict, 4-column stats (safe/caution/harmful/unknown), top 3 harmful + safe ingredients, ToxicPaw branding and footer
+- Created src/components/sharing/ShareButton.tsx: html2canvas-powered image generation from ShareCard DOM, Web Share API integration (mobile native sharing with image file), download fallback for desktop, loading/shared state management
+- Created src/components/sharing/index.ts: barrel exports
+- Updated src/app/layout.tsx: added Open Graph (og:title, og:description, og:siteName, og:type) and Twitter Card (summary_large_image) meta tags for link previews
+- Updated src/components/analysis/AnalysisView.tsx: integrated ShareButton below save-to-history section, passes food name and analysis result
+- Updated src/components/analysis/__tests__/AnalysisView.test.tsx: added ShareButton mock to prevent duplicate text conflicts from hidden ShareCard
+- 25 new tests (230 total): ShareCard (15 tests: rendering, branding, grades A/B/F, verdict, food name show/hide, stats, harmful/safe ingredient lists, 3-item limit, footer, ref forwarding), ShareButton (10 tests: render, hidden card, generating state, html2canvas call, download fallback, Web Share API, shared text, food name passthrough, button disable during share, timeout reset)
+- All 230 tests pass, lint clean, build succeeds
+- Next action: F011 - Landing page and README

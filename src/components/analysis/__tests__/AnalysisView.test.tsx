@@ -4,6 +4,11 @@ import { IngredientList } from "../IngredientList";
 import { SummaryBar } from "../SummaryBar";
 import type { AnalysisResult, AnalyzedIngredient, AnalysisSummary, Grade } from "@/lib/analyzer/types";
 
+// Mock ShareButton to avoid duplicate text from hidden ShareCard
+jest.mock("@/components/sharing", () => ({
+  ShareButton: () => <button data-testid="share-button">Share Result</button>,
+}));
+
 // Mock fetch for AI explanation
 const mockFetch = jest.fn();
 global.fetch = mockFetch;

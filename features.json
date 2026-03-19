@@ -79,7 +79,7 @@
       "name": "Social sharing cards",
       "description": "Generate shareable image card with grade + food name + key findings. One-tap share to WeChat/WhatsApp/Twitter. OG meta tags for link previews",
       "priority": 10,
-      "status": "pending",
+      "status": "done",
       "dependencies": ["F006"]
     },
     {

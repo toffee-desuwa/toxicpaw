@@ -21,6 +21,20 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent",
     title: "ToxicPaw",
   },
+  openGraph: {
+    title: "ToxicPaw - Pet Food Ingredient Scanner",
+    description:
+      "Scan pet food labels instantly. AI-powered ingredient analysis gives your pet's food a safety grade from A to F.",
+    siteName: "ToxicPaw",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ToxicPaw - Pet Food Ingredient Scanner",
+    description:
+      "Scan pet food labels instantly. AI-powered ingredient analysis gives your pet's food a safety grade from A to F.",
+  },
 };
 
 export const viewport: Viewport = {

@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import type { AnalysisResult } from "@/lib/analyzer/types";
 import type { ExplainRequest, ExplainIngredient } from "@/lib/explainer/types";
 import { GradeBadge } from "@/components/grade";
+import { ShareButton } from "@/components/sharing";
 import { IngredientList } from "./IngredientList";
 import { SummaryBar } from "./SummaryBar";
 
@@ -188,6 +189,9 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
           Saved to history
         </p>
       )}
+
+      {/* Share */}
+      <ShareButton result={result} foodName={foodName || undefined} />
 
       {/* Actions */}
       <button
