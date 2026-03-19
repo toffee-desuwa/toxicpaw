@@ -18,6 +18,14 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
   const displayNameCn = `${brand.brandCn} ${brand.productCn}`;
   const { t: tc } = useTranslation("common");
   const { t: tb } = useTranslation("brand");
+  const { t: tg } = useTranslation("grade");
+
+  const verdictKey = analysis.summary.totalIngredients === 0
+    ? "verdictNone"
+    : `verdict${analysis.grade}`;
+  const localizedVerdict = tg(verdictKey, {
+    harmfulCount: String(analysis.summary.harmfulCount),
+  });
 
   return (
     <main className="min-h-dvh">
@@ -48,7 +56,7 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
           className="text-center text-base leading-relaxed text-neutral-300"
           data-testid="verdict"
         >
-          {analysis.verdict}
+          {localizedVerdict}
         </p>
 
         {/* Summary Stats */}

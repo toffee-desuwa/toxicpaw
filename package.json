@@ -16,7 +16,7 @@
     "ocr"
   ],
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 2999",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

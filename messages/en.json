@@ -74,7 +74,13 @@
     "D": "Below Average",
     "F": "Poor",
     "gradeLabel": "Grade {grade}: {label}",
-    "scoreLabel": "Score: {score}/100"
+    "scoreLabel": "Score: {score}/100",
+    "verdictNone": "No ingredients detected. Try scanning again with a clearer image.",
+    "verdictA": "Excellent quality food with wholesome, safe ingredients. Great choice for your pet!",
+    "verdictB": "Good quality food with mostly safe ingredients. A solid choice with minor concerns.",
+    "verdictC": "Average quality food. Some questionable ingredients that could be better.",
+    "verdictD": "Below average quality. Found {harmfulCount} harmful ingredient(s) that may affect your pet's health.",
+    "verdictF": "Poor quality food with {harmfulCount} harmful ingredient(s). Consider switching to a higher quality option."
   },
   "profile": {
     "title": "Pet Profile",
