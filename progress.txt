@@ -250,3 +250,13 @@
 - Design decisions: (1) Feature table over prose — scannable by devs, (2) Concrete stats throughout — builds trust, (3) Architecture tree with annotations — shows real project structure, (4) GIF placeholder as HTML comment — needs actual recording
 - No new tests (docs-only change), 385 existing tests pass, build succeeds (81 static pages)
 - Next action: F023
+
+## Session 23 (F023 - Code Quality Audit Phase 3)
+- Audited F019-F022 code for i18n consistency, fuzzy matching edge cases, routing, test coverage
+- Fixed 6 hardcoded strings across 5 components: "/ 100" in RankingClient, "Score:" in HistoryList, "Grade" aria-label in RankingClient, "Analyzing" aria-label in page.tsx, share text template in ShareButton
+- Added 8 new i18n keys to both en.json and zh.json (scoreDenominator, gradeAriaLabel, scoreDisplay, analyzingAriaLabel, shareText, shareTextWithName, petEmojiCat, petEmojiDog)
+- Extracted duplicate pet type emoji ternary (3 occurrences) into getPetEmoji() utility in brands lib
+- Ranking title/subtitle bilingual pattern confirmed intentional — left as-is
+- No new tests needed: existing i18n parity tests automatically validate new keys
+- 385 tests pass, lint clean, build succeeds (81 static pages)
+- Next action: F024
