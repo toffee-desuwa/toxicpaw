@@ -34,6 +34,7 @@ export interface Ingredient {
   category: IngredientCategory;
   safety_rating: SafetyRating;
   explanation: string;
+  explanation_zh?: string;
   common_aliases: string[];
 }
 

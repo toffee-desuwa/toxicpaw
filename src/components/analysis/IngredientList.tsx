@@ -77,7 +77,9 @@ function IngredientItem({ ingredient, locale, flagLabel }: IngredientItemProps) 
           </span>
         </div>
         <p className="mt-1 text-sm leading-relaxed text-neutral-400">
-          {ingredient.explanation}
+          {locale === "zh" && ingredient.knownIngredient?.explanation_zh
+            ? ingredient.knownIngredient.explanation_zh
+            : ingredient.explanation}
         </p>
       </div>
     </li>
