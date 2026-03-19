@@ -9,15 +9,7 @@
 
 import { useState } from "react";
 import type { ScanHistoryEntry } from "@/lib/history/types";
-import type { Grade } from "@/lib/analyzer/types";
-
-const GRADE_COLORS: Record<Grade, string> = {
-  A: "bg-emerald-500",
-  B: "bg-lime-500",
-  C: "bg-amber-500",
-  D: "bg-orange-500",
-  F: "bg-red-600",
-};
+import { GRADE_COLORS } from "@/lib/grade";
 
 interface HistoryListProps {
   entries: ScanHistoryEntry[];
@@ -61,10 +53,12 @@ export function HistoryList({
       }
       const next = [...prev, entry.id];
       if (next.length === 2 && onCompare) {
-        const pair = next.map(
-          (id) => entries.find((e) => e.id === id)!
-        ) as [ScanHistoryEntry, ScanHistoryEntry];
-        onCompare(pair);
+        const found = next
+          .map((id) => entries.find((e) => e.id === id))
+          .filter((e): e is ScanHistoryEntry => e !== undefined);
+        if (found.length === 2) {
+          onCompare([found[0], found[1]]);
+        }
         return [];
       }
       return next;

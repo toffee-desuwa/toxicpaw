@@ -6,15 +6,7 @@
  */
 
 import type { ScanHistoryEntry } from "@/lib/history/types";
-import type { Grade } from "@/lib/analyzer/types";
-
-const GRADE_COLORS: Record<Grade, string> = {
-  A: "bg-emerald-500",
-  B: "bg-lime-500",
-  C: "bg-amber-500",
-  D: "bg-orange-500",
-  F: "bg-red-600",
-};
+import { GRADE_COLORS } from "@/lib/grade";
 
 interface ComparisonViewProps {
   left: ScanHistoryEntry;

@@ -15,23 +15,7 @@
 
 import { forwardRef } from "react";
 import type { AnalysisResult } from "@/lib/analyzer/types";
-import type { Grade } from "@/lib/analyzer/types";
-
-const GRADE_COLORS: Record<Grade, string> = {
-  A: "bg-emerald-500",
-  B: "bg-lime-500",
-  C: "bg-amber-500",
-  D: "bg-orange-500",
-  F: "bg-red-600",
-};
-
-const GRADE_LABELS: Record<Grade, string> = {
-  A: "Excellent",
-  B: "Good",
-  C: "Average",
-  D: "Below Average",
-  F: "Poor",
-};
+import { GRADE_COLORS, GRADE_LABELS } from "@/lib/grade";
 
 interface ShareCardProps {
   result: AnalysisResult;

@@ -2,28 +2,10 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { searchBrands, getAllBrands } from "@/lib/brands";
+import { searchBrands, getAllBrands, getBrandGrade } from "@/lib/brands";
 import type { BrandEntry } from "@/lib/brands/types";
-import { analyzeIngredients } from "@/lib/analyzer";
-import type { ParsedIngredient } from "@/lib/ocr/types";
 import type { Grade } from "@/lib/analyzer/types";
-
-const GRADE_COLORS: Record<Grade, string> = {
-  A: "bg-emerald-500",
-  B: "bg-lime-500",
-  C: "bg-amber-500",
-  D: "bg-orange-500",
-  F: "bg-red-600",
-};
-
-function getGrade(brand: BrandEntry): Grade {
-  const parsed: ParsedIngredient[] = brand.ingredients.map((name, i) => ({
-    original: name,
-    normalized: name.toLowerCase().trim(),
-    position: i,
-  }));
-  return analyzeIngredients(parsed).grade;
-}
+import { GRADE_COLORS } from "@/lib/grade";
 
 interface BrandSearchProps {
   onScanOwn?: () => void;
@@ -79,7 +61,7 @@ export function BrandSearch({ onScanOwn }: BrandSearchProps) {
           ) : (
             <ul className="space-y-2">
               {results.map((brand) => {
-                const grade = getGrade(brand);
+                const grade = getBrandGrade(brand);
                 return (
                   <li key={brand.slug}>
                     <Link

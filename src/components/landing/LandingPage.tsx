@@ -11,40 +11,14 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { getAllAnalyzedBrands, searchBrands } from "@/lib/brands";
-import { analyzeIngredients } from "@/lib/analyzer";
+import { getAllAnalyzedBrands, searchBrands, getBrandGrade } from "@/lib/brands";
 import type { AnalyzedBrand, BrandEntry } from "@/lib/brands/types";
 import type { Grade } from "@/lib/analyzer/types";
-import type { ParsedIngredient } from "@/lib/ocr/types";
-
-const GRADE_COLORS: Record<Grade, string> = {
-  A: "bg-emerald-500",
-  B: "bg-lime-500",
-  C: "bg-amber-500",
-  D: "bg-orange-500",
-  F: "bg-red-600",
-};
-
-const GRADE_TEXT_COLORS: Record<Grade, string> = {
-  A: "text-emerald-400",
-  B: "text-lime-400",
-  C: "text-amber-400",
-  D: "text-orange-400",
-  F: "text-red-400",
-};
+import { GRADE_COLORS, GRADE_TEXT_COLORS } from "@/lib/grade";
 
 interface LandingPageProps {
   onStartScan: () => void;
   onViewHistory: () => void;
-}
-
-function getGradeForBrand(brand: BrandEntry): Grade {
-  const parsed: ParsedIngredient[] = brand.ingredients.map((name, i) => ({
-    original: name,
-    normalized: name.toLowerCase().trim(),
-    position: i,
-  }));
-  return analyzeIngredients(parsed).grade;
 }
 
 function MiniGradeBadge({ grade }: { grade: Grade }) {
@@ -160,7 +134,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
             ) : (
               <ul className="space-y-2">
                 {searchResults.map((brand) => {
-                  const grade = getGradeForBrand(brand);
+                  const grade = getBrandGrade(brand);
                   return (
                     <li key={brand.slug}>
                       <Link

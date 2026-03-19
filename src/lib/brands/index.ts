@@ -9,6 +9,7 @@
 
 import type { ParsedIngredient } from "../ocr/types";
 import { analyzeIngredients } from "../analyzer";
+import type { Grade } from "../analyzer/types";
 import type { BrandEntry, AnalyzedBrand, BrandPetType, BrandDatabase } from "./types";
 import brandsData from "../../../data/brands.json";
 
@@ -65,6 +66,12 @@ export function getBrandsByPetType(petType: BrandPetType): BrandEntry[] {
 /** Filter and analyze brands by pet type */
 export function getAnalyzedBrandsByPetType(petType: BrandPetType): AnalyzedBrand[] {
   return getBrandsByPetType(petType).map(analyzeBrand);
+}
+
+/** Get the grade for a brand entry without full analysis */
+export function getBrandGrade(brand: BrandEntry): Grade {
+  const parsed = ingredientsToParsed(brand.ingredients);
+  return analyzeIngredients(parsed).grade;
 }
 
 /** Search brands by name (English or Chinese), case-insensitive */
