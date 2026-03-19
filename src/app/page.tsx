@@ -22,6 +22,7 @@ export default function Home() {
     handleStartScan,
     handleProfileSave,
     handleProfileSkip,
+    handlePersonalize,
     handleReset,
     handleImageConfirmed,
     handleSaveToHistory,
@@ -82,6 +83,7 @@ export default function Home() {
           result={analysisResult}
           onScanAnother={handleReset}
           onSaveToHistory={handleSaveToHistory}
+          onPersonalize={handlePersonalize}
           saved={savedToHistory}
         />
       </main>

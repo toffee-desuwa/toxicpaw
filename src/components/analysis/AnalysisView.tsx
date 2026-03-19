@@ -20,6 +20,7 @@ interface AnalysisViewProps {
   result: AnalysisResult;
   onScanAnother: () => void;
   onSaveToHistory?: (foodName: string) => void;
+  onPersonalize?: () => void;
   saved?: boolean;
 }
 
@@ -45,7 +46,7 @@ function buildExplainPayload(result: AnalysisResult): ExplainRequest {
   };
 }
 
-export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = false }: AnalysisViewProps) {
+export function AnalysisView({ result, onScanAnother, onSaveToHistory, onPersonalize, saved = false }: AnalysisViewProps) {
   const [aiExplanation, setAiExplanation] = useState<string>("");
   const [aiLoading, setAiLoading] = useState(true);
   const [foodName, setFoodName] = useState("");
@@ -145,6 +146,23 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
             ))}
           </ul>
         </div>
+      )}
+
+      {/* Personalize CTA — shown when no profile warnings and handler is provided */}
+      {onPersonalize && (!result.profileWarnings || result.profileWarnings.length === 0) && (
+        <button
+          type="button"
+          onClick={onPersonalize}
+          className="rounded-2xl border border-neutral-800 bg-neutral-900/50 px-4 py-4 text-left transition-colors hover:border-neutral-700 hover:bg-neutral-900"
+          data-testid="personalize-cta"
+        >
+          <p className="text-sm font-semibold text-neutral-200">
+            {t("personalizeTitle")}
+          </p>
+          <p className="mt-1 text-xs text-neutral-500">
+            {t("personalizeDesc")}
+          </p>
+        </button>
       )}
 
       {/* Summary Stats */}

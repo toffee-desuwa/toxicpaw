@@ -218,3 +218,17 @@
 - 27 new tests (352 total): i18n framework (19 tests: provider defaults, locale override, switching, EN/ZH translation, interpolation, missing key fallback, no-provider fallback, all namespaces, locale switching updates translations, useLocale/useSetLocale, localStorage persistence), LanguageSwitcher (8 tests: render, EN→ZH toggle, ZH→EN toggle, aria-labels, button type), message completeness (4 tests: namespace parity, key parity, no empty EN/ZH values)
 - All 352 tests pass, lint clean, build succeeds (81 static pages)
 - Next action: F020
+
+## Session 20 (F020 - Zero-Friction Experience Flow)
+- Removed mandatory Pet Profile step from scan flow: handleStartScan now goes directly to "scanning" instead of "profile"
+- New flow: Landing → Scan → Result → (optional) Personalize → Profile → Re-analyze with profile → Result with warnings
+- Added handlePersonalize callback in useAppState that navigates to profile from results
+- handleProfileSave re-analyzes stored ParsedIngredient[] with the new profile and returns to results (using useRef to persist ingredients across renders)
+- handleProfileSkip returns to results when coming from personalize flow
+- Added onPersonalize prop to AnalysisView with a styled CTA card: "Get personalized warnings for your pet" — shown only when no profileWarnings exist
+- When profileWarnings are present (profile already applied), the CTA is hidden and warnings are shown instead
+- Added i18n keys: personalizeTitle/personalizeDesc in both en.json and zh.json
+- Design decisions: (1) Used useRef for lastParsedIngredients — survives re-renders without triggering them, (2) Profile CTA replaces profile warnings section conditionally — clean either/or UI, (3) Profile still persists to localStorage and is loaded on mount, so returning users with a saved profile still get personalized results automatically
+- 12 new tests (364 total): useAppState (7 tests: idle default, start→scanning, scan→results, personalize→profile, profileSave re-analyzes, profileSkip returns to results, full e2e flow), AnalysisView personalize CTA (5 tests: shows CTA, click handler, hides when warnings present, hides when no handler, description text)
+- All 364 tests pass, lint clean, build succeeds (81 static pages)
+- Next action: F021

@@ -159,7 +159,7 @@
       "name": "Zero-friction experience flow",
       "description": "Remove Pet Profile as mandatory step before scanning. New flow: Scan → Camera → Result. Pet Profile becomes optional from result page ('Get personalized analysis' link). First-time experience must be: tap scan → take photo → see grade. 3 steps max.",
       "priority": 20,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F018"]
     },
     {

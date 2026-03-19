@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { extractIngredients } from "@/lib/ocr";
 import { analyzeIngredients } from "@/lib/analyzer";
 import { saveProfile, loadProfile } from "@/lib/profile";
@@ -12,6 +12,7 @@ import {
 } from "@/lib/history";
 import type { AnalysisResult } from "@/lib/analyzer/types";
 import type { PetProfile } from "@/lib/profile/types";
+import type { ParsedIngredient } from "@/lib/ocr/types";
 import type { ScanHistoryEntry } from "@/lib/history/types";
 
 export type AppState =
@@ -38,6 +39,7 @@ export function useAppState() {
   >(null);
   const [selectedHistoryEntry, setSelectedHistoryEntry] =
     useState<ScanHistoryEntry | null>(null);
+  const lastParsedIngredients = useRef<ParsedIngredient[] | null>(null);
 
   useEffect(() => {
     const saved = loadProfile();
@@ -49,7 +51,7 @@ export function useAppState() {
   }, []);
 
   const handleStartScan = useCallback(() => {
-    setState("profile");
+    setState("scanning");
     setAnalysisResult(null);
     setErrorMessage("");
     setSavedToHistory(false);
@@ -58,11 +60,27 @@ export function useAppState() {
   const handleProfileSave = useCallback((profile: PetProfile) => {
     setPetProfile(profile);
     saveProfile(profile);
-    setState("scanning");
+    // Re-analyze with profile if we have ingredients from a previous scan
+    if (lastParsedIngredients.current) {
+      const result = analyzeIngredients(lastParsedIngredients.current, profile);
+      setAnalysisResult(result);
+      setState("results");
+    } else {
+      setState("scanning");
+    }
   }, []);
 
   const handleProfileSkip = useCallback(() => {
-    setState("scanning");
+    // Return to results if we came from there (have parsed ingredients)
+    if (lastParsedIngredients.current && analysisResult) {
+      setState("results");
+    } else {
+      setState("scanning");
+    }
+  }, [analysisResult]);
+
+  const handlePersonalize = useCallback(() => {
+    setState("profile");
   }, []);
 
   const handleReset = useCallback(() => {
@@ -85,6 +103,9 @@ export function useAppState() {
       setState("error");
       return;
     }
+
+    // Store parsed ingredients for potential re-analysis with profile
+    lastParsedIngredients.current = extraction.ingredients;
 
     const result = analyzeIngredients(
       extraction.ingredients,
@@ -154,6 +175,7 @@ export function useAppState() {
     handleStartScan,
     handleProfileSave,
     handleProfileSkip,
+    handlePersonalize,
     handleReset,
     handleImageConfirmed,
     handleSaveToHistory,

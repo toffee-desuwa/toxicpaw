@@ -276,3 +276,68 @@ describe("AnalysisView AI Explanation", () => {
     expect(screen.queryByTestId("ai-explanation")).not.toBeInTheDocument();
   });
 });
+
+describe("AnalysisView Personalize CTA (F020)", () => {
+  it("shows personalize CTA when onPersonalize is provided and no profile warnings", () => {
+    render(
+      <AnalysisView
+        result={makeResult()}
+        onScanAnother={jest.fn()}
+        onPersonalize={jest.fn()}
+      />
+    );
+    expect(screen.getByTestId("personalize-cta")).toBeInTheDocument();
+    expect(screen.getByText("Get personalized warnings for your pet")).toBeInTheDocument();
+  });
+
+  it("calls onPersonalize when CTA is clicked", () => {
+    const onPersonalize = jest.fn();
+    render(
+      <AnalysisView
+        result={makeResult()}
+        onScanAnother={jest.fn()}
+        onPersonalize={onPersonalize}
+      />
+    );
+    fireEvent.click(screen.getByTestId("personalize-cta"));
+    expect(onPersonalize).toHaveBeenCalledTimes(1);
+  });
+
+  it("hides personalize CTA when profile warnings are present", () => {
+    const result = makeResult({
+      profileWarnings: ["Grain sensitivity for your Labrador"],
+    });
+    render(
+      <AnalysisView
+        result={result}
+        onScanAnother={jest.fn()}
+        onPersonalize={jest.fn()}
+      />
+    );
+    expect(screen.queryByTestId("personalize-cta")).not.toBeInTheDocument();
+    expect(screen.getByTestId("profile-warnings")).toBeInTheDocument();
+  });
+
+  it("hides personalize CTA when onPersonalize is not provided", () => {
+    render(
+      <AnalysisView
+        result={makeResult()}
+        onScanAnother={jest.fn()}
+      />
+    );
+    expect(screen.queryByTestId("personalize-cta")).not.toBeInTheDocument();
+  });
+
+  it("shows description text in personalize CTA", () => {
+    render(
+      <AnalysisView
+        result={makeResult()}
+        onScanAnother={jest.fn()}
+        onPersonalize={jest.fn()}
+      />
+    );
+    expect(
+      screen.getByText(/breed, age, and health conditions/i)
+    ).toBeInTheDocument();
+  });
+});
