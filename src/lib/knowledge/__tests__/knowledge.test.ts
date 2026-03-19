@@ -9,6 +9,7 @@ import {
   getCategories,
   getKnowledgeBaseInfo,
 } from "../index";
+import brandsData from "../../../../data/brands.json";
 
 describe("Ingredient Knowledge Base", () => {
   describe("getKnowledgeBaseInfo", () => {
@@ -198,6 +199,178 @@ describe("Ingredient Knowledge Base", () => {
       expect(names).toContain("Sugar");
       expect(names).toContain("Artificial Flavor");
       expect(names).toContain("Onion");
+    });
+  });
+
+  describe("F021 - new generic ingredients", () => {
+    it("finds Artificial Colors by exact name", () => {
+      const result = lookupIngredient("Artificial Colors");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Artificial Colors");
+      expect(result!.ingredient.safety_rating).toBe("harmful");
+      expect(result!.ingredient.category).toBe("coloring");
+    });
+
+    it("finds Artificial Colors by alias variants", () => {
+      for (const alias of [
+        "Artificial Color",
+        "Artificial Coloring",
+        "Added Color",
+        "Color Added",
+      ]) {
+        const result = lookupIngredient(alias);
+        expect(result).not.toBeNull();
+        expect(result!.ingredient.name).toBe("Artificial Colors");
+      }
+    });
+
+    it("finds Animal By-Products by exact name", () => {
+      const result = lookupIngredient("Animal By-Products");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Animal By-Products");
+      expect(result!.ingredient.safety_rating).toBe("harmful");
+    });
+
+    it("finds Animal By-Products alias variants", () => {
+      for (const alias of [
+        "Animal Byproducts",
+        "Animal By-Product",
+        "Animal Byproduct",
+      ]) {
+        const result = lookupIngredient(alias);
+        expect(result).not.toBeNull();
+        expect(result!.ingredient.name).toBe("Animal By-Products");
+      }
+    });
+
+    it("finds L-Tryptophan", () => {
+      const result = lookupIngredient("L-Tryptophan");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.safety_rating).toBe("safe");
+    });
+
+    it("finds Sodium Bisulfate", () => {
+      const result = lookupIngredient("Sodium Bisulfate");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.safety_rating).toBe("caution");
+    });
+
+    it("finds Spearmint Extract", () => {
+      const result = lookupIngredient("Spearmint Extract");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.safety_rating).toBe("safe");
+    });
+  });
+
+  describe("F021 - improved fuzzy matching", () => {
+    it("matches hyphen vs no-hyphen variants", () => {
+      const withHyphen = lookupIngredient("chicken by-product meal");
+      const noHyphen = lookupIngredient("chicken byproduct meal");
+      expect(withHyphen).not.toBeNull();
+      expect(noHyphen).not.toBeNull();
+      expect(withHyphen!.ingredient.name).toBe(noHyphen!.ingredient.name);
+    });
+
+    it("matches 'animal by products' with spaces instead of hyphens", () => {
+      const result = lookupIngredient("animal by products");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Animal By-Products");
+    });
+
+    it("handles 'supplement' suffix pattern", () => {
+      const vitE = lookupIngredient("Vitamin E Supplement");
+      expect(vitE).not.toBeNull();
+      expect(vitE!.ingredient.name).toBe("Vitamin E");
+
+      const vitA = lookupIngredient("Vitamin A Supplement");
+      expect(vitA).not.toBeNull();
+      expect(vitA!.ingredient.name).toBe("Vitamin A");
+    });
+
+    it("matches niacin supplement to Vitamin B3", () => {
+      const result = lookupIngredient("niacin supplement");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Vitamin B3");
+    });
+
+    it("matches vitamin b12 supplement", () => {
+      const result = lookupIngredient("vitamin b12 supplement");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Vitamin B12");
+    });
+
+    it("matches dried probiotic species", () => {
+      for (const term of [
+        "Dried Lactobacillus",
+        "Dried Enterococcus",
+        "Dried Bacillus",
+      ]) {
+        const result = lookupIngredient(term);
+        expect(result).not.toBeNull();
+        expect(result!.ingredient.name).toBe("Probiotics");
+      }
+    });
+
+    it("matches 'rice' as alias for White Rice", () => {
+      const result = lookupIngredient("rice");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("White Rice");
+    });
+
+    it("matches 'whole grain wheat' as alias for Wheat", () => {
+      const result = lookupIngredient("whole grain wheat");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Wheat");
+    });
+
+    it("matches 'whole grain corn' as alias for Corn", () => {
+      const result = lookupIngredient("whole grain corn");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Corn");
+    });
+
+    it("matches sodium selenate as alias for Sodium Selenite", () => {
+      const result = lookupIngredient("sodium selenate");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Sodium Selenite");
+    });
+
+    it("matches freeze-dried chicken liver", () => {
+      const result = lookupIngredient("freeze-dried chicken liver");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Chicken Liver");
+    });
+
+    it("handles OCR artifacts: extra spaces", () => {
+      const result = lookupIngredient("  chicken   meal  ");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Chicken Meal");
+    });
+
+    it("handles trailing punctuation from OCR", () => {
+      const result = lookupIngredient("chicken meal,");
+      expect(result).not.toBeNull();
+      expect(result!.ingredient.name).toBe("Chicken Meal");
+    });
+  });
+
+  describe("F021 - brand ingredient coverage", () => {
+    it("all brand ingredients resolve to known entries", () => {
+      const allIngredients = new Set<string>();
+      for (const brand of brandsData.brands) {
+        for (const ing of brand.ingredients) {
+          allIngredients.add(ing);
+        }
+      }
+
+      const unknowns: string[] = [];
+      for (const ing of allIngredients) {
+        if (!lookupIngredient(ing)) {
+          unknowns.push(ing);
+        }
+      }
+
+      expect(unknowns).toEqual([]);
     });
   });
 

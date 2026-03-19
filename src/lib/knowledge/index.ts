@@ -19,13 +19,8 @@ const knowledgeBase: KnowledgeBase = ingredientsData as KnowledgeBase;
 // Pre-build lookup indexes for fast matching
 const exactNameIndex = new Map<string, Ingredient>();
 const aliasIndex = new Map<string, Ingredient>();
-
-for (const ingredient of knowledgeBase.ingredients) {
-  exactNameIndex.set(ingredient.name.toLowerCase(), ingredient);
-  for (const alias of ingredient.common_aliases) {
-    aliasIndex.set(alias.toLowerCase(), ingredient);
-  }
-}
+// Normalized variant index for hyphen/space/plural insensitive matching
+const normalizedVariantIndex = new Map<string, Ingredient>();
 
 /**
  * Normalize an ingredient string for matching:
@@ -37,6 +32,31 @@ function normalize(input: string): string {
     .toLowerCase()
     .replace(/\s+/g, " ")
     .replace(/[.,;:]+$/, "");
+}
+
+/**
+ * Deep-normalize for fuzzy matching: strips hyphens, collapses spaces,
+ * removes trailing 's' for plurals, removes OCR artifacts
+ */
+function deepNormalize(input: string): string {
+  return input
+    .toLowerCase()
+    .replace(/[-–—]/g, "") // Remove hyphens/dashes
+    .replace(/[''`]/g, "") // Remove apostrophes/backticks (OCR artifacts)
+    .replace(/\s+/g, "") // Remove all spaces
+    .replace(/s$/, ""); // Strip trailing 's' for plurals
+}
+
+for (const ingredient of knowledgeBase.ingredients) {
+  const nameLower = ingredient.name.toLowerCase();
+  exactNameIndex.set(nameLower, ingredient);
+  normalizedVariantIndex.set(deepNormalize(nameLower), ingredient);
+
+  for (const alias of ingredient.common_aliases) {
+    const aliasLower = alias.toLowerCase();
+    aliasIndex.set(aliasLower, ingredient);
+    normalizedVariantIndex.set(deepNormalize(aliasLower), ingredient);
+  }
 }
 
 /**
@@ -58,7 +78,25 @@ export function lookupIngredient(query: string): LookupResult | null {
     return { ingredient: aliasMatch, matched_by: "alias", confidence: 0.95 };
   }
 
-  // 3. Fuzzy match: check if query is a substring of or contains an ingredient name
+  // 3. Deep-normalized variant match (handles hyphens, spaces, plurals)
+  const deepNorm = deepNormalize(normalized);
+  const variantMatch = normalizedVariantIndex.get(deepNorm);
+  if (variantMatch) {
+    return { ingredient: variantMatch, matched_by: "fuzzy", confidence: 0.9 };
+  }
+
+  // 4. "X Supplement" pattern: "vitamin e supplement" → "vitamin e"
+  const supplementStripped = normalized.replace(/\s+supplement$/, "");
+  if (supplementStripped !== normalized) {
+    const suppMatch =
+      exactNameIndex.get(supplementStripped) ??
+      aliasIndex.get(supplementStripped);
+    if (suppMatch) {
+      return { ingredient: suppMatch, matched_by: "fuzzy", confidence: 0.9 };
+    }
+  }
+
+  // 5. Fuzzy match: substring containment scoring
   const fuzzyResult = fuzzyMatch(normalized);
   if (fuzzyResult) {
     return fuzzyResult;

@@ -167,7 +167,7 @@
       "name": "Knowledge base gap fill + fuzzy matching",
       "description": "Add missing ingredients (Artificial Colors, Artificial Flavors, generic terms). Improve matcher: fuzzy matching for OCR typos, handle compound names ('chicken by-product meal'), normalize spaces/hyphens/case. Reduce 'unknown' rate on real scans.",
       "priority": 21,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F018"]
     },
     {

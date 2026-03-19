@@ -232,3 +232,13 @@
 - 12 new tests (364 total): useAppState (7 tests: idle default, start→scanning, scan→results, personalize→profile, profileSave re-analyzes, profileSkip returns to results, full e2e flow), AnalysisView personalize CTA (5 tests: shows CTA, click handler, hides when warnings present, hides when no handler, description text)
 - All 364 tests pass, lint clean, build succeeds (81 static pages)
 - Next action: F021
+
+## Session 21 (F021 - Knowledge Base Gap Fill + Fuzzy Matching)
+- Added 6 new ingredients to data/ingredients.json: Artificial Colors (harmful), Animal By-Products (harmful), L-Tryptophan (safe), Sodium Bisulfate (caution), Spearmint Extract (safe)
+- Added 15+ aliases to existing entries: Rice→White Rice, Whole Grain Wheat→Wheat, Whole Grain Corn→Corn, Sodium Selenate→Sodium Selenite, Niacin Supplement→Vitamin B3, Vitamin B12 Supplement→Vitamin B12, Dried Lactobacillus/Enterococcus/Bacillus→Probiotics, Freeze-Dried Chicken Liver→Chicken Liver, Color Added/Added Color→Artificial Colors
+- Improved fuzzy matcher with 3 new matching strategies: (1) deepNormalize variant index — strips hyphens, spaces, trailing plurals for insensitive matching (e.g., "chicken byproduct meal" = "Chicken By-Product Meal"), (2) "X Supplement" suffix stripping (e.g., "Vitamin E Supplement" → Vitamin E), (3) OCR artifact cleanup (apostrophes, backticks)
+- Design decisions: (1) Deep normalization as a separate index rather than modifying existing normalize() — preserves exact/alias match fidelity while adding a new fuzzy tier, (2) Supplement suffix as explicit step rather than adding aliases for every vitamin — more maintainable, (3) Added "Artificial Colors" as a new harmful entry rather than aliasing to individual dyes — generic labeling is a red flag in itself
+- Brand unknown rate: 1.7% → 0% (121/121 unique ingredients now matched)
+- 21 new tests (385 total): new generic ingredients (7), improved fuzzy matching (13), brand coverage (1)
+- All 385 tests pass, lint clean, build succeeds (81 static pages)
+- Next action: F022

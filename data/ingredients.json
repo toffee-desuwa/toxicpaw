@@ -58,6 +58,7 @@
       "explanation": "Nutrient-dense organ meat rich in iron, vitamin A, and B vitamins. Excellent palatability enhancer.",
       "common_aliases": [
         "Fresh Chicken Liver",
+        "Freeze-Dried Chicken Liver",
         "鸡肝"
       ],
       "explanation_zh": "营养丰富的内脏肉，富含铁、维生素A和B族维生素。极佳的适口性增强剂。"
@@ -661,10 +662,12 @@
       "safety_rating": "safe",
       "explanation": "Easily digestible carbohydrate source. Less fiber than brown rice but gentle on sensitive stomachs.",
       "common_aliases": [
+        "Rice",
         "Brewers Rice",
         "Ground Rice",
         "白米",
-        "大米"
+        "大米",
+        "米"
       ],
       "explanation_zh": "精制谷物，消化率高但营养价值低于糙米。适合敏感肠胃。"
     },
@@ -739,6 +742,7 @@
       "explanation": "Common filler in lower-quality foods. Some pets have corn sensitivities. Provides energy but less nutritional value than other grains.",
       "common_aliases": [
         "Whole Corn",
+        "Whole Grain Corn",
         "Ground Corn",
         "Corn Meal",
         "Maize",
@@ -764,6 +768,7 @@
       "explanation": "Common allergen for pets. Some dogs and cats are sensitive to wheat gluten. Better grain alternatives exist.",
       "common_aliases": [
         "Whole Wheat",
+        "Whole Grain Wheat",
         "Ground Wheat",
         "Wheat Flour",
         "小麦"
@@ -1324,6 +1329,12 @@
         "Bifidobacterium",
         "Enterococcus faecium",
         "Bacillus coagulans",
+        "Dried Lactobacillus",
+        "Dried Enterococcus",
+        "Dried Bacillus",
+        "Lactobacillus",
+        "Enterococcus",
+        "Bacillus",
         "益生菌"
       ],
       "explanation_zh": "有益肠道菌群，支持消化健康和免疫功能。"
@@ -1913,6 +1924,7 @@
       "safety_rating": "safe",
       "explanation": "Inorganic selenium supplement. Less bioavailable than organic forms but still effective.",
       "common_aliases": [
+        "Sodium Selenate",
         "亚硒酸钠"
       ],
       "explanation_zh": "硒补充剂。抗氧化矿物质，支持免疫和甲状腺功能。"
@@ -2014,6 +2026,7 @@
       "explanation": "Niacin - essential for energy metabolism, skin health, and nervous system function.",
       "common_aliases": [
         "Niacin",
+        "Niacin Supplement",
         "Niacinamide",
         "Nicotinic Acid",
         "维生素B3",
@@ -2082,6 +2095,7 @@
       "common_aliases": [
         "Cobalamin",
         "Cyanocobalamin",
+        "Vitamin B12 Supplement",
         "维生素B12",
         "钴胺素"
       ],
@@ -5837,6 +5851,75 @@
         "凝乳酪蛋白"
       ],
       "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+    },
+    {
+      "name": "Artificial Colors",
+      "category": "coloring",
+      "safety_rating": "harmful",
+      "explanation": "Synthetic dyes added purely for appearance with no nutritional value. Linked to hyperactivity and allergic reactions in some animals. Includes Red 40, Yellow 5, Yellow 6, Blue 2.",
+      "common_aliases": [
+        "Artificial Color",
+        "Artificial Coloring",
+        "Artificial Colorings",
+        "Added Color",
+        "Color Added",
+        "FD&C Colors",
+        "人工色素",
+        "合成色素"
+      ],
+      "explanation_zh": "合成染料，仅用于外观，无营养价值。与某些动物的过敏反应和多动症有关。"
+    },
+    {
+      "name": "Animal By-Products",
+      "category": "byproduct",
+      "safety_rating": "harmful",
+      "explanation": "Unspecified animal parts not fit for human consumption. May include organs, feet, beaks, undeveloped eggs, and intestines from any animal. Quality and source are inconsistent and unidentifiable.",
+      "common_aliases": [
+        "Animal By-Product",
+        "Animal Byproducts",
+        "Animal Byproduct",
+        "Animal By-Product Meal",
+        "Animal Byproduct Meal",
+        "动物副产品",
+        "动物副产物"
+      ],
+      "explanation_zh": "未指定来源的动物副产品。质量和来源不一致且无法追溯，属于低品质原料。"
+    },
+    {
+      "name": "L-Tryptophan",
+      "category": "supplement",
+      "safety_rating": "safe",
+      "explanation": "Essential amino acid that supports serotonin production. Can help with calming behavior and sleep quality in pets.",
+      "common_aliases": [
+        "Tryptophan",
+        "L-色氨酸",
+        "色氨酸"
+      ],
+      "explanation_zh": "必需氨基酸，支持血清素合成。有助于宠物的情绪稳定和睡眠质量。"
+    },
+    {
+      "name": "Sodium Bisulfate",
+      "category": "preservative",
+      "safety_rating": "caution",
+      "explanation": "Acidifier used as a preservative and urine acidifier in some pet foods. Generally safe in small amounts but can cause digestive irritation at higher concentrations.",
+      "common_aliases": [
+        "Sodium Hydrogen Sulfate",
+        "酸式硫酸钠"
+      ],
+      "explanation_zh": "防腐剂和酸化剂。小剂量一般安全，但高浓度可能引起消化不适。"
+    },
+    {
+      "name": "Spearmint Extract",
+      "category": "additive",
+      "safety_rating": "safe",
+      "explanation": "Natural flavoring and breath freshener. Generally safe for pets and used to improve palatability and dental health.",
+      "common_aliases": [
+        "Spearmint",
+        "Dried Spearmint",
+        "留兰香提取物",
+        "薄荷提取物"
+      ],
+      "explanation_zh": "天然调味剂和口气清新剂。一般对宠物安全，可改善口腔健康。"
     }
   ]
 }
