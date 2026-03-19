@@ -84,3 +84,17 @@
 - All 135 tests pass, lint clean, build succeeds
 - Uses claude-sonnet-4-6 model with max_tokens=256 for cost efficiency
 - Next action: F008 - Pet profile and personalization
+
+## Session 8 (F008 - Pet Profile and Personalization)
+- Created src/lib/profile/types.ts: PetProfile, PetType, AgeRange, HealthCondition, ScoreAdjustment, ProfileAdjustmentResult types
+- Created src/lib/profile/sensitivities.ts: breed sensitivity data (14 breeds for dogs+cats), health condition penalty mappings (8 conditions), allergy keyword matching, age-based adjustments, position-weighted scoring
+- Created src/lib/profile/storage.ts: localStorage persistence (save/load/clear) with error handling
+- Created src/lib/profile/index.ts: barrel exports for profile module
+- Created src/components/profile/PetProfileForm.tsx: mobile-first form with pet type toggle (dog/cat), breed text input, age range buttons (puppy/adult/senior), weight input, health condition checkboxes (8 options), save/skip actions, pre-fill from existing profile
+- Updated src/lib/analyzer/index.ts: analyzeIngredients now accepts optional PetProfile parameter, applies profile adjustments to score, includes profileWarnings in result
+- Updated src/lib/analyzer/types.ts: added optional profileWarnings field to AnalysisResult
+- Updated src/components/analysis/AnalysisView.tsx: displays personalized alerts section with amber styling when profileWarnings present
+- Updated src/app/page.tsx: added "profile" step between idle and scanning, loads saved profile on mount, passes profile to analyzer
+- 37 new tests (172 total): sensitivities (16 tests: breed data, condition data, adjustments for breeds/conditions/allergies/age/positions/combinations/empty), storage (6 tests: save/load/clear/corrupt), PetProfileForm (10 tests: rendering/interaction/pre-fill), profile-integration (5 tests: score adjustment/warnings/no-profile)
+- All 172 tests pass, lint clean, build succeeds
+- Next action: F009 - Scan history and comparison

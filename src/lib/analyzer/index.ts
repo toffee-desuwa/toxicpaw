@@ -19,6 +19,8 @@
 import type { ParsedIngredient } from "../ocr/types";
 import { lookupIngredient } from "../knowledge";
 import type { LookupResult } from "../knowledge/types";
+import type { PetProfile } from "../profile/types";
+import { calculateProfileAdjustments } from "../profile/sensitivities";
 import type {
   AnalysisResult,
   AnalyzedIngredient,
@@ -189,12 +191,25 @@ function generateVerdict(grade: Grade, summary: AnalysisSummary): string {
 /**
  * Analyze an array of parsed ingredients and produce a full analysis result.
  * This is the main entry point for the analysis engine.
+ * Optionally accepts a pet profile for personalized scoring adjustments.
  */
 export function analyzeIngredients(
-  parsedIngredients: ParsedIngredient[]
+  parsedIngredients: ParsedIngredient[],
+  profile?: PetProfile
 ): AnalysisResult {
   const analyzed = parsedIngredients.map(analyzeIngredient);
-  const score = calculateScore(analyzed);
+  let score = calculateScore(analyzed);
+
+  let profileWarnings: string[] | undefined;
+
+  if (profile) {
+    const adjustments = calculateProfileAdjustments(profile, analyzed);
+    score = Math.max(0, Math.min(100, score + adjustments.totalAdjustment));
+    if (adjustments.warnings.length > 0) {
+      profileWarnings = adjustments.warnings;
+    }
+  }
+
   const grade = scoreToGrade(score);
   const summary = buildSummary(analyzed);
   const verdict = generateVerdict(grade, summary);
@@ -205,6 +220,7 @@ export function analyzeIngredients(
     ingredients: analyzed,
     summary,
     verdict,
+    profileWarnings,
   };
 }
 

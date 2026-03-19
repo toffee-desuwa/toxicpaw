@@ -1,23 +1,43 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { Scanner } from "@/components/scanner";
 import { AnalysisView } from "@/components/analysis";
+import { PetProfileForm } from "@/components/profile";
 import { extractIngredients } from "@/lib/ocr";
 import { analyzeIngredients } from "@/lib/analyzer";
+import { saveProfile, loadProfile } from "@/lib/profile";
 import type { AnalysisResult } from "@/lib/analyzer/types";
+import type { PetProfile } from "@/lib/profile/types";
 
-type AppState = "idle" | "scanning" | "analyzing" | "results" | "error";
+type AppState = "idle" | "profile" | "scanning" | "analyzing" | "results" | "error";
 
 export default function Home() {
   const [state, setState] = useState<AppState>("idle");
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [petProfile, setPetProfile] = useState<PetProfile | null>(null);
+
+  // Load saved profile on mount
+  useEffect(() => {
+    const saved = loadProfile();
+    if (saved) setPetProfile(saved);
+  }, []);
 
   const handleStartScan = useCallback(() => {
-    setState("scanning");
+    setState("profile");
     setAnalysisResult(null);
     setErrorMessage("");
+  }, []);
+
+  const handleProfileSave = useCallback((profile: PetProfile) => {
+    setPetProfile(profile);
+    saveProfile(profile);
+    setState("scanning");
+  }, []);
+
+  const handleProfileSkip = useCallback(() => {
+    setState("scanning");
   }, []);
 
   const handleReset = useCallback(() => {
@@ -37,16 +57,41 @@ export default function Home() {
       return;
     }
 
-    const result = analyzeIngredients(extraction.ingredients);
+    const result = analyzeIngredients(
+      extraction.ingredients,
+      petProfile ?? undefined
+    );
     setAnalysisResult(result);
     setState("results");
-  }, []);
+  }, [petProfile]);
 
   // Results view
   if (state === "results" && analysisResult) {
     return (
       <main className="min-h-dvh">
         <AnalysisView result={analysisResult} onScanAnother={handleReset} />
+      </main>
+    );
+  }
+
+  // Profile step
+  if (state === "profile") {
+    return (
+      <main className="flex min-h-dvh flex-col px-4 pt-12 pb-8">
+        <div className="mx-auto w-full max-w-md">
+          <button
+            type="button"
+            onClick={handleReset}
+            className="mb-6 text-sm text-neutral-400 hover:text-neutral-200"
+          >
+            &larr; Back
+          </button>
+          <PetProfileForm
+            onSave={handleProfileSave}
+            onSkip={handleProfileSkip}
+            initialProfile={petProfile ?? undefined}
+          />
+        </div>
       </main>
     );
   }

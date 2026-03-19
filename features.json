@@ -63,7 +63,7 @@
       "name": "Pet profile and personalization",
       "description": "Input: pet type (cat/dog), breed, age, weight, health conditions. Adjust scoring based on breed-specific sensitivities (e.g., grain sensitivity in certain breeds)",
       "priority": 8,
-      "status": "pending",
+      "status": "done",
       "dependencies": ["F005", "F006"]
     },
     {

@@ -118,6 +118,28 @@ export function AnalysisView({ result, onScanAnother }: AnalysisViewProps) {
         </div>
       )}
 
+      {/* Profile Warnings */}
+      {result.profileWarnings && result.profileWarnings.length > 0 && (
+        <div
+          className="rounded-xl bg-amber-900/30 border border-amber-700/50 px-4 py-3"
+          data-testid="profile-warnings"
+        >
+          <p className="mb-1 text-xs font-medium uppercase tracking-wider text-amber-400">
+            Personalized Alerts
+          </p>
+          <ul className="space-y-1">
+            {result.profileWarnings.map((warning, idx) => (
+              <li
+                key={idx}
+                className="text-sm leading-relaxed text-amber-200"
+              >
+                {warning}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {/* Summary Stats */}
       <SummaryBar summary={result.summary} />
 

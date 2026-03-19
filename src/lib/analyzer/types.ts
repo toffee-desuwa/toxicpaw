@@ -69,4 +69,6 @@ export interface AnalysisResult {
   summary: AnalysisSummary;
   /** Short plain-language verdict */
   verdict: string;
+  /** Personalized warnings based on pet profile (only present when profile is provided) */
+  profileWarnings?: string[];
 }
