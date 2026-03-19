@@ -135,7 +135,9 @@
     "brandSubtitle": "Pet Food Scanner",
     "harmfulIngredients": "\u26a0 Harmful Ingredients",
     "qualityIngredients": "\u2713 Quality Ingredients",
-    "footer": "Scanned with ToxicPaw \u00b7 AI-Powered Pet Food Safety"
+    "footer": "Scanned with ToxicPaw \u00b7 AI-Powered Pet Food Safety",
+    "formatSquare": "1:1 Square",
+    "formatLandscape": "16:9 Landscape"
   },
   "brand": {
     "searchPlaceholder": "Search a brand... \u641c\u7d22\u54c1\u724c",

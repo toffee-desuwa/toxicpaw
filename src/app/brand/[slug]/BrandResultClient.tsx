@@ -58,7 +58,7 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
         <IngredientList ingredients={analysis.ingredients} />
 
         {/* Share */}
-        <ShareButton result={analysis} foodName={displayName} />
+        <ShareButton result={analysis} foodName={displayName} brandSlug={brand.slug} />
 
         {/* CTAs */}
         <div className="flex flex-col gap-3">

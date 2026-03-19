@@ -199,7 +199,7 @@
       "name": "Share link optimization — auto-generated share images",
       "description": "Generate unique share images per brand/result: grade badge + brand name + harmful count + ToxicPaw branding. Use Next.js OG image generation (next/og) or canvas-based approach. Every shared link must have a compelling preview image across all platforms (小红书/抖音/X/WeChat).",
       "priority": 25,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F024"]
     },
     {

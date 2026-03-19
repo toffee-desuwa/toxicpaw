@@ -1,3 +1,9 @@
+/**
+ * F025 - Share Button Tests (updated from F010)
+ *
+ * Tests server-side image generation, format toggle, and fallback to html2canvas.
+ */
+
 import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { ShareButton } from "../ShareButton";
 import html2canvas from "html2canvas";
@@ -11,6 +17,10 @@ jest.mock("html2canvas", () => {
     },
   });
 });
+
+// Mock fetch for API calls
+const mockFetch = jest.fn();
+global.fetch = mockFetch;
 
 function makeIngredient(overrides: Partial<AnalyzedIngredient> = {}): AnalyzedIngredient {
   return {
@@ -70,6 +80,12 @@ describe("ShareButton", () => {
     mockRevokeObjectURL = jest.fn();
     URL.createObjectURL = mockCreateObjectURL;
     URL.revokeObjectURL = mockRevokeObjectURL;
+
+    // Default: API returns a blob
+    mockFetch.mockResolvedValue({
+      ok: true,
+      blob: () => Promise.resolve(new Blob(["server-image"], { type: "image/png" })),
+    });
   });
 
   afterEach(() => {
@@ -82,9 +98,29 @@ describe("ShareButton", () => {
     expect(screen.getByTestId("share-button")).toHaveTextContent("Share Result");
   });
 
-  it("renders the hidden share card for capture", () => {
+  it("renders the hidden share card for fallback capture", () => {
     render(<ShareButton result={makeResult()} />);
     expect(screen.getByTestId("share-card")).toBeInTheDocument();
+  });
+
+  it("renders format toggle", () => {
+    render(<ShareButton result={makeResult()} />);
+    expect(screen.getByTestId("format-toggle")).toBeInTheDocument();
+    expect(screen.getByTestId("format-square")).toBeInTheDocument();
+    expect(screen.getByTestId("format-og")).toBeInTheDocument();
+  });
+
+  it("defaults to square format", () => {
+    render(<ShareButton result={makeResult()} />);
+    expect(screen.getByTestId("format-square")).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByTestId("format-og")).toHaveAttribute("aria-pressed", "false");
+  });
+
+  it("toggles to landscape format", () => {
+    render(<ShareButton result={makeResult()} />);
+    fireEvent.click(screen.getByTestId("format-og"));
+    expect(screen.getByTestId("format-og")).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByTestId("format-square")).toHaveAttribute("aria-pressed", "false");
   });
 
   it("shows generating text while sharing", () => {
@@ -94,7 +130,38 @@ describe("ShareButton", () => {
     expect(button).toHaveTextContent("Generating...");
   });
 
-  it("calls html2canvas when share is clicked", async () => {
+  it("calls server API when share is clicked", async () => {
+    render(<ShareButton result={makeResult()} />);
+
+    await act(async () => {
+      fireEvent.click(screen.getByTestId("share-button"));
+    });
+
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringContaining("/api/share-image"),
+      expect.objectContaining({
+        method: "POST",
+      })
+    );
+  });
+
+  it("uses GET with brand slug when brandSlug is provided", async () => {
+    render(
+      <ShareButton result={makeResult()} brandSlug="orijen-original-dog" />
+    );
+
+    await act(async () => {
+      fireEvent.click(screen.getByTestId("share-button"));
+    });
+
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringContaining("slug=orijen-original-dog")
+    );
+  });
+
+  it("falls back to html2canvas when API fails", async () => {
+    mockFetch.mockRejectedValueOnce(new Error("API error"));
+
     render(<ShareButton result={makeResult()} />);
 
     await act(async () => {
@@ -111,7 +178,6 @@ describe("ShareButton", () => {
       fireEvent.click(screen.getByTestId("share-button"));
     });
 
-    // Should create a blob URL for download
     expect(mockCreateObjectURL).toHaveBeenCalled();
     expect(mockRevokeObjectURL).toHaveBeenCalled();
   });
@@ -181,5 +247,29 @@ describe("ShareButton", () => {
     const button = screen.getByTestId("share-button");
     fireEvent.click(button);
     expect(button).toBeDisabled();
+  });
+
+  it("sends format=square in API request by default", async () => {
+    render(<ShareButton result={makeResult()} />);
+
+    await act(async () => {
+      fireEvent.click(screen.getByTestId("share-button"));
+    });
+
+    const fetchCall = mockFetch.mock.calls[0][0];
+    expect(fetchCall).toContain("format=square");
+  });
+
+  it("sends format=og when landscape is selected", async () => {
+    render(<ShareButton result={makeResult()} />);
+
+    fireEvent.click(screen.getByTestId("format-og"));
+
+    await act(async () => {
+      fireEvent.click(screen.getByTestId("share-button"));
+    });
+
+    const fetchCall = mockFetch.mock.calls[0][0];
+    expect(fetchCall).toContain("format=og");
   });
 });

@@ -135,7 +135,9 @@
     "brandSubtitle": "\u5ba0\u7269\u7cae\u626b\u63cf\u5668",
     "harmfulIngredients": "\u26a0 \u6709\u5bb3\u6210\u5206",
     "qualityIngredients": "\u2713 \u4f18\u8d28\u6210\u5206",
-    "footer": "\u7531 ToxicPaw \u626b\u63cf \u00b7 AI \u9a71\u52a8\u7684\u5ba0\u7269\u7cae\u5b89\u5168\u68c0\u6d4b"
+    "footer": "\u7531 ToxicPaw \u626b\u63cf \u00b7 AI \u9a71\u52a8\u7684\u5ba0\u7269\u7cae\u5b89\u5168\u68c0\u6d4b",
+    "formatSquare": "1:1 \u65b9\u56fe",
+    "formatLandscape": "16:9 \u6a2a\u56fe"
   },
   "brand": {
     "searchPlaceholder": "\u641c\u7d22\u54c1\u724c... Search a brand",
