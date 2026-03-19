@@ -1,8 +1,21 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { AnalysisView } from "../AnalysisView";
 import { IngredientList } from "../IngredientList";
 import { SummaryBar } from "../SummaryBar";
 import type { AnalysisResult, AnalyzedIngredient, AnalysisSummary, Grade } from "@/lib/analyzer/types";
+
+// Mock fetch for AI explanation
+const mockFetch = jest.fn();
+global.fetch = mockFetch;
+
+beforeEach(() => {
+  mockFetch.mockReset();
+  // Default: return empty explanation (fallback mode)
+  mockFetch.mockResolvedValue({
+    ok: true,
+    json: async () => ({ explanation: "", cached: false, fallback: true }),
+  });
+});
 
 function makeIngredient(
   overrides: Partial<AnalyzedIngredient> = {}
@@ -160,5 +173,101 @@ describe("AnalysisView", () => {
       expect(screen.getByText(grade)).toBeInTheDocument();
       unmount();
     }
+  });
+});
+
+describe("AnalysisView AI Explanation", () => {
+  it("shows loading state while fetching AI explanation", () => {
+    // Make fetch hang
+    mockFetch.mockReturnValue(new Promise(() => {}));
+    render(<AnalysisView result={makeResult()} onScanAnother={jest.fn()} />);
+    expect(screen.getByTestId("ai-loading")).toBeInTheDocument();
+    expect(screen.getByText("Generating detailed analysis…")).toBeInTheDocument();
+  });
+
+  it("displays AI explanation when available", async () => {
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        explanation: "BHA is a concerning preservative found in this food.",
+        cached: false,
+      }),
+    });
+
+    render(<AnalysisView result={makeResult()} onScanAnother={jest.fn()} />);
+
+    await waitFor(() => {
+      expect(screen.getByTestId("ai-explanation")).toBeInTheDocument();
+    });
+
+    expect(screen.getByText("BHA is a concerning preservative found in this food.")).toBeInTheDocument();
+    expect(screen.getByText("AI Analysis")).toBeInTheDocument();
+  });
+
+  it("hides AI section when explanation is empty (fallback)", async () => {
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: async () => ({ explanation: "", cached: false, fallback: true }),
+    });
+
+    render(<AnalysisView result={makeResult()} onScanAnother={jest.fn()} />);
+
+    await waitFor(() => {
+      expect(screen.queryByTestId("ai-loading")).not.toBeInTheDocument();
+    });
+
+    expect(screen.queryByTestId("ai-explanation")).not.toBeInTheDocument();
+  });
+
+  it("hides AI section on fetch error", async () => {
+    mockFetch.mockRejectedValue(new Error("Network error"));
+
+    render(<AnalysisView result={makeResult()} onScanAnother={jest.fn()} />);
+
+    await waitFor(() => {
+      expect(screen.queryByTestId("ai-loading")).not.toBeInTheDocument();
+    });
+
+    expect(screen.queryByTestId("ai-explanation")).not.toBeInTheDocument();
+    // Static verdict should still be visible
+    expect(screen.getByTestId("verdict")).toBeInTheDocument();
+  });
+
+  it("sends correct payload to /api/explain", async () => {
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: async () => ({ explanation: "Test", cached: false }),
+    });
+
+    render(<AnalysisView result={makeResult()} onScanAnother={jest.fn()} />);
+
+    await waitFor(() => {
+      expect(mockFetch).toHaveBeenCalledTimes(1);
+    });
+
+    const [url, options] = mockFetch.mock.calls[0] as [string, RequestInit];
+    expect(url).toBe("/api/explain");
+    expect(options.method).toBe("POST");
+
+    const body = JSON.parse(options.body as string) as { grade: string; score: number; ingredients: unknown[] };
+    expect(body.grade).toBe("B");
+    expect(body.score).toBe(82);
+    expect(body.ingredients).toHaveLength(3);
+  });
+
+  it("hides loading after non-ok response", async () => {
+    mockFetch.mockResolvedValue({
+      ok: false,
+      status: 500,
+      json: async () => ({ error: "Internal error" }),
+    });
+
+    render(<AnalysisView result={makeResult()} onScanAnother={jest.fn()} />);
+
+    await waitFor(() => {
+      expect(screen.queryByTestId("ai-loading")).not.toBeInTheDocument();
+    });
+
+    expect(screen.queryByTestId("ai-explanation")).not.toBeInTheDocument();
   });
 });

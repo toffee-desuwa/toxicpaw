@@ -73,3 +73,14 @@
 - 15 new tests (115 total): GradeBadge rendering + accessibility, SummaryBar counts + labels, IngredientList items + positions + explanations + empty state + count header, AnalysisView verdict + button + click handler + all grades
 - All 115 tests pass, lint clean, build succeeds
 - Next action: F007 - AI explanation generation
+
+## Session 7 (F007 - AI Explanation Generation)
+- Installed @anthropic-ai/sdk for Claude API integration
+- Created src/lib/explainer/types.ts: ExplainRequest, ExplainIngredient, ExplainResponse types
+- Created src/lib/explainer/index.ts: explanation generator with in-memory cache (keyed by sorted ingredient names), prompt builder that summarizes harmful/caution/safe ingredients for Claude, cache management utilities
+- Created src/app/api/explain/route.ts: POST endpoint that accepts analysis data, generates AI explanation via Claude API, gracefully falls back (returns empty explanation) when ANTHROPIC_API_KEY is missing
+- Updated AnalysisView component: async fetch of AI explanation after mount, loading state ("Generating detailed analysis…"), styled AI Analysis card below verdict, silent fallback on error
+- 20 new tests (135 total): buildCacheKey determinism/sorting/uniqueness, buildPrompt content, generateExplanation with mocked SDK (API call, caching, missing key error), cache management, AnalysisView AI integration (loading state, display, fallback, error handling, payload validation)
+- All 135 tests pass, lint clean, build succeeds
+- Uses claude-sonnet-4-6 model with max_tokens=256 for cost efficiency
+- Next action: F008 - Pet profile and personalization

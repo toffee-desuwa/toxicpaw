@@ -55,7 +55,7 @@
       "name": "AI explanation generation",
       "description": "Claude API generates a 2-3 sentence plain-language explanation of why the food is good/bad, tailored for non-expert pet owners. Cached per ingredient combo to reduce API costs",
       "priority": 7,
-      "status": "pending",
+      "status": "done",
       "dependencies": ["F005"]
     },
     {
