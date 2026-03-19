@@ -127,7 +127,7 @@
       "name": "Brand safety leaderboard page",
       "description": "Sortable ranking page at /ranking showing all brands by safety grade. Filter by pet type (cat/dog), sort by grade/name. Visual: grade badge + brand name + score in a clean table/card layout. This is the viral linkbait — '2026猫粮安全排行榜'.",
       "priority": 16,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F014"]
     },
     {

@@ -178,3 +178,11 @@
 - 25 new tests (301 total): BrandSearch (13 tests: input rendering, bilingual placeholder, empty state, search results, Chinese search, no-match message, grade badges, pet emoji, scan-own link/button, clear behavior), BrandResultClient (12 tests: brand name/CN name, pet type, grade badge, verdict, ingredients, back link, scan CTA, ranking link, share button, cat food indicator, header testid)
 - All 301 tests pass, lint clean, build succeeds (75 SSG brand pages)
 - Next action: F016
+
+## Session 16 (F016 - Brand Safety Leaderboard Page)
+- Created src/app/ranking/page.tsx: server component with SEO metadata (title, OG, Twitter cards), computes all analyzed brands at build time, statically prerendered
+- Created src/app/ranking/RankingClient.tsx: client component with pet type filter tabs (All/Dog/Cat), sorted card list (by grade A→F, then score descending), rank numbers, small grade badges, brand/product names (EN+CN), scores, links to /brand/[slug], "Scan Your Own Food" CTA
+- Design decisions: server/client split (page.tsx handles metadata + data loading, RankingClient handles interactivity), sorting by grade then score (not just score — grade is the primary hierarchy users understand), rank numbers re-index when filter changes (cleaner than showing original position), statically prerendered at build time for instant load
+- 19 new tests (320 total): title/subtitle rendering, back link, filter tabs, default view (all brands), sort order verification, brand name/Chinese name/score display, grade badges, card links, dog-only filter, cat-only filter, all-tab return, aria-pressed states, rank numbers, re-ranking on filter change, scan CTA, empty state
+- All 320 tests pass, lint clean, build succeeds (81 static pages: 75 brand + /ranking + others)
+- Next action: F017
