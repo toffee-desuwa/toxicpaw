@@ -198,3 +198,13 @@
 - 23 new tests (325 total): app name, tagline, search input/placeholder/results, best brands section (5 items + heading + grade badges + links), worst brands section (5 items + heading), scan CTA click, history button click, full ranking link, trust signals, footer disclaimer, headings, bottom CTA
 - All 325 tests pass, lint clean, build succeeds (81 static pages)
 - Next action: F018
+
+## Session 18 (F018 - Code Quality Audit Phase 2)
+- Audited F013-F017 code for God Components, duplicate code, defensive coding, naming consistency
+- **Deduplicated GRADE_COLORS**: extracted to shared `src/lib/grade/constants.ts` — was copy-pasted across 7 files (GradeBadge, LandingPage, BrandSearch, HistoryList, ComparisonView, ShareCard, RankingClient). Also consolidated GRADE_LABELS, GRADE_TEXT_COLORS, GRADE_ORDER, GRADE_STYLES into the same shared module.
+- **Deduplicated getBrandGrade()**: extracted to `src/lib/brands/index.ts` — was duplicated as `getGradeForBrand()` in LandingPage and `getGrade()` in BrandSearch
+- **Split page.tsx God Component**: extracted `useAppState` custom hook to `src/app/useAppState.ts` (all state management, 11 hooks, event handlers). page.tsx reduced from 333 lines to ~190 lines of pure rendering.
+- **Fixed defensive coding**: replaced unsafe non-null assertion (`find()!`) in HistoryList comparison mode with proper `.filter()` + length guard
+- Audit passed with no issues: naming consistency excellent, zero `any` types, all `.map()` calls properly keyed, error handling comprehensive
+- All 325 tests pass, lint clean, build succeeds (81 static pages)
+- Next action: F019
