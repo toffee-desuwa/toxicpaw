@@ -121,3 +121,12 @@
 - 25 new tests (230 total): ShareCard (15 tests: rendering, branding, grades A/B/F, verdict, food name show/hide, stats, harmful/safe ingredient lists, 3-item limit, footer, ref forwarding), ShareButton (10 tests: render, hidden card, generating state, html2canvas call, download fallback, Web Share API, shared text, food name passthrough, button disable during share, timeout reset)
 - All 230 tests pass, lint clean, build succeeds
 - Next action: F011 - Landing page and README
+
+## Session 11 (F011 - Landing Page and README)
+- Created src/components/landing/LandingPage.tsx: marketing-grade landing page with hero section (app name, tagline, animated CTA), "How It Works" 3-step flow, 4 feature cards (Snap a Photo, AI Analysis, Safety Grade, Personalized), trust signals grid (500+ ingredients, A-F grades, 2 languages, free/open source), bottom CTA, and footer with disclaimer
+- Created src/components/landing/index.ts: barrel exports
+- Updated src/app/page.tsx: replaced minimal idle state with full LandingPage component, passing onStartScan and onViewHistory callbacks
+- Created README.md: badges (Next.js, TypeScript, MIT, PRs Welcome), feature overview, tech stack table, quick start guide, environment variables, usage instructions, project structure, commands, ingredient knowledge base details, grading system explanation, contributing section
+- 18 new tests (248 total): hero rendering/tagline/buttons/callbacks, How It Works section/steps, feature cards/descriptions, trust signals/stats, bottom CTA/callback, footer/disclaimer, accessibility (headings count, aria-labelledby landmarks)
+- All 248 tests pass, lint clean, build succeeds
+- Next action: F012 - Open source packaging

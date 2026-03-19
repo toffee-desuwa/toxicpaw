@@ -87,7 +87,7 @@
       "name": "Landing page and README",
       "description": "Marketing-grade landing page: hero with phone mockup, scan demo GIF, feature highlights, trust signals. GitHub README with badges, screenshots, setup guide",
       "priority": 11,
-      "status": "pending",
+      "status": "done",
       "dependencies": ["F006"]
     },
     {
