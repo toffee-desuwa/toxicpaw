@@ -186,3 +186,15 @@
 - 19 new tests (320 total): title/subtitle rendering, back link, filter tabs, default view (all brands), sort order verification, brand name/Chinese name/score display, grade badges, card links, dog-only filter, cat-only filter, all-tab return, aria-pressed states, rank numbers, re-ranking on filter change, scan CTA, empty state
 - All 320 tests pass, lint clean, build succeeds (81 static pages: 75 brand + /ranking + others)
 - Next action: F017
+
+## Session 17 (F017 - Demo-first Homepage Redesign)
+- Replaced marketing-style LandingPage (F011) with demo-first homepage that shows real brand data immediately
+- Above the fold: compact ToxicPaw branding + tagline, instant brand search bar (Chinese + English), scan CTA button, view history button
+- Worst-rated brands section (fear hook, 5 brands sorted by lowest score) with "View full ranking" link to /ranking
+- Best-rated brands section (5 brands sorted by highest score) with grade badges, brand names (EN+CN), scores, pet type emoji
+- Each brand links to /brand/[slug] for full detail
+- Below the fold: trust signals (500+ ingredients, A-F grades, 2 languages, free), bottom scan CTA, footer with disclaimer
+- Design decisions: (1) Worst brands shown FIRST as the fear hook per spec, (2) Reused getAllAnalyzedBrands() for client-side sort — data bundled at build time so no API call, (3) Same props interface (onStartScan, onViewHistory) for backward compat with page.tsx, (4) Embedded search directly in homepage instead of reusing BrandSearch component — tighter integration with the brand list layout
+- 23 new tests (325 total): app name, tagline, search input/placeholder/results, best brands section (5 items + heading + grade badges + links), worst brands section (5 items + heading), scan CTA click, history button click, full ranking link, trust signals, footer disclaimer, headings, bottom CTA
+- All 325 tests pass, lint clean, build succeeds (81 static pages)
+- Next action: F018

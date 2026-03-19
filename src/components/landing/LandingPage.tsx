@@ -1,47 +1,84 @@
 /**
- * F011 - Landing Page (polished F013)
+ * F017 - Demo-first Homepage
  *
- * Marketing-grade landing page with MiSans typography, refined spacing,
- * and screenshot-worthy visual hierarchy on dark theme.
+ * Replaces the F011 marketing landing page with a demo-first homepage
+ * that shows real brand data immediately. Users see value in 3 seconds
+ * without clicking anything: top 5 best brands, top 5 worst brands,
+ * a search bar, and scan CTA.
  */
+
+"use client";
+
+import { useState, useMemo } from "react";
+import Link from "next/link";
+import { getAllAnalyzedBrands, searchBrands } from "@/lib/brands";
+import { analyzeIngredients } from "@/lib/analyzer";
+import type { AnalyzedBrand, BrandEntry } from "@/lib/brands/types";
+import type { Grade } from "@/lib/analyzer/types";
+import type { ParsedIngredient } from "@/lib/ocr/types";
+
+const GRADE_COLORS: Record<Grade, string> = {
+  A: "bg-emerald-500",
+  B: "bg-lime-500",
+  C: "bg-amber-500",
+  D: "bg-orange-500",
+  F: "bg-red-600",
+};
+
+const GRADE_TEXT_COLORS: Record<Grade, string> = {
+  A: "text-emerald-400",
+  B: "text-lime-400",
+  C: "text-amber-400",
+  D: "text-orange-400",
+  F: "text-red-400",
+};
 
 interface LandingPageProps {
   onStartScan: () => void;
   onViewHistory: () => void;
 }
 
-const features = [
-  {
-    icon: "📸",
-    title: "Snap a Photo",
-    description:
-      "Point your camera at any pet food ingredient label. Our OCR reads English and Chinese labels instantly.",
-  },
-  {
-    icon: "🔬",
-    title: "AI Analysis",
-    description:
-      "500+ ingredients rated by veterinary nutrition science. Every ingredient flagged red, yellow, or green.",
-  },
-  {
-    icon: "🏆",
-    title: "Safety Grade",
-    description:
-      "Get a clear A-F grade so you know exactly how safe your pet's food is. No guesswork.",
-  },
-  {
-    icon: "🐕",
-    title: "Personalized",
-    description:
-      "Enter your pet's breed, age, and health conditions for tailored warnings and recommendations.",
-  },
-];
+function getGradeForBrand(brand: BrandEntry): Grade {
+  const parsed: ParsedIngredient[] = brand.ingredients.map((name, i) => ({
+    original: name,
+    normalized: name.toLowerCase().trim(),
+    position: i,
+  }));
+  return analyzeIngredients(parsed).grade;
+}
 
-const steps = [
-  { step: "1", label: "Scan", detail: "Take a photo of the ingredient label" },
-  { step: "2", label: "Analyze", detail: "AI grades every ingredient" },
-  { step: "3", label: "Know", detail: "Get your safety grade in seconds" },
-];
+function MiniGradeBadge({ grade }: { grade: Grade }) {
+  return (
+    <span
+      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white ${GRADE_COLORS[grade]}`}
+      data-testid="mini-grade-badge"
+    >
+      {grade}
+    </span>
+  );
+}
+
+function BrandListItem({ brand }: { brand: AnalyzedBrand }) {
+  return (
+    <Link
+      href={`/brand/${brand.slug}`}
+      className="flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/50 px-4 py-3 transition-colors hover:border-neutral-600 hover:bg-neutral-800/50"
+    >
+      <MiniGradeBadge grade={brand.analysis.grade} />
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-sm font-semibold text-neutral-100">
+          {brand.brand} — {brand.product}
+        </p>
+        <p className="truncate text-xs text-neutral-500">
+          {brand.brandCn} {brand.productCn} · {brand.petType === "cat" ? "🐱" : "🐶"}
+        </p>
+      </div>
+      <span className={`text-sm font-bold ${GRADE_TEXT_COLORS[brand.analysis.grade]}`}>
+        {brand.analysis.score}
+      </span>
+    </Link>
+  );
+}
 
 const trustItems = [
   { stat: "500+", label: "Ingredients in database" },
@@ -51,98 +88,159 @@ const trustItems = [
 ];
 
 export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
+  const [query, setQuery] = useState("");
+
+  const allAnalyzed = useMemo(() => getAllAnalyzedBrands(), []);
+
+  const bestBrands = useMemo(() => {
+    return [...allAnalyzed]
+      .sort((a, b) => b.analysis.score - a.analysis.score)
+      .slice(0, 5);
+  }, [allAnalyzed]);
+
+  const worstBrands = useMemo(() => {
+    return [...allAnalyzed]
+      .sort((a, b) => a.analysis.score - b.analysis.score)
+      .slice(0, 5);
+  }, [allAnalyzed]);
+
+  const searchResults = useMemo(() => {
+    if (!query.trim()) return [];
+    return searchBrands(query);
+  }, [query]);
+
+  const showSearch = query.trim().length > 0;
+
   return (
     <div className="mx-auto max-w-md px-4">
-      {/* Hero Section */}
-      <section className="flex min-h-[85dvh] flex-col items-center justify-center text-center">
-        <div className="mb-3 text-6xl" aria-hidden="true">
-          🐾
-        </div>
-        <h1 className="text-5xl font-black tracking-tight">
+      {/* Compact Hero */}
+      <section className="pt-12 pb-6 text-center">
+        <h1 className="text-4xl font-black tracking-tight">
           Toxic<span className="text-red-500">Paw</span>
         </h1>
-        <p className="mt-5 max-w-xs text-lg leading-relaxed text-neutral-400">
-          Is your pet&apos;s food safe? Scan the ingredient label and get an
-          instant AI-powered safety grade.
+        <p className="mt-2 text-sm text-neutral-400">
+          Is your pet food safe? Search or scan to find out.
         </p>
+      </section>
+
+      {/* Search Bar */}
+      <section className="pb-6">
+        <div className="relative">
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search a brand... 搜索品牌"
+            className="w-full rounded-2xl border border-neutral-700 bg-neutral-900 px-5 py-4 pl-12 text-base text-neutral-100 placeholder-neutral-500 outline-none transition-colors focus:border-red-500/50 focus:ring-1 focus:ring-red-500/30"
+            data-testid="brand-search-input"
+          />
+          <svg
+            className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-neutral-500"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </div>
+
+        {/* Search Results */}
+        {showSearch && (
+          <div className="mt-3" data-testid="brand-search-results">
+            {searchResults.length === 0 ? (
+              <p className="py-6 text-center text-sm text-neutral-500">
+                No brands found for &ldquo;{query}&rdquo;
+              </p>
+            ) : (
+              <ul className="space-y-2">
+                {searchResults.map((brand) => {
+                  const grade = getGradeForBrand(brand);
+                  return (
+                    <li key={brand.slug}>
+                      <Link
+                        href={`/brand/${brand.slug}`}
+                        className="flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/50 px-4 py-3 transition-colors hover:border-neutral-600 hover:bg-neutral-800/50"
+                      >
+                        <MiniGradeBadge grade={grade} />
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-semibold text-neutral-100">
+                            {brand.brand} — {brand.product}
+                          </p>
+                          <p className="truncate text-xs text-neutral-500">
+                            {brand.brandCn} {brand.productCn} · {brand.petType === "cat" ? "🐱" : "🐶"}
+                          </p>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </div>
+        )}
+      </section>
+
+      {/* Scan CTA (above the brand lists) */}
+      <section className="pb-8 text-center">
         <button
           onClick={onStartScan}
-          className="mt-10 rounded-full bg-red-500 px-12 py-4 text-lg font-bold text-white shadow-xl shadow-red-500/25 transition-all hover:bg-red-400 hover:shadow-red-500/40 active:scale-[0.97]"
+          className="rounded-full bg-red-500 px-10 py-3.5 text-base font-bold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-400 hover:shadow-red-500/35 active:scale-[0.97]"
           type="button"
           data-testid="hero-scan-button"
         >
-          Scan Label Now
+          📸 Scan Your Label
         </button>
         <button
           onClick={onViewHistory}
-          className="mt-4 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-300"
+          className="mt-3 block w-full text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-300"
           type="button"
           data-testid="history-button"
         >
           View Scan History
         </button>
-        <div className="mt-16 animate-bounce text-neutral-700" aria-hidden="true">
-          ↓
-        </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20" aria-labelledby="how-it-works-heading">
-        <h2
-          id="how-it-works-heading"
-          className="mb-12 text-center text-2xl font-bold tracking-tight"
-        >
-          How It Works
-        </h2>
-        <div className="flex justify-between gap-4">
-          {steps.map((s) => (
-            <div key={s.step} className="flex-1 text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-red-500/15 text-lg font-bold text-red-400">
-                {s.step}
-              </div>
-              <p className="mt-4 font-semibold text-neutral-100">{s.label}</p>
-              <p className="mt-1 text-xs leading-relaxed text-neutral-500">
-                {s.detail}
-              </p>
-            </div>
+      {/* Worst-Rated Brands (fear hook — shown first) */}
+      <section className="pb-8" data-testid="worst-brands">
+        <div className="mb-3 flex items-center justify-between">
+          <h2 className="text-lg font-bold text-neutral-100">
+            ⚠️ Worst Rated
+          </h2>
+          <Link
+            href="/ranking"
+            className="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-300"
+            data-testid="view-full-ranking"
+          >
+            View full ranking →
+          </Link>
+        </div>
+        <div className="space-y-2">
+          {worstBrands.map((brand) => (
+            <BrandListItem key={brand.slug} brand={brand} />
           ))}
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-20" aria-labelledby="features-heading">
-        <h2
-          id="features-heading"
-          className="mb-12 text-center text-2xl font-bold tracking-tight"
-        >
-          Why ToxicPaw?
+      {/* Best-Rated Brands */}
+      <section className="pb-8" data-testid="best-brands">
+        <h2 className="mb-3 text-lg font-bold text-neutral-100">
+          🏆 Top Rated
         </h2>
-        <div className="grid grid-cols-1 gap-4">
-          {features.map((f) => (
-            <div
-              key={f.title}
-              className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5"
-            >
-              <div className="mb-3 text-2xl" aria-hidden="true">
-                {f.icon}
-              </div>
-              <h3 className="font-bold text-neutral-100">{f.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-neutral-400">
-                {f.description}
-              </p>
-            </div>
+        <div className="space-y-2">
+          {bestBrands.map((brand) => (
+            <BrandListItem key={brand.slug} brand={brand} />
           ))}
         </div>
       </section>
 
       {/* Trust Signals */}
-      <section className="py-20" aria-labelledby="trust-heading">
-        <h2
-          id="trust-heading"
-          className="mb-12 text-center text-2xl font-bold tracking-tight"
-        >
-          Built for Pet Parents
-        </h2>
+      <section className="py-10">
         <div className="grid grid-cols-2 gap-3">
           {trustItems.map((t) => (
             <div
@@ -159,7 +257,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 text-center">
+      <section className="py-10 text-center">
         <h2 className="text-2xl font-bold tracking-tight">Ready to Scan?</h2>
         <p className="mt-3 text-sm text-neutral-500">
           Find out what&apos;s really in your pet&apos;s food.

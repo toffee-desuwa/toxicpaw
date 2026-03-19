@@ -135,7 +135,7 @@
       "name": "Demo-first homepage redesign",
       "description": "Replace current landing page hero with: top brand ranking preview (top 5 best + worst), prominent search bar ('搜索你家的粮'), secondary CTA '或拍照扫描'. First screen must deliver value in 3 seconds — user sees real data immediately, no click needed. Keep feature highlights and trust signals below the fold.",
       "priority": 17,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F015", "F016"]
     },
     {
