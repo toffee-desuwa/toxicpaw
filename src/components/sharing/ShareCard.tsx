@@ -55,7 +55,7 @@ export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(
         ref={ref}
         data-testid="share-card"
         className="w-[375px] bg-neutral-900 p-6"
-        style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+        style={{ fontFamily: "'MiSans', system-ui, -apple-system, sans-serif" }}
       >
         {/* Header */}
         <div className="mb-4 flex items-center justify-between">

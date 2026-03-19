@@ -160,16 +160,16 @@ export default function Home() {
   if (state === "history-detail" && analysisResult) {
     return (
       <main className="min-h-dvh">
-        <div className="mx-auto max-w-md px-4 pt-8">
+        <div className="mx-auto max-w-md px-4 pt-10">
           <button
             type="button"
             onClick={handleOpenHistory}
-            className="mb-4 text-sm text-neutral-400 hover:text-neutral-200"
+            className="mb-4 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-200"
           >
             &larr; Back to History
           </button>
           {selectedHistoryEntry?.foodName && (
-            <h2 className="mb-4 text-lg font-semibold text-neutral-200">
+            <h2 className="mb-4 text-xl font-bold text-neutral-100">
               {selectedHistoryEntry.foodName}
             </h2>
           )}
@@ -201,20 +201,20 @@ export default function Home() {
           <button
             type="button"
             onClick={handleReset}
-            className="mb-6 text-sm text-neutral-400 hover:text-neutral-200"
+            className="mb-6 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-200"
           >
             &larr; Back
           </button>
           <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-neutral-200">
+            <h2 className="text-xl font-bold text-neutral-100">
               Scan History
             </h2>
             {historyEntries.length >= 2 && (
               <button
                 type="button"
                 onClick={() => setCompareMode((prev) => !prev)}
-                className={`text-sm font-medium ${
-                  compareMode ? "text-red-400" : "text-neutral-400 hover:text-neutral-200"
+                className={`text-sm font-semibold transition-colors ${
+                  compareMode ? "text-red-400" : "text-neutral-500 hover:text-neutral-200"
                 }`}
                 data-testid="compare-toggle"
               >
@@ -243,7 +243,7 @@ export default function Home() {
           <button
             type="button"
             onClick={handleReset}
-            className="mb-6 text-sm text-neutral-400 hover:text-neutral-200"
+            className="mb-6 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-200"
           >
             &larr; Back
           </button>
@@ -263,12 +263,14 @@ export default function Home() {
       <main className="flex min-h-dvh flex-col items-center justify-center px-4">
         <div className="text-center">
           <div
-            className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-neutral-700 border-t-red-500"
+            className="mx-auto h-14 w-14 animate-spin rounded-full border-4 border-neutral-800 border-t-red-500"
             role="status"
             aria-label="Analyzing"
           />
-          <p className="mt-4 text-lg text-neutral-300">Analyzing ingredients…</p>
-          <p className="mt-1 text-sm text-neutral-500">
+          <p className="mt-6 text-xl font-bold text-neutral-100">
+            Analyzing ingredients…
+          </p>
+          <p className="mt-2 text-sm text-neutral-500">
             Reading label and grading safety
           </p>
         </div>
@@ -281,15 +283,17 @@ export default function Home() {
     return (
       <main className="flex min-h-dvh flex-col items-center justify-center px-4">
         <div className="w-full max-w-md text-center">
-          <p className="text-4xl">⚠️</p>
-          <h2 className="mt-4 text-xl font-semibold text-neutral-200">
+          <p className="text-5xl">⚠️</p>
+          <h2 className="mt-5 text-2xl font-bold text-neutral-100">
             Scan Failed
           </h2>
-          <p className="mt-2 text-sm text-neutral-400">{errorMessage}</p>
+          <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+            {errorMessage}
+          </p>
           <button
             type="button"
             onClick={handleStartScan}
-            className="mt-6 rounded-full bg-red-500 px-8 py-3 font-semibold text-white transition-colors hover:bg-red-400 active:scale-95"
+            className="mt-8 rounded-full bg-red-500 px-10 py-3.5 font-bold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-400 active:scale-[0.98]"
           >
             Try Again
           </button>
@@ -306,11 +310,11 @@ export default function Home() {
           <button
             type="button"
             onClick={handleReset}
-            className="mb-6 text-sm text-neutral-400 hover:text-neutral-200"
+            className="mb-6 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-200"
           >
             &larr; Back
           </button>
-          <h2 className="mb-6 text-xl font-semibold text-neutral-200">
+          <h2 className="mb-6 text-xl font-bold text-neutral-100">
             Scan Ingredient Label
           </h2>
           <Scanner onImageConfirmed={handleImageConfirmed} />

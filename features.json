@@ -1,6 +1,6 @@
 {
   "project": "toxicpaw",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "features": [
     {
       "id": "F001",
@@ -97,6 +97,154 @@
       "priority": 12,
       "status": "done",
       "dependencies": ["F011"]
+    },
+    {
+      "id": "F013",
+      "name": "MiSans font + screenshot-level visual polish",
+      "description": "Replace default font with MiSans (Xiaomi open-source font). Polish result page, grade badge, ingredient list for screenshot-worthy mobile UI. Dark mode refinement, spacing, typography hierarchy. Every screen must look good as a social media screenshot.",
+      "priority": 13,
+      "status": "done",
+      "dependencies": ["F012"]
+    },
+    {
+      "id": "F014",
+      "name": "Brand database — 50-100 popular brands pre-analyzed",
+      "description": "Create data/brands.json with 50-100 popular cat/dog food brands (Chinese + international). Each entry: brand name, product line, ingredient list (from public packaging data), pre-computed analysis result via existing engine. Cover top brands: Royal Canin, Orijen, Acana, Blue Buffalo, 皇家, 渴望, 巅峰, 伯纳天纯, 网易严选, etc.",
+      "priority": 14,
+      "status": "backlog",
+      "dependencies": ["F013"]
+    },
+    {
+      "id": "F015",
+      "name": "Brand search + brand result page",
+      "description": "Brand search with instant filtering (Chinese + English input). Each brand has its own page at /brand/[slug] with shareable URL. Brand result page reuses AnalysisView but adds brand name, product line, and 'Scan your own food' CTA. Static generation via generateStaticParams for SEO.",
+      "priority": 15,
+      "status": "backlog",
+      "dependencies": ["F014"]
+    },
+    {
+      "id": "F016",
+      "name": "Brand safety leaderboard page",
+      "description": "Sortable ranking page at /ranking showing all brands by safety grade. Filter by pet type (cat/dog), sort by grade/name. Visual: grade badge + brand name + score in a clean table/card layout. This is the viral linkbait — '2026猫粮安全排行榜'.",
+      "priority": 16,
+      "status": "backlog",
+      "dependencies": ["F014"]
+    },
+    {
+      "id": "F017",
+      "name": "Demo-first homepage redesign",
+      "description": "Replace current landing page hero with: top brand ranking preview (top 5 best + worst), prominent search bar ('搜索你家的粮'), secondary CTA '或拍照扫描'. First screen must deliver value in 3 seconds — user sees real data immediately, no click needed. Keep feature highlights and trust signals below the fold.",
+      "priority": 17,
+      "status": "backlog",
+      "dependencies": ["F015", "F016"]
+    },
+    {
+      "id": "F018",
+      "name": "Code quality audit (phase 2)",
+      "description": "Review F013-F017 code: God Component splits, duplicate code, defensive coding, consistent naming, test coverage for new features. Fix issues found.",
+      "priority": 18,
+      "status": "backlog",
+      "dependencies": ["F017"]
+    },
+    {
+      "id": "F019",
+      "name": "i18n + Chinese localization",
+      "description": "Add i18n framework (next-intl or custom). Support zh-CN and en. Translate all UI strings to Chinese. Chinese ingredient names shown first when user locale is zh. Language switcher in header. Default to browser locale.",
+      "priority": 19,
+      "status": "backlog",
+      "dependencies": ["F018"]
+    },
+    {
+      "id": "F020",
+      "name": "Zero-friction experience flow",
+      "description": "Remove Pet Profile as mandatory step before scanning. New flow: Scan → Camera → Result. Pet Profile becomes optional from result page ('Get personalized analysis' link). First-time experience must be: tap scan → take photo → see grade. 3 steps max.",
+      "priority": 20,
+      "status": "backlog",
+      "dependencies": ["F018"]
+    },
+    {
+      "id": "F021",
+      "name": "Knowledge base gap fill + fuzzy matching",
+      "description": "Add missing ingredients (Artificial Colors, Artificial Flavors, generic terms). Improve matcher: fuzzy matching for OCR typos, handle compound names ('chicken by-product meal'), normalize spaces/hyphens/case. Reduce 'unknown' rate on real scans.",
+      "priority": 21,
+      "status": "backlog",
+      "dependencies": ["F018"]
+    },
+    {
+      "id": "F022",
+      "name": "README rewrite — developer-focused golden structure",
+      "description": "Rewrite README.md: hero GIF (scan→grade loop), one-line hook, ranking screenshot, feature table, tech stack, quick start, architecture overview, knowledge base stats, contributing guide. English primary. Must sell to developers: 'open-source pet food safety analyzer with 500+ ingredient database'.",
+      "priority": 22,
+      "status": "backlog",
+      "dependencies": ["F017"]
+    },
+    {
+      "id": "F023",
+      "name": "Code quality audit (phase 3)",
+      "description": "Review F019-F022 code quality. Focus on i18n consistency, fuzzy matching edge cases, routing, test coverage. Fix issues found.",
+      "priority": 23,
+      "status": "backlog",
+      "dependencies": ["F019", "F020", "F021", "F022"]
+    },
+    {
+      "id": "F024",
+      "name": "Vercel deployment + per-brand OG meta",
+      "description": "Deploy to Vercel with environment variables. Each /brand/[slug] page gets unique OG title/description/image for social sharing previews. Homepage OG shows ranking preview. Test OG cards on Twitter Card Validator and Facebook Sharing Debugger.",
+      "priority": 24,
+      "status": "backlog",
+      "dependencies": ["F023"]
+    },
+    {
+      "id": "F025",
+      "name": "Share link optimization — auto-generated share images",
+      "description": "Generate unique share images per brand/result: grade badge + brand name + harmful count + ToxicPaw branding. Use Next.js OG image generation (next/og) or canvas-based approach. Every shared link must have a compelling preview image across all platforms (小红书/抖音/X/WeChat).",
+      "priority": 25,
+      "status": "backlog",
+      "dependencies": ["F024"]
+    },
+    {
+      "id": "F026",
+      "name": "Code quality audit (phase 4)",
+      "description": "Final pre-launch audit. Performance check (Lighthouse), accessibility, SEO, bundle size, image optimization. Fix critical issues.",
+      "priority": 26,
+      "status": "backlog",
+      "dependencies": ["F025"]
+    },
+    {
+      "id": "F027",
+      "name": "Open API + CLI tool",
+      "description": "Public API at /api/v1/analyze and /api/v1/lookup with docs page. CLI: npx toxicpaw analyze 'ingredient list'. Developer-facing features for GitHub stars.",
+      "priority": 27,
+      "status": "deferred",
+      "dependencies": ["F026"],
+      "notes": "Deferred — has hosting cost implications. Do after traction."
+    },
+    {
+      "id": "F028",
+      "name": "Multi-platform distribution prep",
+      "description": "Prepare assets for launch across: 小红书, 抖音, B站, X/Twitter, Reddit (r/petcare, r/nextjs), Hacker News, Product Hunt, V2EX, 即刻. Platform-specific content formats and copy.",
+      "priority": 28,
+      "status": "deferred",
+      "dependencies": ["F026"],
+      "notes": "Deferred — needs human to create accounts, record videos, write platform-specific copy."
+    },
+    {
+      "id": "F029",
+      "name": "Brand database expansion to 300+",
+      "description": "Expand brand database from 100 to 300+ products. Add more Chinese domestic brands, specialty/prescription diets, raw food brands.",
+      "priority": 29,
+      "status": "deferred",
+      "dependencies": ["F026"],
+      "notes": "Deferred — can be done incrementally after launch based on user demand."
+    },
+    {
+      "id": "F030",
+      "name": "Monetization architecture",
+      "description": "Alternative recommendation engine (low-score → suggest high-score alternatives with affiliate links). Affiliate integration with JD/Taobao/Chewy. API pricing for B2B.",
+      "priority": 30,
+      "status": "deferred",
+      "dependencies": ["F026"],
+      "notes": "Deferred — need traffic first. BaiFu path: virality → attention → monetization."
     }
   ]
 }

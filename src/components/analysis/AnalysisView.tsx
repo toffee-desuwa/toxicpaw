@@ -1,8 +1,8 @@
 /**
- * F006 - Analysis Result Display (updated F007 - AI explanation integration)
+ * F006 - Analysis Result Display (polished F013)
  *
  * Shows grade badge, verdict, AI explanation, summary bar, and ingredient list.
- * The AI explanation is fetched async after mount; the static verdict shows immediately.
+ * Refined spacing and visual hierarchy for screenshot-worthy mobile UI.
  */
 
 "use client";
@@ -88,13 +88,13 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
   }, [result]);
 
   return (
-    <div className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 py-8">
+    <div className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 py-10">
       {/* Grade Badge */}
       <GradeBadge grade={result.grade} score={result.score} />
 
       {/* Verdict */}
       <p
-        className="text-center text-base text-neutral-300"
+        className="text-center text-base leading-relaxed text-neutral-300"
         data-testid="verdict"
       >
         {result.verdict}
@@ -111,10 +111,10 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
       )}
       {!aiLoading && aiExplanation && (
         <div
-          className="rounded-xl bg-neutral-800/50 px-4 py-3"
+          className="rounded-2xl border border-neutral-800 bg-neutral-900/50 px-4 py-4"
           data-testid="ai-explanation"
         >
-          <p className="mb-1 text-xs font-medium uppercase tracking-wider text-neutral-500">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
             AI Analysis
           </p>
           <p className="text-sm leading-relaxed text-neutral-300">
@@ -126,13 +126,13 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
       {/* Profile Warnings */}
       {result.profileWarnings && result.profileWarnings.length > 0 && (
         <div
-          className="rounded-xl bg-amber-900/30 border border-amber-700/50 px-4 py-3"
+          className="rounded-2xl border border-amber-700/50 bg-amber-900/20 px-4 py-4"
           data-testid="profile-warnings"
         >
-          <p className="mb-1 text-xs font-medium uppercase tracking-wider text-amber-400">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-amber-400">
             Personalized Alerts
           </p>
-          <ul className="space-y-1">
+          <ul className="space-y-1.5">
             {result.profileWarnings.map((warning, idx) => (
               <li
                 key={idx}
@@ -156,7 +156,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
         <button
           type="button"
           onClick={() => setShowSaveInput(true)}
-          className="mt-2 w-full rounded-full bg-red-500 px-8 py-3 font-semibold text-white transition-colors hover:bg-red-400 active:scale-95"
+          className="mt-2 w-full rounded-full bg-red-500 px-8 py-3.5 font-semibold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-400 hover:shadow-red-500/30 active:scale-[0.98]"
           data-testid="save-button"
         >
           Save to History
@@ -170,13 +170,13 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
             value={foodName}
             onChange={(e) => setFoodName(e.target.value)}
             placeholder="Food name (optional)"
-            className="flex-1 rounded-xl bg-neutral-800 px-4 py-3 text-sm text-neutral-200 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-red-500"
+            className="flex-1 rounded-xl border border-neutral-800 bg-neutral-900 px-4 py-3 text-sm text-neutral-200 placeholder-neutral-500 outline-none focus:border-red-500/50 focus:ring-1 focus:ring-red-500/30"
             data-testid="food-name-input"
           />
           <button
             type="button"
             onClick={() => onSaveToHistory(foodName)}
-            className="shrink-0 rounded-xl bg-red-500 px-4 py-3 font-medium text-white hover:bg-red-400 active:scale-95"
+            className="shrink-0 rounded-xl bg-red-500 px-5 py-3 font-semibold text-white hover:bg-red-400 active:scale-[0.98]"
             data-testid="confirm-save"
           >
             Save
@@ -185,7 +185,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
       )}
 
       {saved && (
-        <p className="mt-2 text-center text-sm text-emerald-400" data-testid="saved-confirmation">
+        <p className="mt-2 text-center text-sm font-medium text-emerald-400" data-testid="saved-confirmation">
           Saved to history
         </p>
       )}
@@ -197,7 +197,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
       <button
         type="button"
         onClick={onScanAnother}
-        className="w-full rounded-full bg-neutral-700 px-8 py-3 font-medium text-white transition-colors hover:bg-neutral-600 active:scale-95"
+        className="w-full rounded-full border border-neutral-700 bg-neutral-800 px-8 py-3.5 font-semibold text-neutral-200 transition-colors hover:bg-neutral-700 active:scale-[0.98]"
       >
         Scan Another
       </button>

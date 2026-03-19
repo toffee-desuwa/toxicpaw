@@ -1,18 +1,46 @@
 /**
- * F006 - Grade Badge Component
+ * F006 - Grade Badge Component (polished F013)
  *
- * Large, eye-catching letter grade (A-F) with color coding.
+ * Large, eye-catching letter grade (A-F) with color coding and glow effect.
  * Designed for emotional impact — "fear-driven UX" per design principles.
  */
 
 import type { Grade } from "@/lib/analyzer/types";
 
-const GRADE_STYLES: Record<Grade, { bg: string; ring: string; text: string }> = {
-  A: { bg: "bg-emerald-500", ring: "ring-emerald-400/30", text: "text-white" },
-  B: { bg: "bg-lime-500", ring: "ring-lime-400/30", text: "text-white" },
-  C: { bg: "bg-amber-500", ring: "ring-amber-400/30", text: "text-white" },
-  D: { bg: "bg-orange-500", ring: "ring-orange-400/30", text: "text-white" },
-  F: { bg: "bg-red-600", ring: "ring-red-500/30", text: "text-white" },
+const GRADE_STYLES: Record<
+  Grade,
+  { bg: string; ring: string; text: string; glow: string }
+> = {
+  A: {
+    bg: "bg-emerald-500",
+    ring: "ring-emerald-400/30",
+    text: "text-white",
+    glow: "shadow-emerald-500/40",
+  },
+  B: {
+    bg: "bg-lime-500",
+    ring: "ring-lime-400/30",
+    text: "text-white",
+    glow: "shadow-lime-500/40",
+  },
+  C: {
+    bg: "bg-amber-500",
+    ring: "ring-amber-400/30",
+    text: "text-white",
+    glow: "shadow-amber-500/40",
+  },
+  D: {
+    bg: "bg-orange-500",
+    ring: "ring-orange-400/30",
+    text: "text-white",
+    glow: "shadow-orange-500/40",
+  },
+  F: {
+    bg: "bg-red-600",
+    ring: "ring-red-500/30",
+    text: "text-white",
+    glow: "shadow-red-500/40",
+  },
 };
 
 const GRADE_LABELS: Record<Grade, string> = {
@@ -32,19 +60,21 @@ export function GradeBadge({ grade, score }: GradeBadgeProps) {
   const style = GRADE_STYLES[grade];
 
   return (
-    <div className="flex flex-col items-center gap-3">
+    <div className="flex flex-col items-center gap-4">
       <div
-        className={`flex h-28 w-28 items-center justify-center rounded-full ${style.bg} ${style.text} ring-4 ${style.ring} shadow-lg`}
+        className={`flex h-32 w-32 items-center justify-center rounded-full ${style.bg} ${style.text} ring-4 ${style.ring} shadow-2xl ${style.glow}`}
         role="img"
         aria-label={`Grade ${grade}: ${GRADE_LABELS[grade]}`}
       >
-        <span className="text-5xl font-black">{grade}</span>
+        <span className="text-6xl font-black tracking-tight">{grade}</span>
       </div>
       <div className="text-center">
-        <p className="text-lg font-semibold text-neutral-200">
+        <p className="text-xl font-bold text-neutral-100">
           {GRADE_LABELS[grade]}
         </p>
-        <p className="text-sm text-neutral-400">Score: {score}/100</p>
+        <p className="mt-1 text-sm font-medium text-neutral-400">
+          Score: {score}/100
+        </p>
       </div>
     </div>
   );

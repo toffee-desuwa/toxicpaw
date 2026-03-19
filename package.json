@@ -7,7 +7,14 @@
     "type": "git",
     "url": "https://github.com/toxicpaw/toxicpaw"
   },
-  "keywords": ["pet-food", "ingredient-scanner", "pet-safety", "nextjs", "ai", "ocr"],
+  "keywords": [
+    "pet-food",
+    "ingredient-scanner",
+    "pet-safety",
+    "nextjs",
+    "ai",
+    "ocr"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,6 +25,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
     "html2canvas": "^1.4.1",
+    "misans": "^4.1.0",
     "next": "^15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
