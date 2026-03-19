@@ -191,7 +191,7 @@
       "name": "Vercel deployment + per-brand OG meta",
       "description": "Deploy to Vercel with environment variables. Each /brand/[slug] page gets unique OG title/description/image for social sharing previews. Homepage OG shows ranking preview. Test OG cards on Twitter Card Validator and Facebook Sharing Debugger.",
       "priority": 24,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F023"]
     },
     {

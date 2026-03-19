@@ -260,3 +260,16 @@
 - No new tests needed: existing i18n parity tests automatically validate new keys
 - 385 tests pass, lint clean, build succeeds (81 static pages)
 - Next action: F024
+
+## Session 24 (F024 - Vercel Deployment + Per-Brand OG Meta)
+- Created 3 OG image routes using Next.js file-convention `opengraph-image.tsx` with `ImageResponse` from `next/og`
+- Per-brand OG image (`/brand/[slug]/opengraph-image`): dark theme, grade circle with glow, score, brand name (EN+CN), harmful/caution/safe stats — 75 images statically generated
+- Ranking page OG image (`/ranking/opengraph-image`): grade distribution circles (A-F counts), top 5 rated brands list
+- Homepage OG image (`/opengraph-image`): ToxicPaw branding, best vs worst rated brands side-by-side
+- Created `src/lib/og/constants.ts`: GRADE_HEX color map + OG dimensions (1200x630)
+- Added `metadataBase` to root layout (uses VERCEL_URL env var on Vercel, localhost fallback for dev)
+- ~~First build failed: Satori requires `display: "flex"` on all elements with multiple children~~ → Fixed by adding `display: "flex"` to all elements and using template literals for multi-expression text
+- vercel.json already correct (framework: nextjs, npm ci, npm run build)
+- 20 new tests (405 total): OG constants (4), brand OG image (7 — metadata, params, valid/invalid slug, all brands), ranking OG (4), homepage OG (4)
+- All 405 tests pass, lint clean, build succeeds (158 static pages: 81 pages + 77 OG images)
+- Next action: F025

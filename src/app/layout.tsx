@@ -14,6 +14,11 @@ import { LanguageSwitcher } from "@/components/i18n";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000"
+  ),
   title: "ToxicPaw - Pet Food Ingredient Scanner",
   description:
     "Scan pet food labels instantly. AI-powered ingredient analysis gives your pet's food a safety grade from A to F.",
