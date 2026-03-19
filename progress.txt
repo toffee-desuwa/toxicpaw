@@ -198,3 +198,23 @@
 - 23 new tests (325 total): app name, tagline, search input/placeholder/results, best brands section (5 items + heading + grade badges + links), worst brands section (5 items + heading), scan CTA click, history button click, full ranking link, trust signals, footer disclaimer, headings, bottom CTA
 - All 325 tests pass, lint clean, build succeeds (81 static pages)
 - Next action: F018
+
+## Session 18 (F018 - Code Quality Audit Phase 2)
+- Extracted useAppState hook from page.tsx (God Component split)
+- Deduplicated code across components
+- Fixed defensive coding issues
+- All 325 tests pass, lint clean, build succeeds
+- Next action: F019
+
+## Session 19 (F019 - i18n + Chinese Localization)
+- Fixed build-breaking type error: IngredientList.tsx referenced .aliases instead of .common_aliases
+- Created custom i18n framework (src/lib/i18n/): I18nProvider context, useTranslation hook with namespace support, useLocale/useSetLocale hooks, interpolation, browser locale auto-detection, localStorage persistence
+- Created messages/en.json and messages/zh.json with 10 namespaces (common, landing, scanner, analysis, grade, profile, history, sharing, brand, ranking)
+- Created LanguageSwitcher component (src/components/i18n/): fixed-position EN/中文 toggle
+- Wired all 16 UI components to use t() function instead of hardcoded strings
+- Chinese ingredient names shown in IngredientList when locale is zh (via common_aliases lookup)
+- I18nProvider wraps app in layout.tsx, falls back to English without provider (test-friendly)
+- Design decisions: (1) Custom lightweight i18n over next-intl — no routing changes needed, ~150 LOC total, (2) Namespace-based translation keys for organization, (3) Falls back gracefully so existing 325 tests pass without wrapper changes
+- 27 new tests (352 total): i18n framework (19 tests: provider defaults, locale override, switching, EN/ZH translation, interpolation, missing key fallback, no-provider fallback, all namespaces, locale switching updates translations, useLocale/useSetLocale, localStorage persistence), LanguageSwitcher (8 tests: render, EN→ZH toggle, ZH→EN toggle, aria-labels, button type), message completeness (4 tests: namespace parity, key parity, no empty EN/ZH values)
+- All 352 tests pass, lint clean, build succeeds (81 static pages)
+- Next action: F020
