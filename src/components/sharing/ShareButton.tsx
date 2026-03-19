@@ -65,7 +65,9 @@ export function ShareButton({ result, foodName }: ShareButtonProps) {
         type: "image/png",
       });
 
-      const shareText = `${foodName ? foodName + ": " : ""}Grade ${result.grade} (${result.score}/100) - ${result.verdict}`;
+      const shareText = foodName
+        ? t("shareTextWithName", { foodName, grade: result.grade, score: result.score, verdict: result.verdict })
+        : t("shareText", { grade: result.grade, score: result.score, verdict: result.verdict });
 
       if (
         typeof navigator !== "undefined" &&

@@ -5,7 +5,9 @@
     "backToHistory": "\u2190 Back to History",
     "scanYourFood": "Scan Your Own Food",
     "viewRankings": "View All Rankings",
-    "or": "or"
+    "or": "or",
+    "petEmojiCat": "\ud83d\udc31",
+    "petEmojiDog": "\ud83d\udc36"
   },
   "landing": {
     "tagline": "Is your pet food safe? Search or scan to find out.",
@@ -44,6 +46,7 @@
   },
   "analysis": {
     "analyzing": "Analyzing ingredients\u2026",
+    "analyzingAriaLabel": "Analyzing",
     "analyzingSubtext": "Reading label and grading safety",
     "scanFailed": "Scan Failed",
     "tryAgain": "Try Again",
@@ -118,10 +121,13 @@
     "caution": "Caution",
     "harmful": "Harmful",
     "total": "Total",
-    "backToHistory": "Back to History"
+    "backToHistory": "Back to History",
+    "scoreDisplay": "Score: {score}/100"
   },
   "sharing": {
     "shareTitle": "ToxicPaw Pet Food Score",
+    "shareText": "Grade {grade} ({score}/100) - {verdict}",
+    "shareTextWithName": "{foodName}: Grade {grade} ({score}/100) - {verdict}",
     "generating": "Generating...",
     "shared": "Shared!",
     "shareResult": "Share Result",
@@ -144,6 +150,8 @@
     "title": "Pet Food Safety Rankings",
     "subtitle": "\u5ba0\u7269\u7cae\u5b89\u5168\u6392\u884c\u699c",
     "productsRanked": "{count} products ranked",
+    "scoreDenominator": "/ 100",
+    "gradeAriaLabel": "Grade {grade}",
     "all": "\ud83d\udc3e All",
     "dog": "\ud83d\udc36 Dog",
     "cat": "\ud83d\udc31 Cat"

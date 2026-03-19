@@ -11,7 +11,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { getAllAnalyzedBrands, searchBrands, getBrandGrade } from "@/lib/brands";
+import { getAllAnalyzedBrands, searchBrands, getBrandGrade, getPetEmoji } from "@/lib/brands";
 import type { AnalyzedBrand } from "@/lib/brands/types";
 import type { Grade } from "@/lib/analyzer/types";
 import { GRADE_COLORS, GRADE_TEXT_COLORS } from "@/lib/grade";
@@ -45,7 +45,7 @@ function BrandListItem({ brand }: { brand: AnalyzedBrand }) {
           {brand.brand} — {brand.product}
         </p>
         <p className="truncate text-xs text-neutral-500">
-          {brand.brandCn} {brand.productCn} · {brand.petType === "cat" ? "🐱" : "🐶"}
+          {brand.brandCn} {brand.productCn} · {getPetEmoji(brand.petType)}
         </p>
       </div>
       <span className={`text-sm font-bold ${GRADE_TEXT_COLORS[brand.analysis.grade]}`}>
@@ -150,7 +150,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
                             {brand.brand} — {brand.product}
                           </p>
                           <p className="truncate text-xs text-neutral-500">
-                            {brand.brandCn} {brand.productCn} · {brand.petType === "cat" ? "🐱" : "🐶"}
+                            {brand.brandCn} {brand.productCn} · {getPetEmoji(brand.petType)}
                           </p>
                         </div>
                       </Link>

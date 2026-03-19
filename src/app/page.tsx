@@ -162,7 +162,7 @@ export default function Home() {
           <div
             className="mx-auto h-14 w-14 animate-spin rounded-full border-4 border-neutral-800 border-t-red-500"
             role="status"
-            aria-label="Analyzing"
+            aria-label={ta("analyzingAriaLabel")}
           />
           <p className="mt-6 text-xl font-bold text-neutral-100">
             {ta("analyzing")}

@@ -115,8 +115,7 @@ export function HistoryList({
                   {entry.foodName || t("unnamedFood")}
                 </p>
                 <p className="text-xs text-neutral-500">
-                  {formatDate(entry.scannedAt)} · Score: {entry.result.score}
-                  /100
+                  {formatDate(entry.scannedAt)} · {t("scoreDisplay", { score: entry.result.score })}
                 </p>
               </div>
             </button>

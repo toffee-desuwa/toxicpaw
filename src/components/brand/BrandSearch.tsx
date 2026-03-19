@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { searchBrands, getAllBrands, getBrandGrade } from "@/lib/brands";
+import { searchBrands, getAllBrands, getBrandGrade, getPetEmoji } from "@/lib/brands";
 import type { Grade } from "@/lib/analyzer/types";
 import { GRADE_COLORS } from "@/lib/grade";
 import { useTranslation } from "@/lib/i18n";
@@ -80,7 +80,7 @@ export function BrandSearch({ onScanOwn }: BrandSearchProps) {
                           {brand.brand} — {brand.product}
                         </p>
                         <p className="truncate text-xs text-neutral-500">
-                          {brand.brandCn} {brand.productCn} · {brand.petType === "cat" ? "🐱" : "🐶"}
+                          {brand.brandCn} {brand.productCn} · {getPetEmoji(brand.petType)}
                         </p>
                       </div>
                     </Link>

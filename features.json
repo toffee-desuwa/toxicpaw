@@ -183,7 +183,7 @@
       "name": "Code quality audit (phase 3)",
       "description": "Review F019-F022 code quality. Focus on i18n consistency, fuzzy matching edge cases, routing, test coverage. Fix issues found.",
       "priority": 23,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F019", "F020", "F021", "F022"]
     },
     {

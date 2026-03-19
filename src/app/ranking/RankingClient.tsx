@@ -98,7 +98,7 @@ export function RankingClient({ brands }: RankingClientProps) {
               {/* Grade Badge (small) */}
               <div
                 className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${GRADE_COLORS[brand.analysis.grade]} text-sm font-black text-white`}
-                aria-label={`Grade ${brand.analysis.grade}`}
+                aria-label={t("gradeAriaLabel", { grade: brand.analysis.grade })}
               >
                 {brand.analysis.grade}
               </div>
@@ -118,7 +118,7 @@ export function RankingClient({ brands }: RankingClientProps) {
                 <p className="text-sm font-bold text-neutral-200">
                   {brand.analysis.score}
                 </p>
-                <p className="text-xs text-neutral-500">/ 100</p>
+                <p className="text-xs text-neutral-500">{t("scoreDenominator")}</p>
               </div>
             </Link>
           ))}
