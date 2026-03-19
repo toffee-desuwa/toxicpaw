@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { useTranslation } from "@/lib/i18n";
 import { CameraCapture } from "./CameraCapture";
 import { ImageUpload } from "./ImageUpload";
 import { ImagePreview } from "./ImagePreview";
@@ -15,6 +16,7 @@ export function Scanner({ onImageConfirmed }: ScannerProps) {
   const [state, setState] = useState<ScannerState>("capture");
   const [imageData, setImageData] = useState<string | null>(null);
   const [cameraError, setCameraError] = useState<string | null>(null);
+  const { t } = useTranslation("common");
 
   const hasCamera = typeof navigator !== "undefined" && !!navigator.mediaDevices;
 
@@ -61,7 +63,7 @@ export function Scanner({ onImageConfirmed }: ScannerProps) {
         {hasCamera && !cameraError && (
           <div className="mb-4 flex items-center gap-3">
             <div className="h-px flex-1 bg-neutral-700" />
-            <span className="text-sm text-neutral-500">or</span>
+            <span className="text-sm text-neutral-500">{t("or")}</span>
             <div className="h-px flex-1 bg-neutral-700" />
           </div>
         )}

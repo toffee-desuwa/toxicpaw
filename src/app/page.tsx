@@ -5,6 +5,7 @@ import { AnalysisView } from "@/components/analysis";
 import { PetProfileForm } from "@/components/profile";
 import { HistoryList, ComparisonView } from "@/components/history";
 import { LandingPage } from "@/components/landing";
+import { useTranslation } from "@/lib/i18n";
 import { useAppState } from "./useAppState";
 
 export default function Home() {
@@ -32,6 +33,11 @@ export default function Home() {
     toggleCompareMode,
   } = useAppState();
 
+  const { t: tc } = useTranslation("common");
+  const { t: ta } = useTranslation("analysis");
+  const { t: th } = useTranslation("history");
+  const { t: ts } = useTranslation("scanner");
+
   // Comparison view
   if (state === "comparing" && comparisonPair) {
     return (
@@ -55,7 +61,7 @@ export default function Home() {
             onClick={handleOpenHistory}
             className="mb-4 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-200"
           >
-            &larr; Back to History
+            {tc("backToHistory")}
           </button>
           {selectedHistoryEntry?.foodName && (
             <h2 className="mb-4 text-xl font-bold text-neutral-100">
@@ -92,11 +98,11 @@ export default function Home() {
             onClick={handleReset}
             className="mb-6 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-200"
           >
-            &larr; Back
+            {tc("back")}
           </button>
           <div className="mb-6 flex items-center justify-between">
             <h2 className="text-xl font-bold text-neutral-100">
-              Scan History
+              {th("title")}
             </h2>
             {historyEntries.length >= 2 && (
               <button
@@ -107,7 +113,7 @@ export default function Home() {
                 }`}
                 data-testid="compare-toggle"
               >
-                {compareMode ? "Cancel" : "Compare"}
+                {compareMode ? th("cancel") : th("compare")}
               </button>
             )}
           </div>
@@ -134,7 +140,7 @@ export default function Home() {
             onClick={handleReset}
             className="mb-6 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-200"
           >
-            &larr; Back
+            {tc("back")}
           </button>
           <PetProfileForm
             onSave={handleProfileSave}
@@ -157,10 +163,10 @@ export default function Home() {
             aria-label="Analyzing"
           />
           <p className="mt-6 text-xl font-bold text-neutral-100">
-            Analyzing ingredients…
+            {ta("analyzing")}
           </p>
           <p className="mt-2 text-sm text-neutral-500">
-            Reading label and grading safety
+            {ta("analyzingSubtext")}
           </p>
         </div>
       </main>
@@ -174,7 +180,7 @@ export default function Home() {
         <div className="w-full max-w-md text-center">
           <p className="text-5xl">⚠️</p>
           <h2 className="mt-5 text-2xl font-bold text-neutral-100">
-            Scan Failed
+            {ta("scanFailed")}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-neutral-400">
             {errorMessage}
@@ -184,7 +190,7 @@ export default function Home() {
             onClick={handleStartScan}
             className="mt-8 rounded-full bg-red-500 px-10 py-3.5 font-bold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-400 active:scale-[0.98]"
           >
-            Try Again
+            {ta("tryAgain")}
           </button>
         </div>
       </main>
@@ -201,10 +207,10 @@ export default function Home() {
             onClick={handleReset}
             className="mb-6 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-200"
           >
-            &larr; Back
+            {tc("back")}
           </button>
           <h2 className="mb-6 text-xl font-bold text-neutral-100">
-            Scan Ingredient Label
+            {ts("title")}
           </h2>
           <Scanner onImageConfirmed={handleImageConfirmed} />
         </div>

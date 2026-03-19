@@ -1,22 +1,25 @@
 /**
- * F006 - Summary Bar Component (polished F013)
+ * F006 - Summary Bar Component (polished F013, i18n F019)
  *
  * Visual summary showing counts of safe/caution/harmful/unknown ingredients.
  * Each stat in its own mini-card with color accent for screenshot clarity.
  */
 
 import type { AnalysisSummary } from "@/lib/analyzer/types";
+import { useTranslation } from "@/lib/i18n";
 
 interface SummaryBarProps {
   summary: AnalysisSummary;
 }
 
 export function SummaryBar({ summary }: SummaryBarProps) {
+  const { t } = useTranslation("analysis");
+
   const items = [
-    { count: summary.safeCount, label: "Safe", color: "text-emerald-400", border: "border-emerald-500/20" },
-    { count: summary.cautionCount, label: "Caution", color: "text-amber-400", border: "border-amber-500/20" },
-    { count: summary.harmfulCount, label: "Harmful", color: "text-red-400", border: "border-red-500/20" },
-    { count: summary.unknownCount, label: "Unknown", color: "text-neutral-400", border: "border-neutral-700" },
+    { count: summary.safeCount, label: t("safe"), color: "text-emerald-400", border: "border-emerald-500/20" },
+    { count: summary.cautionCount, label: t("caution"), color: "text-amber-400", border: "border-amber-500/20" },
+    { count: summary.harmfulCount, label: t("harmful"), color: "text-red-400", border: "border-red-500/20" },
+    { count: summary.unknownCount, label: t("unknown"), color: "text-neutral-400", border: "border-neutral-700" },
   ];
 
   return (

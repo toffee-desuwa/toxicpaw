@@ -1,21 +1,14 @@
 /**
- * F010 - Social Sharing Card
+ * F010 - Social Sharing Card (i18n F019)
  *
- * PRE-IMPLEMENTATION THINKING:
- * 1. What: A visually striking card that renders grade + food name + key findings,
- *    designed to be captured as an image via html2canvas for sharing.
- * 2. Decisions:
- *    - Use DOM-based rendering (not canvas drawing) so we can reuse Tailwind styles
- *    - Card is 375px wide (mobile screenshot width) with dark theme
- *    - Show: grade circle, score, food name, verdict, top harmful/safe counts
- * 3. Edge cases: Long food names, no harmful ingredients, all unknown ingredients
- * 4. Simplest: A styled div with ref for html2canvas capture
- * 5. Tests: Renders grade, food name, verdict, stats; ref is forwarded
+ * Styled card component for sharing analysis results as images.
+ * 375px wide, dark theme, designed for social media screenshots.
  */
 
 import { forwardRef } from "react";
 import type { AnalysisResult } from "@/lib/analyzer/types";
-import { GRADE_COLORS, GRADE_LABELS } from "@/lib/grade";
+import { GRADE_COLORS } from "@/lib/grade";
+import { useTranslation } from "@/lib/i18n";
 
 interface ShareCardProps {
   result: AnalysisResult;
@@ -24,6 +17,10 @@ interface ShareCardProps {
 
 export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(
   function ShareCard({ result, foodName }, ref) {
+    const { t: tg } = useTranslation("grade");
+    const { t: ta } = useTranslation("analysis");
+    const { t: ts } = useTranslation("sharing");
+
     const harmfulIngredients = result.ingredients
       .filter((i) => i.flag === "red")
       .slice(0, 3)
@@ -43,8 +40,8 @@ export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(
       >
         {/* Header */}
         <div className="mb-4 flex items-center justify-between">
-          <p className="text-lg font-bold text-red-500">ToxicPaw</p>
-          <p className="text-xs text-neutral-500">Pet Food Scanner</p>
+          <p className="text-lg font-bold text-red-500">{ts("brandName")}</p>
+          <p className="text-xs text-neutral-500">{ts("brandSubtitle")}</p>
         </div>
 
         {/* Food Name */}
@@ -67,7 +64,7 @@ export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(
             </span>
           </div>
           <p className="text-sm font-medium text-neutral-300">
-            {GRADE_LABELS[result.grade]} · {result.score}/100
+            {tg(result.grade)} · {result.score}/100
           </p>
         </div>
 
@@ -88,25 +85,25 @@ export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(
             <p className="text-lg font-bold text-emerald-400">
               {result.summary.safeCount}
             </p>
-            <p className="text-[10px] text-neutral-500">Safe</p>
+            <p className="text-[10px] text-neutral-500">{ta("safe")}</p>
           </div>
           <div className="text-center">
             <p className="text-lg font-bold text-amber-400">
               {result.summary.cautionCount}
             </p>
-            <p className="text-[10px] text-neutral-500">Caution</p>
+            <p className="text-[10px] text-neutral-500">{ta("caution")}</p>
           </div>
           <div className="text-center">
             <p className="text-lg font-bold text-red-400">
               {result.summary.harmfulCount}
             </p>
-            <p className="text-[10px] text-neutral-500">Harmful</p>
+            <p className="text-[10px] text-neutral-500">{ta("harmful")}</p>
           </div>
           <div className="text-center">
             <p className="text-lg font-bold text-neutral-400">
               {result.summary.unknownCount}
             </p>
-            <p className="text-[10px] text-neutral-500">Unknown</p>
+            <p className="text-[10px] text-neutral-500">{ta("unknown")}</p>
           </div>
         </div>
 
@@ -114,7 +111,7 @@ export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(
         {harmfulIngredients.length > 0 && (
           <div className="mb-3" data-testid="share-harmful">
             <p className="mb-1 text-xs font-medium text-red-400">
-              ⚠ Harmful Ingredients
+              {ts("harmfulIngredients")}
             </p>
             <p className="text-xs text-neutral-400">
               {harmfulIngredients.join(", ")}
@@ -125,7 +122,7 @@ export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(
         {safeIngredients.length > 0 && (
           <div className="mb-3" data-testid="share-safe">
             <p className="mb-1 text-xs font-medium text-emerald-400">
-              ✓ Quality Ingredients
+              {ts("qualityIngredients")}
             </p>
             <p className="text-xs text-neutral-400">
               {safeIngredients.join(", ")}
@@ -136,7 +133,7 @@ export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(
         {/* Footer */}
         <div className="mt-4 border-t border-neutral-800 pt-3">
           <p className="text-center text-[10px] text-neutral-600">
-            Scanned with ToxicPaw · AI-Powered Pet Food Safety
+            {ts("footer")}
           </p>
         </div>
       </div>

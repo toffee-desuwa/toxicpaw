@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import type { AnalyzedBrand } from "@/lib/brands/types";
 import { GRADE_COLORS, GRADE_ORDER } from "@/lib/grade";
+import { useTranslation } from "@/lib/i18n";
 
 type PetFilter = "all" | "cat" | "dog";
 
@@ -13,6 +14,8 @@ interface RankingClientProps {
 
 export function RankingClient({ brands }: RankingClientProps) {
   const [filter, setFilter] = useState<PetFilter>("all");
+  const { t: tc } = useTranslation("common");
+  const { t } = useTranslation("ranking");
 
   const filtered = useMemo(() => {
     const list =
@@ -28,10 +31,10 @@ export function RankingClient({ brands }: RankingClientProps) {
     });
   }, [brands, filter]);
 
-  const tabs: { key: PetFilter; label: string; emoji: string }[] = [
-    { key: "all", label: "All", emoji: "🐾" },
-    { key: "dog", label: "Dog", emoji: "🐶" },
-    { key: "cat", label: "Cat", emoji: "🐱" },
+  const tabs: { key: PetFilter; labelKey: string }[] = [
+    { key: "all", labelKey: "all" },
+    { key: "dog", labelKey: "dog" },
+    { key: "cat", labelKey: "cat" },
   ];
 
   return (
@@ -43,19 +46,19 @@ export function RankingClient({ brands }: RankingClientProps) {
           className="text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-200"
           data-testid="back-link"
         >
-          &larr; Back to Home
+          {tc("backToHome")}
         </Link>
 
         {/* Header */}
         <div className="text-center">
           <h1 className="text-2xl font-black text-neutral-100">
-            Pet Food Safety Rankings
+            {t("title")}
           </h1>
           <p className="mt-1 text-sm text-neutral-400">
-            宠物粮安全排行榜
+            {t("subtitle")}
           </p>
           <p className="mt-2 text-xs text-neutral-500">
-            {filtered.length} products ranked
+            {t("productsRanked", { count: filtered.length })}
           </p>
         </div>
 
@@ -73,7 +76,7 @@ export function RankingClient({ brands }: RankingClientProps) {
               data-testid={`filter-${tab.key}`}
               aria-pressed={filter === tab.key}
             >
-              {tab.emoji} {tab.label}
+              {t(tab.labelKey)}
             </button>
           ))}
         </div>
@@ -128,7 +131,7 @@ export function RankingClient({ brands }: RankingClientProps) {
             className="block w-full rounded-full bg-red-500 px-8 py-3.5 text-center font-semibold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-400 hover:shadow-red-500/30 active:scale-[0.98]"
             data-testid="scan-cta"
           >
-            Scan Your Own Food
+            {tc("scanYourFood")}
           </Link>
         </div>
       </div>

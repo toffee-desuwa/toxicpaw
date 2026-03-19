@@ -3,9 +3,9 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { searchBrands, getAllBrands, getBrandGrade } from "@/lib/brands";
-import type { BrandEntry } from "@/lib/brands/types";
 import type { Grade } from "@/lib/analyzer/types";
 import { GRADE_COLORS } from "@/lib/grade";
+import { useTranslation } from "@/lib/i18n";
 
 interface BrandSearchProps {
   onScanOwn?: () => void;
@@ -13,6 +13,7 @@ interface BrandSearchProps {
 
 export function BrandSearch({ onScanOwn }: BrandSearchProps) {
   const [query, setQuery] = useState("");
+  const { t } = useTranslation("brand");
 
   const allBrands = useMemo(() => getAllBrands(), []);
 
@@ -31,7 +32,7 @@ export function BrandSearch({ onScanOwn }: BrandSearchProps) {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search a brand... 搜索品牌"
+          placeholder={t("searchPlaceholder")}
           className="w-full rounded-2xl border border-neutral-700 bg-neutral-900 px-5 py-4 pl-12 text-base text-neutral-100 placeholder-neutral-500 outline-none transition-colors focus:border-red-500/50 focus:ring-1 focus:ring-red-500/30"
           data-testid="brand-search-input"
         />
@@ -56,7 +57,7 @@ export function BrandSearch({ onScanOwn }: BrandSearchProps) {
         <div className="mt-3" data-testid="brand-search-results">
           {results.length === 0 ? (
             <p className="py-6 text-center text-sm text-neutral-500">
-              No brands found for &ldquo;{query}&rdquo;
+              {t("noResults", { query })}
             </p>
           ) : (
             <ul className="space-y-2">
@@ -94,18 +95,18 @@ export function BrandSearch({ onScanOwn }: BrandSearchProps) {
       {/* Browse all hint */}
       {!showResults && (
         <p className="mt-3 text-center text-xs text-neutral-600">
-          {allBrands.length} brands in database ·{" "}
+          {t("brandsCount", { count: allBrands.length })}{" "}
           {onScanOwn ? (
             <button
               type="button"
               onClick={onScanOwn}
               className="text-red-400 underline-offset-2 hover:underline"
             >
-              or scan your own label
+              {t("orScanYourOwn")}
             </button>
           ) : (
             <Link href="/" className="text-red-400 underline-offset-2 hover:underline">
-              or scan your own label
+              {t("orScanYourOwn")}
             </Link>
           )}
         </p>

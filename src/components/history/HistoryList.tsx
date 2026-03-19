@@ -1,5 +1,5 @@
 /**
- * F009 - Scan History List Component
+ * F009 - Scan History List Component (i18n F019)
  *
  * Displays a scrollable list of past scans with grade badges and timestamps.
  * Supports selection for comparison mode and deletion of entries.
@@ -10,6 +10,7 @@
 import { useState } from "react";
 import type { ScanHistoryEntry } from "@/lib/history/types";
 import { GRADE_COLORS } from "@/lib/grade";
+import { useTranslation } from "@/lib/i18n";
 
 interface HistoryListProps {
   entries: ScanHistoryEntry[];
@@ -39,6 +40,7 @@ export function HistoryList({
   onCompare,
 }: HistoryListProps) {
   const [selected, setSelected] = useState<string[]>([]);
+  const { t } = useTranslation("history");
 
   function handleToggleSelect(entry: ScanHistoryEntry): void {
     if (!compareMode) {
@@ -69,9 +71,9 @@ export function HistoryList({
     return (
       <div className="text-center py-12" data-testid="history-empty">
         <p className="text-3xl">📋</p>
-        <p className="mt-3 text-neutral-400">No scans yet</p>
+        <p className="mt-3 text-neutral-400">{t("empty")}</p>
         <p className="mt-1 text-sm text-neutral-500">
-          Scan a pet food label to see results here
+          {t("emptyDesc")}
         </p>
       </div>
     );
@@ -81,7 +83,7 @@ export function HistoryList({
     <div className="flex flex-col gap-3" data-testid="history-list">
       {compareMode && (
         <p className="text-sm text-neutral-400 text-center">
-          Select 2 foods to compare ({selected.length}/2 selected)
+          {t("selectToCompare", { count: selected.length })}
         </p>
       )}
 
@@ -110,7 +112,7 @@ export function HistoryList({
 
               <div className="min-w-0 flex-1">
                 <p className="truncate font-medium text-neutral-200">
-                  {entry.foodName || "Unnamed Food"}
+                  {entry.foodName || t("unnamedFood")}
                 </p>
                 <p className="text-xs text-neutral-500">
                   {formatDate(entry.scannedAt)} · Score: {entry.result.score}
@@ -141,7 +143,7 @@ export function HistoryList({
           className="mt-2 text-sm text-neutral-500 hover:text-red-400"
           data-testid="history-clear"
         >
-          Clear All History
+          {t("clearAll")}
         </button>
       )}
     </div>

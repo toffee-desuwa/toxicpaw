@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback, useState } from "react";
+import { useTranslation } from "@/lib/i18n";
 
 interface CameraCaptureProps {
   onCapture: (imageDataUrl: string) => void;
@@ -11,6 +12,7 @@ export function CameraCapture({ onCapture, onError }: CameraCaptureProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const [isReady, setIsReady] = useState(false);
+  const { t } = useTranslation("scanner");
 
   useEffect(() => {
     let cancelled = false;
@@ -21,7 +23,7 @@ export function CameraCapture({ onCapture, onError }: CameraCaptureProps) {
           video: { facingMode: "environment", width: { ideal: 1920 }, height: { ideal: 1080 } },
         });
         if (cancelled) {
-          stream.getTracks().forEach((t) => t.stop());
+          stream.getTracks().forEach((track) => track.stop());
           return;
         }
         streamRef.current = stream;
@@ -33,14 +35,14 @@ export function CameraCapture({ onCapture, onError }: CameraCaptureProps) {
         if (cancelled) return;
         if (err instanceof DOMException) {
           if (err.name === "NotAllowedError") {
-            onError("Camera access denied. Please allow camera permissions or upload an image.");
+            onError(t("cameraDenied"));
           } else if (err.name === "NotFoundError") {
-            onError("No camera found on this device. Please upload an image instead.");
+            onError(t("noCamera"));
           } else {
-            onError("Could not access camera. Please upload an image instead.");
+            onError(t("cameraError"));
           }
         } else {
-          onError("Could not access camera. Please upload an image instead.");
+          onError(t("cameraError"));
         }
       }
     }
@@ -50,11 +52,11 @@ export function CameraCapture({ onCapture, onError }: CameraCaptureProps) {
     return () => {
       cancelled = true;
       if (streamRef.current) {
-        streamRef.current.getTracks().forEach((t) => t.stop());
+        streamRef.current.getTracks().forEach((track) => track.stop());
         streamRef.current = null;
       }
     };
-  }, [onError]);
+  }, [onError, t]);
 
   const handleCapture = useCallback(() => {
     const video = videoRef.current;
@@ -72,7 +74,7 @@ export function CameraCapture({ onCapture, onError }: CameraCaptureProps) {
 
     // Stop camera after capture
     if (streamRef.current) {
-      streamRef.current.getTracks().forEach((t) => t.stop());
+      streamRef.current.getTracks().forEach((track) => track.stop());
       streamRef.current = null;
     }
   }, [onCapture]);
@@ -90,7 +92,7 @@ export function CameraCapture({ onCapture, onError }: CameraCaptureProps) {
         />
         {!isReady && (
           <div className="absolute inset-0 flex items-center justify-center text-neutral-400">
-            Starting camera...
+            {t("startingCamera")}
           </div>
         )}
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useCallback } from "react";
+import { useTranslation } from "@/lib/i18n";
 
 interface ImageUploadProps {
   onImageSelected: (imageDataUrl: string) => void;
@@ -8,6 +9,7 @@ interface ImageUploadProps {
 
 export function ImageUpload({ onImageSelected }: ImageUploadProps) {
   const inputRef = useRef<HTMLInputElement>(null);
+  const { t } = useTranslation("scanner");
 
   const handleFile = useCallback(
     (file: File) => {
@@ -77,10 +79,10 @@ export function ImageUpload({ onImageSelected }: ImageUploadProps) {
         onClick={() => inputRef.current?.click()}
         className="rounded-full bg-neutral-700 px-6 py-3 font-medium text-white transition-colors hover:bg-neutral-600 active:scale-95"
       >
-        Upload Photo
+        {t("uploadPhoto")}
       </button>
       <p className="mt-2 text-sm text-neutral-500">
-        or drag and drop an image here
+        {t("dragDrop")}
       </p>
     </div>
   );

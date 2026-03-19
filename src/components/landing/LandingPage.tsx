@@ -1,5 +1,5 @@
 /**
- * F017 - Demo-first Homepage
+ * F017 - Demo-first Homepage (i18n F019)
  *
  * Replaces the F011 marketing landing page with a demo-first homepage
  * that shows real brand data immediately. Users see value in 3 seconds
@@ -12,9 +12,10 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { getAllAnalyzedBrands, searchBrands, getBrandGrade } from "@/lib/brands";
-import type { AnalyzedBrand, BrandEntry } from "@/lib/brands/types";
+import type { AnalyzedBrand } from "@/lib/brands/types";
 import type { Grade } from "@/lib/analyzer/types";
 import { GRADE_COLORS, GRADE_TEXT_COLORS } from "@/lib/grade";
+import { useTranslation } from "@/lib/i18n";
 
 interface LandingPageProps {
   onStartScan: () => void;
@@ -54,15 +55,10 @@ function BrandListItem({ brand }: { brand: AnalyzedBrand }) {
   );
 }
 
-const trustItems = [
-  { stat: "500+", label: "Ingredients in database" },
-  { stat: "A-F", label: "Clear safety grades" },
-  { stat: "2", label: "Languages supported" },
-  { stat: "Free", label: "Open source & free" },
-];
-
 export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
   const [query, setQuery] = useState("");
+  const { t } = useTranslation("landing");
+  const { t: tc } = useTranslation("common");
 
   const allAnalyzed = useMemo(() => getAllAnalyzedBrands(), []);
 
@@ -85,6 +81,13 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
 
   const showSearch = query.trim().length > 0;
 
+  const trustItems = [
+    { stat: t("trustIngredients"), label: t("trustIngredientsLabel") },
+    { stat: t("trustGrades"), label: t("trustGradesLabel") },
+    { stat: t("trustLanguages"), label: t("trustLanguagesLabel") },
+    { stat: t("trustFree"), label: t("trustFreeLabel") },
+  ];
+
   return (
     <div className="mx-auto max-w-md px-4">
       {/* Compact Hero */}
@@ -93,7 +96,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
           Toxic<span className="text-red-500">Paw</span>
         </h1>
         <p className="mt-2 text-sm text-neutral-400">
-          Is your pet food safe? Search or scan to find out.
+          {t("tagline")}
         </p>
       </section>
 
@@ -104,7 +107,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search a brand... 搜索品牌"
+            placeholder={t("searchPlaceholder")}
             className="w-full rounded-2xl border border-neutral-700 bg-neutral-900 px-5 py-4 pl-12 text-base text-neutral-100 placeholder-neutral-500 outline-none transition-colors focus:border-red-500/50 focus:ring-1 focus:ring-red-500/30"
             data-testid="brand-search-input"
           />
@@ -129,7 +132,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
           <div className="mt-3" data-testid="brand-search-results">
             {searchResults.length === 0 ? (
               <p className="py-6 text-center text-sm text-neutral-500">
-                No brands found for &ldquo;{query}&rdquo;
+                {t("noResults", { query })}
               </p>
             ) : (
               <ul className="space-y-2">
@@ -168,7 +171,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
           type="button"
           data-testid="hero-scan-button"
         >
-          📸 Scan Your Label
+          {t("scanButton")}
         </button>
         <button
           onClick={onViewHistory}
@@ -176,7 +179,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
           type="button"
           data-testid="history-button"
         >
-          View Scan History
+          {t("viewHistory")}
         </button>
       </section>
 
@@ -184,14 +187,14 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
       <section className="pb-8" data-testid="worst-brands">
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-lg font-bold text-neutral-100">
-            ⚠️ Worst Rated
+            {t("worstRated")}
           </h2>
           <Link
             href="/ranking"
             className="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-300"
             data-testid="view-full-ranking"
           >
-            View full ranking →
+            {t("viewFullRanking")}
           </Link>
         </div>
         <div className="space-y-2">
@@ -204,7 +207,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
       {/* Best-Rated Brands */}
       <section className="pb-8" data-testid="best-brands">
         <h2 className="mb-3 text-lg font-bold text-neutral-100">
-          🏆 Top Rated
+          {t("topRated")}
         </h2>
         <div className="space-y-2">
           {bestBrands.map((brand) => (
@@ -216,14 +219,14 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
       {/* Trust Signals */}
       <section className="py-10">
         <div className="grid grid-cols-2 gap-3">
-          {trustItems.map((t) => (
+          {trustItems.map((item) => (
             <div
-              key={t.label}
+              key={item.label}
               className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 text-center"
             >
-              <p className="text-2xl font-bold text-red-400">{t.stat}</p>
+              <p className="text-2xl font-bold text-red-400">{item.stat}</p>
               <p className="mt-1.5 text-xs font-medium text-neutral-500">
-                {t.label}
+                {item.label}
               </p>
             </div>
           ))}
@@ -232,9 +235,9 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
 
       {/* Bottom CTA */}
       <section className="py-10 text-center">
-        <h2 className="text-2xl font-bold tracking-tight">Ready to Scan?</h2>
+        <h2 className="text-2xl font-bold tracking-tight">{t("readyToScan")}</h2>
         <p className="mt-3 text-sm text-neutral-500">
-          Find out what&apos;s really in your pet&apos;s food.
+          {t("readyToScanDesc")}
         </p>
         <button
           onClick={onStartScan}
@@ -242,17 +245,17 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
           type="button"
           data-testid="bottom-scan-button"
         >
-          Scan Label Now
+          {t("scanLabelNow")}
         </button>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-neutral-800/50 py-10 text-center text-xs text-neutral-600">
         <p className="font-medium">
-          ToxicPaw — Open source pet food safety scanner
+          {t("footer")}
         </p>
         <p className="mt-1.5">
-          Not a substitute for veterinary advice.
+          {t("disclaimer")}
         </p>
       </footer>
     </div>

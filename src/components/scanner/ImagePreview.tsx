@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from "@/lib/i18n";
+
 interface ImagePreviewProps {
   src: string;
   onRetake: () => void;
@@ -7,12 +9,14 @@ interface ImagePreviewProps {
 }
 
 export function ImagePreview({ src, onRetake, onConfirm }: ImagePreviewProps) {
+  const { t } = useTranslation("scanner");
+
   return (
     <div className="flex flex-col items-center">
       <div className="w-full overflow-hidden rounded-2xl bg-black">
         <img
           src={src}
-          alt="Captured ingredient label"
+          alt={t("capturedLabel")}
           className="h-auto w-full object-contain"
         />
       </div>
@@ -22,14 +26,14 @@ export function ImagePreview({ src, onRetake, onConfirm }: ImagePreviewProps) {
           onClick={onRetake}
           className="flex-1 rounded-full border-2 border-neutral-600 px-6 py-3 font-medium text-neutral-300 transition-colors hover:border-neutral-400 active:scale-95"
         >
-          Retake
+          {t("retake")}
         </button>
         <button
           type="button"
           onClick={onConfirm}
           className="flex-1 rounded-full bg-red-500 px-6 py-3 font-semibold text-white shadow-lg transition-transform active:scale-95"
         >
-          Analyze
+          {t("analyze")}
         </button>
       </div>
     </div>

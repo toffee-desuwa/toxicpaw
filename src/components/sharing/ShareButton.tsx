@@ -1,5 +1,5 @@
 /**
- * F010 - Share Button
+ * F010 - Share Button (i18n F019)
  *
  * Generates an image from the ShareCard DOM element via html2canvas,
  * then shares via Web Share API (mobile) or downloads the image (fallback).
@@ -10,6 +10,7 @@
 import { useState, useRef, useCallback } from "react";
 import html2canvas from "html2canvas";
 import type { AnalysisResult } from "@/lib/analyzer/types";
+import { useTranslation } from "@/lib/i18n";
 import { ShareCard } from "./ShareCard";
 
 interface ShareButtonProps {
@@ -52,6 +53,7 @@ export function ShareButton({ result, foodName }: ShareButtonProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [sharing, setSharing] = useState(false);
   const [shared, setShared] = useState(false);
+  const { t } = useTranslation("sharing");
 
   const handleShare = useCallback(async () => {
     if (!cardRef.current || sharing) return;
@@ -71,7 +73,7 @@ export function ShareButton({ result, foodName }: ShareButtonProps) {
         navigator.canShare?.({ files: [file] })
       ) {
         await navigator.share({
-          title: "ToxicPaw Pet Food Score",
+          title: t("shareTitle"),
           text: shareText,
           files: [file],
         });
@@ -99,7 +101,7 @@ export function ShareButton({ result, foodName }: ShareButtonProps) {
     } finally {
       setSharing(false);
     }
-  }, [sharing, result, foodName]);
+  }, [sharing, result, foodName, t]);
 
   return (
     <>
@@ -119,7 +121,7 @@ export function ShareButton({ result, foodName }: ShareButtonProps) {
         className="w-full rounded-full bg-red-500 px-8 py-3 font-semibold text-white transition-colors hover:bg-red-400 active:scale-95 disabled:opacity-50"
         data-testid="share-button"
       >
-        {sharing ? "Generating..." : shared ? "Shared!" : "Share Result"}
+        {sharing ? t("generating") : shared ? t("shared") : t("shareResult")}
       </button>
     </>
   );

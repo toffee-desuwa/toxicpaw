@@ -151,7 +151,7 @@
       "name": "i18n + Chinese localization",
       "description": "Add i18n framework (next-intl or custom). Support zh-CN and en. Translate all UI strings to Chinese. Chinese ingredient names shown first when user locale is zh. Language switcher in header. Default to browser locale.",
       "priority": 19,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F018"]
     },
     {

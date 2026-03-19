@@ -9,6 +9,8 @@
  */
 
 import type { Metadata, Viewport } from "next";
+import { I18nProvider } from "@/lib/i18n";
+import { LanguageSwitcher } from "@/components/i18n";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -51,8 +53,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-dvh antialiased">{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-dvh antialiased">
+        <I18nProvider>
+          <LanguageSwitcher />
+          {children}
+        </I18nProvider>
+      </body>
     </html>
   );
 }

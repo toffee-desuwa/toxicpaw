@@ -1,5 +1,5 @@
 /**
- * F006 - Analysis Result Display (polished F013)
+ * F006 - Analysis Result Display (polished F013, i18n F019)
  *
  * Shows grade badge, verdict, AI explanation, summary bar, and ingredient list.
  * Refined spacing and visual hierarchy for screenshot-worthy mobile UI.
@@ -12,6 +12,7 @@ import type { AnalysisResult } from "@/lib/analyzer/types";
 import type { ExplainRequest, ExplainIngredient } from "@/lib/explainer/types";
 import { GradeBadge } from "@/components/grade";
 import { ShareButton } from "@/components/sharing";
+import { useTranslation } from "@/lib/i18n";
 import { IngredientList } from "./IngredientList";
 import { SummaryBar } from "./SummaryBar";
 
@@ -49,6 +50,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
   const [aiLoading, setAiLoading] = useState(true);
   const [foodName, setFoodName] = useState("");
   const [showSaveInput, setShowSaveInput] = useState(false);
+  const { t } = useTranslation("analysis");
 
   useEffect(() => {
     let cancelled = false;
@@ -106,7 +108,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
           className="text-center text-sm text-neutral-500 italic"
           data-testid="ai-loading"
         >
-          Generating detailed analysis…
+          {t("generatingAnalysis")}
         </p>
       )}
       {!aiLoading && aiExplanation && (
@@ -115,7 +117,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
           data-testid="ai-explanation"
         >
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
-            AI Analysis
+            {t("aiAnalysis")}
           </p>
           <p className="text-sm leading-relaxed text-neutral-300">
             {aiExplanation}
@@ -130,7 +132,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
           data-testid="profile-warnings"
         >
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-amber-400">
-            Personalized Alerts
+            {t("personalizedAlerts")}
           </p>
           <ul className="space-y-1.5">
             {result.profileWarnings.map((warning, idx) => (
@@ -159,7 +161,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
           className="mt-2 w-full rounded-full bg-red-500 px-8 py-3.5 font-semibold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-400 hover:shadow-red-500/30 active:scale-[0.98]"
           data-testid="save-button"
         >
-          Save to History
+          {t("saveToHistory")}
         </button>
       )}
 
@@ -169,7 +171,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
             type="text"
             value={foodName}
             onChange={(e) => setFoodName(e.target.value)}
-            placeholder="Food name (optional)"
+            placeholder={t("foodNamePlaceholder")}
             className="flex-1 rounded-xl border border-neutral-800 bg-neutral-900 px-4 py-3 text-sm text-neutral-200 placeholder-neutral-500 outline-none focus:border-red-500/50 focus:ring-1 focus:ring-red-500/30"
             data-testid="food-name-input"
           />
@@ -179,14 +181,14 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
             className="shrink-0 rounded-xl bg-red-500 px-5 py-3 font-semibold text-white hover:bg-red-400 active:scale-[0.98]"
             data-testid="confirm-save"
           >
-            Save
+            {t("save")}
           </button>
         </div>
       )}
 
       {saved && (
         <p className="mt-2 text-center text-sm font-medium text-emerald-400" data-testid="saved-confirmation">
-          Saved to history
+          {t("savedToHistory")}
         </p>
       )}
 
@@ -199,7 +201,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, saved = f
         onClick={onScanAnother}
         className="w-full rounded-full border border-neutral-700 bg-neutral-800 px-8 py-3.5 font-semibold text-neutral-200 transition-colors hover:bg-neutral-700 active:scale-[0.98]"
       >
-        Scan Another
+        {t("scanAnother")}
       </button>
     </div>
   );
