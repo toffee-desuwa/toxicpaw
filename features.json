@@ -175,7 +175,7 @@
       "name": "README rewrite — developer-focused golden structure",
       "description": "Rewrite README.md: hero GIF (scan→grade loop), one-line hook, ranking screenshot, feature table, tech stack, quick start, architecture overview, knowledge base stats, contributing guide. English primary. Must sell to developers: 'open-source pet food safety analyzer with 500+ ingredient database'.",
       "priority": 22,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F017"]
     },
     {
