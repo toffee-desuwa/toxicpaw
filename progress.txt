@@ -242,3 +242,11 @@
 - 21 new tests (385 total): new generic ingredients (7), improved fuzzy matching (13), brand coverage (1)
 - All 385 tests pass, lint clean, build succeeds (81 static pages)
 - Next action: F022
+
+## Session 22 (F022 - README Rewrite — Developer-Focused Golden Structure)
+- Complete rewrite of README.md from generic project readme to developer-focused showcase
+- One-line hook at top: "Open-source pet food safety analyzer with a 500+ ingredient database"
+- Added: feature table (11 features), full tech stack table, annotated architecture tree, detailed grading system with point values, knowledge base stats (512 ingredients, 75 brands, 48 unique), Docker section
+- Design decisions: (1) Feature table over prose — scannable by devs, (2) Concrete stats throughout — builds trust, (3) Architecture tree with annotations — shows real project structure, (4) GIF placeholder as HTML comment — needs actual recording
+- No new tests (docs-only change), 385 existing tests pass, build succeeds (81 static pages)
+- Next action: F023
