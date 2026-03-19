@@ -111,7 +111,7 @@
       "name": "Brand database — 50-100 popular brands pre-analyzed",
       "description": "Create data/brands.json with 50-100 popular cat/dog food brands (Chinese + international). Each entry: brand name, product line, ingredient list (from public packaging data), pre-computed analysis result via existing engine. Cover top brands: Royal Canin, Orijen, Acana, Blue Buffalo, 皇家, 渴望, 巅峰, 伯纳天纯, 网易严选, etc.",
       "priority": 14,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F013"]
     },
     {

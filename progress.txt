@@ -158,3 +158,13 @@
 - Updated ComparisonView: bordered cards, refined typography, consistent button style
 - All 248 tests pass, lint clean, build succeeds
 - Next action: F014
+
+## Session 14 (F014 - Brand Database — 50-100 Popular Brands Pre-Analyzed)
+- Created data/brands.json with 75 brand entries (40 dog, 35 cat) across 48 unique brand names
+- Brands cover: premium (Orijen, Acana, Ziwi Peak, K9 Natural), mid-tier (Royal Canin, Hill's, Purina Pro Plan), budget (Meow Mix, Friskies, Pedigree, Ol' Roy, Kibbles 'n Bits), and Chinese domestic (伯纳天纯, 网易严选, 疯狂小狗, 麦富迪, 比瑞吉, 卫仕, 高爷家, 陈大爷, 耐威克, 路斯)
+- Created src/lib/brands/types.ts: BrandEntry, AnalyzedBrand, BrandDatabase, BrandPetType types
+- Created src/lib/brands/index.ts: loader utilities — getAllBrands, analyzeBrand, getBrandBySlug, getAnalyzedBrandBySlug, getAllBrandSlugs, getBrandsByPetType, getAnalyzedBrandsByPetType, searchBrands (English + Chinese), getBrandDatabaseInfo
+- Design decisions: flat JSON over SQLite (simpler, no build step), analysis computed at runtime not stored (stays consistent with scoring changes), ingredient lists sourced from real packaging data
+- 28 new tests (276 total): data integrity (required fields, unique slugs, URL-safe slugs, non-empty ingredients, >70% knowledge base match rate), analysis (premium > budget scoring, A/B grades for high-quality, D/F for budget), CRUD (slug lookup, pet type filter, search by EN/CN name), metadata
+- All 276 tests pass, lint clean, build succeeds
+- Next action: F015
