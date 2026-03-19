@@ -1,7 +1,13 @@
 {
   "name": "toxicpaw",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toxicpaw/toxicpaw"
+  },
+  "keywords": ["pet-food", "ingredient-scanner", "pet-safety", "nextjs", "ai", "ocr"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

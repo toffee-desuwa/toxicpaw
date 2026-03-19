@@ -130,3 +130,17 @@
 - 18 new tests (248 total): hero rendering/tagline/buttons/callbacks, How It Works section/steps, feature cards/descriptions, trust signals/stats, bottom CTA/callback, footer/disclaimer, accessibility (headings count, aria-labelledby landmarks)
 - All 248 tests pass, lint clean, build succeeds
 - Next action: F012 - Open source packaging
+
+## Session 12 (F012 - Open Source Packaging)
+- Created LICENSE file (MIT License)
+- Created CONTRIBUTING.md with setup guide, code conventions, commit format, ingredient contribution guide, and code of conduct
+- Created .github/workflows/ci.yml: GitHub Actions CI with 4 parallel jobs (lint, test, build, typecheck) on Node 20
+- Created Dockerfile: multi-stage Alpine build (deps → build → production) with standalone output, non-root user
+- Created .dockerignore to exclude node_modules, .next, .git, .env, etc.
+- Created vercel.json for Vercel deployment configuration
+- Created .env.example with ANTHROPIC_API_KEY template
+- Created data/README.md: standalone documentation for the ingredient knowledge base (categories, ratings, usage examples)
+- Updated next.config.ts: added `output: "standalone"` for Docker support
+- Updated package.json: set private=false, added license, repository, and keywords for npm/open-source discovery
+- All 248 tests pass, lint clean, build succeeds
+- ALL 12 FEATURES COMPLETE

@@ -95,7 +95,7 @@
       "name": "Open source packaging",
       "description": "MIT license, CONTRIBUTING.md, GitHub Actions CI, Vercel deployment, Docker option, open-source the ingredient knowledge base separately",
       "priority": 12,
-      "status": "pending",
+      "status": "done",
       "dependencies": ["F011"]
     }
   ]
