@@ -1,0 +1,1 @@
+export { BrandSearch } from "./BrandSearch";

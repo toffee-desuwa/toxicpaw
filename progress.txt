@@ -168,3 +168,13 @@
 - 28 new tests (276 total): data integrity (required fields, unique slugs, URL-safe slugs, non-empty ingredients, >70% knowledge base match rate), analysis (premium > budget scoring, A/B grades for high-quality, D/F for budget), CRUD (slug lookup, pet type filter, search by EN/CN name), metadata
 - All 276 tests pass, lint clean, build succeeds
 - Next action: F015
+
+## Session 15 (F015 - Brand Search + Brand Result Page)
+- Created src/components/brand/BrandSearch.tsx: instant search with Chinese + English input, grade badge per result, links to /brand/[slug], pet type emoji, bilingual placeholder
+- Created src/app/brand/[slug]/page.tsx: server component with generateStaticParams (75 brand pages pre-rendered), generateMetadata for per-brand SEO (unique title/description/OG tags)
+- Created src/app/brand/[slug]/BrandResultClient.tsx: client component reusing GradeBadge, SummaryBar, IngredientList, ShareButton — adds brand name header (EN + CN), pet type indicator, "Scan Your Own Food" CTA, ranking page link
+- Created src/components/brand/index.ts: barrel exports
+- Design decisions: server/client split (page.tsx handles SSG + metadata, BrandResultClient handles interactivity), reused existing analysis components directly rather than wrapping AnalysisView (cleaner brand header integration), search runs client-side against full brand list (75 brands is trivial to filter)
+- 25 new tests (301 total): BrandSearch (13 tests: input rendering, bilingual placeholder, empty state, search results, Chinese search, no-match message, grade badges, pet emoji, scan-own link/button, clear behavior), BrandResultClient (12 tests: brand name/CN name, pet type, grade badge, verdict, ingredients, back link, scan CTA, ranking link, share button, cat food indicator, header testid)
+- All 301 tests pass, lint clean, build succeeds (75 SSG brand pages)
+- Next action: F016

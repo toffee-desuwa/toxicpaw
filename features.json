@@ -119,7 +119,7 @@
       "name": "Brand search + brand result page",
       "description": "Brand search with instant filtering (Chinese + English input). Each brand has its own page at /brand/[slug] with shareable URL. Brand result page reuses AnalysisView but adds brand name, product line, and 'Scan your own food' CTA. Static generation via generateStaticParams for SEO.",
       "priority": 15,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F014"]
     },
     {

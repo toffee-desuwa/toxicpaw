@@ -1,0 +1,129 @@
+/**
+ * Tests for BrandResultClient component (F015)
+ */
+
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import { BrandResultClient } from "../[slug]/BrandResultClient";
+import { getAnalyzedBrandBySlug } from "@/lib/brands";
+
+// Mock next/link
+jest.mock("next/link", () => {
+  return function MockLink({
+    children,
+    href,
+    ...props
+  }: {
+    children: React.ReactNode;
+    href: string;
+    [key: string]: unknown;
+  }) {
+    return (
+      <a href={href} {...props}>
+        {children}
+      </a>
+    );
+  };
+});
+
+// Mock ShareButton to avoid html2canvas complexity
+jest.mock("@/components/sharing", () => ({
+  ShareButton: () => <div data-testid="share-button-mock">Share</div>,
+  ShareCard: () => null,
+}));
+
+// Get a real analyzed brand for testing
+function getTestBrand() {
+  const brand = getAnalyzedBrandBySlug("orijen-original-dog");
+  if (!brand) throw new Error("Test brand not found");
+  return brand;
+}
+
+describe("BrandResultClient", () => {
+  it("renders the brand name as heading", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    expect(
+      screen.getByText(`${brand.brand} ${brand.product}`)
+    ).toBeInTheDocument();
+  });
+
+  it("renders the Chinese brand name", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    expect(
+      screen.getByText(`${brand.brandCn} ${brand.productCn}`)
+    ).toBeInTheDocument();
+  });
+
+  it("shows pet type indicator", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    expect(screen.getByText(/🐶 Dog Food/)).toBeInTheDocument();
+  });
+
+  it("renders the grade badge", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    expect(
+      screen.getByRole("img", { name: /Grade/ })
+    ).toBeInTheDocument();
+  });
+
+  it("renders the verdict", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    expect(screen.getByTestId("verdict")).toBeInTheDocument();
+    expect(screen.getByTestId("verdict").textContent).toBeTruthy();
+  });
+
+  it("renders ingredient list with items", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    // Should show ingredient items
+    const ingredientItems = brand.analysis.ingredients;
+    expect(ingredientItems.length).toBeGreaterThan(0);
+  });
+
+  it("renders back to home link", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    const backLink = screen.getByTestId("back-link");
+    expect(backLink).toHaveAttribute("href", "/");
+  });
+
+  it("renders scan your own food CTA", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    const cta = screen.getByTestId("scan-own-cta");
+    expect(cta).toHaveAttribute("href", "/");
+    expect(cta.textContent).toContain("Scan Your Own Food");
+  });
+
+  it("renders ranking page link", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    const link = screen.getByTestId("ranking-link");
+    expect(link).toHaveAttribute("href", "/ranking");
+    expect(link.textContent).toContain("View All Rankings");
+  });
+
+  it("renders share button", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    expect(screen.getByTestId("share-button-mock")).toBeInTheDocument();
+  });
+
+  it("shows cat food indicator for cat brands", () => {
+    const catBrand = getAnalyzedBrandBySlug("orijen-cat-kitten");
+    if (!catBrand) throw new Error("Cat test brand not found");
+    render(<BrandResultClient brand={catBrand} />);
+    expect(screen.getByText(/🐱 Cat Food/)).toBeInTheDocument();
+  });
+
+  it("renders brand header with testid", () => {
+    const brand = getTestBrand();
+    render(<BrandResultClient brand={brand} />);
+    expect(screen.getByTestId("brand-header")).toBeInTheDocument();
+  });
+});
