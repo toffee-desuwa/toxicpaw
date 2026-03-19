@@ -69,3 +69,14 @@ select,
 textarea {
   font-size: 16px;
 }
+
+/* Global focus-visible ring for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #ef4444;
+  outline-offset: 2px;
+}

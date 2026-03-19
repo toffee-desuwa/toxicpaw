@@ -9,7 +9,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import html2canvas from "html2canvas";
+import type Html2Canvas from "html2canvas";
 import type { AnalysisResult } from "@/lib/analyzer/types";
 import type { ShareFormat } from "@/lib/og/constants";
 import { useTranslation } from "@/lib/i18n";
@@ -74,6 +74,7 @@ async function fetchShareImage(
 
 /** Fallback: capture the ShareCard DOM element via html2canvas */
 async function captureCardAsBlob(element: HTMLElement): Promise<Blob> {
+  const html2canvas: typeof Html2Canvas = (await import("html2canvas")).default;
   const canvas = await html2canvas(element, {
     backgroundColor: "#171717",
     scale: 2,

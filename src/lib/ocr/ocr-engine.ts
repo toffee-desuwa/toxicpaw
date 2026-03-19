@@ -5,7 +5,6 @@
  * The worker is created on-demand and reused for performance.
  */
 
-import Tesseract from 'tesseract.js';
 import type { OcrResult } from './types';
 import { detectLanguage } from './parser';
 
@@ -19,6 +18,7 @@ const MIN_CONFIDENCE = 60;
  * @returns OcrResult with raw text, confidence, and language
  */
 export async function recognizeText(imageDataUrl: string): Promise<OcrResult> {
+  const Tesseract = (await import('tesseract.js')).default;
   const result = await Tesseract.recognize(imageDataUrl, 'eng+chi_sim', {
     logger: () => {}, // suppress logs
   });

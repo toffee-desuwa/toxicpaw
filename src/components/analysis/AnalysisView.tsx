@@ -190,6 +190,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, onPersona
             value={foodName}
             onChange={(e) => setFoodName(e.target.value)}
             placeholder={t("foodNamePlaceholder")}
+            aria-label={t("foodNamePlaceholder")}
             className="flex-1 rounded-xl border border-neutral-800 bg-neutral-900 px-4 py-3 text-sm text-neutral-200 placeholder-neutral-500 outline-none focus:border-red-500/50 focus:ring-1 focus:ring-red-500/30"
             data-testid="food-name-input"
           />

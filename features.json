@@ -207,7 +207,7 @@
       "name": "Code quality audit (phase 4)",
       "description": "Final pre-launch audit. Performance check (Lighthouse), accessibility, SEO, bundle size, image optimization. Fix critical issues.",
       "priority": 26,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F025"]
     },
     {
