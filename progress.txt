@@ -306,3 +306,10 @@
 - 6 new tests (443 total): robots.txt (2 — rules, sitemap URL), sitemap.xml (4 — homepage/ranking inclusion, all brands, priorities, dates)
 - All 443 tests pass, lint clean (0 warnings), build succeeds (161 static pages: 159 + robots.txt + sitemap.xml)
 - ALL 26 FEATURES COMPLETE — remaining F027-F030 are deferred
+
+## Session 27 (Build Fix)
+- Fixed broken build: `output: "standalone"` in next.config.ts caused webpack runtime errors during SSG with next/og ImageResponse
+- init.sh auto-reverted the last commit (F031-F036 visual overhaul) but build was still broken from the `output: "standalone"` config
+- Removed `output: "standalone"` — build now succeeds (161 static pages)
+- All 443 tests pass, lint clean, build succeeds
+- No backlog features remain (F027-F030 are deferred) — EXIT
