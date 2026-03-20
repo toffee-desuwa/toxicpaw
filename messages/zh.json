@@ -65,7 +65,11 @@
     "safe": "\u5b89\u5168",
     "caution": "\u6ce8\u610f",
     "harmful": "\u6709\u5bb3",
-    "unknown": "\u672a\u77e5"
+    "unknown": "\u672a\u77e5",
+    "ceremonyAriaLabel": "\u6b63\u5728\u5206\u6790\u5ba0\u7269\u7cae",
+    "ceremonyScan": "\u626b\u63cf\u914d\u6599\u8868\u2026",
+    "ceremonyExtract": "\u63d0\u53d6\u6210\u5206\u4e2d\u2026",
+    "ceremonyCategorize": "\u5206\u7c7b\u5b89\u5168\u6027\u2026"
   },
   "grade": {
     "A": "\u4f18\u79c0",

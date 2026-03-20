@@ -267,7 +267,7 @@
       "name": "Scan analysis ceremony",
       "description": "Replace spinner with multi-stage animation: (1) scan beam sweeps image, (2) ingredients fly out as text particles, (3) sort into safe/caution/harmful, (4) grade reveals with F032 animation. ~3.5s total. See docs/specs/visual-overhaul-spec.md.",
       "priority": 33,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F032"]
     },
     {

@@ -343,3 +343,22 @@
 - 14 new tests (493 total): grade letter rendering, CountUp score, grade label, accessible aria-label, badge/label containers, 3D flip initial/final states, bounce easing, label fade delay, glow-pulse animation, glow color per grade, all grades rendering, grade color classes
 - All 493 tests pass, lint clean, build succeeds (161 static pages)
 - Next action: F033
+
+## Session 30 (F033 - Scan Analysis Ceremony)
+- Created ScanCeremony component in src/components/analysis/ScanCeremony.tsx
+  - Multi-stage animation replacing the simple spinner during analysis
+  - Stage 1 (0-0.8s): Scan beam — glowing red line sweeps vertically over a dark scan area with grid lines and pulsing magnifier icon
+  - Stage 2 (0.8-2.0s): Ingredient extraction — ingredient names fly in as colored text particles (green/yellow/red dots) with staggered bounce easing
+  - Stage 3 (2.0-2.8s): Categorization — ingredients sort into three columns (Safe/Caution/Harmful) with column fade-in and per-item reveal
+  - Stage 4 (2.8-3.5s): Grade reveal — 3D flip badge + CountUp score + glow pulse (matches F032 AnimatedGradeBadge pattern)
+  - Total ceremony duration: ~3.8s → calls onComplete to transition to results
+- Added "ceremony" AppState between "analyzing" and "results" in useAppState.ts
+  - Flow: analyzing (OCR/analysis runs) → ceremony (animation plays with real data) → results (full AnalysisView)
+  - Added handleCeremonyComplete callback to transition ceremony → results
+- Smart ingredient selection: limits to 12 visible ingredients, prioritizes harmful → caution → safe → unknown for truncation
+- Added 4 i18n keys (en + zh): ceremonyAriaLabel, ceremonyScan, ceremonyExtract, ceremonyCategorize
+- Design decisions: (1) New component + new state vs overriding spinner — clean separation of concerns, keeps analyzing spinner as brief fallback for slow OCR, (2) ~3.8s total duration — long enough to feel premium, short enough not to annoy, (3) Ingredients prioritized by flag severity — harmful always visible even when truncating to 12, (4) AnimatePresence mode="wait" for clean stage transitions, (5) Grade reveal replicates F032 pattern but slightly smaller (h-28 w-28 vs h-32 w-32) to fit ceremony context
+- Updated useAppState tests for new ceremony state flow (3 tests updated)
+- 22 new tests (515 total): ceremony container/accessibility, all 4 stage transitions at correct timing, scan beam rendering, ingredient particle display, category columns with labels, grade letter/label/score/badge, 3D flip initial state, glow-pulse style, onComplete timing, timer cleanup on unmount, ingredient truncation limits, harmful ingredient priority
+- All 515 tests pass, lint clean, build succeeds (161 static pages)
+- Next action: F034

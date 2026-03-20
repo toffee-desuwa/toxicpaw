@@ -20,6 +20,7 @@ export type AppState =
   | "profile"
   | "scanning"
   | "analyzing"
+  | "ceremony"
   | "results"
   | "history"
   | "history-detail"
@@ -112,8 +113,12 @@ export function useAppState() {
       petProfile ?? undefined
     );
     setAnalysisResult(result);
-    setState("results");
+    setState("ceremony");
   }, [petProfile]);
+
+  const handleCeremonyComplete = useCallback(() => {
+    setState("results");
+  }, []);
 
   const handleSaveToHistory = useCallback(
     (foodName: string) => {
@@ -178,6 +183,7 @@ export function useAppState() {
     handlePersonalize,
     handleReset,
     handleImageConfirmed,
+    handleCeremonyComplete,
     handleSaveToHistory,
     handleOpenHistory,
     handleHistorySelect,

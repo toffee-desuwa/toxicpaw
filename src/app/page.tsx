@@ -1,7 +1,7 @@
 "use client";
 
 import { Scanner } from "@/components/scanner";
-import { AnalysisView } from "@/components/analysis";
+import { AnalysisView, ScanCeremony } from "@/components/analysis";
 import { PetProfileForm } from "@/components/profile";
 import { HistoryList, ComparisonView } from "@/components/history";
 import { LandingPage } from "@/components/landing";
@@ -25,6 +25,7 @@ export default function Home() {
     handlePersonalize,
     handleReset,
     handleImageConfirmed,
+    handleCeremonyComplete,
     handleSaveToHistory,
     handleOpenHistory,
     handleHistorySelect,
@@ -154,7 +155,12 @@ export default function Home() {
     );
   }
 
-  // Analyzing spinner
+  // Ceremony animation (after analysis completes)
+  if (state === "ceremony" && analysisResult) {
+    return <ScanCeremony result={analysisResult} onComplete={handleCeremonyComplete} />;
+  }
+
+  // Analyzing spinner (brief, while OCR + analysis runs)
   if (state === "analyzing") {
     return (
       <main className="flex min-h-dvh flex-col items-center justify-center px-4">

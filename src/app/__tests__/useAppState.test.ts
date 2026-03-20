@@ -75,7 +75,7 @@ describe("useAppState - Zero Friction Flow (F020)", () => {
     expect(result.current.state).toBe("scanning");
   });
 
-  it("handleImageConfirmed analyzes and goes to results", async () => {
+  it("handleImageConfirmed analyzes and goes to ceremony, then results", async () => {
     const parsed = makeParsedIngredients();
     const analysis = makeAnalysisResult();
 
@@ -96,8 +96,13 @@ describe("useAppState - Zero Friction Flow (F020)", () => {
       await result.current.handleImageConfirmed("data:image/png;base64,abc");
     });
 
-    expect(result.current.state).toBe("results");
+    // F033: analysis now goes to ceremony first
+    expect(result.current.state).toBe("ceremony");
     expect(result.current.analysisResult).toBe(analysis);
+
+    // Ceremony complete → results
+    act(() => result.current.handleCeremonyComplete());
+    expect(result.current.state).toBe("results");
   });
 
   it("handlePersonalize goes to profile from results", async () => {
@@ -119,6 +124,8 @@ describe("useAppState - Zero Friction Flow (F020)", () => {
     await act(async () => {
       await result.current.handleImageConfirmed("data:image/png;base64,abc");
     });
+    // Complete ceremony → results
+    act(() => result.current.handleCeremonyComplete());
     expect(result.current.state).toBe("results");
 
     // Personalize
@@ -151,6 +158,7 @@ describe("useAppState - Zero Friction Flow (F020)", () => {
     await act(async () => {
       await result.current.handleImageConfirmed("data:image/png;base64,abc");
     });
+    act(() => result.current.handleCeremonyComplete());
 
     // Go to profile
     act(() => result.current.handlePersonalize());
@@ -189,6 +197,7 @@ describe("useAppState - Zero Friction Flow (F020)", () => {
     await act(async () => {
       await result.current.handleImageConfirmed("data:image/png;base64,abc");
     });
+    act(() => result.current.handleCeremonyComplete());
 
     // Go to profile, then skip
     act(() => result.current.handlePersonalize());
@@ -221,10 +230,12 @@ describe("useAppState - Zero Friction Flow (F020)", () => {
     act(() => result.current.handleStartScan());
     expect(result.current.state).toBe("scanning");
 
-    // 2. Confirm image → analyzing → results
+    // 2. Confirm image → analyzing → ceremony → results
     await act(async () => {
       await result.current.handleImageConfirmed("data:image/png;base64,abc");
     });
+    expect(result.current.state).toBe("ceremony");
+    act(() => result.current.handleCeremonyComplete());
     expect(result.current.state).toBe("results");
     expect(result.current.analysisResult?.score).toBe(82);
 

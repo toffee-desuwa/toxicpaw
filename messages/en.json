@@ -65,7 +65,11 @@
     "safe": "Safe",
     "caution": "Caution",
     "harmful": "Harmful",
-    "unknown": "Unknown"
+    "unknown": "Unknown",
+    "ceremonyAriaLabel": "Analyzing your pet food",
+    "ceremonyScan": "Scanning ingredient label\u2026",
+    "ceremonyExtract": "Extracting ingredients\u2026",
+    "ceremonyCategorize": "Categorizing safety\u2026"
   },
   "grade": {
     "A": "Excellent",
