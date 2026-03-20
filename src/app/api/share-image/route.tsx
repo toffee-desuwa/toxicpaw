@@ -11,6 +11,7 @@
 
 import { ImageResponse } from "next/og";
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit } from "@/lib/rate-limit";
 import { getAnalyzedBrandBySlug } from "@/lib/brands";
 import {
   OG_WIDTH,
@@ -38,6 +39,13 @@ function getFormatAndSize(searchParams: URLSearchParams): {
 
 /** GET — generate share image for a known brand */
 export async function GET(request: NextRequest) {
+  if (!rateLimit(request, { limit: 60 }, "api-share-image")) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   const { searchParams } = request.nextUrl;
   const slug = searchParams.get("slug");
 
@@ -104,6 +112,13 @@ function isValidBody(body: unknown): body is ShareImageBody {
 
 /** POST — generate share image for arbitrary scan results */
 export async function POST(request: NextRequest) {
+  if (!rateLimit(request, { limit: 60 }, "api-share-image")) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   let body: unknown;
   try {
     body = await request.json();

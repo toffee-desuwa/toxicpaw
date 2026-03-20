@@ -9,8 +9,16 @@
 import { NextResponse } from "next/server";
 import { generateExplanation } from "@/lib/explainer";
 import type { ExplainRequest } from "@/lib/explainer/types";
+import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: Request): Promise<NextResponse> {
+  if (!rateLimit(request, { limit: 30 }, "api-explain")) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   try {
     const body = (await request.json()) as ExplainRequest;
 
@@ -36,8 +44,9 @@ export async function POST(request: Request): Promise<NextResponse> {
       );
     }
 
+    console.error("Explanation generation failed:", message);
     return NextResponse.json(
-      { error: `Explanation generation failed: ${message}` },
+      { error: "Explanation generation failed" },
       { status: 500 }
     );
   }
