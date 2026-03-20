@@ -328,3 +328,18 @@
 - 36 new tests (479 total): FadeIn (5), SlideUp (6), ScaleIn (6), StaggerChildren (6), CountUp (7), PageTransition (6)
 - All 479 tests pass, lint clean, build succeeds (161 static pages)
 - Next action: F032
+
+## Session 29 (F032 - Grade Reveal Animation)
+- Created AnimatedGradeBadge component in src/components/grade/AnimatedGradeBadge.tsx
+  - 3D flip reveal: rotateY(180→0) + scale(0.5→1) with overshoot easing, 0.7s duration
+  - Score counter: reuses CountUp motion component, 0.8s duration with 0.6s delay
+  - Grade label: fades in with slide-up (y:8→0) after 0.5s delay for staggered reveal
+  - Glow pulse: CSS @keyframes animation (box-shadow 20px→40px+60px) using CSS custom property --glow-color per grade
+- Added glow-pulse @keyframes to globals.css with grade-specific colors via CSS custom properties
+- Exported AnimatedGradeBadge from grade/index.ts
+- Applied AnimatedGradeBadge to BrandResultClient (/brand/[slug] pages) and AnalysisView (scan results)
+- Design decisions: (1) New component rather than modifying GradeBadge — preserves static badge for ranking mini badges, (2) Glow pulse starts at 0.8s delay to not compete with reveal animation, (3) Overshoot easing [0.34, 1.56, 0.64, 1] for bouncy feel matching F031 ScaleIn, (4) CountUp delay of 0.6s synced with label fade-in at 0.5s for natural sequence
+- Updated existing AnalysisView and BrandResultClient tests to mock AnimatedGradeBadge (avoids framer-motion dependency in non-animation tests)
+- 14 new tests (493 total): grade letter rendering, CountUp score, grade label, accessible aria-label, badge/label containers, 3D flip initial/final states, bounce easing, label fade delay, glow-pulse animation, glow color per grade, all grades rendering, grade color classes
+- All 493 tests pass, lint clean, build succeeds (161 static pages)
+- Next action: F033
