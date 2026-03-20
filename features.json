@@ -251,7 +251,7 @@
       "name": "Framer Motion + animation infrastructure",
       "description": "Install framer-motion. Create reusable animation wrappers: FadeIn, SlideUp, ScaleIn, StaggerChildren, CountUp, PageTransition. All in src/components/motion/. Must not break existing functionality. See docs/specs/visual-overhaul-spec.md for details.",
       "priority": 31,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F026"]
     },
     {

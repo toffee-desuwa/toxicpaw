@@ -313,3 +313,18 @@
 - Removed `output: "standalone"` — build now succeeds (161 static pages)
 - All 443 tests pass, lint clean, build succeeds
 - No backlog features remain (F027-F030 are deferred) — EXIT
+
+## Session 28 (F031 - Framer Motion + Animation Infrastructure)
+- Installed framer-motion package (v11+)
+- Created 6 reusable animation wrapper components in src/components/motion/:
+  - FadeIn: opacity 0→1 with configurable duration/delay
+  - SlideUp: translate-y + fade with configurable offset (default 24px)
+  - ScaleIn: scale + fade with spring-like easing (default 0.8→1)
+  - StaggerChildren: container with staggered child animations, exports staggerItemVariants for child elements
+  - CountUp: animated number counter using framer-motion animate(), supports custom formatter and delay
+  - PageTransition: AnimatePresence wrapper with fade+slide enter/exit for page-level transitions
+- Created barrel export in src/components/motion/index.ts
+- Design decisions: (1) All components are "use client" — animation requires browser APIs, (2) Custom prop via framer-motion variants for clean parameterization, (3) ScaleIn uses overshoot easing [0.34, 1.56, 0.64, 1] for bounce feel, (4) CountUp uses setTimeout for delay to avoid requestAnimationFrame in initial render, (5) Components are pure wrappers — no animation applied to existing components yet (that's F032-F036)
+- 36 new tests (479 total): FadeIn (5), SlideUp (6), ScaleIn (6), StaggerChildren (6), CountUp (7), PageTransition (6)
+- All 479 tests pass, lint clean, build succeeds (161 static pages)
+- Next action: F032
