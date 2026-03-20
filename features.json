@@ -245,54 +245,6 @@
       "status": "deferred",
       "dependencies": ["F026"],
       "notes": "Deferred — need traffic first. BaiFu path: virality → attention → monetization."
-    },
-    {
-      "id": "F031",
-      "name": "Framer Motion + animation infrastructure",
-      "description": "Install framer-motion. Create reusable animation wrappers: FadeIn, SlideUp, ScaleIn, StaggerChildren. Add page transition wrapper with AnimatePresence. All new animation components in src/components/motion/. Must not break existing functionality.",
-      "priority": 31,
-      "status": "backlog",
-      "dependencies": ["F026"]
-    },
-    {
-      "id": "F032",
-      "name": "Grade reveal animation",
-      "description": "Grade badge on brand/scan result pages: 3D flip reveal + scale bounce on mount. Score counter animates from 0 to final value (counting up effect). Grade label (优秀/较差) fades in after badge lands. The 'wow moment' — this is what people screenshot. Apply to both /brand/[slug] and scan result views.",
-      "priority": 32,
-      "status": "backlog",
-      "dependencies": ["F031"]
-    },
-    {
-      "id": "F033",
-      "name": "Scan analysis ceremony",
-      "description": "After photo capture, replace simple spinner with a multi-stage animation: (1) scanning beam sweeps across image, (2) ingredients fly out one by one as text particles, (3) ingredients sort into safe/caution/harmful columns, (4) grade reveals with F032 animation. Total duration ~3s. Use framer-motion orchestration with staggerChildren.",
-      "priority": 33,
-      "status": "backlog",
-      "dependencies": ["F032"]
-    },
-    {
-      "id": "F034",
-      "name": "Hero section visual overhaul",
-      "description": "Homepage hero redesign: (1) ToxicPaw title with animated gradient text (shifting red/orange/purple), (2) search bar with subtle glow/pulse border animation, (3) brand cards in ranking sections get hover lift + glow effect, (4) stats section numbers count up on scroll into view. Dark theme with accent glows. Must feel premium, not gimmicky.",
-      "priority": 34,
-      "status": "backlog",
-      "dependencies": ["F031"]
-    },
-    {
-      "id": "F035",
-      "name": "Share card visual upgrade",
-      "description": "Redesign server-side share image (both 1:1 and 16:9): gradient background (dark with colored accent matching grade), glassmorphism card effect, better typography hierarchy, prominent ToxicPaw branding with glow. The share image must make people ask 'what app is this?' when they see it on social media.",
-      "priority": 35,
-      "status": "backlog",
-      "dependencies": ["F031"]
-    },
-    {
-      "id": "F036",
-      "name": "Global micro-interactions + page transitions",
-      "description": "Polish pass: (1) page transitions with fade+slide via AnimatePresence, (2) button press animations (scale down on active), (3) ingredient list items stagger-animate on mount, (4) scroll-triggered fade-in for below-fold content, (5) search results dropdown animate in. Subtle, consistent, premium feel throughout.",
-      "priority": 36,
-      "status": "backlog",
-      "dependencies": ["F032", "F034"]
     }
   ]
 }
