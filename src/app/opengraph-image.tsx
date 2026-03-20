@@ -25,156 +25,197 @@ export default async function OgImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0a0a0a",
+          backgroundImage: "linear-gradient(145deg, #0c0a1d 0%, #0a0a0a 45%, #0d1117 100%)",
           padding: "40px 60px",
           fontFamily: "sans-serif",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
+        {/* Subtle ambient glow */}
         <div
           style={{
             display: "flex",
-            fontSize: 56,
-            fontWeight: 900,
-            color: "#f5f5f5",
-            marginBottom: "4px",
+            position: "absolute",
+            top: "0",
+            left: "50%",
+            width: "600px",
+            height: "300px",
+            borderRadius: "50%",
+            backgroundColor: "rgba(99, 102, 241, 0.06)",
+            boxShadow: "0 0 120px 60px rgba(99, 102, 241, 0.04)",
+            transform: "translateX(-50%)",
           }}
-        >
-          ToxicPaw
-        </div>
-        <div
-          style={{
-            display: "flex",
-            fontSize: 24,
-            color: "#a3a3a3",
-            marginBottom: "36px",
-          }}
-        >
-          AI-Powered Pet Food Safety Scanner
-        </div>
+        />
 
+        {/* Glass card */}
         <div
           style={{
             display: "flex",
-            gap: "60px",
+            flexDirection: "column",
+            alignItems: "center",
+            backgroundColor: "rgba(255, 255, 255, 0.04)",
+            border: "1px solid rgba(255, 255, 255, 0.08)",
+            borderRadius: "24px",
+            padding: "32px 48px",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05)",
             width: "100%",
-            maxWidth: "900px",
+            maxWidth: "1000px",
           }}
         >
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
-              flex: 1,
+              fontSize: 48,
+              fontWeight: 900,
+              color: "#f5f5f5",
+              marginBottom: "2px",
+              letterSpacing: "-0.02em",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                fontSize: 16,
-                color: "#10b981",
-                textTransform: "uppercase",
-                letterSpacing: "2px",
-                marginBottom: "12px",
-                fontWeight: 700,
-              }}
-            >
-              Best Rated
-            </div>
-            {best.map((b) => (
-              <div
-                key={b.slug}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  marginBottom: "10px",
-                  fontSize: 18,
-                }}
-              >
-                <div
-                  style={{
-                    width: "32px",
-                    height: "32px",
-                    borderRadius: "50%",
-                    backgroundColor: GRADE_HEX[b.analysis.grade],
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 16,
-                    fontWeight: 700,
-                    color: "#ffffff",
-                  }}
-                >
-                  {b.analysis.grade}
-                </div>
-                <span style={{ display: "flex", color: "#e5e5e5" }}>
-                  {`${b.brand} ${b.product}`}
-                </span>
-              </div>
-            ))}
+            ToxicPaw
+          </div>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 20,
+              color: "#737373",
+              marginBottom: "28px",
+              letterSpacing: "0.06em",
+            }}
+          >
+            AI-Powered Pet Food Safety Scanner
           </div>
 
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
-              flex: 1,
+              gap: "48px",
+              width: "100%",
             }}
           >
+            {/* Best column */}
             <div
               style={{
                 display: "flex",
-                fontSize: 16,
-                color: "#ef4444",
-                textTransform: "uppercase",
-                letterSpacing: "2px",
-                marginBottom: "12px",
-                fontWeight: 700,
+                flexDirection: "column",
+                flex: 1,
               }}
             >
-              Worst Rated
-            </div>
-            {worst.map((b) => (
               <div
-                key={b.slug}
                 style={{
                   display: "flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  marginBottom: "10px",
-                  fontSize: 18,
+                  fontSize: 13,
+                  color: "#10b981",
+                  textTransform: "uppercase",
+                  letterSpacing: "3px",
+                  marginBottom: "14px",
+                  fontWeight: 700,
                 }}
               >
+                Best Rated
+              </div>
+              {best.map((b) => (
                 <div
+                  key={b.slug}
                   style={{
-                    width: "32px",
-                    height: "32px",
-                    borderRadius: "50%",
-                    backgroundColor: GRADE_HEX[b.analysis.grade],
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 16,
-                    fontWeight: 700,
-                    color: "#ffffff",
+                    gap: "10px",
+                    marginBottom: "10px",
+                    fontSize: 17,
                   }}
                 >
-                  {b.analysis.grade}
+                  <div
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                      borderRadius: "50%",
+                      backgroundColor: GRADE_HEX[b.analysis.grade],
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 15,
+                      fontWeight: 700,
+                      color: "#ffffff",
+                      boxShadow: `0 0 12px ${GRADE_HEX[b.analysis.grade]}44`,
+                    }}
+                  >
+                    {b.analysis.grade}
+                  </div>
+                  <span style={{ display: "flex", color: "#d4d4d4" }}>
+                    {`${b.brand} ${b.product}`}
+                  </span>
                 </div>
-                <span style={{ display: "flex", color: "#e5e5e5" }}>
-                  {`${b.brand} ${b.product}`}
-                </span>
+              ))}
+            </div>
+
+            {/* Worst column */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flex: 1,
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  fontSize: 13,
+                  color: "#ef4444",
+                  textTransform: "uppercase",
+                  letterSpacing: "3px",
+                  marginBottom: "14px",
+                  fontWeight: 700,
+                }}
+              >
+                Worst Rated
               </div>
-            ))}
+              {worst.map((b) => (
+                <div
+                  key={b.slug}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    marginBottom: "10px",
+                    fontSize: 17,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                      borderRadius: "50%",
+                      backgroundColor: GRADE_HEX[b.analysis.grade],
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 15,
+                      fontWeight: 700,
+                      color: "#ffffff",
+                      boxShadow: `0 0 12px ${GRADE_HEX[b.analysis.grade]}44`,
+                    }}
+                  >
+                    {b.analysis.grade}
+                  </div>
+                  <span style={{ display: "flex", color: "#d4d4d4" }}>
+                    {`${b.brand} ${b.product}`}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
+        {/* Footer */}
         <div
           style={{
             display: "flex",
-            marginTop: "28px",
-            fontSize: 20,
-            color: "#737373",
+            marginTop: "20px",
+            fontSize: 17,
+            color: "#525252",
+            letterSpacing: "0.04em",
           }}
         >
           {`${brands.length} brands \u00b7 500+ ingredients \u00b7 Free & Open Source`}

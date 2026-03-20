@@ -283,7 +283,7 @@
       "name": "Share card visual upgrade",
       "description": "Redesign server-side share images: gradient background, glassmorphism card, grade-colored glow, better typography. Must make people ask 'what app is this?' See docs/specs/visual-overhaul-spec.md.",
       "priority": 35,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F031"]
     },
     {

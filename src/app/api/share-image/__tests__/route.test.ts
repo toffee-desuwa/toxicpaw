@@ -1,5 +1,5 @@
 /**
- * F025 - Share Image API Route Tests
+ * F035 - Share Image API Route Tests (updated for visual upgrade)
  *
  * Tests the share image generation logic. Since NextRequest requires the
  * Request global (unavailable in jsdom), we test the underlying modules
@@ -24,6 +24,48 @@ function makeSummary(overrides: Partial<AnalysisSummary> = {}): AnalysisSummary 
     concernPercentage: 10,
     ...overrides,
   };
+}
+
+function makeData(overrides: Partial<ShareImageData> = {}): ShareImageData {
+  return {
+    grade: "B" as Grade,
+    score: 78,
+    summary: makeSummary(),
+    verdict: "Good quality food.",
+    foodName: "My Pet Food",
+    harmfulNames: ["BHA", "BHT"],
+    safeNames: ["Chicken", "Rice"],
+    ...overrides,
+  };
+}
+
+/** Recursively extract all style objects from JSX tree, resolving function components */
+function collectStyles(element: React.ReactElement): Record<string, unknown>[] {
+  const styles: Record<string, unknown>[] = [];
+
+  // If this is a function component, call it to get rendered output
+  if (typeof element?.type === "function") {
+    const rendered = (element.type as (props: Record<string, unknown>) => React.ReactElement)(element.props);
+    if (rendered && typeof rendered === "object" && "props" in rendered) {
+      return collectStyles(rendered);
+    }
+    return styles;
+  }
+
+  if (element?.props?.style) {
+    styles.push(element.props.style as Record<string, unknown>);
+  }
+  if (element?.props?.children) {
+    const children = Array.isArray(element.props.children)
+      ? element.props.children
+      : [element.props.children];
+    for (const child of children) {
+      if (child && typeof child === "object" && "props" in child) {
+        styles.push(...collectStyles(child as React.ReactElement));
+      }
+    }
+  }
+  return styles;
 }
 
 describe("Share Image API — integration", () => {
@@ -98,28 +140,13 @@ describe("Share Image API — integration", () => {
 
   describe("scan result share image generation", () => {
     it("generates share image for scan result data", () => {
-      const data: ShareImageData = {
-        grade: "B" as Grade,
-        score: 78,
-        summary: makeSummary(),
-        verdict: "Good quality food.",
-        foodName: "My Pet Food",
-        harmfulNames: ["BHA", "BHT"],
-        safeNames: ["Chicken", "Rice"],
-      };
-
+      const data = makeData();
       expect(buildShareImage(data, "og")).toBeDefined();
       expect(buildShareImage(data, "square")).toBeDefined();
     });
 
     it("handles empty food name", () => {
-      const data: ShareImageData = {
-        grade: "A" as Grade,
-        score: 95,
-        summary: makeSummary({ harmfulCount: 0 }),
-        verdict: "Excellent food.",
-      };
-
+      const data = makeData({ foodName: undefined, harmfulNames: undefined, safeNames: undefined });
       expect(buildShareImage(data, "og")).toBeDefined();
       expect(buildShareImage(data, "square")).toBeDefined();
     });
@@ -127,12 +154,7 @@ describe("Share Image API — integration", () => {
     it("handles all grade values", () => {
       const grades: Grade[] = ["A", "B", "C", "D", "F"];
       for (const grade of grades) {
-        const data: ShareImageData = {
-          grade,
-          score: 50,
-          summary: makeSummary(),
-          verdict: "Test verdict",
-        };
+        const data = makeData({ grade });
         expect(buildShareImage(data, "og")).toBeDefined();
         expect(buildShareImage(data, "square")).toBeDefined();
       }
@@ -157,6 +179,81 @@ describe("Share Image API — integration", () => {
       for (const grade of grades) {
         expect(GRADE_HEX[grade]).toMatch(/^#[0-9a-f]{6}$/);
       }
+    });
+  });
+
+  describe("F035 visual upgrade — gradient background", () => {
+    it("OG image root uses gradient backgroundImage", () => {
+      const image = buildShareImage(makeData(), "og");
+      const rootStyle = image.props.style as Record<string, unknown>;
+      expect(rootStyle.backgroundImage).toMatch(/linear-gradient/);
+    });
+
+    it("square image root uses gradient backgroundImage", () => {
+      const image = buildShareImage(makeData(), "square");
+      const rootStyle = image.props.style as Record<string, unknown>;
+      expect(rootStyle.backgroundImage).toMatch(/linear-gradient/);
+    });
+  });
+
+  describe("F035 visual upgrade — glassmorphism card", () => {
+    it("OG image contains a glass card with semi-transparent background", () => {
+      const image = buildShareImage(makeData(), "og");
+      const styles = collectStyles(image);
+      const glassCard = styles.find(
+        (s) => typeof s.backgroundColor === "string" && s.backgroundColor.startsWith("rgba(255")
+      );
+      expect(glassCard).toBeDefined();
+      expect(glassCard?.borderRadius).toBe("24px");
+      expect(glassCard?.border).toMatch(/rgba\(255/);
+    });
+
+    it("square image contains a glass card with semi-transparent background", () => {
+      const image = buildShareImage(makeData(), "square");
+      const styles = collectStyles(image);
+      const glassCard = styles.find(
+        (s) => typeof s.backgroundColor === "string" && s.backgroundColor.startsWith("rgba(255")
+      );
+      expect(glassCard).toBeDefined();
+      expect(glassCard?.borderRadius).toBe("24px");
+    });
+  });
+
+  describe("F035 visual upgrade — grade-colored glow", () => {
+    it("grade circle has multi-layer box-shadow for each grade", () => {
+      const grades: Grade[] = ["A", "B", "C", "D", "F"];
+      for (const grade of grades) {
+        const image = buildShareImage(makeData({ grade }), "og");
+        const styles = collectStyles(image);
+        const gradeCircle = styles.find(
+          (s) => s.backgroundColor === GRADE_HEX[grade] && typeof s.boxShadow === "string"
+        );
+        expect(gradeCircle).toBeDefined();
+        // Multi-layer shadow (at least 2 shadow layers separated by commas)
+        const shadow = gradeCircle?.boxShadow as string;
+        expect(shadow.split(",").length).toBeGreaterThanOrEqual(2);
+      }
+    });
+
+    it("ambient glow element exists behind card", () => {
+      const image = buildShareImage(makeData(), "og");
+      const styles = collectStyles(image);
+      const ambientGlow = styles.find(
+        (s) => s.position === "absolute" && s.borderRadius === "50%" && typeof s.boxShadow === "string"
+      );
+      expect(ambientGlow).toBeDefined();
+    });
+  });
+
+  describe("F035 visual upgrade — stat pills", () => {
+    it("stat indicators use pill-shaped containers with borders", () => {
+      const image = buildShareImage(makeData(), "og");
+      const styles = collectStyles(image);
+      const pills = styles.filter(
+        (s) => s.borderRadius === "20px" && typeof s.border === "string"
+      );
+      // 3 stat pills: harmful, caution, safe
+      expect(pills.length).toBe(3);
     });
   });
 });

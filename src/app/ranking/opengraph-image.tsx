@@ -29,131 +29,172 @@ export default async function OgImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0a0a0a",
-          padding: "40px 60px",
+          backgroundImage: "linear-gradient(145deg, #0c0a1d 0%, #0a0a0a 45%, #0d1117 100%)",
+          padding: "36px 60px",
           fontFamily: "sans-serif",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
+        {/* Subtle ambient glow */}
         <div
           style={{
             display: "flex",
-            fontSize: 48,
-            fontWeight: 900,
-            color: "#f5f5f5",
-            marginBottom: "8px",
+            position: "absolute",
+            top: "-100px",
+            left: "50%",
+            width: "700px",
+            height: "350px",
+            borderRadius: "50%",
+            backgroundColor: "rgba(99, 102, 241, 0.05)",
+            boxShadow: "0 0 140px 70px rgba(99, 102, 241, 0.03)",
+            transform: "translateX(-50%)",
           }}
-        >
-          Pet Food Safety Rankings
-        </div>
-        <div
-          style={{
-            display: "flex",
-            fontSize: 28,
-            color: "#a3a3a3",
-            marginBottom: "32px",
-          }}
-        >
-          {`${brands.length} brands analyzed by ToxicPaw`}
-        </div>
+        />
 
-        <div
-          style={{
-            display: "flex",
-            gap: "24px",
-            marginBottom: "36px",
-          }}
-        >
-          {(["A", "B", "C", "D", "F"] as Grade[]).map((g) => (
-            <div
-              key={g}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "8px",
-              }}
-            >
-              <div
-                style={{
-                  width: "64px",
-                  height: "64px",
-                  borderRadius: "50%",
-                  backgroundColor: GRADE_HEX[g],
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 32,
-                  fontWeight: 900,
-                  color: "#ffffff",
-                }}
-              >
-                {g}
-              </div>
-              <span style={{ display: "flex", fontSize: 20, color: "#d4d4d4" }}>
-                {String(gradeCount[g])}
-              </span>
-            </div>
-          ))}
-        </div>
-
+        {/* Glass card */}
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "8px",
+            alignItems: "center",
+            backgroundColor: "rgba(255, 255, 255, 0.04)",
+            border: "1px solid rgba(255, 255, 255, 0.08)",
+            borderRadius: "24px",
+            padding: "28px 40px",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05)",
             width: "100%",
-            maxWidth: "800px",
+            maxWidth: "1000px",
           }}
         >
           <div
             style={{
               display: "flex",
-              fontSize: 18,
-              color: "#737373",
-              textTransform: "uppercase",
-              letterSpacing: "2px",
+              fontSize: 40,
+              fontWeight: 900,
+              color: "#f5f5f5",
               marginBottom: "4px",
+              letterSpacing: "-0.02em",
             }}
           >
-            Top Rated
+            Pet Food Safety Rankings
           </div>
-          {topBrands.map((b, i) => (
-            <div
-              key={b.slug}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "12px",
-                fontSize: 20,
-              }}
-            >
-              <span style={{ display: "flex", color: "#737373", width: "24px" }}>
-                {`${i + 1}.`}
-              </span>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 20,
+              color: "#737373",
+              marginBottom: "24px",
+              letterSpacing: "0.04em",
+            }}
+          >
+            {`${brands.length} brands analyzed by ToxicPaw`}
+          </div>
+
+          {/* Grade distribution */}
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              marginBottom: "24px",
+            }}
+          >
+            {(["A", "B", "C", "D", "F"] as Grade[]).map((g) => (
               <div
+                key={g}
                 style={{
-                  width: "32px",
-                  height: "32px",
-                  borderRadius: "50%",
-                  backgroundColor: GRADE_HEX[b.analysis.grade],
                   display: "flex",
+                  flexDirection: "column",
                   alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 16,
-                  fontWeight: 700,
-                  color: "#ffffff",
+                  gap: "6px",
                 }}
               >
-                {b.analysis.grade}
+                <div
+                  style={{
+                    width: "52px",
+                    height: "52px",
+                    borderRadius: "50%",
+                    backgroundColor: GRADE_HEX[g],
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 26,
+                    fontWeight: 900,
+                    color: "#ffffff",
+                    boxShadow: `0 0 16px ${GRADE_HEX[g]}44`,
+                  }}
+                >
+                  {g}
+                </div>
+                <span style={{ display: "flex", fontSize: 18, color: "#a3a3a3", fontWeight: 600 }}>
+                  {String(gradeCount[g])}
+                </span>
               </div>
-              <span style={{ display: "flex", color: "#e5e5e5" }}>
-                {`${b.brand} ${b.product}`}
-              </span>
-              <span style={{ display: "flex", color: "#737373", marginLeft: "auto" }}>
-                {`${b.analysis.score}/100`}
-              </span>
+            ))}
+          </div>
+
+          {/* Top brands */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "6px",
+              width: "100%",
+              maxWidth: "750px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                fontSize: 12,
+                color: "#525252",
+                textTransform: "uppercase",
+                letterSpacing: "3px",
+                marginBottom: "4px",
+              }}
+            >
+              Top Rated
             </div>
-          ))}
+            {topBrands.map((b, i) => (
+              <div
+                key={b.slug}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  fontSize: 18,
+                  padding: "4px 0",
+                }}
+              >
+                <span style={{ display: "flex", color: "#525252", width: "22px", fontSize: 15, fontWeight: 600 }}>
+                  {`${i + 1}.`}
+                </span>
+                <div
+                  style={{
+                    width: "28px",
+                    height: "28px",
+                    borderRadius: "50%",
+                    backgroundColor: GRADE_HEX[b.analysis.grade],
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: "#ffffff",
+                    boxShadow: `0 0 8px ${GRADE_HEX[b.analysis.grade]}33`,
+                  }}
+                >
+                  {b.analysis.grade}
+                </div>
+                <span style={{ display: "flex", color: "#d4d4d4", fontWeight: 500 }}>
+                  {`${b.brand} ${b.product}`}
+                </span>
+                <span style={{ display: "flex", color: "#525252", marginLeft: "auto", fontSize: 16, fontWeight: 600 }}>
+                  {`${b.analysis.score}/100`}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     ),

@@ -374,3 +374,14 @@
 - 10 new tests (525 total): gradient class on title, search glow on idle, glow removal on focus, glow removal on input, brand card hover lift classes, brand card shadow glow classes, trust signals testid, accent glow accessibility, button press scale, container positioning
 - All 525 tests pass, lint clean, build succeeds (161 static pages)
 - Next action: F035
+
+## Session 31 (F035 - Share card visual upgrade)
+- Redesigned all 4 server-side share image generators with premium visual treatment
+- **share-image.tsx** (OG + square formats): gradient background, glassmorphism card container, grade-colored ambient glow, StatPill components with glow dots, enhanced typography hierarchy
+- **opengraph-image.tsx** (homepage): glass card with best/worst brand columns, subtle indigo ambient glow, grade badge glow shadows
+- **brand/[slug]/opengraph-image.tsx**: grade-specific ambient glow behind glass card, multi-layer box-shadow on grade circle, refined stat pills with colored borders
+- **ranking/opengraph-image.tsx**: glass card with grade distribution + top brands, indigo ambient glow, polished typography spacing
+- Design decisions: (1) Gradient background via `linear-gradient(145deg, #0c0a1d, #0a0a0a, #0d1117)` — deep navy-to-dark shift vs flat black for depth, (2) Glassmorphism simulated via `rgba(255,255,255,0.04)` bg + `rgba(255,255,255,0.08)` border + inset highlight shadow — Satori doesn't support backdrop-filter so layered transparency is the approach, (3) GRADE_GLOW map (brighter variants) for radiant effect separate from GRADE_HEX badge colors, (4) StatPill components replace plain StatDot — pill shape with colored bg/border + glow dot for premium feel, (5) Score display simplified from "Score: X / 100" to "X / 100" — cleaner typography
+- 7 new visual upgrade tests: gradient backgroundImage on root, glass card rgba detection, multi-layer box-shadow on grade circle, ambient glow element, stat pill containers; updated collectStyles to resolve function components
+- All 532 tests pass, lint clean, build succeeds (161 static pages)
+- Next action: F036

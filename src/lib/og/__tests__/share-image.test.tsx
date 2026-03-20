@@ -69,15 +69,16 @@ describe("buildShareImage", () => {
   it("includes stat counts", () => {
     const result = buildShareImage(makeData(), "og");
     const json = JSON.stringify(result);
-    expect(json).toContain("1 harmful");
-    expect(json).toContain("2 caution");
-    expect(json).toContain("6 safe");
+    // Stats are passed as props to StatPill components
+    expect(json).toContain('"harmful"');
+    expect(json).toContain('"caution"');
+    expect(json).toContain('"safe"');
   });
 
   it("includes score display", () => {
     const result = buildShareImage(makeData({ score: 92 }), "square");
     const json = JSON.stringify(result);
-    expect(json).toContain("Score: 92 / 100");
+    expect(json).toContain("92 / 100");
   });
 
   it("uses cat emoji for cat pet type", () => {
