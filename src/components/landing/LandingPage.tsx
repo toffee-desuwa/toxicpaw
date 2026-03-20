@@ -1,25 +1,51 @@
 /**
- * F017 - Demo-first Homepage (i18n F019)
+ * F017 - Demo-first Homepage (i18n F019, visual overhaul F034)
  *
- * Replaces the F011 marketing landing page with a demo-first homepage
- * that shows real brand data immediately. Users see value in 3 seconds
- * without clicking anything: top 5 best brands, top 5 worst brands,
- * a search bar, and scan CTA.
+ * Demo-first homepage with brand data, search, and scan CTA.
+ * F034 adds: animated gradient title, search bar glow pulse,
+ * brand card hover lift+glow, stats CountUp on scroll, accent glows.
  */
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import Link from "next/link";
 import { getAllAnalyzedBrands, searchBrands, getBrandGrade, getPetEmoji } from "@/lib/brands";
 import type { AnalyzedBrand } from "@/lib/brands/types";
 import type { Grade } from "@/lib/analyzer/types";
 import { GRADE_COLORS, GRADE_TEXT_COLORS } from "@/lib/grade";
 import { useTranslation } from "@/lib/i18n";
+import { CountUp } from "@/components/motion";
 
 interface LandingPageProps {
   onStartScan: () => void;
   onViewHistory: () => void;
+}
+
+/** Returns [ref, inView]. In environments without IntersectionObserver (JSDOM), inView is true immediately. */
+function useInView(threshold = 0.3) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [inView, setInView] = useState(
+    () => typeof IntersectionObserver === "undefined"
+  );
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return [ref, inView] as const;
 }
 
 function MiniGradeBadge({ grade }: { grade: Grade }) {
@@ -37,7 +63,7 @@ function BrandListItem({ brand }: { brand: AnalyzedBrand }) {
   return (
     <Link
       href={`/brand/${brand.slug}`}
-      className="flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/50 px-4 py-3 transition-colors hover:border-neutral-600 hover:bg-neutral-800/50"
+      className="flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/50 px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-neutral-600 hover:bg-neutral-800/50 hover:shadow-lg hover:shadow-red-500/5"
     >
       <MiniGradeBadge grade={brand.analysis.grade} />
       <div className="min-w-0 flex-1">
@@ -57,8 +83,11 @@ function BrandListItem({ brand }: { brand: AnalyzedBrand }) {
 
 export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
   const [query, setQuery] = useState("");
+  const [searchFocused, setSearchFocused] = useState(false);
   const { t } = useTranslation("landing");
   const { t: tc } = useTranslation("common");
+  const [trustRef, trustInView] = useInView(0.3);
+  const supportsIO = typeof IntersectionObserver !== "undefined";
 
   const allAnalyzed = useMemo(() => getAllAnalyzedBrands(), []);
 
@@ -82,18 +111,30 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
   const showSearch = query.trim().length > 0;
 
   const trustItems = [
-    { stat: t("trustIngredients"), label: t("trustIngredientsLabel") },
+    { stat: t("trustIngredients"), label: t("trustIngredientsLabel"), countTo: 500, suffix: "+" },
     { stat: t("trustGrades"), label: t("trustGradesLabel") },
-    { stat: t("trustLanguages"), label: t("trustLanguagesLabel") },
+    { stat: t("trustLanguages"), label: t("trustLanguagesLabel"), countTo: 2 },
     { stat: t("trustFree"), label: t("trustFreeLabel") },
   ];
 
   return (
-    <div className="mx-auto max-w-md px-4">
+    <div className="relative mx-auto max-w-md px-4">
+      {/* F034: Background accent glows */}
+      <div
+        className="pointer-events-none absolute top-4 left-8 h-40 w-40 rounded-full bg-red-500/10 blur-[100px]"
+        aria-hidden="true"
+        data-testid="accent-glow"
+      />
+      <div
+        className="pointer-events-none absolute top-[480px] right-8 h-32 w-32 rounded-full bg-orange-500/10 blur-[80px]"
+        aria-hidden="true"
+        data-testid="accent-glow"
+      />
+
       {/* Compact Hero */}
       <section className="pt-12 pb-6 text-center">
         <h1 className="text-4xl font-black tracking-tight">
-          Toxic<span className="text-red-500">Paw</span>
+          Toxic<span className="hero-gradient-text">Paw</span>
         </h1>
         <p className="mt-2 text-sm text-neutral-400">
           {t("tagline")}
@@ -107,9 +148,13 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onFocus={() => setSearchFocused(true)}
+            onBlur={() => setSearchFocused(false)}
             placeholder={t("searchPlaceholder")}
             aria-label={t("searchPlaceholder")}
-            className="w-full rounded-2xl border border-neutral-700 bg-neutral-900 px-5 py-4 pl-12 text-base text-neutral-100 placeholder-neutral-500 outline-none transition-colors focus:border-red-500/50 focus:ring-1 focus:ring-red-500/30"
+            className={`w-full rounded-2xl border border-neutral-700 bg-neutral-900 px-5 py-4 pl-12 text-base text-neutral-100 placeholder-neutral-500 outline-none transition-colors focus:border-red-500/50 focus:ring-1 focus:ring-red-500/30 ${
+              !searchFocused && !showSearch ? "search-glow" : ""
+            }`}
             data-testid="brand-search-input"
           />
           <svg
@@ -143,7 +188,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
                     <li key={brand.slug}>
                       <Link
                         href={`/brand/${brand.slug}`}
-                        className="flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/50 px-4 py-3 transition-colors hover:border-neutral-600 hover:bg-neutral-800/50"
+                        className="flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/50 px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-neutral-600 hover:bg-neutral-800/50 hover:shadow-lg hover:shadow-red-500/5"
                       >
                         <MiniGradeBadge grade={grade} />
                         <div className="min-w-0 flex-1">
@@ -218,14 +263,33 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
       </section>
 
       {/* Trust Signals */}
-      <section className="py-10">
+      <section className="py-10" ref={trustRef} data-testid="trust-signals">
         <div className="grid grid-cols-2 gap-3">
           {trustItems.map((item) => (
             <div
               key={item.label}
               className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 text-center"
             >
-              <p className="text-2xl font-bold text-red-400">{item.stat}</p>
+              {item.countTo !== undefined && supportsIO ? (
+                trustInView ? (
+                  <CountUp
+                    to={item.countTo}
+                    duration={1.2}
+                    formatter={
+                      item.suffix
+                        ? (v: number) => `${v}${item.suffix}`
+                        : undefined
+                    }
+                    className="text-2xl font-bold text-red-400"
+                  />
+                ) : (
+                  <p className="text-2xl font-bold text-red-400">
+                    0{item.suffix || ""}
+                  </p>
+                )
+              ) : (
+                <p className="text-2xl font-bold text-red-400">{item.stat}</p>
+              )}
               <p className="mt-1.5 text-xs font-medium text-neutral-500">
                 {item.label}
               </p>

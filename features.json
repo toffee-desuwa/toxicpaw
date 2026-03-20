@@ -275,7 +275,7 @@
       "name": "Hero section visual overhaul",
       "description": "Homepage hero: animated gradient text title, search bar glow/pulse border, brand cards hover lift+glow, stats CountUp on scroll. Dark theme with accent glows. See docs/specs/visual-overhaul-spec.md.",
       "priority": 34,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F031"]
     },
     {

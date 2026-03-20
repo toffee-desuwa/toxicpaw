@@ -195,3 +195,86 @@ describe("LandingPage (F017 - Demo-first)", () => {
     expect(defaultProps.onStartScan).toHaveBeenCalledTimes(1);
   });
 });
+
+// ---- F034: Hero section visual overhaul ----
+describe("F034 - Hero visual overhaul", () => {
+  const defaultProps = {
+    onStartScan: jest.fn(),
+    onViewHistory: jest.fn(),
+  };
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it("title Paw has animated gradient class", () => {
+    render(<LandingPage {...defaultProps} />);
+    const paw = screen.getByText("Paw");
+    expect(paw).toHaveClass("hero-gradient-text");
+  });
+
+  it("search bar has glow animation when idle", () => {
+    render(<LandingPage {...defaultProps} />);
+    const input = screen.getByTestId("brand-search-input");
+    expect(input).toHaveClass("search-glow");
+  });
+
+  it("search bar loses glow on focus", () => {
+    render(<LandingPage {...defaultProps} />);
+    const input = screen.getByTestId("brand-search-input");
+    fireEvent.focus(input);
+    expect(input).not.toHaveClass("search-glow");
+  });
+
+  it("search bar loses glow when query entered", () => {
+    render(<LandingPage {...defaultProps} />);
+    const input = screen.getByTestId("brand-search-input");
+    fireEvent.change(input, { target: { value: "test" } });
+    expect(input).not.toHaveClass("search-glow");
+  });
+
+  it("brand cards have hover lift classes", () => {
+    render(<LandingPage {...defaultProps} />);
+    const bestSection = screen.getByTestId("best-brands");
+    const firstLink = bestSection.querySelector("a[href^='/brand/']");
+    expect(firstLink).toHaveClass("hover:scale-[1.02]");
+    expect(firstLink).toHaveClass("hover:-translate-y-0.5");
+  });
+
+  it("brand cards have shadow glow on hover", () => {
+    render(<LandingPage {...defaultProps} />);
+    const worstSection = screen.getByTestId("worst-brands");
+    const firstLink = worstSection.querySelector("a[href^='/brand/']");
+    expect(firstLink).toHaveClass("hover:shadow-lg");
+    expect(firstLink).toHaveClass("hover:shadow-red-500/5");
+  });
+
+  it("trust signals section has data-testid", () => {
+    render(<LandingPage {...defaultProps} />);
+    expect(screen.getByTestId("trust-signals")).toBeInTheDocument();
+  });
+
+  it("background accent glows are rendered and accessible", () => {
+    render(<LandingPage {...defaultProps} />);
+    const glows = screen.getAllByTestId("accent-glow");
+    expect(glows.length).toBe(2);
+    glows.forEach((glow) => {
+      expect(glow).toHaveAttribute("aria-hidden", "true");
+      expect(glow).toHaveClass("pointer-events-none");
+    });
+  });
+
+  it("scan buttons have press scale effect", () => {
+    render(<LandingPage {...defaultProps} />);
+    const heroBtn = screen.getByTestId("hero-scan-button");
+    const bottomBtn = screen.getByTestId("bottom-scan-button");
+    expect(heroBtn).toHaveClass("active:scale-[0.97]");
+    expect(bottomBtn).toHaveClass("active:scale-[0.97]");
+  });
+
+  it("main container is positioned for accent glows", () => {
+    render(<LandingPage {...defaultProps} />);
+    const container = screen.getByTestId("trust-signals").closest(".relative");
+    expect(container).toBeInTheDocument();
+  });
+});

@@ -362,3 +362,15 @@
 - 22 new tests (515 total): ceremony container/accessibility, all 4 stage transitions at correct timing, scan beam rendering, ingredient particle display, category columns with labels, grade letter/label/score/badge, 3D flip initial state, glow-pulse style, onComplete timing, timer cleanup on unmount, ingredient truncation limits, harmful ingredient priority
 - All 515 tests pass, lint clean, build succeeds (161 static pages)
 - Next action: F034
+
+## Session 31 (F034 - Hero Section Visual Overhaul)
+- Added animated gradient text effect to title "Paw" span via CSS `background-clip: text` with shifting red→orange gradient (`hero-gradient-text` class, 3s cycle)
+- Added search bar idle glow pulse animation (`search-glow` class, 3s cycle) — stops on focus or when typing
+- Enhanced brand card hover with lift+glow: `hover:scale-[1.02]`, `hover:-translate-y-0.5`, `hover:shadow-lg hover:shadow-red-500/5` with 200ms transition
+- Added scan button press scale: `active:scale-[0.97]` on both hero and bottom scan CTAs
+- Added CountUp on scroll for numeric trust stats (500+ ingredients, 2 languages) using IntersectionObserver + existing CountUp component — gracefully degrades in JSDOM (renders static text)
+- Added 2 decorative background accent glows (red and orange blurred circles) with `pointer-events-none` and `aria-hidden`
+- Design decisions: (1) Pure CSS for repeating animations (gradient shift, glow pulse) vs Framer Motion — simpler, no JS runtime cost for continuous effects, (2) Tailwind hover classes over Framer Motion whileHover — lighter, consistent with existing patterns, (3) IntersectionObserver with JSDOM fallback — `useState(() => typeof IO === "undefined")` makes initial state true in tests so CountUp is never rendered in JSDOM (no framer-motion mock needed), (4) Glow elements use large blur radius within container bounds to avoid horizontal scroll, (5) Kept scope to exactly what F034 specifies — no entrance animations or stagger (that's F036)
+- 10 new tests (525 total): gradient class on title, search glow on idle, glow removal on focus, glow removal on input, brand card hover lift classes, brand card shadow glow classes, trust signals testid, accent glow accessibility, button press scale, container positioning
+- All 525 tests pass, lint clean, build succeeds (161 static pages)
+- Next action: F035
