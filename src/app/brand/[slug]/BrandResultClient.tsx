@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { AnalyzedBrand } from "@/lib/brands/types";
-import { GradeBadge } from "@/components/grade";
+import { AnimatedGradeBadge } from "@/components/grade";
 import { IngredientList } from "@/components/analysis/IngredientList";
 import { SummaryBar } from "@/components/analysis/SummaryBar";
 import { ShareButton } from "@/components/sharing";
@@ -49,7 +49,7 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
         </div>
 
         {/* Grade Badge */}
-        <GradeBadge grade={analysis.grade} score={analysis.score} />
+        <AnimatedGradeBadge grade={analysis.grade} score={analysis.score} />
 
         {/* Verdict */}
         <p

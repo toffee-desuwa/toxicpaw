@@ -10,7 +10,7 @@
 import { useState, useEffect } from "react";
 import type { AnalysisResult } from "@/lib/analyzer/types";
 import type { ExplainRequest, ExplainIngredient } from "@/lib/explainer/types";
-import { GradeBadge } from "@/components/grade";
+import { AnimatedGradeBadge } from "@/components/grade";
 import { ShareButton } from "@/components/sharing";
 import { useTranslation } from "@/lib/i18n";
 import { IngredientList } from "./IngredientList";
@@ -93,7 +93,7 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, onPersona
   return (
     <div className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 py-10">
       {/* Grade Badge */}
-      <GradeBadge grade={result.grade} score={result.score} />
+      <AnimatedGradeBadge grade={result.grade} score={result.score} />
 
       {/* Verdict */}
       <p

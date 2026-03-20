@@ -70,6 +70,17 @@ textarea {
   font-size: 16px;
 }
 
+/* Glow pulse animation for animated grade badge (F032) */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--glow-color, rgba(255, 255, 255, 0.2));
+  }
+  50% {
+    box-shadow: 0 0 40px var(--glow-color, rgba(255, 255, 255, 0.2)),
+                0 0 60px var(--glow-color, rgba(255, 255, 255, 0.1));
+  }
+}
+
 /* Global focus-visible ring for keyboard navigation */
 button:focus-visible,
 a:focus-visible,

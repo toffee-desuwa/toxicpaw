@@ -259,7 +259,7 @@
       "name": "Grade reveal animation",
       "description": "Grade badge: 3D flip reveal + scale bounce on mount. Score counter animates 0 to final value. Grade label fades in after badge. Background glow pulse matching grade color. Apply to GradeBadge in /brand/[slug] and scan result. See docs/specs/visual-overhaul-spec.md.",
       "priority": 32,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F031"]
     },
     {

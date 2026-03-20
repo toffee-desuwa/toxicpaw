@@ -32,6 +32,16 @@ jest.mock("@/components/sharing", () => ({
   ShareCard: () => null,
 }));
 
+// Mock AnimatedGradeBadge to avoid framer-motion in non-animation tests
+jest.mock("@/components/grade", () => ({
+  AnimatedGradeBadge: ({ grade, score }: { grade: string; score: number }) => (
+    <div>
+      <div role="img" aria-label={`Grade ${grade}`}><span>{grade}</span></div>
+      <p>Score: {score}/100</p>
+    </div>
+  ),
+}));
+
 // Get a real analyzed brand for testing
 function getTestBrand() {
   const brand = getAnalyzedBrandBySlug("orijen-original-dog");

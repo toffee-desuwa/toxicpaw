@@ -9,6 +9,16 @@ jest.mock("@/components/sharing", () => ({
   ShareButton: () => <button data-testid="share-button">Share Result</button>,
 }));
 
+// Mock AnimatedGradeBadge to avoid framer-motion in non-animation tests
+jest.mock("@/components/grade", () => ({
+  AnimatedGradeBadge: ({ grade, score }: { grade: string; score: number }) => (
+    <div>
+      <div role="img" aria-label={`Grade ${grade}: Good`}><span>{grade}</span></div>
+      <p>Score: {score}/100</p>
+    </div>
+  ),
+}));
+
 // Mock fetch for AI explanation
 const mockFetch = jest.fn();
 global.fetch = mockFetch;
