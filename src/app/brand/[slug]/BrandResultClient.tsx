@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import type { AnalyzedBrand } from "@/lib/brands/types";
 import { AnimatedGradeBadge } from "@/components/grade";
 import { IngredientList } from "@/components/analysis/IngredientList";
@@ -11,6 +12,15 @@ import { useTranslation } from "@/lib/i18n";
 interface BrandResultClientProps {
   brand: AnalyzedBrand;
 }
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay, ease: "easeOut" as const },
+  }),
+};
 
 export function BrandResultClient({ brand }: BrandResultClientProps) {
   const { analysis } = brand;
@@ -40,36 +50,74 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
         </Link>
 
         {/* Brand Header */}
-        <div className="text-center" data-testid="brand-header">
+        <motion.div
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          custom={0}
+          className="text-center"
+          data-testid="brand-header"
+        >
           <h1 className="text-xl font-bold text-neutral-100">{displayName}</h1>
           <p className="mt-1 text-sm text-neutral-400">{displayNameCn}</p>
           <p className="mt-1 text-xs text-neutral-600">
             {brand.petType === "cat" ? tb("catFood") : tb("dogFood")}
           </p>
-        </div>
+        </motion.div>
 
         {/* Grade Badge */}
         <AnimatedGradeBadge grade={analysis.grade} score={analysis.score} />
 
         {/* Verdict */}
-        <p
+        <motion.p
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          custom={0.3}
           className="text-center text-base leading-relaxed text-neutral-300"
           data-testid="verdict"
         >
           {localizedVerdict}
-        </p>
+        </motion.p>
 
         {/* Summary Stats */}
-        <SummaryBar summary={analysis.summary} />
+        <motion.div
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          custom={0.4}
+        >
+          <SummaryBar summary={analysis.summary} />
+        </motion.div>
 
         {/* Ingredient List */}
-        <IngredientList ingredients={analysis.ingredients} />
+        <motion.div
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          custom={0.5}
+        >
+          <IngredientList ingredients={analysis.ingredients} />
+        </motion.div>
 
         {/* Share */}
-        <ShareButton result={analysis} foodName={displayName} brandSlug={brand.slug} />
+        <motion.div
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          custom={0.6}
+        >
+          <ShareButton result={analysis} foodName={displayName} brandSlug={brand.slug} />
+        </motion.div>
 
         {/* CTAs */}
-        <div className="flex flex-col gap-3">
+        <motion.div
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          custom={0.7}
+          className="flex flex-col gap-3"
+        >
           <Link
             href="/"
             className="block w-full rounded-full bg-red-500 px-8 py-3.5 text-center font-semibold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-400 hover:shadow-red-500/30 active:scale-[0.98]"
@@ -84,7 +132,7 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
           >
             {tc("viewRankings")}
           </Link>
-        </div>
+        </motion.div>
       </div>
     </main>
   );

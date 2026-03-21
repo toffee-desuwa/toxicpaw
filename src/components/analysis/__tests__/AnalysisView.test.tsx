@@ -1,8 +1,40 @@
+import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { AnalysisView } from "../AnalysisView";
 import { IngredientList } from "../IngredientList";
 import { SummaryBar } from "../SummaryBar";
 import type { AnalysisResult, AnalyzedIngredient, AnalysisSummary, Grade } from "@/lib/analyzer/types";
+
+// Mock framer-motion for IngredientList stagger animation (F036)
+/* eslint-disable react/display-name */
+jest.mock("framer-motion", () => {
+  const React = require("react");
+  const filterMotionProps = (props: Record<string, unknown>) => {
+    const blocked = new Set(["variants", "initial", "animate", "exit", "custom", "layout", "viewport", "transition", "whileTap", "whileHover", "whileInView"]);
+    const safe: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(props)) {
+      if (!blocked.has(k)) safe[k] = v;
+    }
+    return safe;
+  };
+  return {
+    motion: {
+      div: React.forwardRef(
+        ({ children, ...rest }: Record<string, unknown>, ref: React.Ref<HTMLDivElement>) =>
+          React.createElement("div", { ref, ...filterMotionProps(rest) }, children)
+      ),
+      li: React.forwardRef(
+        ({ children, ...rest }: Record<string, unknown>, ref: React.Ref<HTMLLIElement>) =>
+          React.createElement("li", { ref, ...filterMotionProps(rest) }, children)
+      ),
+      ul: React.forwardRef(
+        ({ children, ...rest }: Record<string, unknown>, ref: React.Ref<HTMLUListElement>) =>
+          React.createElement("ul", { ref, ...filterMotionProps(rest) }, children)
+      ),
+    },
+    AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
+  };
+});
 
 // Mock ShareButton to avoid duplicate text from hidden ShareCard
 jest.mock("@/components/sharing", () => ({

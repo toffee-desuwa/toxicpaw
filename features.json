@@ -291,7 +291,7 @@
       "name": "Global micro-interactions + page transitions",
       "description": "Page transitions with AnimatePresence, button press scale, ingredient list stagger, scroll-triggered fade-in, search dropdown animate. Subtle premium feel. See docs/specs/visual-overhaul-spec.md.",
       "priority": 36,
-      "status": "backlog",
+      "status": "done",
       "dependencies": ["F032", "F034"]
     }
   ]

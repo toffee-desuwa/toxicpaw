@@ -385,3 +385,18 @@
 - 7 new visual upgrade tests: gradient backgroundImage on root, glass card rgba detection, multi-layer box-shadow on grade circle, ambient glow element, stat pill containers; updated collectStyles to resolve function components
 - All 532 tests pass, lint clean, build succeeds (161 static pages)
 - Next action: F036
+
+## Session 32 (F036 - Global Micro-Interactions + Page Transitions)
+- Added page transitions with AnimatePresence in page.tsx: all app states (landing, scanning, analyzing, ceremony, results, history, profile, comparing, error) wrapped in motion.div with fade+slide enter/exit pageVariants
+- Added button press scale via framer-motion whileTap={{ scale: 0.95 }} on LandingPage scan buttons and RankingClient filter tabs; CSS active:scale-[0.98] on BrandResultClient CTAs and RankingClient ranking items
+- Added ingredient list stagger animation in IngredientList.tsx: listVariants with staggerChildren:0.04 + itemVariants with x:-8→0 slide-in per ingredient
+- Added scroll-triggered fade-in via ScrollReveal component: wraps worst-brands, best-brands, trust-signals, and bottom-CTA sections on LandingPage with whileInView + viewport once
+- Added search dropdown animation with AnimatePresence in both BrandSearch and LandingPage: dropdownVariants with opacity+y+scale enter/exit
+- Added ranking list stagger with AnimatePresence on filter change: RankingClient uses listVariants/itemVariants so tab switching re-animates the list
+- Added section cascade animation in BrandResultClient: sectionVariants with staggered delays (0→0.7s) across header, grade, verdict, summary, ingredients, share, CTAs
+- Created ScrollReveal component in src/components/motion/: whileInView with viewport once + -50px margin, configurable delay
+- Design decisions: (1) CSS active:scale for Link elements (framer-motion whileTap doesn't work on Next.js Link), motion.button whileTap for actual buttons — correct per element type, (2) Short stagger delays (0.03-0.04s) for lists to keep perceived speed while adding polish, (3) pageVariants with y:10→0→-10 for subtle directional movement without jarring shifts, (4) ScrollReveal viewport.once=true to avoid re-triggering on scroll-back, (5) AnimatePresence mode="wait" on ranking filter to cleanly swap filtered lists
+- Updated all affected test files with comprehensive framer-motion mocks: filterMotionProps utility strips animation props, motion.button/motion.div/motion.li/motion.ul/motion.p all mocked
+- 6 new tests for ScrollReveal (538 total): renders children, motion.div wrapper, className pass-through, initial opacity+y state, whileInView target state, multiple children
+- All 538 tests pass, lint clean, build succeeds (161 static pages)
+- ALL 36 FEATURES COMPLETE — F027-F030 are deferred, all backlog items done. EXIT

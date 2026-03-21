@@ -1,11 +1,15 @@
 /**
- * F006 - Ingredient List Component (polished F013, i18n F019)
+ * F006 - Ingredient List Component (polished F013, i18n F019, stagger F036)
  *
  * Scrollable list of analyzed ingredients with color-coded flags.
  * Red = harmful, Yellow = caution, Green = safe, Gray = unknown.
  * Shows Chinese ingredient names when locale is zh.
+ * F036: Stagger animation on ingredient items.
  */
 
+"use client";
+
+import { motion, type Variants } from "framer-motion";
 import type { AnalyzedIngredient, IngredientFlag } from "@/lib/analyzer/types";
 import { useTranslation } from "@/lib/i18n";
 import { lookupIngredient } from "@/lib/knowledge";
@@ -29,6 +33,23 @@ const FLAG_LABEL_KEYS: Record<IngredientFlag, string> = {
   yellow: "caution",
   green: "safe",
   unknown: "unknown",
+};
+
+const listVariants: Variants = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.04 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, x: -8 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.25, ease: "easeOut" as const },
+  },
 };
 
 function getChineseName(name: string): string | undefined {
@@ -59,7 +80,7 @@ function IngredientItem({ ingredient, locale, flagLabel }: IngredientItemProps) 
   }
 
   return (
-    <li className="flex items-start gap-3 py-3">
+    <motion.li variants={itemVariants} className="flex items-start gap-3 py-3">
       <span
         className={`mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full ${dotStyle}`}
         aria-label={flagLabel}
@@ -82,7 +103,7 @@ function IngredientItem({ ingredient, locale, flagLabel }: IngredientItemProps) 
             : ingredient.explanation}
         </p>
       </div>
-    </li>
+    </motion.li>
   );
 }
 
@@ -106,7 +127,13 @@ export function IngredientList({ ingredients }: IngredientListProps) {
       <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-500">
         {t("ingredientsCount", { count: ingredients.length })}
       </h3>
-      <ul className="divide-y divide-neutral-800/50" data-testid="ingredient-list">
+      <motion.ul
+        variants={listVariants}
+        initial="hidden"
+        animate="visible"
+        className="divide-y divide-neutral-800/50"
+        data-testid="ingredient-list"
+      >
         {ingredients.map((item, idx) => (
           <IngredientItem
             key={`${item.normalized}-${idx}`}
@@ -115,7 +142,7 @@ export function IngredientList({ ingredients }: IngredientListProps) {
             flagLabel={t(FLAG_LABEL_KEYS[item.flag])}
           />
         ))}
-      </ul>
+      </motion.ul>
     </div>
   );
 }

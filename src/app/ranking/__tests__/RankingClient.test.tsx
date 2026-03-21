@@ -1,5 +1,5 @@
 /**
- * Tests for RankingClient component (F016)
+ * Tests for RankingClient component (F016, stagger + tab animations F036)
  */
 
 import React from "react";
@@ -7,6 +7,33 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { RankingClient } from "../RankingClient";
 import type { AnalyzedBrand } from "@/lib/brands/types";
 import type { AnalysisResult, Grade } from "@/lib/analyzer/types";
+
+// Mock framer-motion to avoid animation issues in JSDOM
+/* eslint-disable react/display-name */
+jest.mock("framer-motion", () => {
+  const React = require("react");
+  const filterMotionProps = (props: Record<string, unknown>) => {
+    const blocked = new Set(["variants", "initial", "animate", "exit", "custom", "layout", "viewport", "transition", "whileTap", "whileHover", "whileInView"]);
+    const safe: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(props)) {
+      if (!blocked.has(k)) safe[k] = v;
+    }
+    return safe;
+  };
+  return {
+    motion: {
+      div: React.forwardRef(
+        ({ children, ...rest }: Record<string, unknown>, ref: React.Ref<HTMLDivElement>) =>
+          React.createElement("div", { ref, ...filterMotionProps(rest) }, children)
+      ),
+      button: React.forwardRef(
+        ({ children, ...rest }: Record<string, unknown>, ref: React.Ref<HTMLButtonElement>) =>
+          React.createElement("button", { ref, ...filterMotionProps(rest) }, children)
+      ),
+    },
+    AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
+  };
+});
 
 // Mock next/link
 jest.mock("next/link", () => {
@@ -110,13 +137,14 @@ describe("RankingClient", () => {
 
   it("sorts brands by grade (A first) then by score descending", () => {
     render(<RankingClient brands={mockBrands} />);
-    const items = screen.getByTestId("ranking-list").children;
+    const list = screen.getByTestId("ranking-list");
+    const links = list.querySelectorAll("[data-testid^='ranking-item-']");
     // A-grade (95) first, then A-grade (92), then B (80), then D (45), then F (25)
-    expect(items[0]).toHaveAttribute("href", "/brand/brand-a-dog");
-    expect(items[1]).toHaveAttribute("href", "/brand/brand-e-dog");
-    expect(items[2]).toHaveAttribute("href", "/brand/brand-b-cat");
-    expect(items[3]).toHaveAttribute("href", "/brand/brand-c-dog");
-    expect(items[4]).toHaveAttribute("href", "/brand/brand-d-cat");
+    expect(links[0]).toHaveAttribute("href", "/brand/brand-a-dog");
+    expect(links[1]).toHaveAttribute("href", "/brand/brand-e-dog");
+    expect(links[2]).toHaveAttribute("href", "/brand/brand-b-cat");
+    expect(links[3]).toHaveAttribute("href", "/brand/brand-c-dog");
+    expect(links[4]).toHaveAttribute("href", "/brand/brand-d-cat");
   });
 
   it("displays brand name and product on each card", () => {
@@ -195,19 +223,19 @@ describe("RankingClient", () => {
 
   it("shows rank numbers starting from 1", () => {
     render(<RankingClient brands={mockBrands} />);
-    const items = screen.getByTestId("ranking-list").children;
-    expect(items[0]).toHaveTextContent("1");
-    expect(items[4]).toHaveTextContent("5");
+    const links = screen.getByTestId("ranking-list").querySelectorAll("[data-testid^='ranking-item-']");
+    expect(links[0]).toHaveTextContent("1");
+    expect(links[4]).toHaveTextContent("5");
   });
 
   it("re-ranks when filter changes", () => {
     render(<RankingClient brands={mockBrands} />);
     fireEvent.click(screen.getByTestId("filter-dog"));
-    const items = screen.getByTestId("ranking-list").children;
+    const links = screen.getByTestId("ranking-list").querySelectorAll("[data-testid^='ranking-item-']");
     // Dog only: A(95), A(92), D(45) — rank numbers reset
-    expect(items).toHaveLength(3);
-    expect(items[0]).toHaveTextContent("1");
-    expect(items[2]).toHaveTextContent("3");
+    expect(links).toHaveLength(3);
+    expect(links[0]).toHaveTextContent("1");
+    expect(links[2]).toHaveTextContent("3");
   });
 
   it("renders the scan CTA button", () => {

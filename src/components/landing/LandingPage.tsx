@@ -1,21 +1,24 @@
 /**
- * F017 - Demo-first Homepage (i18n F019, visual overhaul F034)
+ * F017 - Demo-first Homepage (i18n F019, visual overhaul F034, micro-interactions F036)
  *
  * Demo-first homepage with brand data, search, and scan CTA.
  * F034 adds: animated gradient title, search bar glow pulse,
  * brand card hover lift+glow, stats CountUp on scroll, accent glows.
+ * F036 adds: search dropdown animation, scroll-reveal sections,
+ * button whileTap scale, brand list stagger.
  */
 
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import { getAllAnalyzedBrands, searchBrands, getBrandGrade, getPetEmoji } from "@/lib/brands";
 import type { AnalyzedBrand } from "@/lib/brands/types";
 import type { Grade } from "@/lib/analyzer/types";
 import { GRADE_COLORS, GRADE_TEXT_COLORS } from "@/lib/grade";
 import { useTranslation } from "@/lib/i18n";
-import { CountUp } from "@/components/motion";
+import { CountUp, ScrollReveal } from "@/components/motion";
 
 interface LandingPageProps {
   onStartScan: () => void;
@@ -80,6 +83,12 @@ function BrandListItem({ brand }: { brand: AnalyzedBrand }) {
     </Link>
   );
 }
+
+const dropdownVariants = {
+  hidden: { opacity: 0, y: -8, scale: 0.98 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.2, ease: "easeOut" as const } },
+  exit: { opacity: 0, y: -4, scale: 0.98, transition: { duration: 0.15, ease: "easeIn" as const } },
+};
 
 export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
   const [query, setQuery] = useState("");
@@ -173,52 +182,63 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
           </svg>
         </div>
 
-        {/* Search Results */}
-        {showSearch && (
-          <div className="mt-3" data-testid="brand-search-results">
-            {searchResults.length === 0 ? (
-              <p className="py-6 text-center text-sm text-neutral-500">
-                {t("noResults", { query })}
-              </p>
-            ) : (
-              <ul className="space-y-2">
-                {searchResults.map((brand) => {
-                  const grade = getBrandGrade(brand);
-                  return (
-                    <li key={brand.slug}>
-                      <Link
-                        href={`/brand/${brand.slug}`}
-                        className="flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/50 px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-neutral-600 hover:bg-neutral-800/50 hover:shadow-lg hover:shadow-red-500/5"
-                      >
-                        <MiniGradeBadge grade={grade} />
-                        <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-semibold text-neutral-100">
-                            {brand.brand} — {brand.product}
-                          </p>
-                          <p className="truncate text-xs text-neutral-500">
-                            {brand.brandCn} {brand.productCn} · {getPetEmoji(brand.petType)}
-                          </p>
-                        </div>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-          </div>
-        )}
+        {/* Search Results — animated dropdown */}
+        <AnimatePresence mode="wait">
+          {showSearch && (
+            <motion.div
+              key="landing-search-results"
+              variants={dropdownVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="mt-3"
+              data-testid="brand-search-results"
+            >
+              {searchResults.length === 0 ? (
+                <p className="py-6 text-center text-sm text-neutral-500">
+                  {t("noResults", { query })}
+                </p>
+              ) : (
+                <ul className="space-y-2">
+                  {searchResults.map((brand) => {
+                    const grade = getBrandGrade(brand);
+                    return (
+                      <li key={brand.slug}>
+                        <Link
+                          href={`/brand/${brand.slug}`}
+                          className="flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/50 px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-neutral-600 hover:bg-neutral-800/50 hover:shadow-lg hover:shadow-red-500/5"
+                        >
+                          <MiniGradeBadge grade={grade} />
+                          <div className="min-w-0 flex-1">
+                            <p className="truncate text-sm font-semibold text-neutral-100">
+                              {brand.brand} — {brand.product}
+                            </p>
+                            <p className="truncate text-xs text-neutral-500">
+                              {brand.brandCn} {brand.productCn} · {getPetEmoji(brand.petType)}
+                            </p>
+                          </div>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* Scan CTA (above the brand lists) */}
       <section className="pb-8 text-center">
-        <button
+        <motion.button
           onClick={onStartScan}
-          className="rounded-full bg-red-500 px-10 py-3.5 text-base font-bold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-400 hover:shadow-red-500/35 active:scale-[0.97]"
+          whileTap={{ scale: 0.95 }}
+          className="rounded-full bg-red-500 px-10 py-3.5 text-base font-bold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-400 hover:shadow-red-500/35"
           type="button"
           data-testid="hero-scan-button"
         >
           {t("scanButton")}
-        </button>
+        </motion.button>
         <button
           onClick={onViewHistory}
           className="mt-3 block w-full text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-300"
@@ -230,89 +250,98 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
       </section>
 
       {/* Worst-Rated Brands (fear hook — shown first) */}
-      <section className="pb-8" data-testid="worst-brands">
-        <div className="mb-3 flex items-center justify-between">
-          <h2 className="text-lg font-bold text-neutral-100">
-            {t("worstRated")}
-          </h2>
-          <Link
-            href="/ranking"
-            className="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-300"
-            data-testid="view-full-ranking"
-          >
-            {t("viewFullRanking")}
-          </Link>
-        </div>
-        <div className="space-y-2">
-          {worstBrands.map((brand) => (
-            <BrandListItem key={brand.slug} brand={brand} />
-          ))}
-        </div>
-      </section>
+      <ScrollReveal>
+        <section className="pb-8" data-testid="worst-brands">
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-lg font-bold text-neutral-100">
+              {t("worstRated")}
+            </h2>
+            <Link
+              href="/ranking"
+              className="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-300"
+              data-testid="view-full-ranking"
+            >
+              {t("viewFullRanking")}
+            </Link>
+          </div>
+          <div className="space-y-2">
+            {worstBrands.map((brand) => (
+              <BrandListItem key={brand.slug} brand={brand} />
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
 
       {/* Best-Rated Brands */}
-      <section className="pb-8" data-testid="best-brands">
-        <h2 className="mb-3 text-lg font-bold text-neutral-100">
-          {t("topRated")}
-        </h2>
-        <div className="space-y-2">
-          {bestBrands.map((brand) => (
-            <BrandListItem key={brand.slug} brand={brand} />
-          ))}
-        </div>
-      </section>
+      <ScrollReveal delay={0.1}>
+        <section className="pb-8" data-testid="best-brands">
+          <h2 className="mb-3 text-lg font-bold text-neutral-100">
+            {t("topRated")}
+          </h2>
+          <div className="space-y-2">
+            {bestBrands.map((brand) => (
+              <BrandListItem key={brand.slug} brand={brand} />
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
 
       {/* Trust Signals */}
-      <section className="py-10" ref={trustRef} data-testid="trust-signals">
-        <div className="grid grid-cols-2 gap-3">
-          {trustItems.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 text-center"
-            >
-              {item.countTo !== undefined && supportsIO ? (
-                trustInView ? (
-                  <CountUp
-                    to={item.countTo}
-                    duration={1.2}
-                    formatter={
-                      item.suffix
-                        ? (v: number) => `${v}${item.suffix}`
-                        : undefined
-                    }
-                    className="text-2xl font-bold text-red-400"
-                  />
+      <ScrollReveal delay={0.1}>
+        <section className="py-10" ref={trustRef} data-testid="trust-signals">
+          <div className="grid grid-cols-2 gap-3">
+            {trustItems.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 text-center"
+              >
+                {item.countTo !== undefined && supportsIO ? (
+                  trustInView ? (
+                    <CountUp
+                      to={item.countTo}
+                      duration={1.2}
+                      formatter={
+                        item.suffix
+                          ? (v: number) => `${v}${item.suffix}`
+                          : undefined
+                      }
+                      className="text-2xl font-bold text-red-400"
+                    />
+                  ) : (
+                    <p className="text-2xl font-bold text-red-400">
+                      0{item.suffix || ""}
+                    </p>
+                  )
                 ) : (
-                  <p className="text-2xl font-bold text-red-400">
-                    0{item.suffix || ""}
-                  </p>
-                )
-              ) : (
-                <p className="text-2xl font-bold text-red-400">{item.stat}</p>
-              )}
-              <p className="mt-1.5 text-xs font-medium text-neutral-500">
-                {item.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+                  <p className="text-2xl font-bold text-red-400">{item.stat}</p>
+                )}
+                <p className="mt-1.5 text-xs font-medium text-neutral-500">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
 
       {/* Bottom CTA */}
-      <section className="py-10 text-center">
-        <h2 className="text-2xl font-bold tracking-tight">{t("readyToScan")}</h2>
-        <p className="mt-3 text-sm text-neutral-500">
-          {t("readyToScanDesc")}
-        </p>
-        <button
-          onClick={onStartScan}
-          className="mt-8 rounded-full bg-red-500 px-12 py-4 text-lg font-bold text-white shadow-xl shadow-red-500/25 transition-all hover:bg-red-400 active:scale-[0.97]"
-          type="button"
-          data-testid="bottom-scan-button"
-        >
-          {t("scanLabelNow")}
-        </button>
-      </section>
+      <ScrollReveal>
+        <section className="py-10 text-center">
+          <h2 className="text-2xl font-bold tracking-tight">{t("readyToScan")}</h2>
+          <p className="mt-3 text-sm text-neutral-500">
+            {t("readyToScanDesc")}
+          </p>
+          <motion.button
+            onClick={onStartScan}
+            whileTap={{ scale: 0.95 }}
+            className="mt-8 rounded-full bg-red-500 px-12 py-4 text-lg font-bold text-white shadow-xl shadow-red-500/25 transition-all hover:bg-red-400"
+            type="button"
+            data-testid="bottom-scan-button"
+          >
+            {t("scanLabelNow")}
+          </motion.button>
+        </section>
+      </ScrollReveal>
 
       {/* Footer */}
       <footer className="border-t border-neutral-800/50 py-10 text-center text-xs text-neutral-600">

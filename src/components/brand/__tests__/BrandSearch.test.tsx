@@ -1,10 +1,35 @@
 /**
- * Tests for BrandSearch component (F015)
+ * Tests for BrandSearch component (F015, dropdown animation F036)
  */
 
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrandSearch } from "../BrandSearch";
+
+// Mock framer-motion to avoid animation issues in JSDOM
+/* eslint-disable react/display-name */
+jest.mock("framer-motion", () => {
+  const React = require("react");
+  return {
+    motion: {
+      div: React.forwardRef(
+        (
+          { children, className, style, ...rest }: Record<string, unknown>,
+          ref: React.Ref<HTMLDivElement>
+        ) => {
+          const safeProps: Record<string, unknown> = {};
+          for (const [k, v] of Object.entries(rest)) {
+            if (typeof k === "string" && !k.startsWith("while") && !["variants", "initial", "animate", "exit", "custom", "layout", "viewport", "transition"].includes(k)) {
+              safeProps[k] = v;
+            }
+          }
+          return React.createElement("div", { ref, className, style, ...safeProps }, children);
+        }
+      ),
+    },
+    AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
+  };
+});
 
 // Mock next/link
 jest.mock("next/link", () => {

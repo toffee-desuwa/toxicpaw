@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import { searchBrands, getAllBrands, getBrandGrade, getPetEmoji } from "@/lib/brands";
 import type { Grade } from "@/lib/analyzer/types";
 import { GRADE_COLORS } from "@/lib/grade";
@@ -10,6 +11,12 @@ import { useTranslation } from "@/lib/i18n";
 interface BrandSearchProps {
   onScanOwn?: () => void;
 }
+
+const dropdownVariants = {
+  hidden: { opacity: 0, y: -8, scale: 0.98 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.2, ease: "easeOut" as const } },
+  exit: { opacity: 0, y: -4, scale: 0.98, transition: { duration: 0.15, ease: "easeIn" as const } },
+};
 
 export function BrandSearch({ onScanOwn }: BrandSearchProps) {
   const [query, setQuery] = useState("");
@@ -54,44 +61,54 @@ export function BrandSearch({ onScanOwn }: BrandSearchProps) {
       </div>
 
       {/* Results */}
-      {showResults && (
-        <div className="mt-3" data-testid="brand-search-results">
-          {results.length === 0 ? (
-            <p className="py-6 text-center text-sm text-neutral-500">
-              {t("noResults", { query })}
-            </p>
-          ) : (
-            <ul className="space-y-2">
-              {results.map((brand) => {
-                const grade = getBrandGrade(brand);
-                return (
-                  <li key={brand.slug}>
-                    <Link
-                      href={`/brand/${brand.slug}`}
-                      className="flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/50 px-4 py-3 transition-colors hover:border-neutral-600 hover:bg-neutral-800/50"
-                      data-testid={`brand-result-${brand.slug}`}
-                    >
-                      <span
-                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${GRADE_COLORS[grade]}`}
+      <AnimatePresence mode="wait">
+        {showResults && (
+          <motion.div
+            key="search-results"
+            variants={dropdownVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="mt-3"
+            data-testid="brand-search-results"
+          >
+            {results.length === 0 ? (
+              <p className="py-6 text-center text-sm text-neutral-500">
+                {t("noResults", { query })}
+              </p>
+            ) : (
+              <ul className="space-y-2">
+                {results.map((brand) => {
+                  const grade = getBrandGrade(brand);
+                  return (
+                    <li key={brand.slug}>
+                      <Link
+                        href={`/brand/${brand.slug}`}
+                        className="flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/50 px-4 py-3 transition-colors hover:border-neutral-600 hover:bg-neutral-800/50"
+                        data-testid={`brand-result-${brand.slug}`}
                       >
-                        {grade}
-                      </span>
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm font-semibold text-neutral-100">
-                          {brand.brand} — {brand.product}
-                        </p>
-                        <p className="truncate text-xs text-neutral-500">
-                          {brand.brandCn} {brand.productCn} · {getPetEmoji(brand.petType)}
-                        </p>
-                      </div>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-        </div>
-      )}
+                        <span
+                          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${GRADE_COLORS[grade]}`}
+                        >
+                          {grade}
+                        </span>
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-semibold text-neutral-100">
+                            {brand.brand} — {brand.product}
+                          </p>
+                          <p className="truncate text-xs text-neutral-500">
+                            {brand.brandCn} {brand.productCn} · {getPetEmoji(brand.petType)}
+                          </p>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Browse all hint */}
       {!showResults && (

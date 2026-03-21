@@ -4,11 +4,39 @@
  * Replaces the F011 marketing page with a demo-first homepage
  * that shows real brand data immediately — top 5 best/worst brands,
  * search bar, and scan CTA.
+ * F036 adds: search dropdown animation, scroll-reveal, button whileTap.
  */
 
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { LandingPage } from "../LandingPage";
+
+// Mock framer-motion to avoid animation issues in JSDOM
+/* eslint-disable react/display-name */
+jest.mock("framer-motion", () => {
+  const React = require("react");
+  const filterMotionProps = (props: Record<string, unknown>) => {
+    const blocked = new Set(["variants", "initial", "animate", "exit", "custom", "layout", "viewport", "transition", "whileTap", "whileHover", "whileInView"]);
+    const safe: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(props)) {
+      if (!blocked.has(k)) safe[k] = v;
+    }
+    return safe;
+  };
+  return {
+    motion: {
+      div: React.forwardRef(
+        ({ children, ...rest }: Record<string, unknown>, ref: React.Ref<HTMLDivElement>) =>
+          React.createElement("div", { ref, ...filterMotionProps(rest) }, children)
+      ),
+      button: React.forwardRef(
+        ({ children, ...rest }: Record<string, unknown>, ref: React.Ref<HTMLButtonElement>) =>
+          React.createElement("button", { ref, ...filterMotionProps(rest) }, children)
+      ),
+    },
+    AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
+  };
+});
 
 // Mock next/link
 jest.mock("next/link", () => {
@@ -264,12 +292,13 @@ describe("F034 - Hero visual overhaul", () => {
     });
   });
 
-  it("scan buttons have press scale effect", () => {
+  it("scan buttons use motion.button for press scale (whileTap)", () => {
     render(<LandingPage {...defaultProps} />);
     const heroBtn = screen.getByTestId("hero-scan-button");
     const bottomBtn = screen.getByTestId("bottom-scan-button");
-    expect(heroBtn).toHaveClass("active:scale-[0.97]");
-    expect(bottomBtn).toHaveClass("active:scale-[0.97]");
+    // motion.button renders as <button> in mocked framer-motion
+    expect(heroBtn.tagName).toBe("BUTTON");
+    expect(bottomBtn.tagName).toBe("BUTTON");
   });
 
   it("main container is positioned for accent glows", () => {

@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import type { AnalyzedBrand } from "@/lib/brands/types";
 import { GRADE_COLORS, GRADE_ORDER } from "@/lib/grade";
 import { useTranslation } from "@/lib/i18n";
@@ -11,6 +12,23 @@ type PetFilter = "all" | "cat" | "dog";
 interface RankingClientProps {
   brands: AnalyzedBrand[];
 }
+
+const listVariants: Variants = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.03 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.25, ease: "easeOut" as const },
+  },
+};
 
 export function RankingClient({ brands }: RankingClientProps) {
   const [filter, setFilter] = useState<PetFilter>("all");
@@ -65,9 +83,10 @@ export function RankingClient({ brands }: RankingClientProps) {
         {/* Pet Type Tabs */}
         <div className="flex gap-2" data-testid="pet-filter-tabs">
           {tabs.map((tab) => (
-            <button
+            <motion.button
               key={tab.key}
               onClick={() => setFilter(tab.key)}
+              whileTap={{ scale: 0.95 }}
               className={`flex-1 rounded-full px-4 py-2.5 text-sm font-semibold transition-all ${
                 filter === tab.key
                   ? "bg-neutral-100 text-neutral-900 shadow-md"
@@ -77,52 +96,62 @@ export function RankingClient({ brands }: RankingClientProps) {
               aria-pressed={filter === tab.key}
             >
               {t(tab.labelKey)}
-            </button>
+            </motion.button>
           ))}
         </div>
 
         {/* Ranking List */}
-        <div className="flex flex-col gap-3" data-testid="ranking-list">
-          {filtered.map((brand, index) => (
-            <Link
-              key={brand.slug}
-              href={`/brand/${brand.slug}`}
-              className="flex items-center gap-4 rounded-2xl border border-neutral-800 bg-neutral-900 p-4 transition-all hover:border-neutral-600 hover:bg-neutral-800 active:scale-[0.99]"
-              data-testid={`ranking-item-${brand.slug}`}
-            >
-              {/* Rank Number */}
-              <span className="w-6 text-center text-sm font-bold text-neutral-500">
-                {index + 1}
-              </span>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={filter}
+            variants={listVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col gap-3"
+            data-testid="ranking-list"
+          >
+            {filtered.map((brand, index) => (
+              <motion.div key={brand.slug} variants={itemVariants}>
+                <Link
+                  href={`/brand/${brand.slug}`}
+                  className="flex items-center gap-4 rounded-2xl border border-neutral-800 bg-neutral-900 p-4 transition-all hover:border-neutral-600 hover:bg-neutral-800 active:scale-[0.99]"
+                  data-testid={`ranking-item-${brand.slug}`}
+                >
+                  {/* Rank Number */}
+                  <span className="w-6 text-center text-sm font-bold text-neutral-500">
+                    {index + 1}
+                  </span>
 
-              {/* Grade Badge (small) */}
-              <div
-                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${GRADE_COLORS[brand.analysis.grade]} text-sm font-black text-white`}
-                aria-label={t("gradeAriaLabel", { grade: brand.analysis.grade })}
-              >
-                {brand.analysis.grade}
-              </div>
+                  {/* Grade Badge (small) */}
+                  <div
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${GRADE_COLORS[brand.analysis.grade]} text-sm font-black text-white`}
+                    aria-label={t("gradeAriaLabel", { grade: brand.analysis.grade })}
+                  >
+                    {brand.analysis.grade}
+                  </div>
 
-              {/* Brand Info */}
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-bold text-neutral-100">
-                  {brand.brand} {brand.product}
-                </p>
-                <p className="truncate text-xs text-neutral-500">
-                  {brand.brandCn} {brand.productCn}
-                </p>
-              </div>
+                  {/* Brand Info */}
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-bold text-neutral-100">
+                      {brand.brand} {brand.product}
+                    </p>
+                    <p className="truncate text-xs text-neutral-500">
+                      {brand.brandCn} {brand.productCn}
+                    </p>
+                  </div>
 
-              {/* Score */}
-              <div className="text-right">
-                <p className="text-sm font-bold text-neutral-200">
-                  {brand.analysis.score}
-                </p>
-                <p className="text-xs text-neutral-500">{t("scoreDenominator")}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+                  {/* Score */}
+                  <div className="text-right">
+                    <p className="text-sm font-bold text-neutral-200">
+                      {brand.analysis.score}
+                    </p>
+                    <p className="text-xs text-neutral-500">{t("scoreDenominator")}</p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
         {/* Bottom CTA */}
         <div className="flex flex-col gap-3 pt-4">
