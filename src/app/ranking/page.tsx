@@ -19,6 +19,12 @@ export const metadata: Metadata = {
     description:
       "Compare 75+ cat and dog food brands ranked by ingredient safety.",
   },
+  alternates: {
+    languages: {
+      'en': '/ranking',
+      'zh-CN': '/ranking',
+    },
+  },
 };
 
 export default function RankingPage() {

@@ -23,11 +23,20 @@ export const metadata: Metadata = {
   description:
     "Scan pet food labels instantly. AI-powered ingredient analysis gives your pet's food a safety grade from A to F.",
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "ToxicPaw",
   },
+  keywords: ["pet food safety", "ingredient scanner", "pet food grade", "dog food", "cat food", "宠物粮安全", "配料分析", "猫粮", "狗粮"],
+  creator: "ToxicPaw",
+  authors: [{ name: "ToxicPaw" }],
   openGraph: {
     title: "ToxicPaw - Pet Food Ingredient Scanner",
     description:
@@ -41,6 +50,12 @@ export const metadata: Metadata = {
     title: "ToxicPaw - Pet Food Ingredient Scanner",
     description:
       "Scan pet food labels instantly. AI-powered ingredient analysis gives your pet's food a safety grade from A to F.",
+  },
+  alternates: {
+    languages: {
+      'en': '/',
+      'zh-CN': '/',
+    },
   },
 };
 
@@ -60,6 +75,22 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-dvh antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "ToxicPaw",
+              "description": "AI-powered pet food ingredient scanner. Scan a label, get an instant safety grade.",
+              "url": "https://toxicpaw.com",
+              "applicationCategory": "HealthApplication",
+              "operatingSystem": "Web",
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+              "inLanguage": ["en", "zh-CN"],
+            }),
+          }}
+        />
         <I18nProvider>
           <LanguageSwitcher />
           {children}

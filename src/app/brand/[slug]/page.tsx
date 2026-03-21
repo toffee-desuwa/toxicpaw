@@ -39,6 +39,12 @@ export async function generateMetadata({ params }: BrandPageProps): Promise<Meta
       title,
       description,
     },
+    alternates: {
+      languages: {
+        'en': `/brand/${slug}`,
+        'zh-CN': `/brand/${slug}`,
+      },
+    },
   };
 }
 
@@ -50,5 +56,28 @@ export default async function BrandPage({ params }: BrandPageProps) {
     notFound();
   }
 
-  return <BrandResultClient brand={brand} />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `${brand.brand} ${brand.product}`,
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": brand.analysis.score,
+        "bestRating": 100,
+      },
+      "author": { "@type": "Organization", "name": "ToxicPaw" },
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BrandResultClient brand={brand} />
+    </>
+  );
 }
