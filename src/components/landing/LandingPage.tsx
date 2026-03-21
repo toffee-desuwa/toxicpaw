@@ -96,7 +96,10 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
   const { t } = useTranslation("landing");
   const { t: tc } = useTranslation("common");
   const [trustRef, trustInView] = useInView(0.3);
-  const supportsIO = typeof IntersectionObserver !== "undefined";
+  const [supportsIO, setSupportsIO] = useState(false);
+  useEffect(() => {
+    setSupportsIO(typeof IntersectionObserver !== "undefined");
+  }, []);
 
   const allAnalyzed = useMemo(() => getAllAnalyzedBrands(), []);
 
