@@ -19,12 +19,12 @@ Scan a pet food label → get an instant A-F safety grade with every ingredient 
 ### [Try Live Demo](https://toffee-desuwa-toxicpaw.hf.space) | [Vercel Mirror](https://toxicpaw-2472095547-9349s-projects.vercel.app)
 
 <p align="center">
-  <img src="https://toxicpaw-2472095547-9349s-projects.vercel.app/opengraph-image" alt="ToxicPaw Homepage" width="600" />
+  <img src="docs/images/homepage.png" alt="ToxicPaw Homepage" width="600" />
 </p>
 
 <p align="center">
-  <img src="https://toxicpaw-2472095547-9349s-projects.vercel.app/brand/orijen-original-dog/opengraph-image" alt="Grade A Example - Orijen" width="280" />
-  <img src="https://toxicpaw-2472095547-9349s-projects.vercel.app/brand/meow-mix-original-cat/opengraph-image" alt="Grade F Example - Meow Mix" width="280" />
+  <img src="docs/images/grade-a.png" alt="Grade A Example - Orijen" width="280" />
+  <img src="docs/images/grade-f.png" alt="Grade F Example - Meow Mix" width="280" />
 </p>
 
 ---
@@ -231,12 +231,12 @@ Built for pets. Open for everyone.
 ### [在线体验](https://toffee-desuwa-toxicpaw.hf.space) | [Vercel 镜像](https://toxicpaw-2472095547-9349s-projects.vercel.app)
 
 <p align="center">
-  <img src="https://toxicpaw-2472095547-9349s-projects.vercel.app/opengraph-image" alt="ToxicPaw 首页" width="600" />
+  <img src="docs/images/homepage.png" alt="ToxicPaw 首页" width="600" />
 </p>
 
 <p align="center">
-  <img src="https://toxicpaw-2472095547-9349s-projects.vercel.app/brand/orijen-original-dog/opengraph-image" alt="A级示例 - 渴望" width="280" />
-  <img src="https://toxicpaw-2472095547-9349s-projects.vercel.app/brand/meow-mix-original-cat/opengraph-image" alt="F级示例 - 喵喵拌" width="280" />
+  <img src="docs/images/grade-a.png" alt="A级示例 - 渴望" width="280" />
+  <img src="docs/images/grade-f.png" alt="F级示例 - 喵喵拌" width="280" />
 </p>
 
 ---
