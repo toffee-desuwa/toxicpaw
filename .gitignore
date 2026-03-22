@@ -24,3 +24,9 @@ init.sh
 
 # Internal specs
 docs/specs/
+
+# Claude Code project instructions (internal)
+CLAUDE.md
+
+# Internal scripts
+scripts/
