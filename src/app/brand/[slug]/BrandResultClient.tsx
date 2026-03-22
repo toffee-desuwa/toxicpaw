@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import type { AnalyzedBrand } from "@/lib/brands/types";
 import { AnimatedGradeBadge } from "@/components/grade";
 import { IngredientList } from "@/components/analysis/IngredientList";
@@ -37,6 +38,10 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
     harmfulCount: String(analysis.summary.harmfulCount),
   });
 
+  // Only animate after client hydration — SSR renders content visible
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   return (
     <main className="min-h-dvh">
       <div className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 py-10">
@@ -52,7 +57,7 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
         {/* Brand Header */}
         <motion.div
           variants={sectionVariants}
-          initial="hidden"
+          initial={mounted ? "hidden" : false}
           animate="visible"
           custom={0}
           className="text-center"
@@ -71,7 +76,7 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
         {/* Verdict */}
         <motion.p
           variants={sectionVariants}
-          initial="hidden"
+          initial={mounted ? "hidden" : false}
           animate="visible"
           custom={0.3}
           className="text-center text-base leading-relaxed text-neutral-300"
@@ -83,7 +88,7 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
         {/* Summary Stats */}
         <motion.div
           variants={sectionVariants}
-          initial="hidden"
+          initial={mounted ? "hidden" : false}
           animate="visible"
           custom={0.4}
         >
@@ -93,7 +98,7 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
         {/* Ingredient List */}
         <motion.div
           variants={sectionVariants}
-          initial="hidden"
+          initial={mounted ? "hidden" : false}
           animate="visible"
           custom={0.5}
         >
@@ -103,7 +108,7 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
         {/* Share */}
         <motion.div
           variants={sectionVariants}
-          initial="hidden"
+          initial={mounted ? "hidden" : false}
           animate="visible"
           custom={0.6}
         >
@@ -113,7 +118,7 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
         {/* CTAs */}
         <motion.div
           variants={sectionVariants}
-          initial="hidden"
+          initial={mounted ? "hidden" : false}
           animate="visible"
           custom={0.7}
           className="flex flex-col gap-3"

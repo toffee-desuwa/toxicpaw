@@ -316,7 +316,7 @@ export default function Home() {
   }
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" initial={false}>
       {renderContent()}
     </AnimatePresence>
   );

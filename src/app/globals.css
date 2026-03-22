@@ -107,6 +107,28 @@ textarea {
   animation: search-glow-pulse 3s ease-in-out infinite;
 }
 
+/* Fallback: ensure content is visible when JS is disabled */
+@media (scripting: none) {
+  main, [style*="opacity"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Fallback: ensure content becomes visible even if JS errors out.
+   Framer-motion sets inline opacity:0 for entry animations —
+   this CSS animation kicks in after 2s as a safety net. */
+main[style*="opacity:0"], main[style*="opacity: 0"] {
+  animation: fallback-reveal 0s 2s forwards;
+}
+
+@keyframes fallback-reveal {
+  to {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* Global focus-visible ring for keyboard navigation */
 button:focus-visible,
 a:focus-visible,

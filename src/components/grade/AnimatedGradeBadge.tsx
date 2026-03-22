@@ -8,6 +8,7 @@
  */
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import type { Grade } from "@/lib/analyzer/types";
 import { GRADE_STYLES } from "@/lib/grade";
 import { useTranslation } from "@/lib/i18n";
@@ -31,6 +32,9 @@ export function AnimatedGradeBadge({ grade, score }: AnimatedGradeBadgeProps) {
   const style = GRADE_STYLES[grade];
   const { t } = useTranslation("grade");
   const gradeLabel = t(grade);
+  // Only animate after client hydration — SSR renders content visible
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   return (
     <div className="flex flex-col items-center gap-4">
@@ -40,7 +44,7 @@ export function AnimatedGradeBadge({ grade, score }: AnimatedGradeBadgeProps) {
         role="img"
         aria-label={t("gradeLabel", { grade, label: gradeLabel })}
         data-testid="animated-grade-badge"
-        initial={{ rotateY: 180, scale: 0.5, opacity: 0 }}
+        initial={mounted ? { rotateY: 180, scale: 0.5, opacity: 0 } : false}
         animate={{ rotateY: 0, scale: 1, opacity: 1 }}
         transition={{
           duration: 0.7,
@@ -61,7 +65,7 @@ export function AnimatedGradeBadge({ grade, score }: AnimatedGradeBadgeProps) {
       {/* Label + score fade in after badge reveal */}
       <motion.div
         className="text-center"
-        initial={{ opacity: 0, y: 8 }}
+        initial={mounted ? { opacity: 0, y: 8 } : false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
         data-testid="animated-grade-label"
