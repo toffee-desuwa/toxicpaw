@@ -184,6 +184,32 @@
     "noLiabilityTitle": "No Liability",
     "noLiabilityBody": "ToxicPaw and its creators assume no liability for decisions made based on information provided by this service.",
     "disputeProcessTitle": "Dispute Process",
-    "disputeProcessBody": "If you represent a brand and believe our analysis contains errors, please contact us at legal@toxicpaw.com."
+    "disputeProcessBody": "If you represent a brand and believe our analysis contains errors, please contact us at legal@toxicpaw.com. For a detailed explanation of how our scoring algorithm works, see our Methodology page. We also welcome feedback from veterinary professionals and researchers at feedback@toxicpaw.com."
+  },
+  "methodology": {
+    "backToHome": "\u2190 Back to Home",
+    "pageTitle": "Scoring Methodology",
+    "lastUpdated": "Last updated: March 2026",
+    "footerLink": "Methodology",
+    "overviewTitle": "Overview",
+    "overviewBody": "ToxicPaw uses an algorithmic scoring system to analyze pet food ingredient lists. Our goal is to provide pet owners with an accessible, transparent tool for understanding ingredient composition. This page documents exactly how our scoring works so that our assessments can be independently evaluated.",
+    "dataSourcesTitle": "Data Sources",
+    "dataSourcesBody": "Our ingredient database of 500+ entries is informed by the following sources:\n\n\u2022 AAFCO (Association of American Feed Control Officials) ingredient definitions and guidelines\n\u2022 FDA Center for Veterinary Medicine pet food safety guidance\n\u2022 Published veterinary nutrition literature\n\u2022 Publicly available ingredient safety data\n\nEach ingredient in our database is assigned a safety rating (safe, caution, or harmful) and a category (e.g., protein, grain, filler, byproduct, coloring, sweetener). These classifications reflect general nutritional perspectives and are not regulatory determinations.",
+    "howScoringWorksTitle": "How Scoring Works",
+    "howScoringWorksBody": "When you scan or search a pet food, our system:\n\n1. Parses the ingredient list and normalizes each ingredient name\n2. Looks up each ingredient in our database using exact match, alias match, or fuzzy match\n3. Assigns each ingredient a flag: green (safe), yellow (caution), red (harmful), or gray (unknown/not in database)\n4. Calculates a numeric score from 0 to 100\n5. Maps the score to a letter grade (A through F)\n6. Generates a plain-language verdict",
+    "ingredientCategoriesTitle": "Ingredient Categories",
+    "ingredientCategoriesBody": "Each ingredient in our database belongs to one of 17 categories: protein, grain, vegetable, fruit, fat/oil, fiber, vitamin, mineral, preservative, additive, sweetener, coloring, filler, byproduct, supplement, thickener, and flavor.\n\nSome categories are treated as \"concerning\" regardless of their individual safety rating. These include: fillers, byproducts, colorings, and sweeteners. Ingredients in these categories receive an additional score deduction even if they are individually rated as safe, because their presence may indicate lower overall formulation quality.",
+    "scoringRulesTitle": "Scoring Rules",
+    "scoringRulesBody": "The score starts at 100 and is adjusted as follows:\n\n\u2022 Each harmful (red) ingredient: \u221215 points\n\u2022 Each harmful ingredient in the top 5 positions: additional \u22125 points\n\u2022 Each caution (yellow) ingredient: \u22125 points\n\u2022 Each caution ingredient in the top 5 positions: additional \u22123 points\n\u2022 Each ingredient in a concerning category (filler, byproduct, coloring, sweetener): \u22123 points\n\u2022 Bonus: +5 points if the first ingredient is a quality protein source\n\u2022 Penalty: \u221210 points if no protein source appears in the top 3 ingredients\n\nIngredient position matters because pet food regulations require ingredients to be listed in descending order by weight. The first ingredients make up the largest portion of the food.\n\nThe final score is clamped to the range 0\u2013100.",
+    "gradeThresholdsTitle": "Grade Thresholds",
+    "gradeThresholdsBody": "The numeric score maps to a letter grade:\n\n\u2022 A: 90\u2013100 (Excellent)\n\u2022 B: 75\u201389 (Good)\n\u2022 C: 60\u201374 (Average)\n\u2022 D: 40\u201359 (Below Average)\n\u2022 F: 0\u201339 (Poor)\n\nThese thresholds are fixed in our algorithm and applied consistently to all products.",
+    "petProfileTitle": "Pet Profile Adjustments",
+    "petProfileBody": "When a user provides their pet's breed, age, weight, or health conditions, the system applies additional score adjustments. For example, a food containing chicken may receive additional deductions for a pet with a known chicken allergy. These adjustments are applied on top of the base score and the result is still clamped to 0\u2013100.",
+    "whatWeDoNotEvaluateTitle": "What We Do Not Evaluate",
+    "whatWeDoNotEvaluateBody": "Our analysis is limited to ingredient composition. We do not evaluate:\n\n\u2022 Manufacturing quality and processes\n\u2022 Bioavailability and digestibility\n\u2022 Batch-to-batch consistency\n\u2022 Regulatory compliance history\n\u2022 Individual pet health conditions (unless a pet profile is provided)\n\u2022 Breed-specific nutritional needs (unless a pet profile is provided)\n\u2022 Caloric density or guaranteed analysis values\n\u2022 Recall history",
+    "limitationsTitle": "Limitations",
+    "limitationsBody": "Please consider the following when interpreting results:\n\n\u2022 Our database may not include every ingredient. Unrecognized ingredients are marked as \"unknown\" and do not affect the score positively or negatively.\n\u2022 Ingredient safety is context-dependent. Dose, species, and individual health all matter.\n\u2022 Many flagged ingredients are FDA/AAFCO approved and safe at regulated levels. A flag reflects algorithmic categorization, not a definitive safety determination.\n\u2022 This tool supplements but does not replace veterinary guidance.\n\u2022 OCR-based scanning may introduce errors in ingredient text recognition.",
+    "openToFeedbackTitle": "Open to Feedback",
+    "openToFeedbackBody": "We strive for accuracy and transparency. If you are a brand representative, veterinary professional, or researcher and believe our analysis contains errors or could be improved, we welcome your feedback. Contact us at feedback@toxicpaw.com. We are committed to updating our database based on credible evidence."
   }
 }

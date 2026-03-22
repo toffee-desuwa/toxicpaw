@@ -14,7 +14,8 @@
         "鸡肉",
         "新鲜鸡肉"
       ],
-      "explanation_zh": "优质完整蛋白质来源，氨基酸谱优秀，适合猫犬。"
+      "explanation_zh": "优质完整蛋白质来源，氨基酸谱优秀，适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chicken Meal",
@@ -26,7 +27,8 @@
         "Dehydrated Chicken",
         "鸡肉粉"
       ],
-      "explanation_zh": "脱水浓缩鸡肉蛋白，按重量计蛋白质含量高于新鲜鸡肉。"
+      "explanation_zh": "脱水浓缩鸡肉蛋白，按重量计蛋白质含量高于新鲜鸡肉。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chicken By-Product Meal",
@@ -37,7 +39,8 @@
         "Chicken By-Products",
         "鸡副产品粉"
       ],
-      "explanation_zh": "由鸡脖、鸡爪、内脏等部位制成。品质低于明确命名的肉类，但仍能提供蛋白质。"
+      "explanation_zh": "由鸡脖、鸡爪、内脏等部位制成。品质低于明确命名的肉类，但仍能提供蛋白质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chicken Fat",
@@ -49,7 +52,8 @@
         "鸡脂肪",
         "鸡油"
       ],
-      "explanation_zh": "omega-6脂肪酸和亚油酸的天然来源。保存良好的鸡脂肪是优质成分。"
+      "explanation_zh": "omega-6脂肪酸和亚油酸的天然来源。保存良好的鸡脂肪是优质成分。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Chicken Liver",
@@ -61,7 +65,8 @@
         "Freeze-Dried Chicken Liver",
         "鸡肝"
       ],
-      "explanation_zh": "营养丰富的内脏肉，富含铁、维生素A和B族维生素。极佳的适口性增强剂。"
+      "explanation_zh": "营养丰富的内脏肉，富含铁、维生素A和B族维生素。极佳的适口性增强剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chicken Heart",
@@ -72,7 +77,8 @@
         "Fresh Chicken Heart",
         "鸡心"
       ],
-      "explanation_zh": "优质内脏肉，牛磺酸含量高，对猫必需，对犬有益。"
+      "explanation_zh": "优质内脏肉，牛磺酸含量高，对猫必需，对犬有益。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Turkey",
@@ -85,7 +91,8 @@
         "Whole Turkey",
         "火鸡肉"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。适合对鸡肉敏感的宠物。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。适合对鸡肉敏感的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Turkey Meal",
@@ -97,7 +104,8 @@
         "Dehydrated Turkey",
         "火鸡肉粉"
       ],
-      "explanation_zh": "浓缩火鸡蛋白，优质氨基酸来源。"
+      "explanation_zh": "浓缩火鸡蛋白，优质氨基酸来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Duck",
@@ -110,7 +118,8 @@
         "Whole Duck",
         "鸭肉"
       ],
-      "explanation_zh": "新型蛋白质来源，适合常见蛋白质过敏的宠物。富含铁质。"
+      "explanation_zh": "新型蛋白质来源，适合常见蛋白质过敏的宠物。富含铁质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Duck Meal",
@@ -122,7 +131,8 @@
         "Dehydrated Duck",
         "鸭肉粉"
       ],
-      "explanation_zh": "浓缩鸭肉蛋白来源，生物价值高。"
+      "explanation_zh": "浓缩鸭肉蛋白来源，生物价值高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Salmon",
@@ -137,7 +147,8 @@
         "三文鱼",
         "鲑鱼"
       ],
-      "explanation_zh": "omega-3脂肪酸（EPA/DHA）的优质来源，支持皮肤、毛发和关节健康。"
+      "explanation_zh": "omega-3脂肪酸（EPA/DHA）的优质来源，支持皮肤、毛发和关节健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Salmon Meal",
@@ -150,7 +161,8 @@
         "三文鱼粉",
         "鲑鱼粉"
       ],
-      "explanation_zh": "浓缩三文鱼蛋白，omega-3含量高。优质蛋白质来源。"
+      "explanation_zh": "浓缩三文鱼蛋白，omega-3含量高。优质蛋白质来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Salmon Oil",
@@ -162,7 +174,8 @@
         "三文鱼油",
         "鲑鱼油"
       ],
-      "explanation_zh": "EPA和DHA omega-3脂肪酸的丰富来源。支持大脑、皮肤、毛发和关节健康。"
+      "explanation_zh": "EPA和DHA omega-3脂肪酸的丰富来源。支持大脑、皮肤、毛发和关节健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Whitefish",
@@ -175,7 +188,8 @@
         "Ocean Whitefish",
         "白鱼"
       ],
-      "explanation_zh": "低脂蛋白质来源，富含omega-3。对食物敏感的宠物通常耐受良好。"
+      "explanation_zh": "低脂蛋白质来源，富含omega-3。对食物敏感的宠物通常耐受良好。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Whitefish Meal",
@@ -186,7 +200,8 @@
         "Dried Whitefish",
         "白鱼粉"
       ],
-      "explanation_zh": "浓缩鱼类蛋白质来源，氨基酸谱良好。"
+      "explanation_zh": "浓缩鱼类蛋白质来源，氨基酸谱良好。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Herring",
@@ -199,7 +214,8 @@
         "Deboned Herring",
         "鲱鱼"
       ],
-      "explanation_zh": "小型多脂鱼类，富含omega-3脂肪酸。处于食物链底端，污染物较少。"
+      "explanation_zh": "小型多脂鱼类，富含omega-3脂肪酸。处于食物链底端，污染物较少。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Herring Meal",
@@ -210,7 +226,8 @@
         "Dried Herring",
         "鲱鱼粉"
       ],
-      "explanation_zh": "浓缩鲱鱼蛋白，omega-3含量优秀。"
+      "explanation_zh": "浓缩鲱鱼蛋白，omega-3含量优秀。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Herring Oil",
@@ -220,7 +237,8 @@
       "common_aliases": [
         "鲱鱼油"
       ],
-      "explanation_zh": "omega-3脂肪酸的优质来源，有益于皮肤、毛发和认知健康。"
+      "explanation_zh": "omega-3脂肪酸的优质来源，有益于皮肤、毛发和认知健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Menhaden Fish Meal",
@@ -231,7 +249,8 @@
         "Menhaden Meal",
         "鲱鱼粉"
       ],
-      "explanation_zh": "优质鱼粉，富含omega-3，蛋白质消化率高。"
+      "explanation_zh": "优质鱼粉，富含omega-3，蛋白质消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Mackerel",
@@ -243,7 +262,8 @@
         "Whole Mackerel",
         "鲭鱼"
       ],
-      "explanation_zh": "多脂鱼类，富含omega-3脂肪酸，优质蛋白质来源。"
+      "explanation_zh": "多脂鱼类，富含omega-3脂肪酸，优质蛋白质来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sardine",
@@ -255,7 +275,8 @@
         "Whole Sardines",
         "沙丁鱼"
       ],
-      "explanation_zh": "小型鱼类，富含omega-3和钙质。汞含量风险低。"
+      "explanation_zh": "小型鱼类，富含omega-3和钙质。汞含量风险低。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Trout",
@@ -268,7 +289,8 @@
         "Rainbow Trout",
         "鳟鱼"
       ],
-      "explanation_zh": "优质淡水鱼蛋白质，富含omega-3脂肪酸。"
+      "explanation_zh": "优质淡水鱼蛋白质，富含omega-3脂肪酸。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Cod",
@@ -281,7 +303,8 @@
         "Atlantic Cod",
         "鳕鱼"
       ],
-      "explanation_zh": "低脂白色鱼肉蛋白，高消化率，脂肪含量低。"
+      "explanation_zh": "低脂白色鱼肉蛋白，高消化率，脂肪含量低。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Tuna",
@@ -294,7 +317,8 @@
         "金枪鱼",
         "吞拿鱼"
       ],
-      "explanation_zh": "良好的蛋白质来源，但汞含量可能较高。建议适量食用，尤其是猫。"
+      "explanation_zh": "良好的蛋白质来源，但汞含量可能较高。建议适量食用，尤其是猫。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Beef",
@@ -307,7 +331,8 @@
         "Whole Beef",
         "牛肉"
       ],
-      "explanation_zh": "优质红肉蛋白质，富含铁、锌和B族维生素。"
+      "explanation_zh": "优质红肉蛋白质，富含铁、锌和B族维生素。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Beef Meal",
@@ -319,7 +344,8 @@
         "Dehydrated Beef",
         "牛肉粉"
       ],
-      "explanation_zh": "浓缩牛肉蛋白来源，氨基酸谱良好。"
+      "explanation_zh": "浓缩牛肉蛋白来源，氨基酸谱良好。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Beef Liver",
@@ -330,7 +356,8 @@
         "Fresh Beef Liver",
         "牛肝"
       ],
-      "explanation_zh": "高营养内脏肉，富含维生素A、铁和B12。"
+      "explanation_zh": "高营养内脏肉，富含维生素A、铁和B12。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Beef Heart",
@@ -341,7 +368,8 @@
         "Fresh Beef Heart",
         "牛心"
       ],
-      "explanation_zh": "牛磺酸和辅酶Q10的优质来源。优质内脏肉。"
+      "explanation_zh": "牛磺酸和辅酶Q10的优质来源。优质内脏肉。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Beef Tallow",
@@ -351,7 +379,8 @@
       "common_aliases": [
         "牛脂"
       ],
-      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。"
+      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Lamb",
@@ -364,7 +393,8 @@
         "Whole Lamb",
         "羊肉"
       ],
-      "explanation_zh": "优质蛋白质来源，适合对鸡肉或牛肉过敏的宠物。"
+      "explanation_zh": "优质蛋白质来源，适合对鸡肉或牛肉过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Lamb Meal",
@@ -376,7 +406,8 @@
         "Dehydrated Lamb",
         "羊肉粉"
       ],
-      "explanation_zh": "浓缩羊肉蛋白来源，消化率良好。"
+      "explanation_zh": "浓缩羊肉蛋白来源，消化率良好。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Lamb Liver",
@@ -387,7 +418,8 @@
         "Fresh Lamb Liver",
         "羊肝"
       ],
-      "explanation_zh": "营养丰富的内脏肉，天然维生素和矿物质来源。"
+      "explanation_zh": "营养丰富的内脏肉，天然维生素和矿物质来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Venison",
@@ -400,7 +432,8 @@
         "Deer",
         "鹿肉"
       ],
-      "explanation_zh": "瘦肉型新型蛋白质，适合过敏体质宠物的排除饮食。"
+      "explanation_zh": "瘦肉型新型蛋白质，适合过敏体质宠物的排除饮食。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Venison Meal",
@@ -411,7 +444,8 @@
         "Dried Venison",
         "鹿肉粉"
       ],
-      "explanation_zh": "浓缩鹿肉蛋白来源，低过敏性蛋白质。"
+      "explanation_zh": "浓缩鹿肉蛋白来源，低过敏性蛋白质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Bison",
@@ -424,7 +458,8 @@
         "水牛肉",
         "野牛肉"
       ],
-      "explanation_zh": "瘦肉型新型蛋白质来源，铁含量高。适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "瘦肉型新型蛋白质来源，铁含量高。适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Rabbit",
@@ -436,7 +471,8 @@
         "Deboned Rabbit",
         "兔肉"
       ],
-      "explanation_zh": "瘦肉型新型蛋白质，非常适合有食物敏感性的宠物。"
+      "explanation_zh": "瘦肉型新型蛋白质，非常适合有食物敏感性的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Wild Boar",
@@ -447,7 +483,8 @@
         "Fresh Wild Boar",
         "野猪肉"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pork",
@@ -459,7 +496,8 @@
         "Deboned Pork",
         "猪肉"
       ],
-      "explanation_zh": "优质蛋白质来源，富含硫胺素。过敏性低于鸡肉或牛肉。"
+      "explanation_zh": "优质蛋白质来源，富含硫胺素。过敏性低于鸡肉或牛肉。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pork Meal",
@@ -470,7 +508,8 @@
         "Dried Pork",
         "猪肉粉"
       ],
-      "explanation_zh": "浓缩猪肉蛋白来源，氨基酸含量良好。"
+      "explanation_zh": "浓缩猪肉蛋白来源，氨基酸含量良好。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pork Liver",
@@ -481,7 +520,8 @@
         "Fresh Pork Liver",
         "猪肝"
       ],
-      "explanation_zh": "营养密集的内脏肉，富含铁和B族维生素。"
+      "explanation_zh": "营养密集的内脏肉，富含铁和B族维生素。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pork Fat",
@@ -493,7 +533,8 @@
         "猪脂肪",
         "猪油"
       ],
-      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。"
+      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Goat",
@@ -505,7 +546,8 @@
         "Deboned Goat",
         "山羊肉"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Quail",
@@ -517,7 +559,8 @@
         "Whole Quail",
         "鹌鹑肉"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pheasant",
@@ -528,7 +571,8 @@
         "Fresh Pheasant",
         "野鸡肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Egg",
@@ -543,7 +587,8 @@
         "鸡蛋",
         "全蛋"
       ],
-      "explanation_zh": "完整蛋白质来源，含所有必需氨基酸。高消化率。"
+      "explanation_zh": "完整蛋白质来源，含所有必需氨基酸。高消化率。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Fish Meal",
@@ -554,7 +599,8 @@
         "Generic Fish Meal",
         "鱼粉"
       ],
-      "explanation_zh": "浓缩蛋白来源。品质因原料来源不同而异，需关注具体成分标注。"
+      "explanation_zh": "浓缩蛋白来源。品质因原料来源不同而异，需关注具体成分标注。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Fish Oil",
@@ -565,7 +611,8 @@
         "Marine Fish Oil",
         "鱼油"
       ],
-      "explanation_zh": "EPA和DHA omega-3脂肪酸来源。支持皮肤、毛发、关节和大脑健康。"
+      "explanation_zh": "EPA和DHA omega-3脂肪酸来源。支持皮肤、毛发、关节和大脑健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Meat Meal",
@@ -576,7 +623,8 @@
         "Generic Meat Meal",
         "肉粉"
       ],
-      "explanation_zh": "来源不明确的副产品。品质无法保证，不推荐。"
+      "explanation_zh": "来源不明确的副产品。品质无法保证，不推荐。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Meat and Bone Meal",
@@ -587,7 +635,8 @@
         "MBM",
         "肉骨粉"
       ],
-      "explanation_zh": "来源不明确的副产品。品质无法保证，不推荐。"
+      "explanation_zh": "来源不明确的副产品。品质无法保证，不推荐。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Animal Fat",
@@ -598,7 +647,8 @@
         "Generic Animal Fat",
         "动物脂肪"
       ],
-      "explanation_zh": "未指明来源的动物脂肪。来源不明确是品质隐忧。"
+      "explanation_zh": "未指明来源的动物脂肪。来源不明确是品质隐忧。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Animal Digest",
@@ -609,7 +659,8 @@
         "Poultry Digest",
         "动物消化物"
       ],
-      "explanation_zh": "来源不明确的副产品。品质无法保证，不推荐。"
+      "explanation_zh": "来源不明确的副产品。品质无法保证，不推荐。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Poultry By-Product Meal",
@@ -620,7 +671,8 @@
         "Poultry By-Products",
         "禽副产品粉"
       ],
-      "explanation_zh": "副产品成分。品质低于明确命名的原料，但仍含一定营养。"
+      "explanation_zh": "副产品成分。品质低于明确命名的原料，但仍含一定营养。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Blood Meal",
@@ -631,7 +683,8 @@
         "Spray-Dried Blood Meal",
         "血粉"
       ],
-      "explanation_zh": "副产品成分。品质低于明确命名的原料，但仍含一定营养。"
+      "explanation_zh": "副产品成分。品质低于明确命名的原料，但仍含一定营养。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Feather Meal",
@@ -642,7 +695,8 @@
         "Hydrolyzed Feather Meal",
         "羽毛粉"
       ],
-      "explanation_zh": "副产品成分。品质低于明确命名的原料，但仍含一定营养。"
+      "explanation_zh": "副产品成分。品质低于明确命名的原料，但仍含一定营养。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Brown Rice",
@@ -654,7 +708,8 @@
         "Ground Brown Rice",
         "糙米"
       ],
-      "explanation_zh": "全谷物，提供复合碳水化合物、纤维和B族维生素。易于消化。"
+      "explanation_zh": "全谷物，提供复合碳水化合物、纤维和B族维生素。易于消化。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "White Rice",
@@ -669,7 +724,8 @@
         "大米",
         "米"
       ],
-      "explanation_zh": "精制谷物，消化率高但营养价值低于糙米。适合敏感肠胃。"
+      "explanation_zh": "精制谷物，消化率高但营养价值低于糙米。适合敏感肠胃。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Oatmeal",
@@ -684,7 +740,8 @@
         "燕麦",
         "燕麦片"
       ],
-      "explanation_zh": "全谷物碳水化合物来源，富含可溶性纤维。适合多数宠物。"
+      "explanation_zh": "全谷物碳水化合物来源，富含可溶性纤维。适合多数宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Barley",
@@ -697,7 +754,8 @@
         "Ground Barley",
         "大麦"
       ],
-      "explanation_zh": "全谷物，富含纤维和B族维生素。良好的碳水化合物来源。"
+      "explanation_zh": "全谷物，富含纤维和B族维生素。良好的碳水化合物来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Quinoa",
@@ -708,7 +766,8 @@
         "Whole Quinoa",
         "藜麦"
       ],
-      "explanation_zh": "完整蛋白质谷物，含所有必需氨基酸。高营养密度。"
+      "explanation_zh": "完整蛋白质谷物，含所有必需氨基酸。高营养密度。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Millet",
@@ -720,7 +779,8 @@
         "Pearl Millet",
         "小米"
       ],
-      "explanation_zh": "小型无麸质谷物，消化率良好。提供B族维生素和矿物质。"
+      "explanation_zh": "小型无麸质谷物，消化率良好。提供B族维生素和矿物质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sorghum",
@@ -733,7 +793,8 @@
         "Milo",
         "高粱"
       ],
-      "explanation_zh": "无麸质古老谷物，富含抗氧化剂。良好的碳水化合物替代品。"
+      "explanation_zh": "无麸质古老谷物，富含抗氧化剂。良好的碳水化合物替代品。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Corn",
@@ -748,7 +809,8 @@
         "Maize",
         "玉米"
       ],
-      "explanation_zh": "廉价填充成分。虽提供一定能量，但不是宠物食品的理想碳水来源。"
+      "explanation_zh": "廉价填充成分。虽提供一定能量，但不是宠物食品的理想碳水来源。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Corn Gluten Meal",
@@ -759,7 +821,8 @@
         "Corn Gluten",
         "玉米蛋白粉"
       ],
-      "explanation_zh": "玉米加工的蛋白质提取物。用作廉价蛋白质填充剂，非高品质蛋白来源。"
+      "explanation_zh": "玉米加工的蛋白质提取物。用作廉价蛋白质填充剂，非高品质蛋白来源。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Wheat",
@@ -773,7 +836,8 @@
         "Wheat Flour",
         "小麦"
       ],
-      "explanation_zh": "常见过敏原。提供碳水化合物但也是许多宠物的过敏源。"
+      "explanation_zh": "常见过敏原。提供碳水化合物但也是许多宠物的过敏源。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Wheat Gluten",
@@ -784,7 +848,8 @@
         "Vital Wheat Gluten",
         "小麦蛋白"
       ],
-      "explanation_zh": "小麦蛋白提取物。植物蛋白，常用于低质宠物食品增加蛋白质含量。"
+      "explanation_zh": "小麦蛋白提取物。植物蛋白，常用于低质宠物食品增加蛋白质含量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Wheat Middlings",
@@ -797,7 +862,8 @@
         "Wheat Bran",
         "小麦次粉"
       ],
-      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。"
+      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Soy",
@@ -813,7 +879,8 @@
         "大豆",
         "豆粕"
       ],
-      "explanation_zh": "蛋白质填充成分。非高品质蛋白来源，常用于降低成本。"
+      "explanation_zh": "蛋白质填充成分。非高品质蛋白来源，常用于降低成本。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Soy Protein Concentrate",
@@ -824,7 +891,8 @@
         "Soy Protein Isolate",
         "大豆蛋白浓缩物"
       ],
-      "explanation_zh": "蛋白质填充成分。非高品质蛋白来源，常用于降低成本。"
+      "explanation_zh": "蛋白质填充成分。非高品质蛋白来源，常用于降低成本。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Brewers Rice",
@@ -835,7 +903,8 @@
         "Rice Fragments",
         "碎米"
       ],
-      "explanation_zh": "碎米粒，碾米的副产品。营养价值低于全粒米。"
+      "explanation_zh": "碎米粒，碾米的副产品。营养价值低于全粒米。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Rice Bran",
@@ -845,7 +914,8 @@
       "common_aliases": [
         "米糠"
       ],
-      "explanation_zh": "米糠外层，良好的纤维、健康脂肪和B族维生素来源。"
+      "explanation_zh": "米糠外层，良好的纤维、健康脂肪和B族维生素来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Rice Flour",
@@ -856,7 +926,8 @@
         "Ground Rice Flour",
         "米粉"
       ],
-      "explanation_zh": "精制米粉，容易消化但纤维含量低。"
+      "explanation_zh": "精制米粉，容易消化但纤维含量低。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Cellulose",
@@ -868,7 +939,8 @@
         "Cellulose Powder",
         "纤维素"
       ],
-      "explanation_zh": "木质纤维或植物纤维。仅做填充用途，无营养价值。"
+      "explanation_zh": "木质纤维或植物纤维。仅做填充用途，无营养价值。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Sweet Potato",
@@ -882,7 +954,8 @@
         "甘薯",
         "地瓜"
       ],
-      "explanation_zh": "优质无谷碳水化合物来源，富含β-胡萝卜素、纤维和维生素。"
+      "explanation_zh": "优质无谷碳水化合物来源，富含β-胡萝卜素、纤维和维生素。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Potato",
@@ -896,7 +969,8 @@
         "土豆",
         "马铃薯"
       ],
-      "explanation_zh": "碳水化合物来源，无谷配方中常用。血糖指数较高。"
+      "explanation_zh": "碳水化合物来源，无谷配方中常用。血糖指数较高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pea",
@@ -910,7 +984,8 @@
         "Yellow Peas",
         "豌豆"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pea Protein",
@@ -922,7 +997,8 @@
         "Pea Protein Isolate",
         "豌豆蛋白"
       ],
-      "explanation_zh": "蛋白质填充成分。非高品质蛋白来源，常用于降低成本。"
+      "explanation_zh": "蛋白质填充成分。非高品质蛋白来源，常用于降低成本。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Pea Starch",
@@ -933,7 +1009,8 @@
         "Pea Flour",
         "豌豆淀粉"
       ],
-      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。"
+      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Chickpea",
@@ -945,7 +1022,8 @@
         "Garbanzo Beans",
         "鹰嘴豆"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Lentil",
@@ -958,7 +1036,8 @@
         "Green Lentils",
         "扁豆"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Carrot",
@@ -970,7 +1049,8 @@
         "Dried Carrots",
         "胡萝卜"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Spinach",
@@ -981,7 +1061,8 @@
         "Dried Spinach",
         "菠菜"
       ],
-      "explanation_zh": "富含铁、维生素和抗氧化剂的绿叶蔬菜。少量使用有益。"
+      "explanation_zh": "富含铁、维生素和抗氧化剂的绿叶蔬菜。少量使用有益。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Broccoli",
@@ -992,7 +1073,8 @@
         "Dried Broccoli",
         "西兰花"
       ],
-      "explanation_zh": "富含维生素C、K和纤维的十字花科蔬菜。适量有益。"
+      "explanation_zh": "富含维生素C、K和纤维的十字花科蔬菜。适量有益。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Kale",
@@ -1003,7 +1085,8 @@
         "Dried Kale",
         "羽衣甘蓝"
       ],
-      "explanation_zh": "营养密度极高的绿叶蔬菜，富含维生素A、C、K和抗氧化剂。"
+      "explanation_zh": "营养密度极高的绿叶蔬菜，富含维生素A、C、K和抗氧化剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pumpkin",
@@ -1015,7 +1098,8 @@
         "Dried Pumpkin",
         "南瓜"
       ],
-      "explanation_zh": "优质纤维和β-胡萝卜素来源。有助于消化健康。"
+      "explanation_zh": "优质纤维和β-胡萝卜素来源。有助于消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Butternut Squash",
@@ -1026,7 +1110,8 @@
         "Squash",
         "南瓜"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Zucchini",
@@ -1037,7 +1122,8 @@
         "Courgette",
         "西葫芦"
       ],
-      "explanation_zh": "蔬菜成分，提供纤维、维生素和矿物质。"
+      "explanation_zh": "蔬菜成分，提供纤维、维生素和矿物质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Green Bean",
@@ -1049,7 +1135,8 @@
         "String Beans",
         "四季豆"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Parsley",
@@ -1060,7 +1147,8 @@
         "Dried Parsley",
         "欧芹"
       ],
-      "explanation_zh": "富含抗氧化剂的蔬菜成分。提供维生素和纤维。"
+      "explanation_zh": "富含抗氧化剂的蔬菜成分。提供维生素和纤维。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Kelp",
@@ -1073,7 +1161,8 @@
         "Seaweed",
         "海带"
       ],
-      "explanation_zh": "碘和微量矿物质的天然来源。支持甲状腺功能。"
+      "explanation_zh": "碘和微量矿物质的天然来源。支持甲状腺功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Alfalfa",
@@ -1085,7 +1174,8 @@
         "Alfalfa Sprouts",
         "苜蓿"
       ],
-      "explanation_zh": "蔬菜成分，提供纤维、维生素和矿物质。"
+      "explanation_zh": "蔬菜成分，提供纤维、维生素和矿物质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Tomato Pomace",
@@ -1096,7 +1186,8 @@
         "Dried Tomato Pomace",
         "番茄渣"
       ],
-      "explanation_zh": "番茄加工副产品，含纤维和番茄红素。并非劣质填充剂。"
+      "explanation_zh": "番茄加工副产品，含纤维和番茄红素。并非劣质填充剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Beet Pulp",
@@ -1108,7 +1199,8 @@
         "Dried Plain Beet Pulp",
         "甜菜粕"
       ],
-      "explanation_zh": "甜菜加工后的纤维。温和的可溶性纤维来源，支持消化健康。"
+      "explanation_zh": "甜菜加工后的纤维。温和的可溶性纤维来源，支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Apple",
@@ -1121,7 +1213,8 @@
         "Apple Pomace",
         "苹果"
       ],
-      "explanation_zh": "提供纤维、维生素C和抗氧化剂。加工时去籽安全。"
+      "explanation_zh": "提供纤维、维生素C和抗氧化剂。加工时去籽安全。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Blueberry",
@@ -1133,7 +1226,8 @@
         "Dried Blueberries",
         "蓝莓"
       ],
-      "explanation_zh": "强效抗氧化剂来源，支持认知和免疫健康。优质功能性成分。"
+      "explanation_zh": "强效抗氧化剂来源，支持认知和免疫健康。优质功能性成分。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Cranberry",
@@ -1145,7 +1239,8 @@
         "Dried Cranberries",
         "蔓越莓"
       ],
-      "explanation_zh": "抗氧化成分，支持泌尿道健康。宠物食品中的有益添加。"
+      "explanation_zh": "抗氧化成分，支持泌尿道健康。宠物食品中的有益添加。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Banana",
@@ -1157,7 +1252,8 @@
         "Dried Banana",
         "香蕉"
       ],
-      "explanation_zh": "天然钾和纤维来源。适量有益，但糖分含量高。"
+      "explanation_zh": "天然钾和纤维来源。适量有益，但糖分含量高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Coconut",
@@ -1169,7 +1265,8 @@
         "Coconut Flour",
         "椰子"
       ],
-      "explanation_zh": "含中链脂肪酸，支持皮肤和毛发健康。"
+      "explanation_zh": "含中链脂肪酸，支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Coconut Oil",
@@ -1180,7 +1277,8 @@
         "Virgin Coconut Oil",
         "椰子油"
       ],
-      "explanation_zh": "含中链脂肪酸（MCT），支持皮肤和毛发健康。可能有助于认知功能。"
+      "explanation_zh": "含中链脂肪酸（MCT），支持皮肤和毛发健康。可能有助于认知功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Flaxseed",
@@ -1193,7 +1291,8 @@
         "Linseed",
         "亚麻籽"
       ],
-      "explanation_zh": "omega-3脂肪酸（ALA）的植物来源。支持皮肤和毛发健康。"
+      "explanation_zh": "omega-3脂肪酸（ALA）的植物来源。支持皮肤和毛发健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Chia Seed",
@@ -1204,7 +1303,8 @@
         "Chia Seeds",
         "奇亚籽"
       ],
-      "explanation_zh": "富含omega-3脂肪酸、纤维和抗氧化剂。"
+      "explanation_zh": "富含omega-3脂肪酸、纤维和抗氧化剂。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Sunflower Oil",
@@ -1215,7 +1315,8 @@
         "Sunflower Seed Oil",
         "葵花籽油"
       ],
-      "explanation_zh": "omega-6脂肪酸的来源。支持皮肤和毛发健康。"
+      "explanation_zh": "omega-6脂肪酸的来源。支持皮肤和毛发健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Canola Oil",
@@ -1226,7 +1327,8 @@
         "Rapeseed Oil",
         "菜籽油"
       ],
-      "explanation_zh": "均衡的omega-3和omega-6脂肪酸来源。品质因来源而异。"
+      "explanation_zh": "均衡的omega-3和omega-6脂肪酸来源。品质因来源而异。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Olive Oil",
@@ -1237,7 +1339,8 @@
         "Extra Virgin Olive Oil",
         "橄榄油"
       ],
-      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。"
+      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Tapioca",
@@ -1250,7 +1353,8 @@
         "木薯",
         "木薯淀粉"
       ],
-      "explanation_zh": "碳水化合物来源，提供能量和部分营养素。"
+      "explanation_zh": "碳水化合物来源，提供能量和部分营养素。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Glucosamine Hydrochloride",
@@ -1262,7 +1366,8 @@
         "Glucosamine",
         "氨基葡萄糖盐酸盐"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Chondroitin Sulfate",
@@ -1273,7 +1378,8 @@
         "Chondroitin",
         "硫酸软骨素"
       ],
-      "explanation_zh": "常与氨基葡萄糖搭配使用的关节保健成分。"
+      "explanation_zh": "常与氨基葡萄糖搭配使用的关节保健成分。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Taurine",
@@ -1284,7 +1390,8 @@
         "L-Taurine",
         "牛磺酸"
       ],
-      "explanation_zh": "对猫必需的氨基酸，支持心脏和眼睛健康。对犬也有益。"
+      "explanation_zh": "对猫必需的氨基酸，支持心脏和眼睛健康。对犬也有益。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "L-Carnitine",
@@ -1295,7 +1402,8 @@
         "Carnitine",
         "左旋肉碱"
       ],
-      "explanation_zh": "支持脂肪代谢和能量产生的氨基酸。有助于体重管理。"
+      "explanation_zh": "支持脂肪代谢和能量产生的氨基酸。有助于体重管理。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "DL-Methionine",
@@ -1306,7 +1414,8 @@
         "Methionine",
         "DL-蛋氨酸"
       ],
-      "explanation_zh": "氨基酸补充剂。支持蛋白质合成和身体机能。"
+      "explanation_zh": "氨基酸补充剂。支持蛋白质合成和身体机能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "L-Lysine",
@@ -1317,7 +1426,8 @@
         "Lysine",
         "赖氨酸"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Probiotics",
@@ -1337,7 +1447,8 @@
         "Bacillus",
         "益生菌"
       ],
-      "explanation_zh": "有益肠道菌群，支持消化健康和免疫功能。"
+      "explanation_zh": "有益肠道菌群，支持消化健康和免疫功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Prebiotics",
@@ -1351,7 +1462,8 @@
         "Chicory Root",
         "益生元"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Chicory Root",
@@ -1363,7 +1475,8 @@
         "Dried Chicory Root",
         "菊苣根"
       ],
-      "explanation_zh": "益生元纤维来源。促进有益肠道菌群生长。"
+      "explanation_zh": "益生元纤维来源。促进有益肠道菌群生长。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Yucca Schidigera Extract",
@@ -1374,7 +1487,8 @@
         "Yucca Extract",
         "丝兰提取物"
       ],
-      "explanation_zh": "天然植物提取物，可减轻粪便异味。"
+      "explanation_zh": "天然植物提取物，可减轻粪便异味。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Green Tea Extract",
@@ -1385,7 +1499,8 @@
         "Green Tea",
         "绿茶提取物"
       ],
-      "explanation_zh": "富含抗氧化剂的天然提取物。支持细胞健康。"
+      "explanation_zh": "富含抗氧化剂的天然提取物。支持细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Rosemary Extract",
@@ -1397,7 +1512,8 @@
         "Dried Rosemary",
         "迷迭香提取物"
       ],
-      "explanation_zh": "具有抗氧化功能的天然防腐剂。安全的化学防腐剂替代品。"
+      "explanation_zh": "具有抗氧化功能的天然防腐剂。安全的化学防腐剂替代品。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Mixed Tocopherols",
@@ -1410,7 +1526,8 @@
         "Vitamin E Preservative",
         "混合生育酚"
       ],
-      "explanation_zh": "天然维生素E混合物，用作防腐剂。安全有效的抗氧化保鲜剂。"
+      "explanation_zh": "天然维生素E混合物，用作防腐剂。安全有效的抗氧化保鲜剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Citric Acid",
@@ -1420,7 +1537,8 @@
       "common_aliases": [
         "柠檬酸"
       ],
-      "explanation_zh": "天然酸味剂和防腐剂。一般公认安全，但过量可能刺激肠胃。"
+      "explanation_zh": "天然酸味剂和防腐剂。一般公认安全，但过量可能刺激肠胃。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Ascorbic Acid",
@@ -1433,7 +1551,8 @@
         "维生素C",
         "抗坏血酸"
       ],
-      "explanation_zh": "维生素C（抗坏血酸）。抗氧化剂，支持免疫健康。"
+      "explanation_zh": "维生素C（抗坏血酸）。抗氧化剂，支持免疫健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "BHA",
@@ -1444,7 +1563,8 @@
         "Butylated Hydroxyanisole",
         "丁基羟基茴香醚"
       ],
-      "explanation_zh": "人工合成抗氧化剂（丁基羟基茴香醚）。部分研究对其安全性提出关注。FDA批准在宠物食品中按规定量使用。"
+      "explanation_zh": "人工合成抗氧化剂（丁基羟基茴香醚）。部分研究对其安全性提出关注。FDA批准在宠物食品中按规定量使用。",
+      "sources": ["FDA CVM", "AAFCO", "IARC"]
     },
     {
       "name": "BHT",
@@ -1455,7 +1575,8 @@
         "Butylated Hydroxytoluene",
         "二丁基羟基甲苯"
       ],
-      "explanation_zh": "人工合成防腐剂（二丁基羟基甲苯）。安全性受到质疑。"
+      "explanation_zh": "人工合成防腐剂（二丁基羟基甲苯）。安全性受到质疑。",
+      "sources": ["FDA CVM", "AAFCO", "IARC"]
     },
     {
       "name": "Ethoxyquin",
@@ -1465,7 +1586,8 @@
       "common_aliases": [
         "乙氧基喹"
       ],
-      "explanation_zh": "合成防腐剂，最初用作农药。部分研究对长期暴露的安全性提出关注。一些国家已对人类食品中的使用进行限制；FDA已限制其在宠物食品中的使用量。"
+      "explanation_zh": "合成防腐剂，最初用作农药。部分研究对长期暴露的安全性提出关注。一些国家已对人类食品中的使用进行限制；FDA已限制其在宠物食品中的使用量。",
+      "sources": ["FDA CVM", "AAFCO", "IARC"]
     },
     {
       "name": "Sodium Nitrite",
@@ -1476,7 +1598,8 @@
         "Sodium Nitrate",
         "亚硝酸钠"
       ],
-      "explanation_zh": "防腐剂和发色剂。部分研究对其安全性提出关注。FDA批准在宠物食品中按规定量使用。"
+      "explanation_zh": "防腐剂和发色剂。部分研究对其安全性提出关注。FDA批准在宠物食品中按规定量使用。",
+      "sources": ["FDA CVM", "AAFCO", "IARC"]
     },
     {
       "name": "Propylene Glycol",
@@ -1487,7 +1610,8 @@
         "PG",
         "丙二醇"
       ],
-      "explanation_zh": "合成甜味剂和保湿剂。对猫有毒，已被禁止用于猫粮。对犬也存在争议。"
+      "explanation_zh": "合成甜味剂和保湿剂。对猫有毒，已被禁止用于猫粮。对犬也存在争议。",
+      "sources": ["FDA CVM", "AAFCO", "IARC"]
     },
     {
       "name": "TBHQ",
@@ -1498,7 +1622,8 @@
         "Tertiary Butylhydroquinone",
         "特丁基对苯二酚"
       ],
-      "explanation_zh": "人工合成防腐剂。安全性存在严重顾虑，不推荐用于宠物食品。"
+      "explanation_zh": "人工合成防腐剂。安全性存在严重顾虑，不推荐用于宠物食品。",
+      "sources": ["FDA CVM", "AAFCO", "IARC"]
     },
     {
       "name": "Potassium Sorbate",
@@ -1508,7 +1633,8 @@
       "common_aliases": [
         "山梨酸钾"
       ],
-      "explanation_zh": "常用食品防腐剂，一般认为安全。低浓度下风险较低。"
+      "explanation_zh": "常用食品防腐剂，一般认为安全。低浓度下风险较低。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sodium Bisulfite",
@@ -1519,7 +1645,8 @@
         "Sodium Metabisulfite",
         "亚硫酸氢钠"
       ],
-      "explanation_zh": "化学防腐剂，可能导致过敏反应。大量食用可能有害。"
+      "explanation_zh": "化学防腐剂，可能导致过敏反应。大量食用可能有害。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Red 40",
@@ -1532,7 +1659,8 @@
         "Red Dye 40",
         "红色40号"
       ],
-      "explanation_zh": "人工色素，部分研究将其与多动和行为问题相关联。FDA批准用于食品。宠物食品中无营养必要性。"
+      "explanation_zh": "人工色素，部分研究将其与多动和行为问题相关联。FDA批准用于食品。宠物食品中无营养必要性。",
+      "sources": ["FDA CVM", "CSPI"]
     },
     {
       "name": "Yellow 5",
@@ -1545,7 +1673,8 @@
         "Yellow Dye 5",
         "黄色5号"
       ],
-      "explanation_zh": "人工色素（柠檬黄），可能引发过敏反应。纯粹为视觉效果添加。"
+      "explanation_zh": "人工色素（柠檬黄），可能引发过敏反应。纯粹为视觉效果添加。",
+      "sources": ["FDA CVM", "CSPI"]
     },
     {
       "name": "Yellow 6",
@@ -1558,7 +1687,8 @@
         "Yellow Dye 6",
         "黄色6号"
       ],
-      "explanation_zh": "人工色素（日落黄），部分研究将其与过敏和行为问题相关联。FDA批准用于食品。无营养用途。"
+      "explanation_zh": "人工色素（日落黄），部分研究将其与过敏和行为问题相关联。FDA批准用于食品。无营养用途。",
+      "sources": ["FDA CVM", "CSPI"]
     },
     {
       "name": "Blue 2",
@@ -1571,7 +1701,8 @@
         "Blue Dye 2",
         "蓝色2号"
       ],
-      "explanation_zh": "人工色素（靛蓝），对宠物无营养益处。部分动物研究对其安全性提出关注。FDA批准用于食品。"
+      "explanation_zh": "人工色素（靛蓝），对宠物无营养益处。部分动物研究对其安全性提出关注。FDA批准用于食品。",
+      "sources": ["FDA CVM", "CSPI"]
     },
     {
       "name": "Red 3",
@@ -1583,7 +1714,8 @@
         "FD&C Red No. 3",
         "红色3号"
       ],
-      "explanation_zh": "人工色素。对宠物无营养价值，纯为外观添加。不推荐。"
+      "explanation_zh": "人工色素。对宠物无营养价值，纯为外观添加。不推荐。",
+      "sources": ["FDA CVM", "CSPI"]
     },
     {
       "name": "Titanium Dioxide",
@@ -1594,7 +1726,8 @@
         "TiO2",
         "二氧化钛"
       ],
-      "explanation_zh": "白色着色剂。纯为外观添加，对宠物营养无益。安全性存疑。"
+      "explanation_zh": "白色着色剂。纯为外观添加，对宠物营养无益。安全性存疑。",
+      "sources": ["FDA CVM", "CSPI"]
     },
     {
       "name": "Caramel Color",
@@ -1605,7 +1738,8 @@
         "Caramel Coloring",
         "焦糖色"
       ],
-      "explanation_zh": "加工着色剂。某些类型可能含有4-甲基咪唑，部分研究对此成分提出关注。FDA批准用于食品。"
+      "explanation_zh": "加工着色剂。某些类型可能含有4-甲基咪唑，部分研究对此成分提出关注。FDA批准用于食品。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Iron Oxide",
@@ -1617,7 +1751,8 @@
         "Yellow Iron Oxide",
         "氧化铁"
       ],
-      "explanation_zh": "矿物着色剂。虽然毒性低，但在宠物食品中不必要。"
+      "explanation_zh": "矿物着色剂。虽然毒性低，但在宠物食品中不必要。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Sugar",
@@ -1631,7 +1766,8 @@
         "白糖",
         "蔗糖"
       ],
-      "explanation_zh": "添加糖在宠物食品中毫无必要。导致肥胖、糖尿病和牙齿问题。"
+      "explanation_zh": "添加糖在宠物食品中毫无必要。导致肥胖、糖尿病和牙齿问题。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Corn Syrup",
@@ -1644,7 +1780,8 @@
         "Corn Syrup Solids",
         "玉米糖浆"
       ],
-      "explanation_zh": "高度加工的甜味剂。导致肥胖和糖尿病。宠物食品中不应出现。"
+      "explanation_zh": "高度加工的甜味剂。导致肥胖和糖尿病。宠物食品中不应出现。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Molasses",
@@ -1656,7 +1793,8 @@
         "Blackstrap Molasses",
         "糖蜜"
       ],
-      "explanation_zh": "含糖量高的甜味剂。少量可接受但非必需成分。"
+      "explanation_zh": "含糖量高的甜味剂。少量可接受但非必需成分。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Sorbitol",
@@ -1666,7 +1804,8 @@
       "common_aliases": [
         "山梨醇"
       ],
-      "explanation_zh": "糖醇类甜味剂。过量食用可导致胃肠不适和腹泻。"
+      "explanation_zh": "糖醇类甜味剂。过量食用可导致胃肠不适和腹泻。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Xylitol",
@@ -1677,7 +1816,8 @@
         "Birch Sugar",
         "木糖醇"
       ],
-      "explanation_zh": "兽医界广泛认为对犬有害的糖醇。据兽医来源，即使少量也可能导致低血糖和肝脏问题。应避免用于宠物食品。"
+      "explanation_zh": "兽医界广泛认为对犬有害的糖醇。据兽医来源，即使少量也可能导致低血糖和肝脏问题。应避免用于宠物食品。",
+      "sources": ["ASPCA APCC", "Merck Veterinary Manual"]
     },
     {
       "name": "Glycerin",
@@ -1689,7 +1829,8 @@
         "Glycerol",
         "甘油"
       ],
-      "explanation_zh": "保湿剂，使半湿粮保持柔软。植物甘油一般安全。"
+      "explanation_zh": "保湿剂，使半湿粮保持柔软。植物甘油一般安全。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Guar Gum",
@@ -1699,7 +1840,8 @@
       "common_aliases": [
         "瓜尔豆胶"
       ],
-      "explanation_zh": "瓜尔豆天然增稠剂。一般安全，提供一定可溶性纤维。"
+      "explanation_zh": "瓜尔豆天然增稠剂。一般安全，提供一定可溶性纤维。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Xanthan Gum",
@@ -1709,7 +1851,8 @@
       "common_aliases": [
         "黄原胶"
       ],
-      "explanation_zh": "发酵产生的增稠剂。少量使用一般安全。"
+      "explanation_zh": "发酵产生的增稠剂。少量使用一般安全。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Carrageenan",
@@ -1720,7 +1863,8 @@
         "Irish Moss",
         "卡拉胶"
       ],
-      "explanation_zh": "海藻提取增稠剂。部分研究将其与肠道炎症相关联，但在研究者中仍有争议。FDA批准用于食品。"
+      "explanation_zh": "海藻提取增稠剂。部分研究将其与肠道炎症相关联，但在研究者中仍有争议。FDA批准用于食品。",
+      "sources": ["FDA CVM", "Veterinary nutrition literature"]
     },
     {
       "name": "Agar-Agar",
@@ -1731,7 +1875,8 @@
         "Agar",
         "琼脂"
       ],
-      "explanation_zh": "海藻提取的天然凝胶剂。安全的增稠剂替代品。"
+      "explanation_zh": "海藻提取的天然凝胶剂。安全的增稠剂替代品。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Locust Bean Gum",
@@ -1742,7 +1887,8 @@
         "Carob Bean Gum",
         "刺槐豆胶"
       ],
-      "explanation_zh": "角豆树天然增稠剂。安全且耐受性良好。"
+      "explanation_zh": "角豆树天然增稠剂。安全且耐受性良好。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Cassia Gum",
@@ -1752,7 +1898,8 @@
       "common_aliases": [
         "决明胶"
       ],
-      "explanation_zh": "决明子天然增稠剂。一般安全，用于湿粮质地调节。"
+      "explanation_zh": "决明子天然增稠剂。一般安全，用于湿粮质地调节。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sodium Tripolyphosphate",
@@ -1763,7 +1910,8 @@
         "STPP",
         "三聚磷酸钠"
       ],
-      "explanation_zh": "用于控制牙结石的磷酸盐。大量食用可能引起消化问题。"
+      "explanation_zh": "用于控制牙结石的磷酸盐。大量食用可能引起消化问题。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Calcium Carbonate",
@@ -1774,7 +1922,8 @@
         "Limestone",
         "碳酸钙"
       ],
-      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。"
+      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Calcium Phosphate",
@@ -1786,7 +1935,8 @@
         "Tricalcium Phosphate",
         "磷酸钙"
       ],
-      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。"
+      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Salt",
@@ -1799,7 +1949,8 @@
         "食盐",
         "氯化钠"
       ],
-      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。"
+      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Potassium Chloride",
@@ -1809,7 +1960,8 @@
       "common_aliases": [
         "氯化钾"
       ],
-      "explanation_zh": "钾补充剂。支持心脏功能和肌肉收缩。"
+      "explanation_zh": "钾补充剂。支持心脏功能和肌肉收缩。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Zinc Sulfate",
@@ -1822,7 +1974,8 @@
         "Zinc Chelate",
         "硫酸锌"
       ],
-      "explanation_zh": "锌补充剂。支持免疫功能、皮肤和毛发健康。"
+      "explanation_zh": "锌补充剂。支持免疫功能、皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Zinc Proteinate",
@@ -1834,7 +1987,8 @@
         "Zinc Amino Acid Chelate",
         "锌蛋白盐"
       ],
-      "explanation_zh": "锌补充剂。支持免疫功能、皮肤和毛发健康。"
+      "explanation_zh": "锌补充剂。支持免疫功能、皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Iron Proteinate",
@@ -1846,7 +2000,8 @@
         "Iron Amino Acid Chelate",
         "铁蛋白盐"
       ],
-      "explanation_zh": "铁质补充剂。支持血红蛋白生成和氧气运输。"
+      "explanation_zh": "铁质补充剂。支持血红蛋白生成和氧气运输。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Ferrous Sulfate",
@@ -1857,7 +2012,8 @@
         "Iron Sulfate",
         "硫酸亚铁"
       ],
-      "explanation_zh": "铁质补充剂。支持血红蛋白生成和氧气运输。"
+      "explanation_zh": "铁质补充剂。支持血红蛋白生成和氧气运输。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Copper Sulfate",
@@ -1869,7 +2025,8 @@
         "Copper Amino Acid Chelate",
         "硫酸铜"
       ],
-      "explanation_zh": "铁质补充剂。支持血红蛋白生成和氧气运输。"
+      "explanation_zh": "铁质补充剂。支持血红蛋白生成和氧气运输。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Copper Proteinate",
@@ -1880,7 +2037,8 @@
         "Copper Amino Acid Complex",
         "铜蛋白盐"
       ],
-      "explanation_zh": "铜补充剂。支持铁吸收和结缔组织形成。"
+      "explanation_zh": "铜补充剂。支持铁吸收和结缔组织形成。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Manganese Sulfate",
@@ -1892,7 +2050,8 @@
         "Manganese Oxide",
         "硫酸锰"
       ],
-      "explanation_zh": "锰补充剂。支持骨骼发育和代谢功能。"
+      "explanation_zh": "锰补充剂。支持骨骼发育和代谢功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Manganese Proteinate",
@@ -1903,7 +2062,8 @@
         "Manganese Amino Acid Complex",
         "锰蛋白盐"
       ],
-      "explanation_zh": "锰补充剂。支持骨骼发育和代谢功能。"
+      "explanation_zh": "锰补充剂。支持骨骼发育和代谢功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Selenium",
@@ -1916,7 +2076,8 @@
         "Selenomethionine",
         "硒"
       ],
-      "explanation_zh": "硒补充剂。抗氧化矿物质，支持免疫和甲状腺功能。"
+      "explanation_zh": "硒补充剂。抗氧化矿物质，支持免疫和甲状腺功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sodium Selenite",
@@ -1927,7 +2088,8 @@
         "Sodium Selenate",
         "亚硒酸钠"
       ],
-      "explanation_zh": "硒补充剂。抗氧化矿物质，支持免疫和甲状腺功能。"
+      "explanation_zh": "硒补充剂。抗氧化矿物质，支持免疫和甲状腺功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Iodine",
@@ -1939,7 +2101,8 @@
         "Calcium Iodate",
         "碘"
       ],
-      "explanation_zh": "碘补充剂。支持甲状腺功能正常运作。"
+      "explanation_zh": "碘补充剂。支持甲状腺功能正常运作。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Cobalt",
@@ -1951,7 +2114,8 @@
         "Cobalt Sulfate",
         "钴"
       ],
-      "explanation_zh": "钴补充剂。维生素B12合成所需微量矿物质。"
+      "explanation_zh": "钴补充剂。维生素B12合成所需微量矿物质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Magnesium",
@@ -1964,7 +2128,8 @@
         "Magnesium Proteinate",
         "镁"
       ],
-      "explanation_zh": "镁补充剂。支持肌肉和神经功能。"
+      "explanation_zh": "镁补充剂。支持肌肉和神经功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Phosphorus",
@@ -1976,7 +2141,8 @@
         "Sodium Phosphate",
         "磷"
       ],
-      "explanation_zh": "磷补充剂。支持骨骼和牙齿健康。"
+      "explanation_zh": "磷补充剂。支持骨骼和牙齿健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin A",
@@ -1990,7 +2156,8 @@
         "Beta-Carotene",
         "维生素A"
       ],
-      "explanation_zh": "维生素A补充剂。支持视力、免疫和皮肤健康。"
+      "explanation_zh": "维生素A补充剂。支持视力、免疫和皮肤健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin B1",
@@ -2004,7 +2171,8 @@
         "维生素B1",
         "硫胺素"
       ],
-      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。"
+      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin B2",
@@ -2017,7 +2185,8 @@
         "维生素B2",
         "核黄素"
       ],
-      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。"
+      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin B3",
@@ -2032,7 +2201,8 @@
         "维生素B3",
         "烟酸"
       ],
-      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。"
+      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin B5",
@@ -2046,7 +2216,8 @@
         "维生素B5",
         "泛酸"
       ],
-      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。"
+      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin B6",
@@ -2059,7 +2230,8 @@
         "维生素B6",
         "吡哆醇"
       ],
-      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。"
+      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin B7",
@@ -2072,7 +2244,8 @@
         "维生素B7",
         "生物素"
       ],
-      "explanation_zh": "维生素补充剂。满足宠物日常营养需求。"
+      "explanation_zh": "维生素补充剂。满足宠物日常营养需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin B9",
@@ -2085,7 +2258,8 @@
         "维生素B9",
         "叶酸"
       ],
-      "explanation_zh": "维生素补充剂。满足宠物日常营养需求。"
+      "explanation_zh": "维生素补充剂。满足宠物日常营养需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin B12",
@@ -2099,7 +2273,8 @@
         "维生素B12",
         "钴胺素"
       ],
-      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。"
+      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin C",
@@ -2111,7 +2286,8 @@
         "Ascorbyl Palmitate",
         "维生素C"
       ],
-      "explanation_zh": "维生素C（抗坏血酸）。抗氧化剂，支持免疫健康。"
+      "explanation_zh": "维生素C（抗坏血酸）。抗氧化剂，支持免疫健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin D3",
@@ -2124,7 +2300,8 @@
         "Vitamin D3 Supplement",
         "维生素D3"
       ],
-      "explanation_zh": "维生素D补充剂。支持钙吸收和骨骼健康。"
+      "explanation_zh": "维生素D补充剂。支持钙吸收和骨骼健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin E",
@@ -2138,7 +2315,8 @@
         "维生素E",
         "生育酚"
       ],
-      "explanation_zh": "维生素E补充剂。强效抗氧化剂，支持免疫和皮肤健康。"
+      "explanation_zh": "维生素E补充剂。强效抗氧化剂，支持免疫和皮肤健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vitamin K",
@@ -2152,7 +2330,8 @@
         "Phytonadione",
         "维生素K"
       ],
-      "explanation_zh": "维生素K补充剂。支持血液凝固和骨骼健康。"
+      "explanation_zh": "维生素K补充剂。支持血液凝固和骨骼健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Menadione Sodium Bisulfite Complex",
@@ -2165,7 +2344,8 @@
         "MSBC",
         "甲萘醌"
       ],
-      "explanation_zh": "维生素K补充剂。支持血液凝固和骨骼健康。"
+      "explanation_zh": "维生素K补充剂。支持血液凝固和骨骼健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Choline Chloride",
@@ -2177,7 +2357,8 @@
         "Choline Bitartrate",
         "氯化胆碱"
       ],
-      "explanation_zh": "维生素补充剂。满足宠物日常营养需求。"
+      "explanation_zh": "维生素补充剂。满足宠物日常营养需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Inositol",
@@ -2188,7 +2369,8 @@
         "Myo-Inositol",
         "肌醇"
       ],
-      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。"
+      "explanation_zh": "B族维生素补充剂。支持能量代谢和神经功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Natural Flavor",
@@ -2200,7 +2382,8 @@
         "Natural Flavors",
         "天然香料"
       ],
-      "explanation_zh": "天然调味剂。来源于天然原料，一般安全。"
+      "explanation_zh": "天然调味剂。来源于天然原料，一般安全。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Artificial Flavor",
@@ -2212,7 +2395,8 @@
         "Artificial Flavors",
         "人工香料"
       ],
-      "explanation_zh": "调味成分。用于提升食品适口性。"
+      "explanation_zh": "调味成分。用于提升食品适口性。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Garlic",
@@ -2225,7 +2409,8 @@
         "大蒜",
         "蒜粉"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Onion",
@@ -2238,7 +2423,8 @@
         "洋葱",
         "洋葱粉"
       ],
-      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。"
+      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。",
+      "sources": ["ASPCA APCC", "Merck Veterinary Manual"]
     },
     {
       "name": "Grapes",
@@ -2252,7 +2438,8 @@
         "葡萄",
         "葡萄干"
       ],
-      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。"
+      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。",
+      "sources": ["ASPCA APCC", "Merck Veterinary Manual"]
     },
     {
       "name": "Chocolate",
@@ -2266,7 +2453,8 @@
         "巧克力",
         "可可"
       ],
-      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。"
+      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。",
+      "sources": ["ASPCA APCC", "Merck Veterinary Manual"]
     },
     {
       "name": "Avocado",
@@ -2278,7 +2466,8 @@
         "Avocado Oil",
         "牛油果"
       ],
-      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。"
+      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Macadamia Nut",
@@ -2289,7 +2478,8 @@
         "Macadamia Nuts",
         "夏威夷果"
       ],
-      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。"
+      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。",
+      "sources": ["ASPCA APCC", "Merck Veterinary Manual"]
     },
     {
       "name": "Nutmeg",
@@ -2299,7 +2489,8 @@
       "common_aliases": [
         "肉豆蔻"
       ],
-      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。"
+      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。",
+      "sources": ["ASPCA APCC", "Merck Veterinary Manual"]
     },
     {
       "name": "Turmeric",
@@ -2311,7 +2502,8 @@
         "Curcumin",
         "姜黄"
       ],
-      "explanation_zh": "含姜黄素的天然抗炎成分。支持关节和消化健康。"
+      "explanation_zh": "含姜黄素的天然抗炎成分。支持关节和消化健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Ginger",
@@ -2323,7 +2515,8 @@
         "Dried Ginger",
         "生姜"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Cinnamon",
@@ -2335,7 +2528,8 @@
         "Ceylon Cinnamon",
         "肉桂"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Peppermint",
@@ -2347,7 +2541,8 @@
         "Peppermint Extract",
         "薄荷"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Flaxseed Oil",
@@ -2358,7 +2553,8 @@
         "Linseed Oil",
         "亚麻籽油"
       ],
-      "explanation_zh": "植物性omega-3来源。支持皮肤和毛发健康。"
+      "explanation_zh": "植物性omega-3来源。支持皮肤和毛发健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Hemp Seed",
@@ -2371,7 +2567,8 @@
         "Hemp Hearts",
         "大麻籽"
       ],
-      "explanation_zh": "必需脂肪酸补充剂。支持皮肤、毛发和整体健康。"
+      "explanation_zh": "必需脂肪酸补充剂。支持皮肤、毛发和整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Spirulina",
@@ -2382,7 +2579,8 @@
         "Blue-Green Algae",
         "螺旋藻"
       ],
-      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。"
+      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Chlorella",
@@ -2392,7 +2590,8 @@
       "common_aliases": [
         "小球藻"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Egg Product",
@@ -2404,7 +2603,8 @@
         "Dried Whole Egg",
         "蛋粉"
       ],
-      "explanation_zh": "脱水全蛋，保留蛋白质含量。浓缩蛋白来源。"
+      "explanation_zh": "脱水全蛋，保留蛋白质含量。浓缩蛋白来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Cottage Cheese",
@@ -2416,7 +2616,8 @@
         "Cheese",
         "奶酪"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Whey",
@@ -2428,7 +2629,8 @@
         "Dried Whey",
         "乳清"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Yogurt",
@@ -2440,7 +2642,8 @@
         "Yogurt Culture",
         "酸奶"
       ],
-      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。"
+      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Bone Broth",
@@ -2452,7 +2655,8 @@
         "Beef Bone Broth",
         "骨头汤"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dried Cranberry",
@@ -2463,7 +2667,8 @@
         "Cranberry Powder",
         "蔓越莓干"
       ],
-      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。"
+      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pomegranate",
@@ -2475,7 +2680,8 @@
         "Pomegranate Seed",
         "石榴"
       ],
-      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。"
+      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Papaya",
@@ -2486,7 +2692,8 @@
         "Dried Papaya",
         "木瓜"
       ],
-      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。"
+      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Mango",
@@ -2497,7 +2704,8 @@
         "Dried Mango",
         "芒果"
       ],
-      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。"
+      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pear",
@@ -2508,7 +2716,8 @@
         "Dried Pear",
         "梨"
       ],
-      "explanation_zh": "天然维生素C来源。提供抗氧化剂和纤维。"
+      "explanation_zh": "天然维生素C来源。提供抗氧化剂和纤维。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Watermelon",
@@ -2518,7 +2727,8 @@
       "common_aliases": [
         "西瓜"
       ],
-      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。"
+      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Raspberry",
@@ -2530,7 +2740,8 @@
         "Dried Raspberries",
         "覆盆子"
       ],
-      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。"
+      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Blackberry",
@@ -2541,7 +2752,8 @@
         "Blackberries",
         "黑莓"
       ],
-      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。"
+      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Strawberry",
@@ -2553,7 +2765,8 @@
         "Dried Strawberries",
         "草莓"
       ],
-      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。"
+      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Celery",
@@ -2563,7 +2776,8 @@
       "common_aliases": [
         "芹菜"
       ],
-      "explanation_zh": "蔬菜成分，提供纤维、维生素和矿物质。"
+      "explanation_zh": "蔬菜成分，提供纤维、维生素和矿物质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Cabbage",
@@ -2574,7 +2788,8 @@
         "卷心菜",
         "白菜"
       ],
-      "explanation_zh": "富含抗氧化剂的蔬菜成分。提供维生素和纤维。"
+      "explanation_zh": "富含抗氧化剂的蔬菜成分。提供维生素和纤维。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Cauliflower",
@@ -2584,7 +2799,8 @@
       "common_aliases": [
         "花椰菜"
       ],
-      "explanation_zh": "蔬菜成分，提供纤维、维生素和矿物质。"
+      "explanation_zh": "蔬菜成分，提供纤维、维生素和矿物质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Brussels Sprout",
@@ -2595,7 +2811,8 @@
         "Brussels Sprouts",
         "抱子甘蓝"
       ],
-      "explanation_zh": "富含抗氧化剂的蔬菜成分。提供维生素和纤维。"
+      "explanation_zh": "富含抗氧化剂的蔬菜成分。提供维生素和纤维。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Asparagus",
@@ -2605,7 +2822,8 @@
       "common_aliases": [
         "芦笋"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Beet",
@@ -2617,7 +2835,8 @@
         "Beetroot",
         "甜菜"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Turnip",
@@ -2628,7 +2847,8 @@
         "Turnips",
         "萝卜"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Fennel",
@@ -2639,7 +2859,8 @@
         "Fennel Seed",
         "茴香"
       ],
-      "explanation_zh": "蔬菜成分，提供纤维、维生素和矿物质。"
+      "explanation_zh": "蔬菜成分，提供纤维、维生素和矿物质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dandelion",
@@ -2651,7 +2872,8 @@
         "Dandelion Root",
         "蒲公英"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Chamomile",
@@ -2663,7 +2885,8 @@
         "Dried Chamomile",
         "洋甘菊"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Milk Thistle",
@@ -2675,7 +2898,8 @@
         "Milk Thistle Extract",
         "奶蓟"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Cranberry Extract",
@@ -2686,7 +2910,8 @@
         "Cranberry Powder",
         "蔓越莓提取物"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Lactobacillus Acidophilus Fermentation Product",
@@ -2697,7 +2922,8 @@
         "Lactobacillus acidophilus",
         "嗜酸乳杆菌"
       ],
-      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。"
+      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Bacillus Coagulans Fermentation Product",
@@ -2708,7 +2934,8 @@
         "Bacillus coagulans",
         "凝结芽孢杆菌"
       ],
-      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。"
+      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Enterococcus Faecium Fermentation Product",
@@ -2719,7 +2946,8 @@
         "Enterococcus faecium",
         "粪肠球菌"
       ],
-      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。"
+      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Montmorillonite Clay",
@@ -2731,7 +2959,8 @@
         "Calcium Montmorillonite",
         "蒙脱石"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Diatomaceous Earth",
@@ -2742,7 +2971,8 @@
         "DE",
         "硅藻土"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Brewers Yeast",
@@ -2754,7 +2984,8 @@
         "Saccharomyces cerevisiae",
         "啤酒酵母"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Nutritional Yeast",
@@ -2765,7 +2996,8 @@
         "Dried Yeast",
         "营养酵母"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Kelp",
@@ -2777,7 +3009,8 @@
         "Ascophyllum nodosum",
         "干海带"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Miscanthus Grass",
@@ -2788,7 +3021,8 @@
         "Miscanthus",
         "芒草"
       ],
-      "explanation_zh": "膳食纤维来源。支持消化健康。"
+      "explanation_zh": "膳食纤维来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Psyllium",
@@ -2800,7 +3034,8 @@
         "Psyllium Seed",
         "车前子壳"
       ],
-      "explanation_zh": "可溶性纤维来源。支持消化健康和肠道功能。"
+      "explanation_zh": "可溶性纤维来源。支持消化健康和肠道功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Methylsulfonylmethane",
@@ -2811,7 +3046,8 @@
         "MSM",
         "甲基磺酰甲烷"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Omega-3 Fatty Acids",
@@ -2824,7 +3060,8 @@
         "Omega 3",
         "欧米伽3脂肪酸"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Omega-6 Fatty Acids",
@@ -2837,7 +3074,8 @@
         "Omega 6",
         "欧米伽6脂肪酸"
       ],
-      "explanation_zh": "必需脂肪酸补充剂。支持皮肤、毛发和整体健康。"
+      "explanation_zh": "必需脂肪酸补充剂。支持皮肤、毛发和整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Lecithin",
@@ -2849,7 +3087,8 @@
         "Sunflower Lecithin",
         "卵磷脂"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Marigold Extract",
@@ -2862,7 +3101,8 @@
         "Tagetes erecta",
         "万寿菊提取物"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "New Zealand Green Mussel",
@@ -2874,7 +3114,8 @@
         "Perna canaliculus",
         "新西兰绿贻贝"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Colostrum",
@@ -2885,7 +3126,8 @@
         "Bovine Colostrum",
         "初乳"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Coenzyme Q10",
@@ -2897,7 +3139,8 @@
         "Ubiquinone",
         "辅酶Q10"
       ],
-      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。"
+      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Apple Cider Vinegar",
@@ -2908,7 +3151,8 @@
         "ACV",
         "苹果醋"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Pineapple",
@@ -2919,7 +3163,8 @@
         "Pineapple",
         "菠萝"
       ],
-      "explanation_zh": "天然维生素C来源。提供抗氧化剂和纤维。"
+      "explanation_zh": "天然维生素C来源。提供抗氧化剂和纤维。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Duck Fat",
@@ -2930,7 +3175,8 @@
         "Rendered Duck Fat",
         "鸭脂肪"
       ],
-      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。"
+      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Lamb Fat",
@@ -2941,7 +3187,8 @@
         "Rendered Lamb Fat",
         "羊脂肪"
       ],
-      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。"
+      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Turkey Fat",
@@ -2951,7 +3198,8 @@
       "common_aliases": [
         "火鸡脂肪"
       ],
-      "explanation_zh": "omega-6脂肪酸来源。支持皮肤和毛发健康。"
+      "explanation_zh": "omega-6脂肪酸来源。支持皮肤和毛发健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Krill",
@@ -2964,7 +3212,8 @@
         "Antarctic Krill",
         "磷虾"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Mussel",
@@ -2976,7 +3225,8 @@
         "Blue Mussel",
         "贻贝"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Shrimp",
@@ -2988,7 +3238,8 @@
         "Shrimp Meal",
         "虾"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Crab",
@@ -2999,7 +3250,8 @@
         "Crab Meal",
         "螃蟹"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Anchovy",
@@ -3011,7 +3263,8 @@
         "Anchovy Meal",
         "凤尾鱼"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pollock",
@@ -3023,7 +3276,8 @@
         "Walleye Pollock",
         "鳕鱼"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Catfish",
@@ -3034,7 +3288,8 @@
         "Channel Catfish",
         "鲶鱼"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Tilapia",
@@ -3044,7 +3299,8 @@
       "common_aliases": [
         "罗非鱼"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Elk",
@@ -3055,7 +3311,8 @@
         "Fresh Elk",
         "麋鹿肉"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Kangaroo",
@@ -3066,7 +3323,8 @@
         "Fresh Kangaroo",
         "袋鼠肉"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Alligator",
@@ -3078,7 +3336,8 @@
         "Crocodile",
         "鳄鱼肉"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Insect Protein",
@@ -3092,7 +3351,8 @@
         "Hermetia illucens",
         "昆虫蛋白"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Hydrolyzed Protein",
@@ -3105,7 +3365,8 @@
         "Hydrolyzed Salmon",
         "水解蛋白"
       ],
-      "explanation_zh": "水解蛋白质，分子量小，适合过敏体质宠物。低过敏性蛋白来源。"
+      "explanation_zh": "水解蛋白质，分子量小，适合过敏体质宠物。低过敏性蛋白来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Plasma Protein",
@@ -3117,7 +3378,8 @@
         "Porcine Plasma",
         "血浆蛋白"
       ],
-      "explanation_zh": "蛋白质来源，但需注意品质和来源。建议适量食用。"
+      "explanation_zh": "蛋白质来源，但需注意品质和来源。建议适量食用。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Liver Flavor",
@@ -3129,7 +3391,8 @@
         "Liver Digest",
         "肝脏风味"
       ],
-      "explanation_zh": "天然调味剂。来源于天然原料，一般安全。"
+      "explanation_zh": "天然调味剂。来源于天然原料，一般安全。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Smoke Flavor",
@@ -3141,7 +3404,8 @@
         "Liquid Smoke",
         "烟熏风味"
       ],
-      "explanation_zh": "天然调味剂。来源于天然原料，一般安全。"
+      "explanation_zh": "天然调味剂。来源于天然原料，一般安全。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Bacon Flavor",
@@ -3152,7 +3416,8 @@
         "Bacon Flavoring",
         "培根风味"
       ],
-      "explanation_zh": "人工调味剂。非天然来源，安全性存在顾虑。"
+      "explanation_zh": "人工调味剂。非天然来源，安全性存在顾虑。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Phosphoric Acid",
@@ -3162,7 +3427,8 @@
       "common_aliases": [
         "磷酸"
       ],
-      "explanation_zh": "酸度调节剂。用于调控食品pH值。"
+      "explanation_zh": "酸度调节剂。用于调控食品pH值。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Sodium Hexametaphosphate",
@@ -3173,7 +3439,8 @@
         "SHMP",
         "六偏磷酸钠"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Calcium Sulfate",
@@ -3184,7 +3451,8 @@
         "Gypsum",
         "硫酸钙"
       ],
-      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。"
+      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Tricalcium Phosphate",
@@ -3195,7 +3463,8 @@
         "TCP",
         "磷酸三钙"
       ],
-      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。"
+      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sodium Acid Pyrophosphate",
@@ -3206,7 +3475,8 @@
         "SAPP",
         "酸式焦磷酸钠"
       ],
-      "explanation_zh": "乳化剂。帮助油水混合，改善食品质地。"
+      "explanation_zh": "乳化剂。帮助油水混合，改善食品质地。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Monocalcium Phosphate",
@@ -3217,7 +3487,8 @@
         "MCP",
         "磷酸二氢钙"
       ],
-      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。"
+      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dried Tomato",
@@ -3229,7 +3500,8 @@
         "Tomatoes",
         "番茄"
       ],
-      "explanation_zh": "富含抗氧化剂的蔬菜成分。提供维生素和纤维。"
+      "explanation_zh": "富含抗氧化剂的蔬菜成分。提供维生素和纤维。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Seaweed Meal",
@@ -3241,7 +3513,8 @@
         "Ocean Kelp",
         "海藻粉"
       ],
-      "explanation_zh": "必需脂肪酸补充剂。支持皮肤、毛发和整体健康。"
+      "explanation_zh": "必需脂肪酸补充剂。支持皮肤、毛发和整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Fenugreek",
@@ -3252,7 +3525,8 @@
         "Fenugreek Seed",
         "胡芦巴"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Licorice Root",
@@ -3263,7 +3537,8 @@
         "Glycyrrhiza glabra",
         "甘草"
       ],
-      "explanation_zh": "天然抗炎成分。支持关节和消化健康。"
+      "explanation_zh": "天然抗炎成分。支持关节和消化健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Astragalus",
@@ -3275,7 +3550,8 @@
         "Huang Qi",
         "黄芪"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Echinacea",
@@ -3286,7 +3562,8 @@
         "Echinacea purpurea",
         "紫锥菊"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Slippery Elm",
@@ -3297,7 +3574,8 @@
         "Slippery Elm Bark",
         "滑榆"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Marshmallow Root",
@@ -3308,7 +3586,8 @@
         "Althaea officinalis",
         "药蜀葵根"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Valerian Root",
@@ -3319,7 +3598,8 @@
         "Valerian",
         "缬草"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "L-Theanine",
@@ -3330,7 +3610,8 @@
         "Theanine",
         "茶氨酸"
       ],
-      "explanation_zh": "氨基酸补充剂。支持蛋白质合成和身体机能。"
+      "explanation_zh": "氨基酸补充剂。支持蛋白质合成和身体机能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Catnip",
@@ -3341,7 +3622,8 @@
         "Nepeta cataria",
         "猫薄荷"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Plum",
@@ -3354,7 +3636,8 @@
         "西梅",
         "李子"
       ],
-      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。"
+      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Persimmon",
@@ -3364,7 +3647,8 @@
       "common_aliases": [
         "柿子"
       ],
-      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。"
+      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Fig",
@@ -3375,7 +3659,8 @@
         "Dried Fig",
         "无花果"
       ],
-      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。"
+      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Goat Milk",
@@ -3387,7 +3672,8 @@
         "Goat Milk Powder",
         "羊奶"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Amaranth",
@@ -3398,7 +3684,8 @@
         "Whole Amaranth",
         "苋菜籽"
       ],
-      "explanation_zh": "无麸质谷物，适合麸质敏感的宠物。良好的碳水化合物来源。"
+      "explanation_zh": "无麸质谷物，适合麸质敏感的宠物。良好的碳水化合物来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Buckwheat",
@@ -3409,7 +3696,8 @@
         "Whole Buckwheat",
         "荞麦"
       ],
-      "explanation_zh": "无麸质谷物，适合麸质敏感的宠物。良好的碳水化合物来源。"
+      "explanation_zh": "无麸质谷物，适合麸质敏感的宠物。良好的碳水化合物来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Spelt",
@@ -3420,7 +3708,8 @@
         "Whole Spelt",
         "斯佩尔特小麦"
       ],
-      "explanation_zh": "碳水化合物来源，提供能量和部分营养素。"
+      "explanation_zh": "碳水化合物来源，提供能量和部分营养素。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Rye",
@@ -3431,7 +3720,8 @@
         "Whole Rye",
         "黑麦"
       ],
-      "explanation_zh": "全谷物，提供复合碳水化合物、纤维和多种营养素。"
+      "explanation_zh": "全谷物，提供复合碳水化合物、纤维和多种营养素。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Teff",
@@ -3441,7 +3731,8 @@
       "common_aliases": [
         "画眉草"
       ],
-      "explanation_zh": "无麸质谷物，适合麸质敏感的宠物。良好的碳水化合物来源。"
+      "explanation_zh": "无麸质谷物，适合麸质敏感的宠物。良好的碳水化合物来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Potato Protein",
@@ -3452,7 +3743,8 @@
         "Potato Protein Isolate",
         "土豆蛋白"
       ],
-      "explanation_zh": "蛋白质填充成分。非高品质蛋白来源，常用于降低成本。"
+      "explanation_zh": "蛋白质填充成分。非高品质蛋白来源，常用于降低成本。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Potato Starch",
@@ -3462,7 +3754,8 @@
       "common_aliases": [
         "马铃薯淀粉"
       ],
-      "explanation_zh": "淀粉粘合剂和增稠剂。提供碳水化合物但营养价值有限。"
+      "explanation_zh": "淀粉粘合剂和增稠剂。提供碳水化合物但营养价值有限。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Corn Starch",
@@ -3473,7 +3766,8 @@
         "Modified Corn Starch",
         "玉米淀粉"
       ],
-      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。"
+      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Rice Protein Concentrate",
@@ -3484,7 +3778,8 @@
         "Rice Protein",
         "大米蛋白"
       ],
-      "explanation_zh": "蛋白质填充成分。非高品质蛋白来源，常用于降低成本。"
+      "explanation_zh": "蛋白质填充成分。非高品质蛋白来源，常用于降低成本。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Oat Fiber",
@@ -3495,7 +3790,8 @@
         "Oat Hull",
         "燕麦纤维"
       ],
-      "explanation_zh": "温和的纤维来源，支持消化健康。"
+      "explanation_zh": "温和的纤维来源，支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pea Fiber",
@@ -3505,7 +3801,8 @@
       "common_aliases": [
         "豌豆纤维"
       ],
-      "explanation_zh": "膳食纤维来源。支持消化健康。"
+      "explanation_zh": "膳食纤维来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Apple Fiber",
@@ -3517,7 +3814,8 @@
         "Apple Pomace",
         "苹果纤维"
       ],
-      "explanation_zh": "膳食纤维来源。支持消化健康。"
+      "explanation_zh": "膳食纤维来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sodium Caseinate",
@@ -3528,7 +3826,8 @@
         "Casein",
         "酪蛋白酸钠"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Calcium Stearate",
@@ -3538,7 +3837,8 @@
       "common_aliases": [
         "硬脂酸钙"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Silicon Dioxide",
@@ -3549,7 +3849,8 @@
         "Silica",
         "二氧化硅"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Magnesium Stearate",
@@ -3559,7 +3860,8 @@
       "common_aliases": [
         "硬脂酸镁"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dried Bifidobacterium Animalis Fermentation Product",
@@ -3570,7 +3872,8 @@
         "Bifidobacterium animalis",
         "动物双歧杆菌"
       ],
-      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。"
+      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Lactobacillus Casei Fermentation Product",
@@ -3581,7 +3884,8 @@
         "Lactobacillus casei",
         "干酪乳杆菌"
       ],
-      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。"
+      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Aspergillus Niger Fermentation Extract",
@@ -3592,7 +3896,8 @@
         "Aspergillus niger",
         "黑曲霉发酵提取物"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Trichoderma Longibrachiatum Fermentation Extract",
@@ -3603,7 +3908,8 @@
         "Trichoderma longibrachiatum",
         "长枝木霉发酵提取物"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Preserved with Citric Acid",
@@ -3613,7 +3919,8 @@
       "common_aliases": [
         "柠檬酸防腐"
       ],
-      "explanation_zh": "天然防腐剂。安全的化学防腐剂替代品。"
+      "explanation_zh": "天然防腐剂。安全的化学防腐剂替代品。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Calcium Propionate",
@@ -3623,7 +3930,8 @@
       "common_aliases": [
         "丙酸钙"
       ],
-      "explanation_zh": "防腐剂。用于延长食品保质期。"
+      "explanation_zh": "防腐剂。用于延长食品保质期。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sodium Benzoate",
@@ -3633,7 +3941,8 @@
       "common_aliases": [
         "苯甲酸钠"
       ],
-      "explanation_zh": "防腐剂。安全性存在一定争议，建议关注。"
+      "explanation_zh": "防腐剂。安全性存在一定争议，建议关注。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Sodium Erythorbate",
@@ -3643,7 +3952,8 @@
       "common_aliases": [
         "异抗坏血酸钠"
       ],
-      "explanation_zh": "防腐剂。用于延长食品保质期。"
+      "explanation_zh": "防腐剂。用于延长食品保质期。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Ground Bone",
@@ -3655,7 +3965,8 @@
         "Ground Chicken Bone",
         "骨粉"
       ],
-      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。"
+      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Eggshell Membrane",
@@ -3667,7 +3978,8 @@
         "Natural Eggshell Membrane",
         "蛋壳膜"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Hydrolyzed Yeast",
@@ -3679,7 +3991,8 @@
         "Yeast Cell Wall",
         "水解酵母"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Beta-Glucan",
@@ -3690,7 +4003,8 @@
         "Beta Glucans",
         "β-葡聚糖"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Shiitake Mushroom",
@@ -3702,7 +4016,8 @@
         "Lentinula edodes",
         "香菇"
       ],
-      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。"
+      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Reishi Mushroom",
@@ -3714,7 +4029,8 @@
         "Lingzhi",
         "灵芝"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Turkey Tail Mushroom",
@@ -3726,7 +4042,8 @@
         "Coriolus versicolor",
         "云芝"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Lions Mane Mushroom",
@@ -3737,7 +4054,8 @@
         "Hericium erinaceus",
         "猴头菇"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Ascorbyl Palmitate",
@@ -3747,7 +4065,8 @@
       "common_aliases": [
         "抗坏血酸棕榈酸酯"
       ],
-      "explanation_zh": "天然防腐剂。安全的化学防腐剂替代品。"
+      "explanation_zh": "天然防腐剂。安全的化学防腐剂替代品。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Calcium Ascorbate",
@@ -3757,7 +4076,8 @@
       "common_aliases": [
         "抗坏血酸钙"
       ],
-      "explanation_zh": "维生素C（抗坏血酸）。抗氧化剂，支持免疫健康。"
+      "explanation_zh": "维生素C（抗坏血酸）。抗氧化剂，支持免疫健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "D-Alpha Tocopherol",
@@ -3769,7 +4089,8 @@
         "D-Alpha Tocopheryl Acetate",
         "天然维生素E"
       ],
-      "explanation_zh": "维生素E补充剂。强效抗氧化剂，支持免疫和皮肤健康。"
+      "explanation_zh": "维生素E补充剂。强效抗氧化剂，支持免疫和皮肤健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Phytosterols",
@@ -3781,7 +4102,8 @@
         "Plant Sterols",
         "植物甾醇"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Aloe Vera",
@@ -3793,7 +4115,8 @@
         "Aloe Barbadensis",
         "芦荟"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Oregano Oil",
@@ -3805,7 +4128,8 @@
         "Origanum vulgare",
         "牛至油"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Thyme",
@@ -3816,7 +4140,8 @@
         "Dried Thyme",
         "百里香"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sage",
@@ -3827,7 +4152,8 @@
         "Dried Sage",
         "鼠尾草"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Basil",
@@ -3839,7 +4165,8 @@
         "Sweet Basil",
         "罗勒"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dill",
@@ -3850,7 +4177,8 @@
         "Dried Dill",
         "莳萝"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Watercress",
@@ -3860,7 +4188,8 @@
       "common_aliases": [
         "西洋菜"
       ],
-      "explanation_zh": "富含抗氧化剂的蔬菜成分。提供维生素和纤维。"
+      "explanation_zh": "富含抗氧化剂的蔬菜成分。提供维生素和纤维。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dried Chicory",
@@ -3872,7 +4201,8 @@
         "Chicory Pulp",
         "干菊苣"
       ],
-      "explanation_zh": "益生元纤维来源。促进有益肠道菌群生长。"
+      "explanation_zh": "益生元纤维来源。促进有益肠道菌群生长。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Ground Cinnamon",
@@ -3884,7 +4214,8 @@
         "Cassia",
         "肉桂粉"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Honey",
@@ -3896,7 +4227,8 @@
         "Manuka Honey",
         "蜂蜜"
       ],
-      "explanation_zh": "甜味剂。宠物食品中不必要的添加，可能导致健康问题。"
+      "explanation_zh": "甜味剂。宠物食品中不必要的添加，可能导致健康问题。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Dried Coconut",
@@ -3908,7 +4240,8 @@
         "Desiccated Coconut",
         "干椰子"
       ],
-      "explanation_zh": "膳食纤维来源。支持消化健康。"
+      "explanation_zh": "膳食纤维来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Duck Liver",
@@ -3919,7 +4252,8 @@
         "Fresh Duck Liver",
         "鸭肝"
       ],
-      "explanation_zh": "营养丰富的内脏肉，适口性极佳。"
+      "explanation_zh": "营养丰富的内脏肉，适口性极佳。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Turkey Liver",
@@ -3930,7 +4264,8 @@
         "Fresh Turkey Liver",
         "火鸡肝"
       ],
-      "explanation_zh": "优质内脏肉，富含必需维生素和矿物质。"
+      "explanation_zh": "优质内脏肉，富含必需维生素和矿物质。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Beef Kidney",
@@ -3941,7 +4276,8 @@
         "Fresh Beef Kidney",
         "牛肾"
       ],
-      "explanation_zh": "优质内脏肉，天然维生素和矿物质的丰富来源。"
+      "explanation_zh": "优质内脏肉，天然维生素和矿物质的丰富来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Beef Lung",
@@ -3952,7 +4288,8 @@
         "Fresh Beef Lung",
         "牛肺"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Beef Tripe",
@@ -3964,7 +4301,8 @@
         "Green Beef Tripe",
         "牛肚"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chicken Gizzard",
@@ -3975,7 +4313,8 @@
         "Fresh Chicken Gizzard",
         "鸡胗"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chicken Cartilage",
@@ -3986,7 +4325,8 @@
         "Chicken Cartilage Meal",
         "鸡软骨"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Deboned Pork",
@@ -3997,7 +4337,8 @@
         "Fresh Pork",
         "去骨猪肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pork Heart",
@@ -4008,7 +4349,8 @@
         "Fresh Pork Heart",
         "猪心"
       ],
-      "explanation_zh": "优质内脏肉，牛磺酸含量高。对猫必需，对犬有益。"
+      "explanation_zh": "优质内脏肉，牛磺酸含量高。对猫必需，对犬有益。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pork Kidney",
@@ -4019,7 +4361,8 @@
         "Fresh Pork Kidney",
         "猪肾"
       ],
-      "explanation_zh": "优质内脏肉，天然维生素和矿物质的丰富来源。"
+      "explanation_zh": "优质内脏肉，天然维生素和矿物质的丰富来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Lamb Heart",
@@ -4030,7 +4373,8 @@
         "Fresh Lamb Heart",
         "羊心"
       ],
-      "explanation_zh": "优质内脏肉，牛磺酸含量高。对猫必需，对犬有益。"
+      "explanation_zh": "优质内脏肉，牛磺酸含量高。对猫必需，对犬有益。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Lamb Kidney",
@@ -4041,7 +4385,8 @@
         "Fresh Lamb Kidney",
         "羊肾"
       ],
-      "explanation_zh": "优质内脏肉，天然维生素和矿物质的丰富来源。"
+      "explanation_zh": "优质内脏肉，天然维生素和矿物质的丰富来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Lamb Tripe",
@@ -4052,7 +4397,8 @@
         "Green Lamb Tripe",
         "羊肚"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Whole Prey Ratio",
@@ -4064,7 +4410,8 @@
         "Prey Model",
         "完整猎物比例"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Corn Fiber",
@@ -4075,7 +4422,8 @@
         "Corn Bran",
         "玉米纤维"
       ],
-      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。"
+      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Soybean Hulls",
@@ -4087,7 +4435,8 @@
         "Soy Fiber",
         "大豆壳"
       ],
-      "explanation_zh": "大豆壳。低成本纤维来源，营养价值有限。"
+      "explanation_zh": "大豆壳。低成本纤维来源，营养价值有限。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Peanut Hulls",
@@ -4098,7 +4447,8 @@
         "Peanut Shells",
         "花生壳"
       ],
-      "explanation_zh": "花生壳磨粉。无营养价值的廉价纤维填充剂。"
+      "explanation_zh": "花生壳磨粉。无营养价值的廉价纤维填充剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Oat Hulls",
@@ -4109,7 +4459,8 @@
         "Oat Bran",
         "燕麦壳"
       ],
-      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。"
+      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Rice Hulls",
@@ -4121,7 +4472,8 @@
         "Rice Hull Fiber",
         "稻壳"
       ],
-      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。"
+      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Starch",
@@ -4133,7 +4485,8 @@
         "Food Starch",
         "淀粉"
       ],
-      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。"
+      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Distillers Dried Grains",
@@ -4146,7 +4499,8 @@
         "Distillers Dried Grains with Solubles",
         "酒糟"
       ],
-      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。"
+      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Water",
@@ -4158,7 +4512,8 @@
         "Water Sufficient for Processing",
         "水"
       ],
-      "explanation_zh": "保湿剂。保持食品水分和柔软质地。"
+      "explanation_zh": "保湿剂。保持食品水分和柔软质地。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Broth",
@@ -4172,7 +4527,8 @@
         "Fish Broth",
         "肉汤"
       ],
-      "explanation_zh": "调味成分。用于提升食品适口性。"
+      "explanation_zh": "调味成分。用于提升食品适口性。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Gelatin",
@@ -4183,7 +4539,8 @@
         "Pork Gelatin",
         "明胶"
       ],
-      "explanation_zh": "增稠剂。用于改善食品质地和口感。"
+      "explanation_zh": "增稠剂。用于改善食品质地和口感。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sodium Alginate",
@@ -4194,7 +4551,8 @@
         "Alginate",
         "海藻酸钠"
       ],
-      "explanation_zh": "天然增稠剂。一般安全，用于改善食品质地。"
+      "explanation_zh": "天然增稠剂。一般安全，用于改善食品质地。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pectin",
@@ -4205,7 +4563,8 @@
         "Fruit Pectin",
         "果胶"
       ],
-      "explanation_zh": "天然增稠剂。一般安全，用于改善食品质地。"
+      "explanation_zh": "天然增稠剂。一般安全，用于改善食品质地。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Maltodextrin",
@@ -4215,7 +4574,8 @@
       "common_aliases": [
         "麦芽糊精"
       ],
-      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。"
+      "explanation_zh": "填充成分。营养价值有限，主要用于降低成本或增加体积。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dextrose",
@@ -4226,7 +4586,8 @@
         "Glucose",
         "葡萄糖"
       ],
-      "explanation_zh": "葡萄糖形式的糖。用于提升适口性但增加不必要的糖分摄入。"
+      "explanation_zh": "葡萄糖形式的糖。用于提升适口性但增加不必要的糖分摄入。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Lactose",
@@ -4237,7 +4598,8 @@
         "Milk Sugar",
         "乳糖"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Almond",
@@ -4249,7 +4611,8 @@
         "Almond Meal",
         "杏仁"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Walnut",
@@ -4260,7 +4623,8 @@
         "Walnuts",
         "核桃"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Caffeine",
@@ -4272,7 +4636,8 @@
         "Tea Extract",
         "咖啡因"
       ],
-      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。"
+      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。",
+      "sources": ["ASPCA APCC", "Merck Veterinary Manual"]
     },
     {
       "name": "Alcohol",
@@ -4285,7 +4650,8 @@
         "Wine",
         "酒精"
       ],
-      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。"
+      "explanation_zh": "人工添加剂。安全性存在严重顾虑，不推荐。",
+      "sources": ["ASPCA APCC", "Merck Veterinary Manual"]
     },
     {
       "name": "Rendered Fat",
@@ -4296,7 +4662,8 @@
         "Animal Rendered Fat",
         "动物渲染脂肪"
       ],
-      "explanation_zh": "来源不明确的副产品。品质无法保证，不推荐。"
+      "explanation_zh": "来源不明确的副产品。品质无法保证，不推荐。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Liver Digest",
@@ -4307,7 +4674,8 @@
         "Chicken Liver Digest",
         "肝脏消化物"
       ],
-      "explanation_zh": "天然调味剂。来源于天然原料，一般安全。"
+      "explanation_zh": "天然调味剂。来源于天然原料，一般安全。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Natural Chicken Flavor",
@@ -4318,7 +4686,8 @@
         "Chicken Flavoring",
         "天然鸡肉风味"
       ],
-      "explanation_zh": "天然调味剂。来源于天然原料，一般安全。"
+      "explanation_zh": "天然调味剂。来源于天然原料，一般安全。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Anchovy Oil",
@@ -4328,7 +4697,8 @@
       "common_aliases": [
         "凤尾鱼油"
       ],
-      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。"
+      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Sardine Oil",
@@ -4338,7 +4708,8 @@
       "common_aliases": [
         "沙丁鱼油"
       ],
-      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。"
+      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Algae Oil",
@@ -4350,7 +4721,8 @@
         "Schizochytrium",
         "藻油"
       ],
-      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。"
+      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "MCT Oil",
@@ -4361,7 +4733,8 @@
         "Medium Chain Triglycerides",
         "中链甘油三酯"
       ],
-      "explanation_zh": "含中链脂肪酸。支持能量代谢和皮肤健康。"
+      "explanation_zh": "含中链脂肪酸。支持能量代谢和皮肤健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Camelina Oil",
@@ -4372,7 +4745,8 @@
         "Gold of Pleasure Oil",
         "亚麻荠油"
       ],
-      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。"
+      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Safflower Oil",
@@ -4382,7 +4756,8 @@
       "common_aliases": [
         "红花油"
       ],
-      "explanation_zh": "omega-6脂肪酸来源。支持皮肤和毛发健康。"
+      "explanation_zh": "omega-6脂肪酸来源。支持皮肤和毛发健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Sesame Oil",
@@ -4393,7 +4768,8 @@
         "Sesame Seed Oil",
         "芝麻油"
       ],
-      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。"
+      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Borage Oil",
@@ -4404,7 +4780,8 @@
         "Borage Seed Oil",
         "琉璃苣油"
       ],
-      "explanation_zh": "omega-6脂肪酸来源。支持皮肤和毛发健康。"
+      "explanation_zh": "omega-6脂肪酸来源。支持皮肤和毛发健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Evening Primrose Oil",
@@ -4414,7 +4791,8 @@
       "common_aliases": [
         "月见草油"
       ],
-      "explanation_zh": "omega-6脂肪酸来源。支持皮肤和毛发健康。"
+      "explanation_zh": "omega-6脂肪酸来源。支持皮肤和毛发健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Manganese Oxide",
@@ -4424,7 +4802,8 @@
       "common_aliases": [
         "氧化锰"
       ],
-      "explanation_zh": "锰补充剂。支持骨骼发育和代谢功能。"
+      "explanation_zh": "锰补充剂。支持骨骼发育和代谢功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Zinc Oxide",
@@ -4434,7 +4813,8 @@
       "common_aliases": [
         "氧化锌"
       ],
-      "explanation_zh": "锌补充剂。支持免疫功能、皮肤和毛发健康。"
+      "explanation_zh": "锌补充剂。支持免疫功能、皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Potassium Iodide",
@@ -4444,7 +4824,8 @@
       "common_aliases": [
         "碘化钾"
       ],
-      "explanation_zh": "碘补充剂。支持甲状腺功能正常运作。"
+      "explanation_zh": "碘补充剂。支持甲状腺功能正常运作。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Calcium Iodate",
@@ -4454,7 +4835,8 @@
       "common_aliases": [
         "碘酸钙"
       ],
-      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。"
+      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chromium",
@@ -4466,7 +4848,8 @@
         "Chromium Proteinate",
         "铬"
       ],
-      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。"
+      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Boron",
@@ -4477,7 +4860,8 @@
         "Sodium Borate",
         "硼"
       ],
-      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。"
+      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Vanadium",
@@ -4488,7 +4872,8 @@
         "Vanadium Chelate",
         "钒"
       ],
-      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。"
+      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Molybdenum",
@@ -4499,7 +4884,8 @@
         "Sodium Molybdate",
         "钼"
       ],
-      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。"
+      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Silicon",
@@ -4510,7 +4896,8 @@
         "Sodium Metasilicate",
         "硅"
       ],
-      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。"
+      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Strontium",
@@ -4521,7 +4908,8 @@
         "Strontium Carbonate",
         "锶"
       ],
-      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。"
+      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Tin",
@@ -4532,7 +4920,8 @@
         "Stannous Chloride",
         "锡"
       ],
-      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。"
+      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sulfur",
@@ -4543,7 +4932,8 @@
         "Organic Sulfur",
         "硫"
       ],
-      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。"
+      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chloride",
@@ -4554,7 +4944,8 @@
         "Choline Chloride",
         "氯化物"
       ],
-      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。"
+      "explanation_zh": "矿物质补充剂。满足宠物必需矿物质需求。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dehydrated Alfalfa Meal",
@@ -4566,7 +4957,8 @@
         "Sun-Cured Alfalfa",
         "脱水苜蓿粉"
       ],
-      "explanation_zh": "膳食纤维来源。支持消化健康。"
+      "explanation_zh": "膳食纤维来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dried Carrot",
@@ -4577,7 +4969,8 @@
         "Carrot Powder",
         "干胡萝卜"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dried Pumpkin",
@@ -4588,7 +4981,8 @@
         "Pumpkin Powder",
         "干南瓜"
       ],
-      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。"
+      "explanation_zh": "良好的纤维和营养素来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Freeze-Dried Chicken",
@@ -4599,7 +4993,8 @@
         "FD Chicken",
         "冻干鸡肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Freeze-Dried Beef",
@@ -4610,7 +5005,8 @@
         "FD Beef",
         "冻干牛肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Freeze-Dried Salmon",
@@ -4621,7 +5017,8 @@
         "FD Salmon",
         "冻干三文鱼"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Freeze-Dried Duck",
@@ -4632,7 +5029,8 @@
         "FD Duck",
         "冻干鸭肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Freeze-Dried Turkey",
@@ -4643,7 +5041,8 @@
         "FD Turkey",
         "冻干火鸡肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Freeze-Dried Lamb",
@@ -4654,7 +5053,8 @@
         "FD Lamb",
         "冻干羊肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Freeze-Dried Liver",
@@ -4666,7 +5066,8 @@
         "FD Chicken Liver",
         "冻干肝脏"
       ],
-      "explanation_zh": "营养丰富的内脏肉，富含维生素和矿物质。优质天然营养来源。"
+      "explanation_zh": "营养丰富的内脏肉，富含维生素和矿物质。优质天然营养来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Raw Chicken",
@@ -4677,7 +5078,8 @@
         "Fresh Raw Chicken",
         "生鸡肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Raw Beef",
@@ -4688,7 +5090,8 @@
         "Fresh Raw Beef",
         "生牛肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dehydrated Chicken",
@@ -4699,7 +5102,8 @@
         "Air-Dried Chicken",
         "脱水鸡肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dehydrated Fish",
@@ -4710,7 +5114,8 @@
         "Air-Dried Fish",
         "脱水鱼"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dehydrated Lamb",
@@ -4721,7 +5126,8 @@
         "Air-Dried Lamb",
         "脱水羊肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dehydrated Pork",
@@ -4732,7 +5138,8 @@
         "Air-Dried Pork",
         "脱水猪肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chicken Necks",
@@ -4743,7 +5150,8 @@
         "Raw Chicken Necks",
         "鸡脖"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chicken Wings",
@@ -4754,7 +5162,8 @@
         "Raw Chicken Wings",
         "鸡翅"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Chicken Thigh",
@@ -4765,7 +5174,8 @@
         "Chicken Thighs",
         "鸡腿肉"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Turkey Heart",
@@ -4776,7 +5186,8 @@
         "Fresh Turkey Heart",
         "火鸡心"
       ],
-      "explanation_zh": "富含牛磺酸的内脏肉，对猫必需。"
+      "explanation_zh": "富含牛磺酸的内脏肉，对猫必需。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Turkey Gizzard",
@@ -4787,7 +5198,8 @@
         "Fresh Turkey Gizzard",
         "火鸡胗"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Duck Heart",
@@ -4798,7 +5210,8 @@
         "Fresh Duck Heart",
         "鸭心"
       ],
-      "explanation_zh": "优质内脏肉，牛磺酸含量高。对猫必需，对犬有益。"
+      "explanation_zh": "优质内脏肉，牛磺酸含量高。对猫必需，对犬有益。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Venison Heart",
@@ -4809,7 +5222,8 @@
         "Fresh Venison Heart",
         "鹿心"
       ],
-      "explanation_zh": "优质内脏肉，牛磺酸含量高。对猫必需，对犬有益。"
+      "explanation_zh": "优质内脏肉，牛磺酸含量高。对猫必需，对犬有益。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Venison Liver",
@@ -4820,7 +5234,8 @@
         "Fresh Venison Liver",
         "鹿肝"
       ],
-      "explanation_zh": "营养丰富的内脏肉，富含维生素和矿物质。优质天然营养来源。"
+      "explanation_zh": "营养丰富的内脏肉，富含维生素和矿物质。优质天然营养来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Bison Liver",
@@ -4831,7 +5246,8 @@
         "Fresh Bison Liver",
         "水牛肝"
       ],
-      "explanation_zh": "营养丰富的内脏肉，富含维生素和矿物质。优质天然营养来源。"
+      "explanation_zh": "营养丰富的内脏肉，富含维生素和矿物质。优质天然营养来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Rabbit Liver",
@@ -4842,7 +5258,8 @@
         "Fresh Rabbit Liver",
         "兔肝"
       ],
-      "explanation_zh": "营养丰富的内脏肉，富含维生素和矿物质。优质天然营养来源。"
+      "explanation_zh": "营养丰富的内脏肉，富含维生素和矿物质。优质天然营养来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Goat Liver",
@@ -4853,7 +5270,8 @@
         "Fresh Goat Liver",
         "山羊肝"
       ],
-      "explanation_zh": "营养丰富的内脏肉，富含维生素和矿物质。优质天然营养来源。"
+      "explanation_zh": "营养丰富的内脏肉，富含维生素和矿物质。优质天然营养来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Goat Milk Yogurt",
@@ -4864,7 +5282,8 @@
         "Goat Kefir",
         "山羊奶酸奶"
       ],
-      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。"
+      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Kefir",
@@ -4876,7 +5295,8 @@
         "Cow Milk Kefir",
         "开菲尔"
       ],
-      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。"
+      "explanation_zh": "益生菌补充剂。支持消化健康和肠道菌群平衡。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Sardine Meal",
@@ -4887,7 +5307,8 @@
         "Dried Sardine",
         "沙丁鱼粉"
       ],
-      "explanation_zh": "浓缩蛋白来源，按重量计蛋白质含量高。优质氨基酸来源。"
+      "explanation_zh": "浓缩蛋白来源，按重量计蛋白质含量高。优质氨基酸来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Mackerel Meal",
@@ -4898,7 +5319,8 @@
         "Dried Mackerel",
         "鲭鱼粉"
       ],
-      "explanation_zh": "浓缩蛋白来源，按重量计蛋白质含量高。优质氨基酸来源。"
+      "explanation_zh": "浓缩蛋白来源，按重量计蛋白质含量高。优质氨基酸来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Haddock",
@@ -4909,7 +5331,8 @@
         "Fresh Haddock",
         "黑线鳕"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Flounder",
@@ -4920,7 +5343,8 @@
         "Fresh Flounder",
         "比目鱼"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sole",
@@ -4932,7 +5356,8 @@
         "Dover Sole",
         "鳎鱼"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Perch",
@@ -4944,7 +5369,8 @@
         "Yellow Perch",
         "鲈鱼"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Walleye",
@@ -4955,7 +5381,8 @@
         "Fresh Walleye",
         "梭鲈"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Pike",
@@ -4967,7 +5394,8 @@
         "Fresh Pike",
         "梭子鱼"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Whiting",
@@ -4979,7 +5407,8 @@
         "Silver Hake",
         "牙鳕"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Smelt",
@@ -4991,7 +5420,8 @@
         "Rainbow Smelt",
         "胡瓜鱼"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Squid",
@@ -5003,7 +5433,8 @@
         "Dried Squid",
         "鱿鱼"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Clam",
@@ -5015,7 +5446,8 @@
         "Clam Juice",
         "蛤蜊"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Oyster",
@@ -5027,7 +5459,8 @@
         "Oyster Meal",
         "牡蛎"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Scallop",
@@ -5039,7 +5472,8 @@
         "Dried Scallop",
         "扇贝"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Abalone",
@@ -5049,7 +5483,8 @@
       "common_aliases": [
         "鲍鱼"
       ],
-      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。"
+      "explanation_zh": "优质蛋白质来源，富含omega-3脂肪酸。支持皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Sea Cucumber",
@@ -5060,7 +5495,8 @@
         "Dried Sea Cucumber",
         "海参"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Pheasant Meal",
@@ -5071,7 +5507,8 @@
         "Dried Pheasant",
         "野鸡肉粉"
       ],
-      "explanation_zh": "浓缩蛋白来源，按重量计蛋白质含量高。优质氨基酸来源。"
+      "explanation_zh": "浓缩蛋白来源，按重量计蛋白质含量高。优质氨基酸来源。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Quail Egg",
@@ -5082,7 +5519,8 @@
         "Quail Eggs",
         "鹌鹑蛋"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Guinea Fowl",
@@ -5093,7 +5531,8 @@
         "Fresh Guinea Fowl",
         "珍珠鸡"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Ostrich",
@@ -5104,7 +5543,8 @@
         "Fresh Ostrich",
         "鸵鸟肉"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Horse",
@@ -5115,7 +5555,8 @@
         "Horsemeat",
         "马肉"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Crocodile",
@@ -5126,7 +5567,8 @@
         "Fresh Crocodile",
         "鳄鱼"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Camel",
@@ -5137,7 +5579,8 @@
         "Camel Meat",
         "骆驼肉"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Yak",
@@ -5149,7 +5592,8 @@
         "Yak Milk",
         "牦牛肉"
       ],
-      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。"
+      "explanation_zh": "新型蛋白质来源，适合对常见蛋白质过敏的宠物。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Water Buffalo",
@@ -5160,7 +5604,8 @@
         "Buffalo Meat",
         "水牛"
       ],
-      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。"
+      "explanation_zh": "瘦肉型优质蛋白质来源。脂肪含量低，消化率高。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Edible Bone",
@@ -5173,7 +5618,8 @@
         "Finely Ground Bone",
         "可食用骨"
       ],
-      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。"
+      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Coconut Cream",
@@ -5183,7 +5629,8 @@
       "common_aliases": [
         "椰浆"
       ],
-      "explanation_zh": "含中链脂肪酸。支持能量代谢和皮肤健康。"
+      "explanation_zh": "含中链脂肪酸。支持能量代谢和皮肤健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Hemp Seed Oil",
@@ -5194,7 +5641,8 @@
         "Hemp Oil",
         "大麻籽油"
       ],
-      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。"
+      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Walnut Oil",
@@ -5204,7 +5652,8 @@
       "common_aliases": [
         "核桃油"
       ],
-      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。"
+      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Avocado Oil",
@@ -5214,7 +5663,8 @@
       "common_aliases": [
         "牛油果油"
       ],
-      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。"
+      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Pumpkin Seed Oil",
@@ -5224,7 +5674,8 @@
       "common_aliases": [
         "南瓜籽油"
       ],
-      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。"
+      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Black Cumin Seed Oil",
@@ -5236,7 +5687,8 @@
         "Black Seed Oil",
         "黑种草籽油"
       ],
-      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。"
+      "explanation_zh": "脂肪酸来源，提供必需脂肪酸和能量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Pumpkin Seed",
@@ -5248,7 +5700,8 @@
         "Ground Pumpkin Seed",
         "南瓜籽"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Sunflower Seed",
@@ -5260,7 +5713,8 @@
         "Ground Sunflower Seed",
         "葵花籽"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Coconut Flour",
@@ -5270,7 +5724,8 @@
       "common_aliases": [
         "椰子粉"
       ],
-      "explanation_zh": "膳食纤维来源。支持消化健康。"
+      "explanation_zh": "膳食纤维来源。支持消化健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Acacia Fiber",
@@ -5282,7 +5737,8 @@
         "Acacia Gum",
         "阿拉伯胶"
       ],
-      "explanation_zh": "益生元纤维来源。促进有益肠道菌群生长。"
+      "explanation_zh": "益生元纤维来源。促进有益肠道菌群生长。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Bamboo Fiber",
@@ -5293,7 +5749,8 @@
         "Bamboo Powder",
         "竹纤维"
       ],
-      "explanation_zh": "可溶性纤维来源。支持消化健康和肠道功能。"
+      "explanation_zh": "可溶性纤维来源。支持消化健康和肠道功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Nori",
@@ -5305,7 +5762,8 @@
         "紫菜",
         "海苔"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Wakame",
@@ -5316,7 +5774,8 @@
         "Dried Wakame",
         "裙带菜"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dulse",
@@ -5328,7 +5787,8 @@
         "Palmaria palmata",
         "红藻"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Chaga Mushroom",
@@ -5339,7 +5799,8 @@
         "Inonotus obliquus",
         "白桦茸"
       ],
-      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。"
+      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Cordyceps",
@@ -5351,7 +5812,8 @@
         "Cordyceps militaris",
         "冬虫夏草"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Maitake Mushroom",
@@ -5362,7 +5824,8 @@
         "Grifola frondosa",
         "舞茸"
       ],
-      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。"
+      "explanation_zh": "免疫支持补充剂。促进免疫系统正常功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Olive Leaf Extract",
@@ -5373,7 +5836,8 @@
         "Oleuropein",
         "橄榄叶提取物"
       ],
-      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。"
+      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Grape Seed Extract",
@@ -5385,7 +5849,8 @@
         "Proanthocyanidins",
         "葡萄籽提取物"
       ],
-      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。"
+      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Pine Bark Extract",
@@ -5396,7 +5861,8 @@
         "Pycnogenol",
         "松树皮提取物"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Bilberry",
@@ -5407,7 +5873,8 @@
         "Bilberry Extract",
         "越橘"
       ],
-      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。"
+      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Acai",
@@ -5419,7 +5886,8 @@
         "Acai Extract",
         "巴西莓"
       ],
-      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。"
+      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Goji Berry",
@@ -5431,7 +5899,8 @@
         "Lycium barbarum",
         "枸杞"
       ],
-      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。"
+      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Noni Fruit",
@@ -5443,7 +5912,8 @@
         "Morinda citrifolia",
         "诺丽果"
       ],
-      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。"
+      "explanation_zh": "天然水果成分，提供维生素、纤维和抗氧化剂。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Mangosteen",
@@ -5454,7 +5924,8 @@
         "Mangosteen Extract",
         "山竹"
       ],
-      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。"
+      "explanation_zh": "富含抗氧化剂的水果成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Moringa",
@@ -5466,7 +5937,8 @@
         "Moringa oleifera",
         "辣木"
       ],
-      "explanation_zh": "氨基酸补充剂。支持蛋白质合成和身体机能。"
+      "explanation_zh": "氨基酸补充剂。支持蛋白质合成和身体机能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Wheatgrass",
@@ -5477,7 +5949,8 @@
         "Wheat Grass Juice",
         "小麦草"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Barley Grass",
@@ -5488,7 +5961,8 @@
         "Barley Grass Juice",
         "大麦草"
       ],
-      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。"
+      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Cat Grass",
@@ -5499,7 +5973,8 @@
         "Pet Grass",
         "猫草"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Bromelain",
@@ -5510,7 +5985,8 @@
         "Pineapple Enzyme",
         "菠萝蛋白酶"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Papain",
@@ -5521,7 +5997,8 @@
         "Papaya Enzyme",
         "木瓜蛋白酶"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Lipase",
@@ -5531,7 +6008,8 @@
       "common_aliases": [
         "脂肪酶"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Protease",
@@ -5541,7 +6019,8 @@
       "common_aliases": [
         "蛋白酶"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Amylase",
@@ -5551,7 +6030,8 @@
       "common_aliases": [
         "淀粉酶"
       ],
-      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。"
+      "explanation_zh": "消化健康补充剂。支持营养吸收和肠道功能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Cellulase",
@@ -5561,7 +6041,8 @@
       "common_aliases": [
         "纤维素酶"
       ],
-      "explanation_zh": "消化酶补充剂。帮助营养物质分解和吸收。"
+      "explanation_zh": "消化酶补充剂。帮助营养物质分解和吸收。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Hyaluronic Acid",
@@ -5573,7 +6054,8 @@
         "Sodium Hyaluronate",
         "透明质酸"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Collagen",
@@ -5585,7 +6067,8 @@
         "Collagen Peptides",
         "胶原蛋白"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "SAMe",
@@ -5596,7 +6079,8 @@
         "S-Adenosyl-L-Methionine",
         "S-腺苷蛋氨酸"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Alpha Lipoic Acid",
@@ -5608,7 +6092,8 @@
         "R-Lipoic Acid",
         "α-硫辛酸"
       ],
-      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。"
+      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "N-Acetyl Cysteine",
@@ -5619,7 +6104,8 @@
         "NAC",
         "N-乙酰半胱氨酸"
       ],
-      "explanation_zh": "氨基酸补充剂。支持蛋白质合成和身体机能。"
+      "explanation_zh": "氨基酸补充剂。支持蛋白质合成和身体机能。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Astaxanthin",
@@ -5631,7 +6117,8 @@
         "Haematococcus pluvialis",
         "虾青素"
       ],
-      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。"
+      "explanation_zh": "关节保健补充剂。支持关节灵活性和软骨健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Lutein",
@@ -5642,7 +6129,8 @@
         "Marigold-Derived Lutein",
         "叶黄素"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Zeaxanthin",
@@ -5652,7 +6140,8 @@
       "common_aliases": [
         "玉米黄质"
       ],
-      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。"
+      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Lycopene",
@@ -5663,7 +6152,8 @@
         "Tomato Lycopene",
         "番茄红素"
       ],
-      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。"
+      "explanation_zh": "天然抗氧化成分。支持免疫和细胞健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Phosphatidylserine",
@@ -5674,7 +6164,8 @@
         "PS",
         "磷脂酰丝氨酸"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Medium Chain Triglycerides",
@@ -5686,7 +6177,8 @@
         "MCT Powder",
         "中链甘油三酯"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Calcium Lactate",
@@ -5696,7 +6188,8 @@
       "common_aliases": [
         "乳酸钙"
       ],
-      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。"
+      "explanation_zh": "钙质补充剂。支持骨骼和牙齿健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Magnesium Citrate",
@@ -5706,7 +6199,8 @@
       "common_aliases": [
         "柠檬酸镁"
       ],
-      "explanation_zh": "镁补充剂。支持肌肉和神经功能。"
+      "explanation_zh": "镁补充剂。支持肌肉和神经功能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Zinc Methionine",
@@ -5717,7 +6211,8 @@
         "Zinc Methionine Complex",
         "蛋氨酸锌"
       ],
-      "explanation_zh": "锌补充剂。支持免疫功能、皮肤和毛发健康。"
+      "explanation_zh": "锌补充剂。支持免疫功能、皮肤和毛发健康。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Ferric Chloride",
@@ -5728,7 +6223,8 @@
         "Iron Chloride",
         "氯化铁"
       ],
-      "explanation_zh": "铁质补充剂。支持血红蛋白生成和氧气运输。"
+      "explanation_zh": "铁质补充剂。支持血红蛋白生成和氧气运输。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Copper Lysine",
@@ -5739,7 +6235,8 @@
         "Copper Amino Acid Chelate",
         "赖氨酸铜"
       ],
-      "explanation_zh": "铜补充剂。支持铁吸收和结缔组织形成。"
+      "explanation_zh": "铜补充剂。支持铁吸收和结缔组织形成。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dried Seaweed Meal",
@@ -5751,7 +6248,8 @@
         "Sea Vegetable Meal",
         "干海藻粉"
       ],
-      "explanation_zh": "营养补充成分。支持宠物整体健康。"
+      "explanation_zh": "营养补充成分。支持宠物整体健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Ground Whole Flaxseed",
@@ -5762,7 +6260,8 @@
         "Milled Flaxseed",
         "研磨亚麻籽"
       ],
-      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。"
+      "explanation_zh": "omega-3脂肪酸来源。支持皮肤、毛发和关节健康。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Dried Rosemary",
@@ -5773,7 +6272,8 @@
         "Rosemary Leaves",
         "干迷迭香"
       ],
-      "explanation_zh": "天然防腐剂。安全的化学防腐剂替代品。"
+      "explanation_zh": "天然防腐剂。安全的化学防腐剂替代品。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Dried Spearmint",
@@ -5784,7 +6284,8 @@
         "Spearmint Leaf",
         "留兰香"
       ],
-      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。"
+      "explanation_zh": "食品添加剂。用于改善食品品质或加工性能。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Clove",
@@ -5795,7 +6296,8 @@
         "Clove Oil",
         "丁香"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Star Anise",
@@ -5805,7 +6307,8 @@
       "common_aliases": [
         "八角"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Bay Leaf",
@@ -5816,7 +6319,8 @@
         "Bay Leaves",
         "月桂叶"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Black Pepper",
@@ -5827,7 +6331,8 @@
         "Piperine",
         "黑胡椒"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Cayenne Pepper",
@@ -5839,7 +6344,8 @@
         "Chili Pepper",
         "辣椒"
       ],
-      "explanation_zh": "食品添加剂。安全性存在一定争议。"
+      "explanation_zh": "食品添加剂。安全性存在一定争议。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Rennet Casein",
@@ -5850,7 +6356,8 @@
         "Casein",
         "凝乳酪蛋白"
       ],
-      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。"
+      "explanation_zh": "优质蛋白质来源，提供必需氨基酸。适合猫犬。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "Artificial Colors",
@@ -5867,7 +6374,8 @@
         "人工色素",
         "合成色素"
       ],
-      "explanation_zh": "合成染料，仅用于外观，无营养价值。与某些动物的过敏反应和多动症有关。"
+      "explanation_zh": "合成染料，仅用于外观，无营养价值。与某些动物的过敏反应和多动症有关。",
+      "sources": ["FDA CVM", "CSPI"]
     },
     {
       "name": "Animal By-Products",
@@ -5883,7 +6391,8 @@
         "动物副产品",
         "动物副产物"
       ],
-      "explanation_zh": "未指定来源的动物副产品。质量和来源不一致且无法追溯，属于低品质原料。"
+      "explanation_zh": "未指定来源的动物副产品。质量和来源不一致且无法追溯，属于低品质原料。",
+      "sources": ["AAFCO"]
     },
     {
       "name": "L-Tryptophan",
@@ -5895,7 +6404,8 @@
         "L-色氨酸",
         "色氨酸"
       ],
-      "explanation_zh": "必需氨基酸，支持血清素合成。有助于宠物的情绪稳定和睡眠质量。"
+      "explanation_zh": "必需氨基酸，支持血清素合成。有助于宠物的情绪稳定和睡眠质量。",
+      "sources": ["AAFCO", "Veterinary nutrition literature"]
     },
     {
       "name": "Sodium Bisulfate",
@@ -5906,7 +6416,8 @@
         "Sodium Hydrogen Sulfate",
         "酸式硫酸钠"
       ],
-      "explanation_zh": "防腐剂和酸化剂。小剂量一般安全，但高浓度可能引起消化不适。"
+      "explanation_zh": "防腐剂和酸化剂。小剂量一般安全，但高浓度可能引起消化不适。",
+      "sources": ["FDA CVM", "AAFCO"]
     },
     {
       "name": "Spearmint Extract",
@@ -5919,7 +6430,8 @@
         "留兰香提取物",
         "薄荷提取物"
       ],
-      "explanation_zh": "天然调味剂和口气清新剂。一般对宠物安全，可改善口腔健康。"
+      "explanation_zh": "天然调味剂和口气清新剂。一般对宠物安全，可改善口腔健康。",
+      "sources": ["AAFCO"]
     }
   ]
 }

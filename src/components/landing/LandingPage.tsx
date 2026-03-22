@@ -97,6 +97,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
   const { t } = useTranslation("landing");
   const { t: tc } = useTranslation("common");
   const { t: tl } = useTranslation("legal");
+  const { t: tm } = useTranslation("methodology");
   const [trustRef, trustInView] = useInView(0.3);
   const [supportsIO, setSupportsIO] = useState(false);
   useEffect(() => {
@@ -354,12 +355,21 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
           {t("footer")}
         </p>
         <Disclaimer />
-        <Link
-          href="/legal"
-          className="mt-3 inline-block text-xs text-neutral-600 underline underline-offset-2 transition-colors hover:text-neutral-400"
-        >
-          {tl("footerLink")}
-        </Link>
+        <div className="mt-3 flex items-center justify-center gap-3">
+          <Link
+            href="/legal"
+            className="text-xs text-neutral-600 underline underline-offset-2 transition-colors hover:text-neutral-400"
+          >
+            {tl("footerLink")}
+          </Link>
+          <span className="text-neutral-700">&middot;</span>
+          <Link
+            href="/methodology"
+            className="text-xs text-neutral-600 underline underline-offset-2 transition-colors hover:text-neutral-400"
+          >
+            {tm("footerLink")}
+          </Link>
+        </div>
       </footer>
     </div>
   );
