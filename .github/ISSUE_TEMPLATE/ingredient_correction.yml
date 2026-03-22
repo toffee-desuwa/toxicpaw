@@ -1,0 +1,36 @@
+name: Ingredient Correction
+description: Report an incorrect ingredient rating or description
+labels: ["ingredient-data"]
+body:
+  - type: input
+    id: ingredient
+    attributes:
+      label: Ingredient Name
+      placeholder: e.g., "BHA" or "chicken meal"
+    validations:
+      required: true
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: What's Wrong?
+      options:
+        - Safety rating is incorrect
+        - Description is inaccurate
+        - Missing ingredient (not in database)
+        - Source citation needed
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested Correction
+      description: What should it say? Please include sources if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links to AAFCO, FDA, or veterinary literature supporting your correction
+    validations:
+      required: false

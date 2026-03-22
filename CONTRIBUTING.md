@@ -1,111 +1,101 @@
 # Contributing to ToxicPaw
 
-Thank you for your interest in contributing to ToxicPaw! This guide will help you get started.
+[English](#contributing) | [中文](#贡献指南)
 
-## Getting Started
+---
 
-1. **Fork the repository** and clone your fork locally
-2. **Install dependencies**: `npm install`
-3. **Run the dev server**: `npm run dev`
-4. **Run tests**: `npm test`
-
-## Development Setup
-
-### Prerequisites
-
-- Node.js 18+
-- npm 9+
-
-### Environment Variables
-
-Copy `.env.example` to `.env.local` and fill in:
-
-```
-ANTHROPIC_API_KEY=your_key_here
-```
-
-The app works without an API key (AI explanations will be skipped), but you need one for full functionality.
+<a name="contributing"></a>
 
 ## How to Contribute
 
-### Reporting Bugs
+We welcome contributions! Here are the most impactful areas:
 
-- Use the GitHub Issues tab
-- Include steps to reproduce, expected vs actual behavior, and screenshots if applicable
-- Mention your browser and device (this is a mobile-first app)
+### Ingredient Database
+- Add missing ingredients to `data/ingredients.json`
+- Improve ingredient descriptions and safety ratings
+- Add source citations
 
-### Suggesting Features
+### Brand Coverage
+- Add more brands with real ingredient lists to `data/brands.json`
+- Verify existing brand data against current packaging
 
-- Open a GitHub Issue with the "enhancement" label
-- Describe the use case and why it would benefit pet owners
+### Translations
+- Improve Chinese translations in `messages/zh.json`
+- Add new language support
 
-### Submitting Code
+### Bug Reports & Feature Requests
+- Use [GitHub Issues](https://github.com/toffee-desuwa/toxicpaw/issues)
+- Include screenshots and steps to reproduce for bugs
 
-1. Create a feature branch from `main`: `git checkout -b feat/your-feature`
-2. Make your changes following our conventions (below)
-3. Write or update tests for your changes
-4. Ensure all checks pass: `npm test && npm run lint && npm run build`
-5. Commit using conventional format (see below)
-6. Push and open a Pull Request
+## Development Setup
 
-## Code Conventions
-
-### TypeScript
-
-- Strict mode enabled (`"strict": true`)
-- No `any` types
-- Use interfaces for object shapes, types for unions/intersections
-
-### Commits
-
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
-
-```
-feat(scope): add new feature
-fix(scope): fix a bug
-test(scope): add or update tests
-docs(scope): update documentation
-refactor(scope): code refactoring
-chore(scope): maintenance tasks
+```bash
+git clone https://github.com/toffee-desuwa/toxicpaw.git
+cd toxicpaw
+npm install
+npm run dev    # http://localhost:2999
+npm test       # Run tests
+npm run build  # Production build
 ```
 
-### Testing
+## Pull Request Guidelines
 
-- All components must have tests
-- Use React Testing Library for component tests
-- Use Jest for unit tests
-- Run `npm test` before submitting a PR
-
-### Styling
-
-- Tailwind CSS v4 utility classes
-- Mobile-first responsive design (test at 375px width)
-- No inline styles or CSS modules
-
-## Adding Ingredients
-
-The ingredient knowledge base is in `data/ingredients.json`. To add a new ingredient:
-
-```json
-{
-  "name": "Ingredient Name",
-  "category": "protein|grain|vegetable|...",
-  "safety_rating": "safe|caution|harmful",
-  "explanation": "Why this ingredient is rated this way",
-  "aliases": ["alternate name", "Chinese name"]
-}
-```
-
-Make sure to:
-- Check for duplicates before adding
-- Include Chinese aliases if known
-- Cite veterinary nutrition sources for the safety rating
-- Add tests for any new categories or edge cases
+1. Fork the repo and create a feature branch
+2. Make your changes with clear commit messages
+3. Ensure `npm run build` passes
+4. Submit a PR with a description of what changed and why
 
 ## Code of Conduct
 
-Be respectful, constructive, and inclusive. We're all here because we care about pet safety.
+Be respectful. We're here to help pets eat better.
 
-## Questions?
+---
 
-Open a GitHub Issue or start a Discussion. We're happy to help!
+<a name="贡献指南"></a>
+
+## 如何贡献
+
+欢迎贡献！以下是最有价值的贡献方向：
+
+### 成分数据库
+- 向 `data/ingredients.json` 添加缺失的成分
+- 改进成分描述和安全评级
+- 添加来源引用
+
+### 品牌覆盖
+- 向 `data/brands.json` 添加更多品牌的真实成分表
+- 核实现有品牌数据是否与当前包装一致
+
+### 翻译
+- 改进 `messages/zh.json` 中的中文翻译
+- 添加新语言支持
+
+### Bug 报告 & 功能建议
+- 使用 [GitHub Issues](https://github.com/toffee-desuwa/toxicpaw/issues)
+- Bug 报告请附上截图和复现步骤
+
+## 开发环境搭建
+
+```bash
+git clone https://github.com/toffee-desuwa/toxicpaw.git
+cd toxicpaw
+npm install
+npm run dev    # http://localhost:2999
+npm test       # 运行测试
+npm run build  # 生产构建
+```
+
+## Pull Request 规范
+
+1. Fork 仓库并创建功能分支
+2. 提交时使用清晰的 commit message
+3. 确保 `npm run build` 通过
+4. 提交 PR 时描述改动内容和原因
+
+## 行为准则
+
+互相尊重。我们的共同目标是让宠物吃得更安全。
+
+---
+
+Thank you for helping make pet food safer! 🐾
