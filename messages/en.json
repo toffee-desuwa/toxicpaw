@@ -184,7 +184,7 @@
     "noLiabilityTitle": "No Liability",
     "noLiabilityBody": "ToxicPaw and its creators assume no liability for decisions made based on information provided by this service.",
     "disputeProcessTitle": "Dispute Process",
-    "disputeProcessBody": "If you represent a brand and believe our analysis contains errors, please contact us at legal@toxicpaw.com. For a detailed explanation of how our scoring algorithm works, see our Methodology page. We also welcome feedback from veterinary professionals and researchers at feedback@toxicpaw.com."
+    "disputeProcessBody": "If you represent a brand and believe our analysis contains errors, please open an issue on our GitHub repository at https://github.com/toffee-desuwa/toxicpaw/issues. For a detailed explanation of how our scoring algorithm works, see our Methodology page. We also welcome feedback from veterinary professionals and researchers via GitHub Issues."
   },
   "methodology": {
     "backToHome": "\u2190 Back to Home",
@@ -210,6 +210,6 @@
     "limitationsTitle": "Limitations",
     "limitationsBody": "Please consider the following when interpreting results:\n\n\u2022 Our database may not include every ingredient. Unrecognized ingredients are marked as \"unknown\" and do not affect the score positively or negatively.\n\u2022 Ingredient safety is context-dependent. Dose, species, and individual health all matter.\n\u2022 Many flagged ingredients are FDA/AAFCO approved and safe at regulated levels. A flag reflects algorithmic categorization, not a definitive safety determination.\n\u2022 This tool supplements but does not replace veterinary guidance.\n\u2022 OCR-based scanning may introduce errors in ingredient text recognition.",
     "openToFeedbackTitle": "Open to Feedback",
-    "openToFeedbackBody": "We strive for accuracy and transparency. If you are a brand representative, veterinary professional, or researcher and believe our analysis contains errors or could be improved, we welcome your feedback. Contact us at feedback@toxicpaw.com. We are committed to updating our database based on credible evidence."
+    "openToFeedbackBody": "We strive for accuracy and transparency. If you are a brand representative, veterinary professional, or researcher and believe our analysis contains errors or could be improved, we welcome your feedback. Submit feedback via our GitHub repository at https://github.com/toffee-desuwa/toxicpaw/issues. We are committed to updating our database based on credible evidence."
   }
 }
