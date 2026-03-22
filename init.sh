@@ -1,18 +1,22 @@
-#!/bin/bash
-# ToxicPaw - Session initialization script
-# Run at the start of every Ralph loop to verify environment
+#!/usr/bin/env bash
+# ============================================================
+# ToxicPaw Harness Init Script
+# Every Ralph session: build safety check → environment → status report
+# ============================================================
 
-set -e
+set -euo pipefail
 
 echo "=== ToxicPaw Session Init ==="
+echo "Date: $(date '+%Y-%m-%d %H:%M:%S')"
+echo ""
 
-# Verify we're in the right directory
+# 1. Verify project root
 if [[ ! -f "CLAUDE.md" ]]; then
     echo "ERROR: Not in toxicpaw project root"
     exit 1
 fi
 
-# Verify harness files exist
+# 2. Verify harness files
 for f in features.json progress.txt CLAUDE.md; do
     if [[ ! -f "$f" ]]; then
         echo "ERROR: Missing harness file: $f"
@@ -20,29 +24,58 @@ for f in features.json progress.txt CLAUDE.md; do
     fi
 done
 
-# Check git status
-echo "Git status:"
-git status --short
-
-# Show last 3 commits for context
-echo ""
-echo "Recent commits:"
-git log --oneline -3 2>/dev/null || echo "(no commits yet)"
-
-# Show feature progress
-echo ""
-echo "Feature progress:"
-total=$(cat features.json | grep '"id"' | wc -l)
-done=$(cat features.json | grep '"status": "done"' | wc -l)
-in_progress=$(cat features.json | grep '"status": "in_progress"' | wc -l)
-echo "  Total: $total | Done: $done | In Progress: $in_progress | Remaining: $((total - done - in_progress))"
-
-# Check if node_modules exists (after F001)
+# 3. Dependencies check
 if [[ -f "package.json" ]] && [[ ! -d "node_modules" ]]; then
-    echo ""
     echo "Installing npm dependencies..."
     npm install
 fi
 
+# 4. Build safety check with auto-revert
+echo "--- Build Safety Check ---"
+if [[ -f "package.json" ]]; then
+    if ! npm run build --silent 2>/dev/null; then
+        echo "WARN: Last commit has broken build. Auto-reverting..."
+        git revert HEAD --no-edit
+        npm install --silent 2>/dev/null
+        if ! npm run build --silent 2>/dev/null; then
+            echo "FAIL: Still broken after revert. Manual intervention needed."
+            exit 1
+        fi
+        echo "Auto-reverted broken commit. Clean state restored."
+    else
+        echo "Build OK"
+    fi
+fi
 echo ""
-echo "=== Init complete. Read progress.txt and features.json, then work on the next pending feature. ==="
+
+# 5. Lint check
+echo "--- Lint Check ---"
+npm run lint 2>&1 | tail -5
+echo ""
+
+# 6. Git status
+echo "--- Git Status ---"
+git status --short
+echo ""
+echo "Last 5 commits:"
+git log --oneline -5
+echo ""
+
+# 7. Feature status summary
+echo "--- Feature Status ---"
+node -e "
+const fs = require('fs');
+const data = JSON.parse(fs.readFileSync('features.json', 'utf8'));
+const counts = {};
+data.features.forEach(f => { counts[f.status] = (counts[f.status] || 0) + 1; });
+Object.entries(counts).sort().forEach(([s, c]) => console.log('  ' + s + ': ' + c));
+console.log('  total: ' + data.features.length);
+"
+echo ""
+
+# 8. Last progress entry
+echo "--- Last Progress Entry ---"
+tail -5 progress.txt 2>/dev/null || echo "(no progress yet)"
+echo ""
+
+echo "=== Init Complete ==="

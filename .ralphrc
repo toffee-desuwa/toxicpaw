@@ -1,7 +1,7 @@
 # ToxicPaw Ralph Configuration
 
-# Claude CLI command
-CLAUDE_CODE_CMD="claude"
+# Claude CLI command (Windows: must set Git Bash path)
+CLAUDE_CODE_CMD="CLAUDE_CODE_GIT_BASH_PATH='D:\\Git\\bin\\bash.exe' claude"
 
 # Rate limiting
 MAX_CALLS_PER_HOUR=50
@@ -18,8 +18,8 @@ SESSION_EXPIRY_HOURS=0
 RESET_SESSION_EACH_LOOP=true
 CLAUDE_USE_CONTINUE=false
 
-# Tool permissions
-CLAUDE_ALLOWED_TOOLS="Write,Read,Edit,Bash(git add *),Bash(git commit *),Bash(git diff *),Bash(git log *),Bash(git status),Bash(npm *),Bash(npx *),Bash(node *),Bash(mkdir *),Bash(cat *)"
+# Tool permissions — MUST be Bash(*) for combined commands to work
+ALLOWED_TOOLS="Write,Read,Edit,Bash(*),Glob,Grep"
 
 # Circuit breaker
 CB_COOLDOWN_MINUTES=15
