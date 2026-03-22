@@ -171,20 +171,20 @@ function buildSummary(analyzed: AnalyzedIngredient[]): AnalysisSummary {
 /** Generate a short plain-language verdict based on grade and summary */
 function generateVerdict(grade: Grade, summary: AnalysisSummary): string {
   if (summary.totalIngredients === 0) {
-    return "No ingredients detected. Try scanning again with a clearer image.";
+    return "No ingredients found to analyze.";
   }
 
   switch (grade) {
     case "A":
-      return "Excellent quality food with wholesome, safe ingredients. Great choice for your pet!";
+      return "Our analysis considers this food to have excellent ingredient quality.";
     case "B":
-      return "Good quality food with mostly safe ingredients. A solid choice with minor concerns.";
+      return "Our analysis considers this food to have good ingredient quality.";
     case "C":
-      return "Average quality food. Some questionable ingredients that could be better.";
+      return "Our analysis finds average ingredient quality. Some ingredients are flagged for review.";
     case "D":
-      return `Below average quality. Found ${summary.harmfulCount} harmful ingredient${summary.harmfulCount !== 1 ? "s" : ""} that may affect your pet's health.`;
+      return `Our analysis flags several ingredients for review. Consult your veterinarian for personalized advice.`;
     case "F":
-      return `Poor quality food with ${summary.harmfulCount} harmful ingredient${summary.harmfulCount !== 1 ? "s" : ""}. Consider switching to a higher quality option.`;
+      return `Our analysis flags ${summary.harmfulCount} ingredient${summary.harmfulCount !== 1 ? "s" : ""} for review. We recommend consulting your veterinarian.`;
   }
 }
 

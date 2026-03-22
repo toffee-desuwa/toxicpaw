@@ -27,24 +27,24 @@ export function buildPrompt(request: ExplainRequest): string {
 
   let ingredientSummary = "";
   if (redItems.length > 0) {
-    ingredientSummary += `Harmful ingredients: ${redItems.map((i) => `${i.name} (${i.explanation})`).join(", ")}. `;
+    ingredientSummary += `Flagged ingredients: ${redItems.map((i) => `${i.name} (${i.explanation})`).join(", ")}. `;
   }
   if (yellowItems.length > 0) {
-    ingredientSummary += `Caution ingredients: ${yellowItems.map((i) => i.name).join(", ")}. `;
+    ingredientSummary += `Ingredients flagged for review: ${yellowItems.map((i) => i.name).join(", ")}. `;
   }
   if (greenItems.length > 0) {
     ingredientSummary += `Safe ingredients: ${greenItems.map((i) => i.name).join(", ")}. `;
   }
 
-  return `You are a pet nutrition expert explaining a pet food ingredient analysis to a concerned pet owner.
+  return `You are a pet nutrition analyst explaining an algorithmic pet food ingredient analysis. This is not veterinary advice.
 
-The food received a grade of ${request.grade} (score: ${request.score}/100).
-- ${request.summary.harmfulCount} harmful, ${request.summary.cautionCount} caution, ${request.summary.safeCount} safe, ${request.summary.unknownCount} unknown ingredients
+The food received an algorithmic grade of ${request.grade} (score: ${request.score}/100).
+- ${request.summary.harmfulCount} flagged, ${request.summary.cautionCount} for review, ${request.summary.safeCount} safe, ${request.summary.unknownCount} unknown ingredients
 - First ingredient is quality protein: ${request.summary.topIngredientIsProtein ? "yes" : "no"}
 
 ${ingredientSummary}
 
-Write exactly 2-3 sentences in plain language explaining why this food received this grade. Be specific about which ingredients are concerning or praiseworthy. Use a warm but direct tone — like a vet talking to a pet parent. Do not use markdown formatting.`;
+Write exactly 2-3 sentences in plain language explaining why our algorithm assigned this grade. Frame findings as algorithmic observations, not definitive safety judgments. Recommend consulting a veterinarian for personalized dietary advice. Use a warm but informative tone. Do not use markdown formatting.`;
 }
 
 /**

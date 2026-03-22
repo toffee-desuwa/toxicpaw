@@ -15,6 +15,7 @@ import { ShareButton } from "@/components/sharing";
 import { useTranslation } from "@/lib/i18n";
 import { IngredientList } from "./IngredientList";
 import { SummaryBar } from "./SummaryBar";
+import { Disclaimer } from "@/components/shared/Disclaimer";
 
 interface AnalysisViewProps {
   result: AnalysisResult;
@@ -102,6 +103,11 @@ export function AnalysisView({ result, onScanAnother, onSaveToHistory, onPersona
       >
         {result.verdict}
       </p>
+
+      {/* Legal Disclaimer */}
+      <div className="text-center">
+        <Disclaimer />
+      </div>
 
       {/* AI Explanation */}
       {aiLoading && (

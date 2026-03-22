@@ -70,8 +70,8 @@ describe("buildShareImage", () => {
     const result = buildShareImage(makeData(), "og");
     const json = JSON.stringify(result);
     // Stats are passed as props to StatPill components
-    expect(json).toContain('"harmful"');
-    expect(json).toContain('"caution"');
+    expect(json).toContain('"flagged"');
+    expect(json).toContain('"review"');
     expect(json).toContain('"safe"');
   });
 

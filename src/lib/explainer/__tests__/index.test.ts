@@ -84,7 +84,7 @@ describe("buildPrompt", () => {
   it("lists harmful ingredients", () => {
     const prompt = buildPrompt(makeRequest());
     expect(prompt).toContain("BHA");
-    expect(prompt).toContain("Harmful ingredients");
+    expect(prompt).toContain("Flagged ingredients");
   });
 
   it("lists safe ingredients", () => {

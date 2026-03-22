@@ -136,8 +136,8 @@ describe("SummaryBar", () => {
   it("renders labels", () => {
     render(<SummaryBar summary={makeSummary()} />);
     expect(screen.getByText("Safe")).toBeInTheDocument();
-    expect(screen.getByText("Caution")).toBeInTheDocument();
-    expect(screen.getByText("Harmful")).toBeInTheDocument();
+    expect(screen.getByText("Review")).toBeInTheDocument();
+    expect(screen.getByText("Flagged")).toBeInTheDocument();
     expect(screen.getByText("Unknown")).toBeInTheDocument();
   });
 });

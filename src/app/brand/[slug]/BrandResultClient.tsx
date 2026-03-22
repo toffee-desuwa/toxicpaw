@@ -9,6 +9,7 @@ import { IngredientList } from "@/components/analysis/IngredientList";
 import { SummaryBar } from "@/components/analysis/SummaryBar";
 import { ShareButton } from "@/components/sharing";
 import { useTranslation } from "@/lib/i18n";
+import { Disclaimer } from "@/components/shared/Disclaimer";
 
 interface BrandResultClientProps {
   brand: AnalyzedBrand;
@@ -84,6 +85,11 @@ export function BrandResultClient({ brand }: BrandResultClientProps) {
         >
           {localizedVerdict}
         </motion.p>
+
+        {/* Legal Disclaimer */}
+        <div className="text-center">
+          <Disclaimer />
+        </div>
 
         {/* Summary Stats */}
         <motion.div

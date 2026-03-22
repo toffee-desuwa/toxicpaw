@@ -19,6 +19,7 @@ import type { Grade } from "@/lib/analyzer/types";
 import { GRADE_COLORS, GRADE_TEXT_COLORS } from "@/lib/grade";
 import { useTranslation } from "@/lib/i18n";
 import { CountUp, ScrollReveal } from "@/components/motion";
+import { Disclaimer } from "@/components/shared/Disclaimer";
 
 interface LandingPageProps {
   onStartScan: () => void;
@@ -95,6 +96,7 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
   const [searchFocused, setSearchFocused] = useState(false);
   const { t } = useTranslation("landing");
   const { t: tc } = useTranslation("common");
+  const { t: tl } = useTranslation("legal");
   const [trustRef, trustInView] = useInView(0.3);
   const [supportsIO, setSupportsIO] = useState(false);
   useEffect(() => {
@@ -351,9 +353,13 @@ export function LandingPage({ onStartScan, onViewHistory }: LandingPageProps) {
         <p className="font-medium">
           {t("footer")}
         </p>
-        <p className="mt-1.5">
-          {t("disclaimer")}
-        </p>
+        <Disclaimer />
+        <Link
+          href="/legal"
+          className="mt-3 inline-block text-xs text-neutral-600 underline underline-offset-2 transition-colors hover:text-neutral-400"
+        >
+          {tl("footerLink")}
+        </Link>
       </footer>
     </div>
   );

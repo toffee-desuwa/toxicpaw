@@ -210,8 +210,8 @@ function buildOgImage(data: ShareImageData) {
 
         {/* Stats row */}
         <div style={{ display: "flex", gap: "16px" }}>
-          <StatPill color="#ef4444" label="harmful" count={data.summary.harmfulCount} />
-          <StatPill color="#f59e0b" label="caution" count={data.summary.cautionCount} />
+          <StatPill color="#ef4444" label="flagged" count={data.summary.harmfulCount} />
+          <StatPill color="#f59e0b" label="review" count={data.summary.cautionCount} />
           <StatPill color="#10b981" label="safe" count={data.summary.safeCount} />
         </div>
       </GlassCard>
@@ -361,8 +361,8 @@ function buildSquareImage(data: ShareImageData) {
 
         {/* Stats row */}
         <div style={{ display: "flex", gap: "20px", marginBottom: "24px" }}>
-          <StatPill color="#ef4444" label="harmful" count={data.summary.harmfulCount} />
-          <StatPill color="#f59e0b" label="caution" count={data.summary.cautionCount} />
+          <StatPill color="#ef4444" label="flagged" count={data.summary.harmfulCount} />
+          <StatPill color="#f59e0b" label="review" count={data.summary.cautionCount} />
           <StatPill color="#10b981" label="safe" count={data.summary.safeCount} />
         </div>
 
@@ -381,7 +381,7 @@ function buildSquareImage(data: ShareImageData) {
             }}
           >
             <span style={{ display: "flex", fontSize: 15, color: "#ef4444", fontWeight: 600, letterSpacing: "0.04em" }}>
-              {"\u26a0 Harmful Ingredients Found"}
+              {"\u26a0 Flagged Ingredients"}
             </span>
             <span style={{ display: "flex", fontSize: 17, color: "#fca5a5", textAlign: "center" }}>
               {data.harmfulNames.slice(0, 5).join(", ")}

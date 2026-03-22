@@ -235,8 +235,8 @@ describe("ScanCeremony", () => {
       jest.advanceTimersByTime(2000);
     });
     expect(screen.getByText("Safe")).toBeInTheDocument();
-    expect(screen.getByText("Caution")).toBeInTheDocument();
-    expect(screen.getByText("Harmful")).toBeInTheDocument();
+    expect(screen.getByText("Review")).toBeInTheDocument();
+    expect(screen.getByText("Flagged")).toBeInTheDocument();
   });
 
   it("shows ingredients in their categories during categorize stage", () => {

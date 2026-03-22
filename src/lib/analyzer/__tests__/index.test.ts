@@ -49,7 +49,7 @@ describe("analyzeIngredients", () => {
     expect(result.score).toBe(0);
     expect(result.ingredients).toHaveLength(0);
     expect(result.summary.totalIngredients).toBe(0);
-    expect(result.verdict).toContain("No ingredients detected");
+    expect(result.verdict).toContain("No ingredients found");
   });
 
   it("grades a high-quality food with safe ingredients highly", () => {

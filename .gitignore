@@ -4,11 +4,23 @@ dist/
 .env
 .env.local
 *.log
-.ralph/logs/
-.ralph/.call_count
-.ralph/.exit_signals
-.ralph/.circuit_breaker_state
-.ralph/.claude_session_id
-.ralph/.response_analysis
-.ralph/.ralph_session_history
 .DS_Store
+
+# Build artifacts
+tsconfig.tsbuildinfo
+
+# Internal tooling — Ralph harness (entire directory)
+.ralph/
+.ralphrc
+
+# Claude Code IDE config
+.claude/
+
+# Session/planning docs (internal only)
+SESSION_CONTEXT.md
+progress.txt
+features.json
+init.sh
+
+# Internal specs
+docs/specs/

@@ -803,7 +803,7 @@
       "name": "Soy",
       "category": "filler",
       "safety_rating": "caution",
-      "explanation": "Common allergen and often genetically modified. Can cause gas and bloating. Used as a cheap protein source.",
+      "explanation": "Common allergen and often genetically modified. May cause gas and bloating in some pets. Frequently used as an economical protein source.",
       "common_aliases": [
         "Soybean",
         "Soy Flour",
@@ -862,7 +862,7 @@
       "name": "Cellulose",
       "category": "filler",
       "safety_rating": "caution",
-      "explanation": "Indigestible plant fiber (often from wood pulp). Used as a cheap bulk filler with zero nutritional value.",
+      "explanation": "Indigestible plant fiber (often from wood pulp). Typically used as a bulk filler with minimal nutritional value.",
       "common_aliases": [
         "Powdered Cellulose",
         "Cellulose Powder",
@@ -1439,18 +1439,18 @@
       "name": "BHA",
       "category": "preservative",
       "safety_rating": "harmful",
-      "explanation": "Butylated hydroxyanisole - synthetic preservative classified as a possible carcinogen. Banned in some countries for human food.",
+      "explanation": "Butylated hydroxyanisole - synthetic preservative classified by some bodies as a possible concern. FDA-approved for use in pet food at regulated levels. Restricted in some countries for human food.",
       "common_aliases": [
         "Butylated Hydroxyanisole",
         "丁基羟基茴香醚"
       ],
-      "explanation_zh": "人工合成抗氧化剂（丁基羟基茴香醚）。研究表明可能具有致癌性。"
+      "explanation_zh": "人工合成抗氧化剂（丁基羟基茴香醚）。部分研究对其安全性提出关注。FDA批准在宠物食品中按规定量使用。"
     },
     {
       "name": "BHT",
       "category": "preservative",
       "safety_rating": "harmful",
-      "explanation": "Butylated hydroxytoluene - synthetic preservative linked to organ toxicity and potential carcinogenicity.",
+      "explanation": "Butylated hydroxytoluene - synthetic preservative. Some studies have raised concerns about long-term exposure. FDA-approved for use in pet food at regulated levels.",
       "common_aliases": [
         "Butylated Hydroxytoluene",
         "二丁基羟基甲苯"
@@ -1461,28 +1461,28 @@
       "name": "Ethoxyquin",
       "category": "preservative",
       "safety_rating": "harmful",
-      "explanation": "Synthetic antioxidant originally developed as a pesticide. Linked to liver and kidney damage. Banned in many countries.",
+      "explanation": "Synthetic antioxidant originally developed as a pesticide. Some studies have raised concerns about long-term exposure. Restricted in some countries for human food; FDA has limited its use in pet food.",
       "common_aliases": [
         "乙氧基喹"
       ],
-      "explanation_zh": "合成防腐剂，最初用作农药。与肝脏和肾脏问题有关，许多国家已限制使用。"
+      "explanation_zh": "合成防腐剂，最初用作农药。部分研究对长期暴露的安全性提出关注。一些国家已对人类食品中的使用进行限制；FDA已限制其在宠物食品中的使用量。"
     },
     {
       "name": "Sodium Nitrite",
       "category": "preservative",
       "safety_rating": "harmful",
-      "explanation": "Chemical preservative that can form carcinogenic nitrosamines. Used for color and preservation in low-quality foods.",
+      "explanation": "Chemical preservative that may form compounds some studies flag as potentially concerning. FDA-approved for use in pet food at regulated levels. Used for color and preservation.",
       "common_aliases": [
         "Sodium Nitrate",
         "亚硝酸钠"
       ],
-      "explanation_zh": "防腐剂和发色剂。高浓度可能有毒，已知致癌物。"
+      "explanation_zh": "防腐剂和发色剂。部分研究对其安全性提出关注。FDA批准在宠物食品中按规定量使用。"
     },
     {
       "name": "Propylene Glycol",
       "category": "preservative",
       "safety_rating": "harmful",
-      "explanation": "Chemical moisturizer toxic to cats (causes Heinz body anemia). FDA banned it in cat food. Avoid for all pets.",
+      "explanation": "Chemical moisturizer. According to veterinary sources, may be harmful to cats (associated with Heinz body anemia). FDA has prohibited its use in cat food. Generally not recommended for pet food.",
       "common_aliases": [
         "PG",
         "丙二醇"
@@ -1493,7 +1493,7 @@
       "name": "TBHQ",
       "category": "preservative",
       "safety_rating": "harmful",
-      "explanation": "Tertiary butylhydroquinone - synthetic preservative linked to stomach tumors in animal studies.",
+      "explanation": "Tertiary butylhydroquinone - synthetic preservative. Some animal studies have raised concerns; FDA-approved for use in pet food at regulated levels.",
       "common_aliases": [
         "Tertiary Butylhydroquinone",
         "特丁基对苯二酚"
@@ -1525,20 +1525,20 @@
       "name": "Red 40",
       "category": "coloring",
       "safety_rating": "harmful",
-      "explanation": "Artificial dye linked to hyperactivity and behavioral issues. Purely cosmetic with zero nutritional value. Pets don't care about food color.",
+      "explanation": "Artificial dye that some studies have associated with hyperactivity and behavioral issues. Purely cosmetic with no nutritional value. FDA-approved for use in food.",
       "common_aliases": [
         "Allura Red",
         "FD&C Red No. 40",
         "Red Dye 40",
         "红色40号"
       ],
-      "explanation_zh": "人工色素，与多动症和行为问题有关。宠物食品中无必要添加。"
+      "explanation_zh": "人工色素，部分研究将其与多动和行为问题相关联。FDA批准用于食品。宠物食品中无营养必要性。"
     },
     {
       "name": "Yellow 5",
       "category": "coloring",
       "safety_rating": "harmful",
-      "explanation": "Artificial dye linked to allergic reactions and hyperactivity. No nutritional purpose.",
+      "explanation": "Artificial dye that some studies have associated with allergic reactions and hyperactivity. No nutritional purpose. FDA-approved for use in food.",
       "common_aliases": [
         "Tartrazine",
         "FD&C Yellow No. 5",
@@ -1551,33 +1551,33 @@
       "name": "Yellow 6",
       "category": "coloring",
       "safety_rating": "harmful",
-      "explanation": "Artificial dye associated with allergic reactions and potential carcinogenicity. Purely cosmetic.",
+      "explanation": "Artificial dye that some studies have associated with allergic reactions. Some regulatory bodies have raised concerns. Purely cosmetic. FDA-approved for use in food.",
       "common_aliases": [
         "Sunset Yellow",
         "FD&C Yellow No. 6",
         "Yellow Dye 6",
         "黄色6号"
       ],
-      "explanation_zh": "人工色素（日落黄），与过敏和行为问题有关。不必要的添加。"
+      "explanation_zh": "人工色素（日落黄），部分研究将其与过敏和行为问题相关联。FDA批准用于食品。无营养用途。"
     },
     {
       "name": "Blue 2",
       "category": "coloring",
       "safety_rating": "harmful",
-      "explanation": "Artificial dye with no nutritional benefit. Linked to brain tumors in animal studies.",
+      "explanation": "Artificial dye with no nutritional benefit. Some animal studies have raised concerns. FDA-approved for use in food.",
       "common_aliases": [
         "Indigo Carmine",
         "FD&C Blue No. 2",
         "Blue Dye 2",
         "蓝色2号"
       ],
-      "explanation_zh": "人工色素（靛蓝），对宠物无益。与脑肿瘤有潜在关联。"
+      "explanation_zh": "人工色素（靛蓝），对宠物无营养益处。部分动物研究对其安全性提出关注。FDA批准用于食品。"
     },
     {
       "name": "Red 3",
       "category": "coloring",
       "safety_rating": "harmful",
-      "explanation": "Artificial dye recognized as a thyroid carcinogen. Banned in cosmetics but still allowed in food.",
+      "explanation": "Artificial dye flagged by some regulatory bodies as a possible concern for thyroid health. Restricted in cosmetics but FDA-approved for use in food.",
       "common_aliases": [
         "Erythrosine",
         "FD&C Red No. 3",
@@ -1589,7 +1589,7 @@
       "name": "Titanium Dioxide",
       "category": "coloring",
       "safety_rating": "harmful",
-      "explanation": "White colorant classified as possibly carcinogenic when inhaled. Banned in EU food. No nutritional purpose in pet food.",
+      "explanation": "White colorant classified by some bodies as a possible concern when inhaled. Restricted in EU food products; FDA-approved for use in pet food. No nutritional purpose.",
       "common_aliases": [
         "TiO2",
         "二氧化钛"
@@ -1600,12 +1600,12 @@
       "name": "Caramel Color",
       "category": "coloring",
       "safety_rating": "caution",
-      "explanation": "Artificial coloring with no nutritional value. Some forms contain 4-MEI, a potential carcinogen.",
+      "explanation": "Artificial coloring with no nutritional value. Some forms may contain 4-MEI, which some studies have flagged as potentially concerning. FDA-approved for use in food.",
       "common_aliases": [
         "Caramel Coloring",
         "焦糖色"
       ],
-      "explanation_zh": "加工着色剂。某些类型含有4-甲基咪唑，可能致癌。"
+      "explanation_zh": "加工着色剂。某些类型可能含有4-甲基咪唑，部分研究对此成分提出关注。FDA批准用于食品。"
     },
     {
       "name": "Iron Oxide",
@@ -1672,12 +1672,12 @@
       "name": "Xylitol",
       "category": "sweetener",
       "safety_rating": "harmful",
-      "explanation": "EXTREMELY TOXIC to dogs. Even small amounts can cause life-threatening hypoglycemia and liver failure. DEADLY.",
+      "explanation": "Widely recognized by veterinary authorities as very harmful to dogs. According to veterinary sources, even small amounts may cause hypoglycemia and liver failure. Should be avoided in pet food.",
       "common_aliases": [
         "Birch Sugar",
         "木糖醇"
       ],
-      "explanation_zh": "对犬极度危险的糖醇。即使微量也可导致低血糖、肝衰竭甚至死亡。"
+      "explanation_zh": "兽医界广泛认为对犬有害的糖醇。据兽医来源，即使少量也可能导致低血糖和肝脏问题。应避免用于宠物食品。"
     },
     {
       "name": "Glycerin",
@@ -1715,12 +1715,12 @@
       "name": "Carrageenan",
       "category": "thickener",
       "safety_rating": "caution",
-      "explanation": "Seaweed-derived thickener linked to gastrointestinal inflammation in some studies. Controversial additive.",
+      "explanation": "Seaweed-derived thickener. Some studies have associated it with gastrointestinal inflammation, though this remains debated among researchers. FDA-approved for use in food.",
       "common_aliases": [
         "Irish Moss",
         "卡拉胶"
       ],
-      "explanation_zh": "海藻提取增稠剂。研究与肠道炎症有关联，存在争议。"
+      "explanation_zh": "海藻提取增稠剂。部分研究将其与肠道炎症相关联，但在研究者中仍有争议。FDA批准用于食品。"
     },
     {
       "name": "Agar-Agar",
@@ -2218,7 +2218,7 @@
       "name": "Garlic",
       "category": "additive",
       "safety_rating": "caution",
-      "explanation": "Toxic to dogs and cats in large amounts (causes oxidative damage to red blood cells). Small amounts in food are debated.",
+      "explanation": "According to veterinary sources, may be harmful to dogs and cats in large amounts (associated with oxidative damage to red blood cells). Small amounts in food are debated among experts.",
       "common_aliases": [
         "Garlic Powder",
         "Dried Garlic",
@@ -2231,7 +2231,7 @@
       "name": "Onion",
       "category": "additive",
       "safety_rating": "harmful",
-      "explanation": "TOXIC to dogs and cats. Causes hemolytic anemia by damaging red blood cells. Must be avoided completely.",
+      "explanation": "Widely recognized by veterinary authorities as harmful to dogs and cats. According to veterinary sources, may cause hemolytic anemia by damaging red blood cells. Should be avoided in pet food.",
       "common_aliases": [
         "Onion Powder",
         "Dried Onion",
@@ -2244,7 +2244,7 @@
       "name": "Grapes",
       "category": "fruit",
       "safety_rating": "harmful",
-      "explanation": "TOXIC to dogs. Can cause acute kidney failure. Must be avoided completely. Toxic compound recently identified as tartaric acid.",
+      "explanation": "Widely recognized by veterinary authorities as harmful to dogs. According to veterinary sources, may cause acute kidney failure. Recent research has identified tartaric acid as a compound of concern. Should be avoided in pet food.",
       "common_aliases": [
         "Grape",
         "Raisins",
@@ -2258,7 +2258,7 @@
       "name": "Chocolate",
       "category": "additive",
       "safety_rating": "harmful",
-      "explanation": "TOXIC to dogs and cats. Contains theobromine which pets cannot metabolize. Can cause seizures and death.",
+      "explanation": "Widely recognized by veterinary authorities as harmful to dogs and cats. Contains theobromine, which according to veterinary sources, pets have difficulty metabolizing. Should be avoided in pet food.",
       "common_aliases": [
         "Cocoa",
         "Cacao",
@@ -2272,7 +2272,7 @@
       "name": "Avocado",
       "category": "fruit",
       "safety_rating": "caution",
-      "explanation": "Contains persin which is toxic to some animals. The flesh is generally safer than skin/pit but still debated for pets.",
+      "explanation": "Contains persin, which according to some sources may be harmful to certain animals. The flesh is generally considered safer than skin/pit but still debated for pets.",
       "common_aliases": [
         "Avocado Meal",
         "Avocado Oil",
@@ -2284,7 +2284,7 @@
       "name": "Macadamia Nut",
       "category": "additive",
       "safety_rating": "harmful",
-      "explanation": "TOXIC to dogs. Causes weakness, vomiting, tremors, and hyperthermia. Must be avoided completely.",
+      "explanation": "Widely recognized by veterinary authorities as harmful to dogs. According to veterinary sources, may cause weakness, vomiting, tremors, and hyperthermia. Should be avoided in pet food.",
       "common_aliases": [
         "Macadamia Nuts",
         "夏威夷果"
@@ -2295,7 +2295,7 @@
       "name": "Nutmeg",
       "category": "additive",
       "safety_rating": "harmful",
-      "explanation": "Contains myristicin which is toxic to pets. Can cause hallucinations, increased heart rate, and seizures.",
+      "explanation": "Contains myristicin, which according to veterinary sources may be harmful to pets. Some sources associate it with adverse neurological effects. Should be avoided in pet food.",
       "common_aliases": [
         "肉豆蔻"
       ],
@@ -4093,7 +4093,7 @@
       "name": "Peanut Hulls",
       "category": "filler",
       "safety_rating": "harmful",
-      "explanation": "Ground peanut shells used as an extremely cheap filler. Zero nutritional value.",
+      "explanation": "Ground peanut shells used as an economical filler. Provides minimal nutritional value.",
       "common_aliases": [
         "Peanut Shells",
         "花生壳"
@@ -4255,7 +4255,7 @@
       "name": "Walnut",
       "category": "additive",
       "safety_rating": "caution",
-      "explanation": "Can be difficult to digest and some varieties (black walnuts) are toxic to dogs.",
+      "explanation": "Can be difficult to digest. According to some veterinary sources, some varieties (black walnuts) may be harmful to dogs.",
       "common_aliases": [
         "Walnuts",
         "核桃"
@@ -4266,7 +4266,7 @@
       "name": "Caffeine",
       "category": "additive",
       "safety_rating": "harmful",
-      "explanation": "TOXIC to pets. Stimulant that can cause rapid heart rate, seizures, and death. Must be avoided.",
+      "explanation": "Widely recognized by veterinary authorities as harmful to pets. According to veterinary sources, this stimulant may cause rapid heart rate and seizures. Should be avoided in pet food.",
       "common_aliases": [
         "Coffee",
         "Tea Extract",
@@ -4278,7 +4278,7 @@
       "name": "Alcohol",
       "category": "additive",
       "safety_rating": "harmful",
-      "explanation": "TOXIC to pets. Even small amounts can cause vomiting, diarrhea, breathing problems, and death.",
+      "explanation": "Widely recognized by veterinary authorities as harmful to pets. According to veterinary sources, even small amounts may cause vomiting, diarrhea, and breathing problems. Should be avoided in pet food.",
       "common_aliases": [
         "Ethanol",
         "Beer",
@@ -5379,7 +5379,7 @@
       "name": "Grape Seed Extract",
       "category": "supplement",
       "safety_rating": "caution",
-      "explanation": "Antioxidant-rich extract. While grapes are toxic to dogs, grape seed extract in small amounts is generally considered safe, but controversial.",
+      "explanation": "Antioxidant-rich extract. While grapes are widely recognized as harmful to dogs, grape seed extract in small amounts is generally considered safe by some sources, though this remains debated.",
       "common_aliases": [
         "GSE",
         "Proanthocyanidins",
@@ -5602,7 +5602,7 @@
       "name": "Alpha Lipoic Acid",
       "category": "supplement",
       "safety_rating": "caution",
-      "explanation": "Antioxidant that is safe for dogs but TOXIC to cats. Must be used with species awareness.",
+      "explanation": "Antioxidant generally considered safe for dogs. According to some veterinary sources, may be harmful to cats. Should be used with species awareness.",
       "common_aliases": [
         "ALA",
         "R-Lipoic Acid",
@@ -5790,7 +5790,7 @@
       "name": "Clove",
       "category": "additive",
       "safety_rating": "caution",
-      "explanation": "Contains eugenol which can be toxic in large amounts, especially to cats. Small amounts in food are usually safe.",
+      "explanation": "Contains eugenol, which according to some sources may be harmful in large amounts, especially to cats. Small amounts in food are generally considered safe.",
       "common_aliases": [
         "Clove Oil",
         "丁香"
@@ -5801,7 +5801,7 @@
       "name": "Star Anise",
       "category": "additive",
       "safety_rating": "caution",
-      "explanation": "Contains anethole. Safe in very small amounts but can be toxic in larger quantities.",
+      "explanation": "Contains anethole. Generally considered safe in very small amounts, but according to some sources may be harmful in larger quantities.",
       "common_aliases": [
         "八角"
       ],
